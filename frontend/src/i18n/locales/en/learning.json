@@ -1,0 +1,1068 @@
+{
+  "codingLab": {
+    "title": "Smart Coding Lab",
+    "backToHub": "Back to Algorithm Hub",
+    "problemTitle": "Problem",
+    "codeEditor": "Code Editor",
+    "runCode": "Run Code",
+    "submitCode": "Submit Code",
+    "aiExplain": "AI Explanation",
+    "aiHint": "AI Hint",
+    "showSolution": "View Solution",
+    "nextProblem": "Next Problem",
+    "prevProblem": "Previous Problem",
+    "difficulty": "Difficulty",
+    "tags": "Tags",
+    "examples": "Examples",
+    "solution": "Solution",
+    "testCases": "Test Cases",
+    "output": "Output",
+    "expected": "Expected Output",
+    "actual": "Actual Output",
+    "passed": "Passed",
+    "failed": "Failed",
+    "language": "Programming Language",
+    "selectLanguage": "Select Language",
+    "console": "Console",
+    "results": "Results",
+    "success": "Success",
+    "error": "Error",
+    "warning": "Warning",
+    "info": "Info",
+    "voiceChat": "Voice Chat",
+    "aiTeacher": "AI Teacher"
+  },
+  "courseDirectory": {
+    "title": "Algorithm Problems",
+    "dataStructuresTitle": "Data Structures",
+    "algorithmPatterns": "Algorithm Patterns",
+    "selectPatternToView": "Select algorithm pattern to view problems",
+    "theoryStudy": "Theory Study",
+    "problemCount": "problems"
+  },
+  "dataStructures": {
+    "数组": "Array",
+    "字符串": "String",
+    "链表": "Linked List",
+    "栈": "Stack",
+    "树": "Tree",
+    "图": "Graph",
+    "堆": "Heap",
+    "队列": "Queue",
+    "矩阵": "Matrix",
+    "位运算": "Bit Manipulation"
+  },
+  "algorithmPatterns": {
+    "数组双指针": "Array Two Pointers",
+    "使用双指针技术解决数组相关问题": "Use two pointers technique to solve array problems",
+    "数组滑动窗口": "Array Sliding Window",
+    "使用滑动窗口处理数组子序列问题": "Use sliding window to handle array subsequence problems",
+    "数组二分查找": "Array Binary Search",
+    "在有序数组中使用二分查找算法": "Use binary search in sorted arrays",
+    "数组基础操作": "Array Basic Operations",
+    "数组的基本操作和变换": "Basic operations and transformations of arrays",
+    "数组动态规划": "Array Dynamic Programming",
+    "基于数组的动态规划问题": "Dynamic programming problems based on arrays",
+    "数组回溯": "Array Backtracking",
+    "在数组中使用回溯算法": "Use backtracking algorithm in arrays"
+  },
+  "difficulties": {
+    "简单": "Easy",
+    "中等": "Medium",
+    "困难": "Hard"
+  },
+  "problems": {
+    "两数之和": "Two Sum",
+    "两数之和 II - 输入有序数组": "Two Sum II - Input Array Is Sorted",
+    "三数之和": "3Sum",
+    "盛最多水的容器": "Container With Most Water",
+    "接雨水": "Trapping Rain Water",
+    "买卖股票的最佳时机": "Best Time to Buy and Sell Stock",
+    "最大子数组和": "Maximum Subarray",
+    "乘积最大子数组": "Maximum Product Subarray",
+    "寻找旋转排序数组中的最小值": "Find Minimum in Rotated Sorted Array",
+    "搜索旋转排序数组": "Search in Rotated Sorted Array",
+    "存在重复元素": "Contains Duplicate",
+    "除自身以外数组的乘积": "Product of Array Except Self",
+    "爬楼梯": "Climbing Stairs",
+    "打家劫舍": "House Robber",
+    "打家劫舍 II": "House Robber II"
+  },
+  "algorithmHub": {
+    "title": "Algorithm Learning Center",
+    "subtitle": "Master core algorithmic thinking and improve programming skills",
+    "patterns": {
+      "title": "Algorithm Patterns",
+      "subtitle": "Learn by patterns, progressively master algorithmic essence",
+      "twoPointers": "Two Pointers",
+      "slidingWindow": "Sliding Window",
+      "binarySearch": "Binary Search",
+      "dynamicProgramming": "Dynamic Programming",
+      "backtracking": "Backtracking",
+      "greedy": "Greedy Algorithm",
+      "treeTraversal": "Tree Traversal",
+      "graphTraversal": "Graph Traversal"
+    },
+    "progress": {
+      "completed": "Completed",
+      "total": "Total",
+      "problems": "problems",
+      "startLearning": "Start Learning",
+      "continueLearning": "Continue Learning",
+      "overview": "Progress Overview",
+      "overviewDescription": "Algorithm learning path progress, mastering core knowledge of data structures and algorithms",
+      "consecutiveDays": "Consecutive",
+      "days": "days",
+      "completedProblems": "Completed",
+      "algorithmTraining": "Algorithm Training",
+      "overallCompletion": "Overall Completion",
+      "chapters": "Chapters",
+      "totalProblems": "Total Problems"
+    },
+    "difficulty": {
+      "easy": "Easy",
+      "medium": "Medium",
+      "hard": "Hard"
+    },
+    "loading": {
+      "startingEnvironment": "Starting learning environment..."
+    },
+    "comments": {
+      "stateManagement": "State Management",
+      "calculateProgress": "Calculate Overall Progress",
+      "getRecommended": "Get Recommended Next Learning Content",
+      "startLearning": "Start Learning Function",
+      "aiVoiceLearning": "AI Voice Learning Start",
+      "renderProgressOverview": "Render Learning Progress Overview - Using Project Card Design"
+    },
+    "voice": {
+      "welcomeBack": "Welcome back! Today we continue learning {chapterName}, you have completed {progress}%, let's start!"
+    }
+  },
+  "page": {
+    "title": "Learning Center",
+    "subtitle": "Structured learning paths from beginner to expert",
+    "searchPlaceholder": "Search courses, skills...",
+    "searchButton": "Search"
+  },
+  "paths": {
+    "title": "Choose Your Learning Path",
+    "data-scientist": {
+      "title": "Data Scientist",
+      "level": "Beginner to Advanced",
+      "duration": "5 months",
+      "description": "Data analysis, statistical modeling, machine learning - from data insights to business value"
+    },
+    "fullstack": {
+      "title": "Full Stack Developer",
+      "level": "Beginner to Advanced",
+      "duration": "8 months",
+      "description": "Complete tech stack: Frontend + Backend, React, Node.js, databases to deployment"
+    },
+    "ai-engineer": {
+      "title": "AI Algorithm Engineer",
+      "level": "Intermediate to Advanced",
+      "duration": "10 months",
+      "description": "Deep learning, machine learning algorithms, TensorFlow, PyTorch practical applications"
+    },
+    "selectedPath": {
+      "title": "{pathTitle} Learning Path",
+      "suffix": "Learning Path",
+      "startButton": "Start Learning"
+    },
+    "progress": "Learning Progress",
+    "studentsCount": "{count} students enrolled"
+  },
+  "courses": {
+    "data-scientist": [
+      {
+        "title": "Python Data Science Fundamentals",
+        "instructor": "AI Teaching Assistant Data",
+        "duration": "8 hours",
+        "description": "From Python basics to data science, including Pandas, NumPy, Matplotlib hands-on practice"
+      },
+      {
+        "title": "Statistical Analysis & Data Visualization",
+        "instructor": "AI Teaching Assistant Viz",
+        "duration": "10 hours",
+        "description": "Descriptive statistics, hypothesis testing, data visualization best practices"
+      },
+      {
+        "title": "Machine Learning Algorithms in Practice",
+        "instructor": "AI Teaching Assistant Smart",
+        "duration": "16 hours",
+        "description": "Supervised learning, unsupervised learning, model evaluation and optimization"
+      },
+      {
+        "title": "Deep Learning & Neural Networks",
+        "instructor": "AI Teaching Assistant Brain",
+        "duration": "20 hours",
+        "description": "TensorFlow, Keras deep learning project practice"
+      }
+    ],
+    "fullstack": [
+      {
+        "title": "React Frontend Development Basics",
+        "instructor": "AI Teaching Assistant Frontend",
+        "duration": "12 hours",
+        "description": "React components, state management, routing - essential for modern frontend development"
+      },
+      {
+        "title": "Node.js Backend Development",
+        "instructor": "AI Teaching Assistant Backend",
+        "duration": "14 hours",
+        "description": "Express framework, API design, database integration"
+      },
+      {
+        "title": "MongoDB Database Hands-on",
+        "instructor": "AI Teaching Assistant DB",
+        "duration": "10 hours",
+        "description": "NoSQL database design, index optimization, aggregation queries"
+      },
+      {
+        "title": "TypeScript Full Stack Development",
+        "instructor": "AI Teaching Assistant Type",
+        "duration": "16 hours",
+        "description": "Type-safe full stack development, enterprise-level project practice"
+      }
+    ],
+    "ai-engineer": [
+      {
+        "title": "Python Machine Learning Fundamentals",
+        "instructor": "AI Teaching Assistant Algorithm",
+        "duration": "15 hours",
+        "description": "Scikit-learn, feature engineering, model evaluation"
+      },
+      {
+        "title": "TensorFlow Deep Learning",
+        "instructor": "AI Teaching Assistant Deep",
+        "duration": "20 hours",
+        "description": "Neural networks, CNN, RNN practical projects"
+      },
+      {
+        "title": "PyTorch Practical Applications",
+        "instructor": "AI Teaching Assistant Fire",
+        "duration": "18 hours",
+        "description": "Dynamic graph framework, custom models, model deployment"
+      },
+      {
+        "title": "OpenCV Computer Vision",
+        "instructor": "AI Teaching Assistant Vision",
+        "duration": "16 hours",
+        "description": "Image processing, object detection, facial recognition"
+      }
+    ]
+  },
+  "levels": {
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced"
+  },
+  "status": {
+    "completed": "Completed",
+    "active": "In Progress",
+    "locked": "Locked",
+    "notStarted": "Not Started"
+  },
+  "buttons": {
+    "startLearning": "Start Learning",
+    "continueLearning": "Continue Learning",
+    "reviewCourse": "Review Course",
+    "locked": "Not Unlocked",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  },
+  "aiFeatures": {
+    "title": "AI Learning Assistant",
+    "personalizedTeaching": {
+      "title": "AI Personalized Teaching",
+      "description": "Customize personalized learning plans based on your progress and abilities"
+    },
+    "voiceInteraction": {
+      "title": "Voice Interactive Teaching",
+      "description": "Support voice Q&A, learn like talking to a teacher"
+    },
+    "smartRecommendation": {
+      "title": "Smart Exercise Recommendations",
+      "description": "Precisely recommend practice problems based on weak areas"
+    },
+    "reportGeneration": {
+      "title": "Learning Report Generation",
+      "description": "Automatically generate learning reports to track learning effectiveness"
+    }
+  },
+  "modal": {
+    "courseOutline": "Course Outline",
+    "reviews": "Reviews",
+    "lessons": "lessons",
+    "chapter1": "Chapter 1: Python Basic Syntax",
+    "chapter1Desc": "Variables, data types, control structures",
+    "chapter2": "Chapter 2: Data Structures & Algorithms",
+    "chapter2Desc": "List, dictionary, set operations",
+    "chapter3": "Chapter 3: Pandas Data Processing",
+    "chapter3Desc": "Data reading, cleaning, transformation",
+    "chapter4": "Chapter 4: Comprehensive Project Practice",
+    "chapter4Desc": "E-commerce data analysis project",
+    "reviewsContent": "Course reviews content..."
+  },
+  "dropdown": {
+    "downloadMaterials": "Download Materials",
+    "shareCourse": "Share Course",
+    "favoriteCourse": "Favorite Course"
+  },
+  "messages": {
+    "skillLearned": "Congratulations! You have mastered the {skill} skill",
+    "courseCompleted": "Course \"{title}\" completed successfully!",
+    "learningPhaseCompleted": "Congratulations on completing the learning phase!",
+    "readyForProjects": "You have mastered enough skills. Would you like to start generating personalized projects?",
+    "startLearningCourse": "Started learning \"{title}\"",
+    "prerequisiteRequired": "Please complete prerequisite courses first"
+  },
+  "frameworks": {
+    "react": {
+      "title": "React Framework Fundamentals",
+      "description": "React is a JavaScript library developed by Facebook for building user interfaces. It adopts a component-based development approach and achieves efficient interface updates through the Virtual DOM mechanism. React's core features include: component architecture, declarative programming, unidirectional data flow, and a rich ecosystem.",
+      "corePoints": {
+        "title": "🎯 Core Points",
+        "list": [
+          "Component-based development - Break down interfaces into independent, reusable components",
+          "Virtual DOM mechanism - Maintain virtual DOM tree in memory to optimize real DOM operations",
+          "Declarative programming paradigm - Describe what the interface should look like, not how to manipulate it",
+          "JSX syntax sugar - Write HTML-like syntax in JavaScript",
+          "Unidirectional data flow - Data flows from parent to child components, maintaining predictable application state"
+        ]
+      },
+      "codeExamples": {
+        "title": "💻 Code Examples",
+        "example1": {
+          "title": "1. First React Component",
+          "description": "Basic structure of functional component, receives props parameter and returns JSX elements"
+        },
+        "example2": {
+          "title": "2. Class Component Example",
+          "description": "Class component implemented by extending React.Component, using render method to return JSX"
+        }
+      },
+      "concepts": {
+        "title": "📊 Concept Diagrams",
+        "list": [
+          "React rendering process: Component definition → JSX compilation → Virtual DOM → Diff algorithm → Real DOM update",
+          "React component tree structure: App component as root component, containing multiple child components, forming tree structure"
+        ]
+      },
+      "performance": {
+        "title": "⚡ Performance Optimization",
+        "rendering": "Rendering optimization: React.memo(), useMemo(), useCallback()",
+        "renderingDesc": "Avoid unnecessary re-renders to improve application performance",
+        "bundleSize": "Bundle size optimization: Code Splitting",
+        "bundleSizeDesc": "Reduce initial loading time through dynamic imports"
+      },
+      "bestPractices": {
+        "title": "🚀 Best Practices",
+        "list": [
+          "Component separation: Keep components with single responsibility, easy to maintain and test",
+          "State management: Properly use useState and useReducer to manage component state",
+          "Lifecycle: Correctly use useEffect to handle side effects",
+          "Performance optimization: Avoid creating objects and functions in render"
+        ]
+      },
+      "commonMistakes": {
+        "title": "⚠️ Common Pitfalls",
+        "list": [
+          "Directly mutating state, should use setState or state update functions",
+          "Forgetting to add dependencies in useEffect, may cause infinite loops",
+          "Incorrect use of key property, affecting list rendering performance",
+          "Defining functions or objects inside components, causing unnecessary child component re-renders"
+        ]
+      }
+    }
+  },
+  "algorithms": {
+    "slidingWindow": {
+      "title": "Sliding Window Algorithm",
+      "subtitle": "Course Theory Section",
+      "loading": "Course content is loading, please wait...",
+      "corePoints": {
+        "title": "🎯 Core Points",
+        "loading": "Loading..."
+      },
+      "note": "This content also needs to be dynamic"
+    }
+  },
+  "classroomNotes": {
+    "title": "📝 Classroom Notes",
+    "defaultTopic": "Course Topic",
+    "defaultContent": "Course content is being prepared...",
+    "corePoints": {
+      "title": "🎯 Core Points",
+      "defaultText": "Content is being prepared..."
+    },
+    "codeExamples": {
+      "title": "💻 Code Examples"
+    },
+    "concepts": {
+      "title": "📊 Concept Diagrams"
+    },
+    "practicalTips": {
+      "title": "💡 Practical Tips"
+    },
+    "commonPitfalls": {
+      "title": "⚠️ Common Pitfalls"
+    },
+    "performance": {
+      "title": "⚡ Performance Optimization"
+    },
+    "bestPractices": {
+      "title": "🚀 Best Practices"
+    },
+    "commonMistakes": {
+      "title": "⚠️ Common Pitfalls"
+    },
+    "deliverables": {
+      "title": "📦 Project Deliverables:"
+    },
+    "techStack": {
+      "title": "🔧 Tech Stack"
+    },
+    "projectInfo": {
+      "title": "🚀 Project Information"
+    },
+    "loadingText": "Loading content...",
+    "noContentText": "No content available"
+  },
+  "practice": {
+    "codeExamples": {
+      "title": "💻 Code Examples",
+      "icon": "💻",
+      "defaultText": "Code examples are being prepared..."
+    },
+    "testCases": {
+      "title": "🧪 Test Cases",
+      "icon": "🧪"
+    },
+    "hints": {
+      "title": "💡 Solution Hints",
+      "icon": "💡"
+    },
+    "testExample": {
+      "title": "🔍 Test Examples",
+      "icon": "🔍",
+      "input": "Input:",
+      "expected": "Expected:"
+    }
+  },
+  "career": {
+    "title": "Career Preparation",
+    "subtitle": "Resume Optimization • Interview Preparation • Skill Assessment • Career Planning",
+    "resumeGeneration": {
+      "title": "Resume Generation",
+      "aiDriven": "AI-Driven",
+      "generating": "AI Generating...",
+      "generateButton": "Generate Resume Points",
+      "generatedTitle": "✨ Generated Resume Points",
+      "valueTitle": "Value Demonstration in Projects",
+      "defaultValue": "As the core algorithm engine of the project, achieving high-performance data processing and optimization experience.",
+      "styles": {
+        "technical": "💻 Technical-Oriented",
+        "projectFocused": "🚀 Project-Focused",
+        "resultOriented": "📊 Result-Oriented"
+      },
+      "fallbackTemplates": {
+        "technical": "Loading technical resume template...",
+        "projectFocused": "Loading project-focused resume template...",
+        "resultOriented": "Loading result-oriented resume template..."
+      }
+    },
+    "skills": {
+      "title": "Core Skills",
+      "defaultSkills": ["Frontend Development", "Algorithm Optimization", "Project Management", "Team Collaboration"]
+    },
+    "interview": {
+      "title": "Interview Question Bank",
+      "difficulty": {
+        "basic": "Basic",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced"
+      }
+    }
+  },
+  "practice": {
+    "defaultTitle": "Practice Exercise",
+    "defaultDescription": "Hands-on coding • Smart hints • Instant feedback • Progressive difficulty",
+    "defaultProblem": "Practice exercise description is being prepared..."
+  },
+  "codeExamples": {
+    "title": "Code Examples"
+  },
+  "developmentTips": {
+    "title": "Development Tips",
+    "projectGuidance": {
+      "title": "Project Development Guidance",
+      "planning": {
+        "title": "Project Planning",
+        "description": "Design the overall architecture first, clarifying the functions and data flow of each module"
+      },
+      "incremental": {
+        "title": "Incremental Development",
+        "description": "Start from core functions and gradually add new features"
+      },
+      "codeQuality": {
+        "title": "Code Quality",
+        "description": "Keep the code clear, using appropriate naming and comments"
+      },
+      "testing": {
+        "title": "Test Verification",
+        "description": "Develop alongside testing to ensure functional correctness"
+      }
+    },
+    "developmentPrecautions": {
+      "title": "Development Precautions",
+      "componentDesign": "Component Design: Keep components with single responsibility, easy to maintain and reuse",
+      "stateManagement": "State Management: Organize application state reasonably, avoid unnecessary complexity",
+      "performanceOptimization": "Performance Optimization: Be careful to avoid unnecessary re-renders, use memo appropriately",
+      "userExperience": "User Experience: Consider interaction details such as loading states and error handling"
+    }
+  },
+  "practiceStage": {
+    "basicSolution": "Basic Solution Example",
+    "advancedSolution": "Advanced Optimization Solution",
+    "solutionAnalysis": "Solution Analysis",
+    "commonMistakes": "Common Mistakes to Avoid",
+    "steps": {
+      "understand": "Understand the Problem:",
+      "analyze": "Analyze Algorithm:",
+      "implement": "Write Code:",
+      "test": "Test & Verify:"
+    },
+    "stepDescriptions": {
+      "understand": "Carefully read the problem description, clarify input/output format and constraints",
+      "analyze": "Determine data structures and algorithms to use, consider time complexity",
+      "implement": "Write basic solution first, ensure logic is correct, then consider optimization",
+      "test": "Test with sample data, check edge cases"
+    },
+    "mistakeItems": {
+      "indexOutOfBounds": {
+        "title": "Index Out of Bounds:",
+        "description": "Check index range before accessing list elements"
+      },
+      "variableNaming": {
+        "title": "Variable Naming:",
+        "description": "Use meaningful variable names, avoid single-letter naming"
+      },
+      "boundaryConditions": {
+        "title": "Boundary Conditions:",
+        "description": "Consider special cases like empty input, single element"
+      },
+      "algorithmComplexity": {
+        "title": "Algorithm Complexity:",
+        "description": "Avoid unnecessary nested loops, optimize time complexity"
+      }
+    }
+  },
+  "projectStage": {
+    "knowledgeBreakdown": "Knowledge Breakdown",
+    "projectArchitecture": "Project Architecture",
+    "smartSuggestions": "Smart Suggestions"
+  },
+  "careerStage": {
+    "codingInterview": "Coding Interview",
+    "behavioralInterview": "Behavioral Interview",
+    "todayAlgorithm": "Today's Algorithm",
+    "startCoding": "Start Coding Challenge",
+    "startVoiceInterview": "Start Voice Interview",
+    "resumeGeneration": "Resume Generation",
+    "generateResumePoints": "Generate Resume Points",
+    "aiGenerating": "AI Generating...",
+    "algorithmPractice": "Algorithm Programming Practice",
+    "minimumWindow": "Minimum Window Substring",
+    "algorithmThinking": "Algorithm Thinking & Project Experience Discussion",
+    "voiceRecognition": "Voice Recognition",
+    "naturalDialogue": "Natural Dialogue",
+    "interviewDescription": "In-depth discussion of algorithm application scenarios, optimization ideas and practical project experience",
+    "difficulty": {
+      "easy": "Easy",
+      "medium": "Medium",
+      "hard": "Hard"
+    }
+  },
+  "smartCodingLab": {
+    "comments": {
+      "stateManagement": "State Management",
+      "editorRelated": "Editor Related",
+      "aiBlackboardStates": "AI Blackboard Related States",
+      "pageStateManagement": "Page State Management",
+      "aiTeacherChat": "AI Teacher Chat States",
+      "interviewChat": "AI Interviewer Chat States",
+      "interviewEvaluation": "Interview Evaluation States",
+      "codeExamples": "Code Examples Card Display States",
+      "aiBlackboard": "AI Smart Blackboard Display States",
+      "aiTeacherVoice": "AI Teacher Voice Related States",
+      "interviewMode": "Interview Mode State Management",
+      "duration": "30 minutes",
+      "voiceInterviewChat": "Voice Interview Chat States",
+      "voiceRecognition": "Voice Recognition States"
+    },
+    "aiTeacher": {
+      "greeting": "Hello! I'm your AI teaching assistant. I can help you understand algorithm problems and solve programming questions. What do you need help with?",
+      "helpPrompt": "I understand your question. For this algorithm problem, I suggest you first analyze the time complexity requirements, then choose the appropriate data structure to optimize the solution. Do you need more specific help?",
+      "conceptExplanation": "Let the AI teacher explain concepts in detail and draw diagrams on the blackboard",
+      "selectTopic": "Select Teaching Topic"
+    },
+    "interviewer": {
+      "greeting": "Hello! Welcome to this technical interview.",
+      "todayTopic": "Today we're going to discuss the problem: {title}",
+      "startPrompt": "Please first describe the core problem of this question in your own words, then tell me your solution approach.",
+      "thinking": "AI interviewer is thinking...",
+      "analyzingCode": "AI interviewer is analyzing your code...",
+      "preparingQuestions": "AI interviewer is preparing opening questions...",
+      "evaluating": "AI interviewer is evaluating...",
+      "evaluatingDescription": "Analyzing your code quality, algorithm approach and interview performance",
+      "fallbackResponse": "Great answer! Let's continue to explore this problem in depth.",
+      "errorResponse": "Sorry, I can't reply right now. Please try again later.",
+      "evaluationComplete": "Evaluation complete, thank you for your participation!",
+      "codingPrompt": "Great! Now please start implementing your solution in the editor below, explaining your approach as you code.",
+      "followUpQuestion": "Do you think there's room for optimization in this algorithm?",
+      "understandingPrompt": "Please first tell me your understanding of this problem, what's your solution approach?",
+      "continueThinking": "Please continue sharing your thoughts.",
+      "interviewStart": "Interview begins!"
+    },
+    "voiceRecognition": {
+      "initializing": "Initializing voice recognition...",
+      "supported": "Browser supports voice recognition",
+      "configComplete": "Voice recognition configuration complete",
+      "started": "Voice recognition started",
+      "eventTriggered": "Voice recognition event triggered, result count",
+      "finalResult": "Final voice recognition result",
+      "aiSpeaking": "AI is speaking, ignoring voice recognition result",
+      "delayedCheck": "Delayed check: AI is speaking, ignoring voice recognition result",
+      "readyToSend": "Voice recognition result ready to send",
+      "directSend": "Directly sending voice recognition result",
+      "tooShort": "Recognition result too short, skipping send",
+      "interimResult": "Interim voice recognition result",
+      "error": "Voice recognition error",
+      "microphonePermissionDenied": "Microphone permission denied, please allow browser to access microphone",
+      "noSpeechDetected": "No speech input detected",
+      "networkError": "Network error, voice recognition temporarily unavailable",
+      "autoRestart": "Voice recognition auto-restart successful after error",
+      "alreadyRunning": "Voice recognition already running, no restart needed",
+      "restartFailed": "Restart failed",
+      "aiSpeakingNoRestart": "AI is speaking, not restarting voice recognition",
+      "endEvent": "Voice recognition end event triggered",
+      "autoRestartSuccess": "Voice recognition ended, auto-restart successful",
+      "instanceCreated": "Voice recognition instance created and saved",
+      "healthCheck": "Detected voice recognition not running, attempting restart",
+      "heartbeatSuccess": "Heartbeat check: Voice recognition restart successful",
+      "heartbeatRunning": "Heartbeat check: Voice recognition already running",
+      "heartbeatFailed": "Heartbeat check: Restart failed",
+      "heartbeatNormal": "Heartbeat check: Voice recognition running normally",
+      "microphonePermissionGranted": "Microphone permission granted",
+      "microphonePermissionError": "Microphone permission denied",
+      "allowMicrophoneAccess": "Please allow browser to access microphone to use voice features",
+      "notSupported": "Browser does not support voice recognition",
+      "currentBrowserNotSupported": "Current browser does not support voice recognition",
+      "cleanupTimer": "Cleaning up voice recognition health check timer",
+      "microphonePermissionRequired": "Please allow microphone access to use voice features",
+      "startingTest": "Starting voice recognition test...",
+      "startupFailed": "Voice recognition startup failed",
+      "testStarted": "Voice recognition test started successfully",
+      "testFailed": "Voice recognition test failed",
+      "notInitialized": "Voice recognition not initialized",
+      "listeningStarted": "Voice listening started"
+    },
+    "audio": {
+      "startControl": "Starting AI voice playback control",
+      "pausedRecognition": "Voice recognition paused",
+      "pauseFailed": "Failed to pause voice recognition",
+      "ttsRequestFailed": "TTS request failed",
+      "playbackEnded": "AI voice playback ended",
+      "playbackFailed": "Audio playback failed",
+      "ttsFailed": "TTS playback failed",
+      "restartSuccess": "AI voice ended, voice recognition restarted",
+      "alreadyRunning": "Voice recognition already running",
+      "restartFailed": "Failed to restart voice recognition"
+    },
+    "interview": {
+      "timeUp": "Time's up, automatically ending interview",
+      "manualStop": "Manually stopping voice recognition",
+      "manualStart": "Manually starting voice recognition",
+      "manualStartTest": "Manually starting voice recognition test...",
+      "manualStartFailed": "Manual start failed",
+      "testStart": "Starting voice recognition test...",
+      "testAttempt": "Attempting to start voice recognition test",
+      "testSuccess": "Voice recognition test started, please speak...",
+      "testContinue": "Voice recognition already running, test continues",
+      "testDirectSpeech": "Voice recognition already running, please speak directly to test",
+      "testFailed": "Test start failed",
+      "testError": "Test failed",
+      "directTest": "Voice recognition already running, please test directly",
+      "objectNotInitialized": "Voice recognition object not initialized",
+      "starting": "Starting voice recognition...",
+      "startCommandSent": "Voice recognition start command sent",
+      "alreadyRunningNoRepeat": "Voice recognition already running, no need to repeat start",
+      "voiceListeningStarted": "Voice listening started",
+      "startFailed": "Failed to start voice recognition",
+      "voiceRecognitionStartFailed": "Voice recognition start failed",
+      "voiceRecognitionAlreadyRunning": "Voice recognition already running",
+      "voiceRecognitionUnavailable": "Voice recognition unavailable",
+      "browserNotSupported": "Browser does not support voice recognition"
+    },
+    "course": {
+      "loadFailed": "Course data loading failed",
+      "dataLoadFailed": "Course data loading failed"
+    },
+    "loading": {
+      "enhancedContent": "Enhanced content loaded! {title} now includes multiple solutions and AI explanations.",
+      "welcomeMessage": "Welcome to {title} coding practice! This is a {difficulty} difficulty {pattern} problem. Let's get started!",
+      "problemNotFound": "Problem not found: pattern \"{pattern}\", problem ID \"{problemId}\"",
+      "missingParams": "Missing required route parameters",
+      "loadFailed": "Failed to load problem: {message}"
+    },
+    "codeTemplate": {
+      "writeCodeHere": "Write your code here",
+      "testCase": "Test Case",
+      "placeholder": "Write your code here...",
+      "candidate": "Candidate",
+      "interviewer": "AI Interviewer",
+      "congratulations": "🎉 Congratulations! All test cases passed!",
+      "partialPass": "❌ Some test cases failed, please check your code",
+      "allTestsPassed": "🎉 All test cases passed!",
+      "testCaseResults": "test cases passed"
+    },
+    "topics": {
+      "whatIsReact": "What is React",
+      "componentDevelopment": "Component Development",
+      "virtualDOM": "Virtual DOM",
+      "jsxSyntax": "JSX Syntax",
+      "problemReading": "Problem Reading",
+      "thoughtAnalysis": "Approach Analysis",
+      "complexityAnalysis": "Complexity Analysis",
+      "followUpQuestions": "Follow-up Questions"
+    },
+    "ui": {
+      "editor": "Editor",
+      "interviewDialogue": "AI Interviewer",
+      "interviewTips": "Interview Tips",
+      "codeExamples": "Code Examples",
+      "solutionHints": "Solution Hints",
+      "aiTeacher": "AI Teacher",
+      "aiAssistant": "AI Assistant",
+      "loading": "Loading...",
+      "testResults": "Test Results",
+      "submissionHistory": "Submission History",
+      "chatWithTeacher": "Ask AI assistant...",
+      "chatWithInterviewer": "Chat with interviewer...",
+      "currentProblemTitle": "Current Algorithm Problem",
+      "algorithmTopic": "Algorithm Problem",
+      "twoSum": "Two Sum",
+      "targetDescription": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.",
+      "returnToProblemBank": "Back to Problems",
+      "problemDescription": "Problem Description",
+      "examples": "Examples",
+      "constraints": "Constraints",
+      "relatedTags": "Related Tags",
+      "loadingProblemInfo": "Loading problem details...",
+      "loadingExamples": "Loading examples...",
+      "input": "Input",
+      "output": "Output",
+      "explanation": "Explanation",
+      "returnToClassroom": "Back to Classroom",
+      "hint": "💡 Hint:",
+      "learningObjective": "🎯 Learning Objective:",
+      "masterApplication": "Master {pattern} application",
+      "aiDebug": "AI Debug",
+      "aiBlackboard": "AI Smart Board",
+      "mockInterview": "Mock Interview",
+      "exitInterview": "Exit Interview"
+    },
+    "interviewTips": {
+      "expressThoughts": "Clearly express solution approach",
+      "analyzeComplexity": "Analyze time and space complexity",
+      "considerBoundary": "Consider boundary conditions",
+      "optimizeThinking": "Think about optimization"
+    },
+    "followUp": {
+      "timeComplexityQuestion": "Great! Can you analyze the time complexity of this algorithm?",
+      "otherApproachQuestion": "Nice solution! Do you think there are other implementation approaches?",
+      "optimizationQuestion": "If the data volume is very large, how would you optimize this algorithm?",
+      "boundaryQuestion": "Have you considered handling boundary cases? Like empty arrays or duplicate elements?",
+      "allTestsPassed": "Excellent! All test cases passed. Can you analyze the time and space complexity of this algorithm?",
+      "mostTestsPassed": "Good, most test cases passed. What do you think might be causing the failed test cases?",
+      "fewTestsPassed": "It looks like there are still some issues with the code. Can you explain your approach? Let's analyze it together."
+    },
+    "fallback": {
+      "unknownResponse": "No problem, let's take it step by step. For {title}, what do you think is the most intuitive approach?",
+      "hashMapResponse": "Great! What should the keys and values of the hash table store?",
+      "bruteForceResponse": "Right, the brute force approach is intuitive. Can you analyze the time complexity?",
+      "complexityResponse": "Good analysis! What about space complexity? Any optimization methods?",
+      "implementationResponse": "Okay, can you specifically explain your implementation approach?",
+      "analysisResponse": "Let's analyze the complexity of this method.",
+      "boundaryResponse": "Great! What other boundary cases need to be considered?"
+    },
+    "aiLecture": {
+      "preparing": "Preparing detailed explanation of {topic} for you...",
+      "prompt": "As a professional algorithm teacher, please provide detailed explanation about \"{topic}\" for the algorithm problem {title}.",
+      "contentGenerated": "Explanation content for {topic} has been generated",
+      "blackboardDrawing": "Drawing {topic} illustrations on the blackboard for you...",
+      "voiceGenerating": "Generating audio, will play soon...",
+      "voiceFailed": "Audio generation failed, but text content is ready for you to read",
+      "fallbackVoice": "Using fallback audio playback"
+    },
+    "evaluation": {
+      "finalEvaluationPrompt": "As a senior technical interviewer, please provide a comprehensive evaluation of the entire interview process",
+      "evaluationFailed": "Final evaluation failed",
+      "defaultGrade": "Average",
+      "defaultSummary": "Evaluation system temporarily unable to complete analysis.",
+      "defaultStrengths": "Actively participated in interview",
+      "defaultImprovements": "Needs further evaluation",
+      "defaultRecommendation": "Needs further evaluation"
+    },
+    "recordSaving": {
+      "savingRecord": "Saving interview record...",
+      "recordSaved": "Interview record saved",
+      "saveFailed": "Failed to save interview record"
+    },
+    "evaluationCriteria": {
+      "algorithmUnderstanding": "Algorithm understanding (grasp of problem essence)",
+      "solutionClarity": "Solution clarity (logical expression ability)",
+      "technicalDepth": "Technical depth (algorithm complexity analysis, optimization thinking)",
+      "communication": "Communication skills (clarity and professionalism of answers)",
+      "learningAttitude": "Learning attitude (receptiveness to suggestions and depth of thinking)",
+      "evaluationStandard": "Evaluation criteria: Excellent(90-100), Good(75-89), Average(60-74), Needs Improvement(below 60)",
+      "jsonFormat": "Please output evaluation results in the following JSON format:",
+      "overallScore": "overall score (0-100)",
+      "algorithmUnderstandingScore": "algorithm understanding score",
+      "problemSolvingScore": "problem solving score",
+      "technicalDepthScore": "technical depth score",
+      "communicationScore": "communication score",
+      "learningAttitudeScore": "learning attitude score",
+      "strengthsExample": "strength 1",
+      "improvementsExample": "improvement 1",
+      "finalCommentExample": "comprehensive evaluation summary",
+      "recommendationExample": "whether to recommend for next round",
+      "candidate": "Candidate",
+      "interviewer": "AI Interviewer",
+      "gradeExcellent": "Excellent",
+      "gradeGood": "Good",
+      "gradeAverage": "Average",
+      "gradeNeedsImprovement": "Needs Improvement",
+      "overallEvaluation": "Overall evaluation",
+      "strengthsLabel": "Strengths",
+      "improvementsLabel": "Improvements",
+      "nextRoundRecommendation": "Next round recommendation",
+      "evaluationFormatIncomplete": "Evaluation result format incomplete"
+    },
+    "aiPrompts": {
+      "codingGuidance1": "Great idea! Now let's start coding. Please implement your solution in the code editor on the right.",
+      "codingGuidance2": "Very clear understanding! Now please implement this algorithm, I'll observe your coding process.",
+      "codingGuidance3": "Clear approach! Let's start coding now, feel free to ask if you have any questions.",
+      "goodAnswer": "Great answer! Let's continue to explore this problem in depth.",
+      "currentAlgorithmProblem": "Current algorithm problem",
+      "mediumDifficulty": "Medium",
+      "algorithmProblem": "Algorithm problem"
+    },
+    "interviewKeywords": {
+      "completed": "completed",
+      "finished": "finished",
+      "how": "how",
+      "correct": "correct",
+      "right": "right",
+      "problem": "problem",
+      "error": "error",
+      "help": "help",
+      "unknown": "unknown",
+      "unclear": "unclear",
+      "hash": "hash",
+      "bruteForce": "brute force",
+      "loop": "loop",
+      "complexity": "complexity"
+    },
+    "examples": {
+      "twoSumExplanation": "Because nums[0] + nums[1] == 9, return [0, 1]",
+      "bruteForceHint": "A simple implementation uses nested for loops with O(n²) time complexity",
+      "hashTableHint": "You can use a hash table to reduce time complexity to O(n)",
+      "hashTableCheck": "When traversing to number x, check if target - x exists in the hash table",
+      "requirementAnalysis": "Analyze the input and output requirements of the problem"
+    },
+    "codeExampleTexts": {
+      "hashMapOptimized": "Hash Map Optimized Solution",
+      "approach": "Approach: Traverse array, calculate complement for each element, then check if complement exists in hash map",
+      "timeComplexity": "Time Complexity: O(n) - only need to traverse array once",
+      "spaceComplexity": "Space Complexity: O(n) - worst case need to store n-1 elements",
+      "args": "Args:",
+      "integerArray": "integer array",
+      "targetSum": "target sum",
+      "returns": "Returns:",
+      "indexesList": "List of indices of the two numbers, e.g. [0, 1]",
+      "createHashMap": "Create hash map to store {value: index} mapping",
+      "traverseArray": "Traverse array, getting both index and value",
+      "calculateComplement": "Calculate complement for current number",
+      "checkComplement": "Check if complement already exists in hash map",
+      "foundPair": "Found it! Return indices of complement and current number",
+      "storeInHashMap": "If no complement found, store current number in hash map",
+      "keyValueComment": "Key is value, value is index position",
+      "notFoundReturn": "If no solution found after traversal, return empty list",
+      "guaranteedSolution": "(Problem guarantees solution exists, so this won't execute)",
+      "testCode": "Test Code",
+      "createInstance": "Create Solution instance",
+      "algorithmTest": "Algorithm Test",
+      "testCase1": "Test Case 1: Basic scenario",
+      "testCase2": "Test Case 2: Non-consecutive indices",
+      "testCase3": "Test Case 3: Same numbers",
+      "testNumber": "Test",
+      "input": "Input",
+      "output": "Output",
+      "verification": "Verification",
+      "allTestsPassed": "All tests passed!"
+    },
+    "hints": {
+      "bruteForceLoop": "A simple implementation uses nested for loops with O(n²) time complexity",
+      "hashTableOptimization": "You can use a hash table to reduce time complexity to O(n)",
+      "complementCheck": "When traversing to number x, check if target - x exists in the hash table"
+    },
+    "problemTitles": {
+      "twoSum": "Two Sum"
+    },
+    "problemDescriptions": {
+      "twoSum": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order."
+    },
+    "problemExamples": {
+      "twoSum": {
+        "example1": {
+          "input": "nums = [2,7,11,15], target = 9",
+          "output": "[0,1]",
+          "explanation": "Because nums[0] + nums[1] == 9, we return [0, 1]."
+        },
+        "example2": {
+          "input": "nums = [3,2,4], target = 6",
+          "output": "[1,2]",
+          "explanation": "Because nums[1] + nums[2] == 6, we return [1, 2]."
+        },
+        "example3": {
+          "input": "nums = [3,3], target = 6",
+          "output": "[0,1]",
+          "explanation": "Because nums[0] + nums[1] == 6, we return [0, 1]."
+        }
+      }
+    },
+    "solutionHints": {
+      "title": "Solution Hints"
+    },
+    "testCaseDescriptions": {
+      "twoSum": {
+        "case1": "Standard test case",
+        "case2": "Different order",
+        "case3": "Same elements"
+      }
+    },
+    "constraints": {
+      "twoSum": {
+        "constraint1": "2 <= nums.length <= 10⁴",
+        "constraint2": "-10⁹ <= nums[i] <= 10⁹",
+        "constraint3": "-10⁹ <= target <= 10⁹",
+        "constraint4": "Only one valid answer exists"
+      }
+    },
+    "relatedTags": {
+      "twoSum": ["Array", "Hash Table"]
+    },
+    "messageTypes": {
+      "interviewDialogue": "AI Interviewer"
+    },
+    "errors": {
+      "sorry": "Sorry, I can't reply right now. Please try again later.",
+      "inputEmpty": "Input content is empty, returning",
+      "voiceEmpty": "Voice content is empty, returning",
+      "blackboardFailed": "Blackboard operation failed",
+      "voiceFailed": "Voice generation failed",
+      "fallbackVoiceFailed": "Fallback voice also failed",
+      "evaluationFailed": "Final evaluation failed",
+      "parseFailed": "Evaluation result parsing failed, using original text",
+      "originalAiResponse": "Original AI response",
+      "recordSaved": "Interview record saved",
+      "problemGenerationFailed": "Failed to generate initial interview question",
+      "codeExecutionError": "Code execution error"
+    },
+    "error": {
+      "dataMissing": "Problem data missing",
+      "loadingFailed": "Failed to load problem data"
+    },
+    "codeExecution": {
+      "executing": "Executing code...",
+      "failed": "Code execution failed"
+    },
+    "guidance": {
+      "analyzePattern": "Analyze how to apply {pattern} approach",
+      "implementLogic": "Implement solution logic step by step"
+    },
+    "loading": {
+      "problem": "Loading problem details...",
+      "failed": "Loading failed"
+    },
+    "buttons": {
+      "reload": "Reload"
+    },
+    "voiceChat": {
+      "starting": "Starting voice chat..."
+    },
+    "debugging": {
+      "inDevelopment": "This feature is in development"
+    },
+    "feedback": {
+      "solutionComplete": "🎉 Congratulations! Your solution is complete!",
+      "solutionIncomplete": "Some test cases didn't pass, keep trying!"
+    },
+    "testResults": {
+      "noResults": "No test results yet"
+    },
+    "submissions": {
+      "noRecords": "No submission records"
+    },
+    "tags": {
+      "algorithm": "Algorithm",
+      "dataStructure": "Data Structure"
+    },
+    "chat": {
+      "placeholder": "Enter message..."
+    },
+    "evaluation": {
+      "good": "Good",
+      "average": "Average",
+      "needsImprovement": "Needs Improvement",
+      "testSummary": "Test pass rate: {rate}%, {result}",
+      "goodPerformance": "Good performance",
+      "needsEffort": "Needs effort",
+      "basicCorrect": "Basic algorithm correct",
+      "activeAttempt": "Actively attempted the problem",
+      "canOptimize": "Can be further optimized",
+      "proceedNext": "Recommend proceeding to next round",
+      "furtherImprovement": "Needs further improvement",
+      "systemUnavailable": "Evaluation system temporarily unavailable",
+      "activeParticipation": "Actively participated in interview",
+      "needsFurtherEvaluation": "Needs further evaluation",
+      "overallGood": "Overall good performance",
+      "algorithmCorrectness": "Algorithm Correctness",
+      "clearThinking": "Clear thinking",
+      "correctImplementation": "Correct implementation",
+      "canOptimizeEfficiency": "Can optimize efficiency",
+      "codeStyle": "Code style",
+      "proceedNextRound": "Recommend for next round",
+      "analyzing": "Analyzing interview performance..."
+    },
+    "interview": {
+      "recordSaved": "Interview record saved",
+      "mode": "Interview Mode",
+      "preparing": "Preparing",
+      "active": "Active",
+      "paused": "Paused",
+      "completed": "Completed",
+      "pause": "Pause",
+      "continue": "Continue",
+      "chatPlaceholder": "Chat with interviewer..."
+    },
+    "difficulty": {
+      "easy": "Easy",
+      "medium": "Medium",
+      "hard": "Hard"
+    }
+  }
+}

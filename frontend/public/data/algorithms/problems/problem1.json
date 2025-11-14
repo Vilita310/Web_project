@@ -1,0 +1,211 @@
+{
+  "meta": {
+    "id": 1,
+    "title": "两数之和",
+    "difficulty": "简单",
+    "leetcodeId": 1,
+    "category": "array",
+    "patterns": ["hash_table", "array"],
+    "tags": ["数组", "哈希表"],
+    "estimatedTime": "15分钟",
+    "passingRate": "49.1%",
+    "version": "1.0",
+    "lastUpdated": "2024-01-20"
+  },
+
+  "description": "给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回他们的数组下标。你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。你可以按任意顺序返回答案。",
+
+  "examples": [
+    {
+      "input": "nums = [2,7,11,15], target = 9",
+      "output": "[0,1]",
+      "explanation": "因为 nums[0] + nums[1] == 9 ，返回 [0, 1]"
+    },
+    {
+      "input": "nums = [3,2,4], target = 6",
+      "output": "[1,2]",
+      "explanation": "因为 nums[1] + nums[2] == 6 ，返回 [1, 2]"
+    },
+    {
+      "input": "nums = [3,3], target = 6",
+      "output": "[0,1]",
+      "explanation": "因为 nums[0] + nums[1] == 6 ，返回 [0, 1]"
+    }
+  ],
+
+  "constraints": [
+    "2 <= nums.length <= 10³",
+    "-10⁹ <= nums[i] <= 10⁹",
+    "-10⁹ <= target <= 10⁹",
+    "只会存在一个有效答案"
+  ],
+
+  "hints": [
+    "一个简单的实现是使用两层 for 循环，时间复杂度是 O(n²)",
+    "你可以使用哈希表将时间复杂度降低到 O(n)",
+    "当遍历到数字 x 时，检查哈希表中是否存在 target - x"
+  ],
+
+  "followUp": "你可以想出一个时间复杂度小于 O(n²) 的算法吗？",
+
+  "solutions": [
+    {
+      "id": "brute_force",
+      "name": "暴力解法",
+      "timeComplexity": "O(n²)",
+      "spaceComplexity": "O(1)",
+      "description": "使用两层循环遍历所有可能的数字组合",
+
+      "code": {
+        "javascript": "function twoSum(nums, target) {\n    for (let i = 0; i < nums.length; i++) {\n        for (let j = i + 1; j < nums.length; j++) {\n            if (nums[i] + nums[j] === target) {\n                return [i, j];\n            }\n        }\n    }\n}",
+        "python": "def twoSum(nums, target):\n    for i in range(len(nums)):\n        for j in range(i + 1, len(nums)):\n            if nums[i] + nums[j] == target:\n                return [i, j]"
+      },
+
+      "explanation": {
+        "approach": "🔄 双重循环遍历所有数字对",
+        "steps": [
+          "外层循环：选择第一个数 nums[i]",
+          "内层循环：选择第二个数 nums[j] (j > i)",
+          "检查 nums[i] + nums[j] == target",
+          "找到匹配则返回 [i, j]"
+        ],
+        "pros": ["简单直观", "空间复杂度 O(1)"],
+        "cons": ["时间复杂度 O(n²)", "效率较低"]
+      }
+    },
+
+    {
+      "id": "hash_table",
+      "name": "哈希表优化",
+      "timeComplexity": "O(n)",
+      "spaceComplexity": "O(n)",
+      "description": "使用哈希表存储已遍历的数字，实现 O(1) 时间复杂度的查找",
+
+      "code": {
+        "javascript": "function twoSum(nums, target) {\n    const map = new Map();\n    \n    for (let i = 0; i < nums.length; i++) {\n        const complement = target - nums[i];\n        \n        if (map.has(complement)) {\n            return [map.get(complement), i];\n        }\n        \n        map.set(nums[i], i);\n    }\n}",
+        "python": "def twoSum(nums, target):\n    hash_map = {}\n    \n    for i, num in enumerate(nums):\n        complement = target - num\n        \n        if complement in hash_map:\n            return [hash_map[complement], i]\n        \n        hash_map[num] = i"
+      },
+
+      "explanation": {
+        "approach": "🗂️ 哈希表 + 一次遍历",
+        "steps": [
+          "创建哈希表存储 {数字: 索引}",
+          "计算配对数字：complement = target - nums[i]",
+          "检查 complement 是否在哈希表中",
+          "存在则返回索引，不存在则存入当前数字"
+        ],
+        "pros": ["时间复杂度 O(n)", "一次遍历", "查找速度 O(1)"],
+        "cons": ["空间复杂度 O(n)", "需额外存储空间"]
+      }
+    }
+  ],
+
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 哈希表 vs 双指针选择策略",
+      "content": "这是数组问题的经典入门题，重点学习时间复杂度优化：\n\n💡 **核心思想**：\n• 暴力解法：检查所有数字对 → O(n²)\n• 哈希表：用空间换时间 → O(n)\n• 双指针：适用于有序数组场景\n\n🎯 **关键理解**：\n根据数组是否有序选择不同策略，理解空间-时间权衡。"
+    },
+
+    "keyInsights": [
+      "💰 空间换时间：哈希表查找 O(n)→O(1)",
+      "📊 算法选择：无序用哈希表，有序用双指针",
+      "🔄 一次遍历比两次遍历更高效"
+    ],
+
+    "commonMistakes": [
+      "❌ 返回元素值而不是索引",
+      "❌ 重复使用同一个元素",
+      "❌ 哈希表存储顺序错误"
+    ]
+  },
+
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "nums": [2, 7, 11, 15],
+      "target": 9
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "初始化空的哈希表",
+        "highlight": [],
+        "action": "创建 map = {}",
+        "mapState": {},
+        "currentIndex": null
+      },
+      {
+        "step": 2,
+        "description": "查看第一个元素 nums[0] = 2",
+        "highlight": [0],
+        "action": "计算配对数字: target - 2 = 9 - 2 = 7",
+        "mapState": {},
+        "currentIndex": 0,
+        "complement": 7
+      },
+      {
+        "step": 3,
+        "description": "7 不在哈希表中，存储当前元素",
+        "highlight": [0],
+        "action": "map[2] = 0",
+        "mapState": {"2": 0},
+        "currentIndex": 0
+      },
+      {
+        "step": 4,
+        "description": "查看第二个元素 nums[1] = 7",
+        "highlight": [1],
+        "action": "计算配对数字: target - 7 = 9 - 7 = 2",
+        "mapState": {"2": 0},
+        "currentIndex": 1,
+        "complement": 2
+      },
+      {
+        "step": 5,
+        "description": "找到配对数字 2 在哈希表中！",
+        "highlight": [0, 1],
+        "action": "返回 [map[2], 1] = [0, 1]",
+        "mapState": {"2": 0},
+        "currentIndex": 1,
+        "result": [0, 1],
+        "found": true
+      }
+    ]
+  },
+
+  "relatedProblems": [
+    {
+      "id": 167,
+      "title": "两数之和 II - 输入有序数组",
+      "reason": "学习双指针在有序数组中的应用",
+      "difficulty": "中等"
+    },
+    {
+      "id": 15,
+      "title": "三数之和",
+      "reason": "两数之和的进阶版本，结合排序和双指针",
+      "difficulty": "中等"
+    },
+    {
+      "id": 18,
+      "title": "四数之和",
+      "reason": "进一步扩展 N 数之和的解题思路",
+      "difficulty": "中等"
+    }
+  ],
+
+  "practiceExercises": [
+    {
+      "title": "变种练习：三数之和为零",
+      "description": "给定数组，找出所有不重复的三元组，使得三数之和为 0",
+      "difficulty": "中等",
+      "hints": ["先排序", "固定一个数，用双指针找另外两个数", "注意去重"]
+    },
+    {
+      "title": "思考题：最接近的两数之和",
+      "description": "找出数组中两数之和最接近 target 的组合",
+      "difficulty": "中等",
+      "hints": ["记录最小差值", "可以使用双指针优化"]
+    }
+  ]
+}

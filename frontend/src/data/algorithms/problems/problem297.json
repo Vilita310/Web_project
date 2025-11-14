@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "id": 297,
+    "title": "二叉树的序列化与反序列化",
+    "difficulty": "困难",
+    "leetcodeId": 297,
+    "category": "tree",
+    "patterns": [
+      "tree_serialization"
+    ],
+    "tags": [
+      "树",
+      "深度优先搜索",
+      "广度优先搜索",
+      "字符串",
+      "二叉树"
+    ],
+    "estimatedTime": "45分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "序列化是将一个数据结构或者对象转换为连续的比特位的操作，进而可以将转换后的数据存储在一个文件或者内存中，同时也可以通过网络传输到另一个计算机环境，采取相反方式重构得到原数据。请设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻辑，你只需要保证一个二叉树可以被序列化为一个字符串并且将这个字符串反序列化为原始的树结构。",
+  "examples": [
+    {
+      "input": "root = [1,2,3,null,null,4,5]",
+      "output": "[1,2,3,null,null,4,5]",
+      "explanation": "你可以将以下二叉树:\n    1\n   / \\\n  2   3\n     / \\\n    4   5\n序列化为 \"[1,2,3,null,null,4,5]\""
+    }
+  ],
+  "constraints": [
+    "树中结点数在范围 [0, 10⁴] 内",
+    "-1000 <= Node.val <= 1000"
+  ],
+  "hints": [
+    "可以使用前序遍历或者层序遍历",
+    "使用特殊字符表示空节点",
+    "序列化和反序列化要配对使用相同的遍历方式"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "preorder_dfs",
+      "name": "前序遍历DFS",
+      "timeComplexity": "O(n)",
+      "spaceComplexity": "O(n)",
+      "description": "使用前序遍历进行序列化和反序列化",
+      "code": {
+        "javascript": "/**\n * 二叉树的序列化与反序列化 - 使用前序遍历进行序列化和反序列化\n */\n\nclass TreeNode {\n    constructor(val, left = null, right = null) {\n        this.val = val;\n        this.left = left;\n        this.right = right;\n    }\n}\n\nfunction serialize(root) {\n    const result = [];\n\n    function dfs(node) {\n        if (!node) {\n            result.push('null');\n            return;\n        }\n        result.push(node.val.toString());\n        dfs(node.left);\n        dfs(node.right);\n    }\n\n    dfs(root);\n    return result.join(',');\n}\n\nfunction deserialize(data) {\n    const values = data.split(',');\n    let index = 0;\n\n    function dfs() {\n        if (index >= values.length || values[index] === 'null') {\n            index++;\n            return null;\n        }\n\n        const node = new TreeNode(parseInt(values[index]));\n        index++;\n        node.left = dfs();\n        node.right = dfs();\n        return node;\n    }\n\n    return dfs();\n}\n\n\n/**\n * 测试serialize函数\n */\nfunction testSerialize() {\n    console.log(\"=== serialize测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: root = [1,2,3,null,null,4,5]\");\n    console.log(\"期望输出: [1,2,3,null,null,4,5]\");\n    console.log(\"说明: 你可以将以下二叉树:\n    1\n   / \\\n  2   3\n     / \\\n    4   5\n序列化为 \"[1,2,3,null,null,4,5]\"\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testSerialize();",
+        "python": "\"\"\"\n二叉树的序列化与反序列化 - 使用前序遍历进行序列化和反序列化\n\"\"\"\n\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef serialize(root):\n    result = []\n\n    def dfs(node):\n        if not node:\n            result.append('null')\n            return\n        result.append(str(node.val))\n        dfs(node.left)\n        dfs(node.right)\n\n    dfs(root)\n    return ','.join(result)\n\ndef deserialize(data):\n    values = data.split(',')\n    index = 0\n\n    def dfs():\n        nonlocal index\n        if index >= len(values) or values[index] == 'null':\n            index += 1\n            return None\n\n        node = TreeNode(int(values[index]))\n        index += 1\n        node.left = dfs()\n        node.right = dfs()\n        return node\n\n    return dfs()\n\n\ndef test___init__():\n    \"\"\"测试__init__函数\"\"\"\n    print(\"=== __init__测试 ===\")\n\n    # 测试用例\n    print(\"输入: root = [1,2,3,null,null,4,5]\")\n    print(\"期望输出: [1,2,3,null,null,4,5]\")\n    print(\"说明: 你可以将以下二叉树:\n    1\n   / \\\n  2   3\n     / \\\n    4   5\n序列化为 \"[1,2,3,null,null,4,5]\"\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test___init__()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 二叉树的序列化与反序列化解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "root = [1,2,3,null,null,4,5]",
+      "output": "[1,2,3,null,null,4,5]",
+      "explanation": "你可以将以下二叉树:\n    1\n   / \\\n  2   3\n     / \\\n    4   5\n序列化为 \"[1,2,3,null,null,4,5]\""
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "二叉树的序列化与反序列化变种练习",
+      "description": "基于二叉树的序列化与反序列化的变种问题",
+      "difficulty": "困难",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "id": 435,
+    "title": "无重叠区间",
+    "difficulty": "中等",
+    "leetcodeId": 435,
+    "category": "greedy",
+    "patterns": [
+      "greedy_interval"
+    ],
+    "tags": [
+      "贪心",
+      "数组",
+      "排序"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给定一个区间的集合 intervals ，其中 intervals[i] = [starti, endi] 。返回 需要移除区间的最小数量，使剩余区间互不重叠 。",
+  "examples": [
+    {
+      "input": "intervals = [[1,2],[2,3],[3,4],[1,3]]",
+      "output": "1",
+      "explanation": "移除 [1,3] 后，剩下的区间没有重叠。"
+    },
+    {
+      "input": "intervals = [[1,2],[1,2],[1,2]]",
+      "output": "2",
+      "explanation": "你需要移除两个 [1,2] 来使剩下的区间没有重叠。"
+    }
+  ],
+  "constraints": [
+    "1 <= intervals.length <= 10⁵",
+    "-5 * 10⁴ <= starti < endi <= 5 * 10⁴"
+  ],
+  "hints": [
+    "贪心算法：按结束时间排序",
+    "总是选择结束时间最早的区间",
+    "移除与已选区间重叠的区间"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "greedy",
+      "name": "贪心算法",
+      "timeComplexity": "O(n log n)",
+      "spaceComplexity": "O(1)",
+      "description": "按结束时间排序，贪心选择不重叠区间",
+      "code": {
+        "javascript": "/**\n * 无重叠区间 - 按结束时间排序，贪心选择不重叠区间\n */\n\nfunction eraseOverlapIntervals(intervals) {\n    if (intervals.length === 0) return 0;\n\n    // 按结束时间排序\n    intervals.sort((a, b) => a[1] - b[1]);\n\n    let count = 0;\n    let end = intervals[0][1];\n\n    for (let i = 1; i < intervals.length; i++) {\n        if (intervals[i][0] < end) {\n            // 有重叠，需要移除当前区间\n            count++;\n        } else {\n            // 无重叠，更新结束时间\n            end = intervals[i][1];\n        }\n    }\n\n    return count;\n}\n\n\n/**\n * 测试eraseOverlapIntervals函数\n */\nfunction testEraseOverlapIntervals() {\n    console.log(\"=== eraseOverlapIntervals测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: intervals = [[1,2],[2,3],[3,4],[1,3]]\");\n    console.log(\"期望输出: 1\");\n    console.log(\"说明: 移除 [1,3] 后，剩下的区间没有重叠。\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testEraseOverlapIntervals();",
+        "python": "\"\"\"\n无重叠区间 - 按结束时间排序，贪心选择不重叠区间\n\"\"\"\n\ndef eraseOverlapIntervals(intervals):\n    if not intervals:\n        return 0\n\n    # 按结束时间排序\n    intervals.sort(key=lambda x: x[1])\n\n    count = 0\n    end = intervals[0][1]\n\n    for i in range(1, len(intervals)):\n        if intervals[i][0] < end:\n            # 有重叠，需要移除当前区间\n            count += 1\n        else:\n            # 无重叠，更新结束时间\n            end = intervals[i][1]\n\n    return count\n\n\ndef test_eraseOverlapIntervals():\n    \"\"\"测试eraseOverlapIntervals函数\"\"\"\n    print(\"=== eraseOverlapIntervals测试 ===\")\n\n    # 测试用例\n    print(\"输入: intervals = [[1,2],[2,3],[3,4],[1,3]]\")\n    print(\"期望输出: 1\")\n    print(\"说明: 移除 [1,3] 后，剩下的区间没有重叠。\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_eraseOverlapIntervals()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 无重叠区间解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "intervals = [[1,2],[2,3],[3,4],[1,3]]",
+      "output": "1",
+      "explanation": "移除 [1,3] 后，剩下的区间没有重叠。"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "无重叠区间变种练习",
+      "description": "基于无重叠区间的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

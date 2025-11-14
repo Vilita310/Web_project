@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "id": 1143,
+    "title": "最长公共子序列",
+    "difficulty": "中等",
+    "leetcodeId": 1143,
+    "category": "dynamic_programming",
+    "patterns": [
+      "dynamic_programming_lcs"
+    ],
+    "tags": [
+      "字符串",
+      "动态规划"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给定两个字符串 text1 和 text2，返回这两个字符串的最长 公共子序列 的长度。如果不存在 公共子序列 ，返回 0 。一个字符串的 子序列 是指这样一个新的字符串：它是由原字符串在不改变字符的相对顺序的情况下删除某些字符（也可以不删除任何字符）后组成的新字符串。例如，\"ace\" 是 \"abcde\" 的子序列，但 \"aec\" 不是 \"abcde\" 的子序列。两个字符串的 公共子序列 是这两个字符串所共同拥有的子序列。",
+  "examples": [
+    {
+      "input": "text1 = \"abcde\", text2 = \"ace\"",
+      "output": "3",
+      "explanation": "最长公共子序列是 \"ace\" ，它的长度为 3 。"
+    },
+    {
+      "input": "text1 = \"abc\", text2 = \"abc\"",
+      "output": "3",
+      "explanation": "最长公共子序列是 \"abc\" ，它的长度为 3 。"
+    },
+    {
+      "input": "text1 = \"abc\", text2 = \"def\"",
+      "output": "0",
+      "explanation": "两个字符串没有公共子序列，返回 0 。"
+    }
+  ],
+  "constraints": [
+    "1 <= text1.length, text2.length <= 1000",
+    "text1 和 text2 仅由小写英文字符组成"
+  ],
+  "hints": [
+    "使用动态规划解决",
+    "定义dp[i][j]为text1[0...i-1]和text2[0...j-1]的最长公共子序列长度",
+    "如果字符相等，dp[i][j] = dp[i-1][j-1] + 1"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "dynamic_programming",
+      "name": "动态规划",
+      "timeComplexity": "O(m × n)",
+      "spaceComplexity": "O(m × n)",
+      "description": "使用二维DP数组求解最长公共子序列",
+      "code": {
+        "javascript": "/**\n * 最长公共子序列 - 使用二维DP数组求解最长公共子序列\n */\n\nfunction longestCommonSubsequence(text1, text2) {\n    const m = text1.length;\n    const n = text2.length;\n\n    // dp[i][j] 表示 text1[0...i-1] 和 text2[0...j-1] 的最长公共子序列长度\n    const dp = Array(m + 1).fill(null).map(() => Array(n + 1).fill(0));\n\n    for (let i = 1; i <= m; i++) {\n        for (let j = 1; j <= n; j++) {\n            if (text1[i - 1] === text2[j - 1]) {\n                // 字符相等，长度加1\n                dp[i][j] = dp[i - 1][j - 1] + 1;\n            } else {\n                // 字符不等，取较大值\n                dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);\n            }\n        }\n    }\n\n    return dp[m][n];\n}\n\n\n/**\n * 测试longestCommonSubsequence函数\n */\nfunction testLongestCommonSubsequence() {\n    console.log(\"=== longestCommonSubsequence测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: text1 = \"abcde\", text2 = \"ace\"\");\n    console.log(\"期望输出: 3\");\n    console.log(\"说明: 最长公共子序列是 \"ace\" ，它的长度为 3 。\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testLongestCommonSubsequence();",
+        "python": "\"\"\"\n最长公共子序列 - 使用二维DP数组求解最长公共子序列\n\"\"\"\n\ndef longestCommonSubsequence(text1, text2):\n    m, n = len(text1), len(text2)\n\n    # dp[i][j] 表示 text1[0...i-1] 和 text2[0...j-1] 的最长公共子序列长度\n    dp = [[0] * (n + 1) for _ in range(m + 1)]\n\n    for i in range(1, m + 1):\n        for j in range(1, n + 1):\n            if text1[i - 1] == text2[j - 1]:\n                # 字符相等，长度加1\n                dp[i][j] = dp[i - 1][j - 1] + 1\n            else:\n                # 字符不等，取较大值\n                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])\n\n    return dp[m][n]\n\n\ndef test_longestCommonSubsequence():\n    \"\"\"测试longestCommonSubsequence函数\"\"\"\n    print(\"=== longestCommonSubsequence测试 ===\")\n\n    # 测试用例\n    print(\"输入: text1 = \"abcde\", text2 = \"ace\"\")\n    print(\"期望输出: 3\")\n    print(\"说明: 最长公共子序列是 \"ace\" ，它的长度为 3 。\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_longestCommonSubsequence()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 最长公共子序列解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "text1 = \"abcde\", text2 = \"ace\"",
+      "output": "3",
+      "explanation": "最长公共子序列是 \"ace\" ，它的长度为 3 。"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "最长公共子序列变种练习",
+      "description": "基于最长公共子序列的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

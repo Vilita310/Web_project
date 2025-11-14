@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "id": 73,
+    "title": "矩阵置零",
+    "difficulty": "中等",
+    "leetcodeId": 73,
+    "category": "array",
+    "patterns": [
+      "matrix_in_place"
+    ],
+    "tags": [
+      "数组",
+      "矩阵"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给定一个 m x n 的矩阵，如果一个元素为 0 ，则将其所在行和列的所有元素都设为 0 。请使用 原地 算法。",
+  "examples": [
+    {
+      "input": "matrix = [[1,1,1],[1,0,1],[1,1,1]]",
+      "output": "[[1,0,1],[0,0,0],[1,0,1]]",
+      "explanation": "将包含0的行和列都置零"
+    },
+    {
+      "input": "matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]",
+      "output": "[[0,0,0,0],[0,4,5,0],[0,3,1,0]]",
+      "explanation": "第一行第一列和第四列包含0，相应置零"
+    }
+  ],
+  "constraints": [
+    "m == matrix.length",
+    "n == matrix[0].length",
+    "1 <= m, n <= 200",
+    "-2^31 <= matrix[i][j] <= 2^31 - 1"
+  ],
+  "hints": [
+    "可以使用第一行和第一列作为标记",
+    "需要特殊处理第一行和第一列本身",
+    "从后往前处理避免标记被覆盖"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "in_place_markers",
+      "name": "原地标记",
+      "timeComplexity": "O(m*n)",
+      "spaceComplexity": "O(1)",
+      "description": "使用第一行和第一列作为标记位",
+      "code": {
+        "javascript": "/**\n * 矩阵置零 - 使用第一行和第一列作为标记位\n */\n\nfunction setZeroes(matrix) {\n    const m = matrix.length;\n    const n = matrix[0].length;\n    let firstRowZero = false;\n    let firstColZero = false;\n\n    // 检查第一行是否有0\n    for (let j = 0; j < n; j++) {\n        if (matrix[0][j] === 0) {\n            firstRowZero = true;\n            break;\n        }\n    }\n\n    // 检查第一列是否有0\n    for (let i = 0; i < m; i++) {\n        if (matrix[i][0] === 0) {\n            firstColZero = true;\n            break;\n        }\n    }\n\n    // 使用第一行和第一列作为标记\n    for (let i = 1; i < m; i++) {\n        for (let j = 1; j < n; j++) {\n            if (matrix[i][j] === 0) {\n                matrix[i][0] = 0;\n                matrix[0][j] = 0;\n            }\n        }\n    }\n\n    // 根据标记置零\n    for (let i = 1; i < m; i++) {\n        for (let j = 1; j < n; j++) {\n            if (matrix[i][0] === 0 || matrix[0][j] === 0) {\n                matrix[i][j] = 0;\n            }\n        }\n    }\n\n    // 处理第一行\n    if (firstRowZero) {\n        for (let j = 0; j < n; j++) {\n            matrix[0][j] = 0;\n        }\n    }\n\n    // 处理第一列\n    if (firstColZero) {\n        for (let i = 0; i < m; i++) {\n            matrix[i][0] = 0;\n        }\n    }\n}\n\n\n/**\n * 测试setZeroes函数\n */\nfunction testSetZeroes() {\n    console.log(\"=== setZeroes测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: matrix = [[1,1,1],[1,0,1],[1,1,1]]\");\n    console.log(\"期望输出: [[1,0,1],[0,0,0],[1,0,1]]\");\n    console.log(\"说明: 将包含0的行和列都置零\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testSetZeroes();",
+        "python": "\"\"\"\n矩阵置零 - 使用第一行和第一列作为标记位\n\"\"\"\n\ndef setZeroes(matrix):\n    m, n = len(matrix), len(matrix[0])\n    first_row_zero = False\n    first_col_zero = False\n\n    # 检查第一行是否有0\n    for j in range(n):\n        if matrix[0][j] == 0:\n            first_row_zero = True\n            break\n\n    # 检查第一列是否有0\n    for i in range(m):\n        if matrix[i][0] == 0:\n            first_col_zero = True\n            break\n\n    # 使用第一行和第一列作为标记\n    for i in range(1, m):\n        for j in range(1, n):\n            if matrix[i][j] == 0:\n                matrix[i][0] = 0\n                matrix[0][j] = 0\n\n    # 根据标记置零\n    for i in range(1, m):\n        for j in range(1, n):\n            if matrix[i][0] == 0 or matrix[0][j] == 0:\n                matrix[i][j] = 0\n\n    # 处理第一行\n    if first_row_zero:\n        for j in range(n):\n            matrix[0][j] = 0\n\n    # 处理第一列\n    if first_col_zero:\n        for i in range(m):\n            matrix[i][0] = 0\n\n\ndef test_setZeroes():\n    \"\"\"测试setZeroes函数\"\"\"\n    print(\"=== setZeroes测试 ===\")\n\n    # 测试用例\n    print(\"输入: matrix = [[1,1,1],[1,0,1],[1,1,1]]\")\n    print(\"期望输出: [[1,0,1],[0,0,0],[1,0,1]]\")\n    print(\"说明: 将包含0的行和列都置零\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_setZeroes()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 矩阵置零解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "matrix = [[1,1,1],[1,0,1],[1,1,1]]",
+      "output": "[[1,0,1],[0,0,0],[1,0,1]]",
+      "explanation": "将包含0的行和列都置零"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "矩阵置零变种练习",
+      "description": "基于矩阵置零的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

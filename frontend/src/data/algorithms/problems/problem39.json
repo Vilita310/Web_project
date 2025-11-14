@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "id": 39,
+    "title": "组合总和",
+    "difficulty": "中等",
+    "leetcodeId": 39,
+    "category": "backtracking",
+    "patterns": [
+      "backtracking_combination"
+    ],
+    "tags": [
+      "数组",
+      "回溯"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给你一个 无重复元素 的整数数组 candidates 和一个目标整数 target ，找出 candidates 中可以使数字和为目标数 target 的 所有 不同组合 ，并以列表形式返回。你可以按 任意顺序 返回这些组合。candidates 中的 同一个 数字可以 无限制重复被选取 。如果至少一个数字的被选数量不同，则两种组合是不同的。 对于给定的输入，保证和为 target 的不同组合数少于 150 个。",
+  "examples": [
+    {
+      "input": "candidates = [2,3,6,7], target = 7",
+      "output": "[[2,2,3],[7]]",
+      "explanation": "2 和 3 可以形成一组候选，2 + 2 + 3 = 7 。注意 2 可以使用多次。7 也是一个候选， 7 = 7 。仅有这两种组合。"
+    },
+    {
+      "input": "candidates = [2,3,5], target = 8",
+      "output": "[[2,2,2,2],[2,3,3],[3,5]]",
+      "explanation": "有多种组合方式。"
+    },
+    {
+      "input": "candidates = [2], target = 1",
+      "output": "[]",
+      "explanation": "没有任何组合方式。"
+    }
+  ],
+  "constraints": [
+    "1 <= candidates.length <= 30",
+    "2 <= candidates[i] <= 40",
+    "candidates 中的所有元素 互不相同",
+    "1 <= target <= 40"
+  ],
+  "hints": [
+    "可以使用回溯算法。",
+    "为了避免重复，可以按顺序选择候选数字。"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "backtracking",
+      "name": "回溯算法",
+      "timeComplexity": "O(n^(t/m))",
+      "spaceComplexity": "O(t/m)",
+      "description": "使用回溯算法探索所有可能的组合",
+      "code": {
+        "javascript": "/**\n * 组合总和 - 使用回溯算法探索所有可能的组合\n */\n\nfunction combinationSum(candidates, target) {\n    const result = [];\n    \n    function backtrack(start, currentSum, path) {\n        if (currentSum === target) {\n            result.push([...path]);\n            return;\n        }\n        \n        if (currentSum > target) {\n            return;\n        }\n        \n        for (let i = start; i < candidates.length; i++) {\n            path.push(candidates[i]);\n            backtrack(i, currentSum + candidates[i], path);\n            path.pop();\n        }\n    }\n    \n    backtrack(0, 0, []);\n    return result;\n}\n\n\n/**\n * 测试combinationSum函数\n */\nfunction testCombinationSum() {\n    console.log(\"=== combinationSum测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: candidates = [2,3,6,7], target = 7\");\n    console.log(\"期望输出: [[2,2,3],[7]]\");\n    console.log(\"说明: 2 和 3 可以形成一组候选，2 + 2 + 3 = 7 。注意 2 可以使用多次。7 也是一个候选， 7 = 7 。仅有这两种组合。\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testCombinationSum();",
+        "python": "\"\"\"\n组合总和 - 使用回溯算法探索所有可能的组合\n\"\"\"\n\ndef combinationSum(candidates, target):\n    result = []\n    \n    def backtrack(start, current_sum, path):\n        if current_sum == target:\n            result.append(path[:])\n            return\n        \n        if current_sum > target:\n            return\n        \n        for i in range(start, len(candidates)):\n            path.append(candidates[i])\n            backtrack(i, current_sum + candidates[i], path)\n            path.pop()\n    \n    backtrack(0, 0, [])\n    return result\n\n\ndef test_combinationSum():\n    \"\"\"测试combinationSum函数\"\"\"\n    print(\"=== combinationSum测试 ===\")\n\n    # 测试用例\n    print(\"输入: candidates = [2,3,6,7], target = 7\")\n    print(\"期望输出: [[2,2,3],[7]]\")\n    print(\"说明: 2 和 3 可以形成一组候选，2 + 2 + 3 = 7 。注意 2 可以使用多次。7 也是一个候选， 7 = 7 。仅有这两种组合。\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_combinationSum()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 组合总和解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "candidates = [2,3,6,7], target = 7",
+      "output": "[[2,2,3],[7]]",
+      "explanation": "2 和 3 可以形成一组候选，2 + 2 + 3 = 7 。注意 2 可以使用多次。7 也是一个候选， 7 = 7 。仅有这两种组合。"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "组合总和变种练习",
+      "description": "基于组合总和的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

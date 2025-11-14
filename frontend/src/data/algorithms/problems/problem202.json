@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "id": 202,
+    "title": "快乐数",
+    "difficulty": "简单",
+    "leetcodeId": 202,
+    "category": "hash_table",
+    "patterns": [
+      "hash_set_cycle"
+    ],
+    "tags": [
+      "哈希表",
+      "数学",
+      "双指针"
+    ],
+    "estimatedTime": "15分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "编写一个算法来判断一个数 n 是不是快乐数。快乐数定义为：对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和。然后重复这个过程直到这个数变为 1（此时对应的是快乐数），或者是 无限循环 但始终变不到 1（此时对应的不是快乐数）。如果 可以变为  1，那么这个数就是快乐数。",
+  "examples": [
+    {
+      "input": "n = 19",
+      "output": "true",
+      "explanation": "1² + 9² = 82; 8² + 2² = 68; 6² + 8² = 100; 1² + 0² + 0² = 1"
+    },
+    {
+      "input": "n = 2",
+      "output": "false",
+      "explanation": "会进入无限循环"
+    }
+  ],
+  "constraints": [
+    "1 <= n <= 2³¹ - 1"
+  ],
+  "hints": [
+    "使用哈希集合检测循环",
+    "或者使用快慢指针检测循环"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "hash_set",
+      "name": "哈希集合",
+      "timeComplexity": "O(log n)",
+      "spaceComplexity": "O(log n)",
+      "description": "使用哈希集合检测循环",
+      "code": {
+        "javascript": "/**\n * 快乐数 - 使用哈希集合检测循环\n */\n\nfunction isHappy(n) {\n    const seen = new Set();\n\n    function getNext(num) {\n        let sum = 0;\n        while (num > 0) {\n            const digit = num % 10;\n            sum += digit * digit;\n            num = Math.floor(num / 10);\n        }\n        return sum;\n    }\n\n    while (n !== 1 && !seen.has(n)) {\n        seen.add(n);\n        n = getNext(n);\n    }\n\n    return n === 1;\n}\n\n\n/**\n * 测试isHappy函数\n */\nfunction testIsHappy() {\n    console.log(\"=== isHappy测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: n = 19\");\n    console.log(\"期望输出: true\");\n    console.log(\"说明: 1² + 9² = 82; 8² + 2² = 68; 6² + 8² = 100; 1² + 0² + 0² = 1\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testIsHappy();",
+        "python": "\"\"\"\n快乐数 - 使用哈希集合检测循环\n\"\"\"\n\ndef isHappy(n):\n    def get_next(num):\n        total = 0\n        while num > 0:\n            digit = num % 10\n            total += digit * digit\n            num //= 10\n        return total\n\n    seen = set()\n    while n != 1 and n not in seen:\n        seen.add(n)\n        n = get_next(n)\n\n    return n == 1\n\n\ndef test_isHappy():\n    \"\"\"测试isHappy函数\"\"\"\n    print(\"=== isHappy测试 ===\")\n\n    # 测试用例\n    print(\"输入: n = 19\")\n    print(\"期望输出: true\")\n    print(\"说明: 1² + 9² = 82; 8² + 2² = 68; 6² + 8² = 100; 1² + 0² + 0² = 1\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_isHappy()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 快乐数解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "n = 19",
+      "output": "true",
+      "explanation": "1² + 9² = 82; 8² + 2² = 68; 6² + 8² = 100; 1² + 0² + 0² = 1"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "快乐数变种练习",
+      "description": "基于快乐数的变种问题",
+      "difficulty": "简单",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

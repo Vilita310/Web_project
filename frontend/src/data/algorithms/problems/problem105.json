@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "id": 105,
+    "title": "从前序与中序遍历序列构造二叉树",
+    "difficulty": "中等",
+    "leetcodeId": 105,
+    "category": "tree",
+    "patterns": [
+      "tree_construction"
+    ],
+    "tags": [
+      "树",
+      "数组",
+      "哈希表",
+      "分治",
+      "二叉树"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给定两个整数数组 preorder 和 inorder ，其中 preorder 是二叉树的先序遍历， inorder 是同一棵树的中序遍历，请构造二叉树并返回其根节点。",
+  "examples": [
+    {
+      "input": "preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]",
+      "output": "[3,9,20,null,null,15,7]",
+      "explanation": "根据前序和中序遍历构造二叉树"
+    },
+    {
+      "input": "preorder = [-1], inorder = [-1]",
+      "output": "[-1]",
+      "explanation": "只有一个节点的树"
+    }
+  ],
+  "constraints": [
+    "1 <= preorder.length <= 3000",
+    "inorder.length == preorder.length",
+    "-3000 <= preorder[i], inorder[i] <= 3000",
+    "preorder 和 inorder 均 无重复 元素",
+    "inorder 均出现在 preorder",
+    "preorder 保证 为二叉树的前序遍历序列",
+    "inorder 保证 为二叉树的中序遍历序列"
+  ],
+  "hints": [
+    "前序遍历的第一个元素是根节点",
+    "在中序遍历中找到根节点位置，可以分割左右子树",
+    "递归构造左右子树"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "recursive_build",
+      "name": "递归构造",
+      "timeComplexity": "O(n)",
+      "spaceComplexity": "O(n)",
+      "description": "递归地根据前序和中序遍历构造二叉树",
+      "code": {
+        "javascript": "/**\n * 从前序与中序遍历序列构造二叉树 - 递归地根据前序和中序遍历构造二叉树\n */\n\nfunction buildTree(preorder, inorder) {\n    if (!preorder.length || !inorder.length) return null;\n\n    const inorderMap = new Map();\n    for (let i = 0; i < inorder.length; i++) {\n        inorderMap.set(inorder[i], i);\n    }\n\n    function build(preStart, preEnd, inStart, inEnd) {\n        if (preStart > preEnd) return null;\n\n        const rootVal = preorder[preStart];\n        const root = new TreeNode(rootVal);\n        const rootIndex = inorderMap.get(rootVal);\n        const leftSize = rootIndex - inStart;\n\n        root.left = build(preStart + 1, preStart + leftSize, inStart, rootIndex - 1);\n        root.right = build(preStart + leftSize + 1, preEnd, rootIndex + 1, inEnd);\n\n        return root;\n    }\n\n    return build(0, preorder.length - 1, 0, inorder.length - 1);\n}\n\n\n/**\n * 测试buildTree函数\n */\nfunction testBuildTree() {\n    console.log(\"=== buildTree测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]\");\n    console.log(\"期望输出: [3,9,20,null,null,15,7]\");\n    console.log(\"说明: 根据前序和中序遍历构造二叉树\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testBuildTree();",
+        "python": "\"\"\"\n从前序与中序遍历序列构造二叉树 - 递归地根据前序和中序遍历构造二叉树\n\"\"\"\n\ndef buildTree(preorder, inorder):\n    if not preorder or not inorder:\n        return None\n\n    inorder_map = {val: i for i, val in enumerate(inorder)}\n\n    def build(pre_start, pre_end, in_start, in_end):\n        if pre_start > pre_end:\n            return None\n\n        root_val = preorder[pre_start]\n        root = TreeNode(root_val)\n        root_index = inorder_map[root_val]\n        left_size = root_index - in_start\n\n        root.left = build(pre_start + 1, pre_start + left_size, in_start, root_index - 1)\n        root.right = build(pre_start + left_size + 1, pre_end, root_index + 1, in_end)\n\n        return root\n\n    return build(0, len(preorder) - 1, 0, len(inorder) - 1)\n\n\ndef test_buildTree():\n    \"\"\"测试buildTree函数\"\"\"\n    print(\"=== buildTree测试 ===\")\n\n    # 测试用例\n    print(\"输入: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]\")\n    print(\"期望输出: [3,9,20,null,null,15,7]\")\n    print(\"说明: 根据前序和中序遍历构造二叉树\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_buildTree()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 从前序与中序遍历序列构造二叉树解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]",
+      "output": "[3,9,20,null,null,15,7]",
+      "explanation": "根据前序和中序遍历构造二叉树"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "从前序与中序遍历序列构造二叉树变种练习",
+      "description": "基于从前序与中序遍历序列构造二叉树的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

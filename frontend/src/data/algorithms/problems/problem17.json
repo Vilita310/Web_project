@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "id": 17,
+    "title": "电话号码的字母组合",
+    "difficulty": "中等",
+    "leetcodeId": 17,
+    "category": "backtracking",
+    "patterns": [
+      "backtracking_phone_mapping"
+    ],
+    "tags": [
+      "哈希表",
+      "字符串",
+      "回溯"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给定一个仅包含数字 2-9 的字符串，返回所有它能表示的字母组合。答案可以按 任意顺序 返回。给出数字到字母的映射如下（与电话按键相同）。注意 1 不对应任何字母。",
+  "examples": [
+    {
+      "input": "digits = \"23\"",
+      "output": "[\"ad\",\"ae\",\"af\",\"bd\",\"be\",\"bf\",\"cd\",\"ce\",\"cf\"]",
+      "explanation": "数字2对应字母a、b、c，数字3对应字母d、e、f"
+    },
+    {
+      "input": "digits = \"\"",
+      "output": "[]",
+      "explanation": "空字符串返回空数组"
+    },
+    {
+      "input": "digits = \"2\"",
+      "output": "[\"a\",\"b\",\"c\"]",
+      "explanation": "数字2对应的所有字母"
+    }
+  ],
+  "constraints": [
+    "0 <= digits.length <= 4",
+    "digits[i] 是范围 ['2', '9'] 的一个数字"
+  ],
+  "hints": [
+    "使用回溯算法进行深度优先搜索",
+    "建立数字到字母的映射关系",
+    "递归构建所有可能的组合"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "backtracking",
+      "name": "回溯算法",
+      "timeComplexity": "O(3^m × 4^n)",
+      "spaceComplexity": "O(3^m × 4^n)",
+      "description": "使用回溯算法生成所有可能的字母组合",
+      "code": {
+        "javascript": "/**\n * 电话号码的字母组合 - 使用回溯算法生成所有可能的字母组合\n */\n\nfunction letterCombinations(digits) {\n    if (digits.length === 0) return [];\n\n    const phoneMap = {\n        '2': 'abc',\n        '3': 'def',\n        '4': 'ghi',\n        '5': 'jkl',\n        '6': 'mno',\n        '7': 'pqrs',\n        '8': 'tuv',\n        '9': 'wxyz'\n    };\n\n    const result = [];\n\n    function backtrack(index, combination) {\n        if (index === digits.length) {\n            result.push(combination);\n            return;\n        }\n\n        const letters = phoneMap[digits[index]];\n        for (let letter of letters) {\n            backtrack(index + 1, combination + letter);\n        }\n    }\n\n    backtrack(0, '');\n    return result;\n}\n\n\n/**\n * 测试letterCombinations函数\n */\nfunction testLetterCombinations() {\n    console.log(\"=== letterCombinations测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: digits = \"23\"\");\n    console.log(\"期望输出: [\"ad\",\"ae\",\"af\",\"bd\",\"be\",\"bf\",\"cd\",\"ce\",\"cf\"]\");\n    console.log(\"说明: 数字2对应字母a、b、c，数字3对应字母d、e、f\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testLetterCombinations();",
+        "python": "\"\"\"\n电话号码的字母组合 - 使用回溯算法生成所有可能的字母组合\n\"\"\"\n\ndef letterCombinations(digits):\n    if not digits:\n        return []\n\n    phone_map = {\n        '2': 'abc',\n        '3': 'def',\n        '4': 'ghi',\n        '5': 'jkl',\n        '6': 'mno',\n        '7': 'pqrs',\n        '8': 'tuv',\n        '9': 'wxyz'\n    }\n\n    result = []\n\n    def backtrack(index, combination):\n        if index == len(digits):\n            result.append(combination)\n            return\n\n        letters = phone_map[digits[index]]\n        for letter in letters:\n            backtrack(index + 1, combination + letter)\n\n    backtrack(0, '')\n    return result\n\n\ndef test_letterCombinations():\n    \"\"\"测试letterCombinations函数\"\"\"\n    print(\"=== letterCombinations测试 ===\")\n\n    # 测试用例\n    print(\"输入: digits = \"23\"\")\n    print(\"期望输出: [\"ad\",\"ae\",\"af\",\"bd\",\"be\",\"bf\",\"cd\",\"ce\",\"cf\"]\")\n    print(\"说明: 数字2对应字母a、b、c，数字3对应字母d、e、f\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_letterCombinations()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 电话号码的字母组合解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "digits = \"23\"",
+      "output": "[\"ad\",\"ae\",\"af\",\"bd\",\"be\",\"bf\",\"cd\",\"ce\",\"cf\"]",
+      "explanation": "数字2对应字母a、b、c，数字3对应字母d、e、f"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "电话号码的字母组合变种练习",
+      "description": "基于电话号码的字母组合的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

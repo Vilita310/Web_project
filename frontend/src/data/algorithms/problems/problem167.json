@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "id": 167,
+    "title": "两数之和 II - 输入有序数组",
+    "difficulty": "中等",
+    "leetcodeId": 167,
+    "category": "array",
+    "patterns": [
+      "array_two_pointers"
+    ],
+    "tags": [
+      "数组",
+      "双指针"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给你一个下标从 1 开始的整数数组 numbers ，该数组已按 非递减顺序排列 ，请你从数组中找出满足相加之和等于目标数 target 的两个数。如果设这两个数分别是 numbers[index1] 和 numbers[index2] ，则 1 <= index1 < index2 <= numbers.length 。以长度为 2 的整数数组 [index1, index2] 的形式返回这两个整数的下标 index1 和 index2。你可以假设每个输入 只对应唯一的答案 ，而且你 不可以 重复使用相同的元素。你所设计的解决方案必须只使用常量级的额外空间。",
+  "examples": [
+    {
+      "input": "numbers = [2,7,11,15], target = 9",
+      "output": "[1,2]",
+      "explanation": "2 与 7 之和等于目标数 9 。因此 index1 = 1, index2 = 2 。返回 [1, 2] 。"
+    }
+  ],
+  "constraints": [
+    "2 <= numbers.length <= 3 * 10⁴",
+    "-1000 <= numbers[i] <= 1000",
+    "numbers 按 非递减顺序 排列",
+    "-1000 <= target <= 1000",
+    "仅存在一个有效答案"
+  ],
+  "hints": [
+    "我们可以使用双指针的方法",
+    "一个指针指向较小的元素，一个指针指向较大的元素",
+    "根据两个指针指向的数字的和与目标数的比较结果，来调整指针的位置"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "two_pointers",
+      "name": "双指针",
+      "timeComplexity": "O(n)",
+      "spaceComplexity": "O(1)",
+      "description": "利用数组有序的性质，使用双指针技术",
+      "code": {
+        "javascript": "/**\n * 两数之和 II - 输入有序数组 - 利用数组有序的性质，使用双指针技术\n */\n\nfunction twoSum(numbers, target) {\n    let left = 0, right = numbers.length - 1;\n    while (left < right) {\n        const sum = numbers[left] + numbers[right];\n        if (sum === target) return [left + 1, right + 1];\n        else if (sum < target) left++;\n        else right--;\n    }\n    return [];\n}\n\n\n/**\n * 测试twoSum函数\n */\nfunction testTwoSum() {\n    console.log(\"=== twoSum测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: numbers = [2,7,11,15], target = 9\");\n    console.log(\"期望输出: [1,2]\");\n    console.log(\"说明: 2 与 7 之和等于目标数 9 。因此 index1 = 1, index2 = 2 。返回 [1, 2] 。\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testTwoSum();",
+        "python": "\"\"\"\n两数之和 II - 输入有序数组 - 利用数组有序的性质，使用双指针技术\n\"\"\"\n\ndef twoSum(numbers, target):\n    left, right = 0, len(numbers) - 1\n    while left < right:\n        current_sum = numbers[left] + numbers[right]\n        if current_sum == target:\n            return [left + 1, right + 1]\n        elif current_sum < target:\n            left += 1\n        else:\n            right -= 1\n    return []\n\n\ndef test_twoSum():\n    \"\"\"测试twoSum函数\"\"\"\n    print(\"=== twoSum测试 ===\")\n\n    # 测试用例\n    print(\"输入: numbers = [2,7,11,15], target = 9\")\n    print(\"期望输出: [1,2]\")\n    print(\"说明: 2 与 7 之和等于目标数 9 。因此 index1 = 1, index2 = 2 。返回 [1, 2] 。\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_twoSum()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 两数之和 II - 输入有序数组解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "numbers = [2,7,11,15], target = 9",
+      "output": "[1,2]",
+      "explanation": "2 与 7 之和等于目标数 9 。因此 index1 = 1, index2 = 2 。返回 [1, 2] 。"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "两数之和 II - 输入有序数组变种练习",
+      "description": "基于两数之和 II - 输入有序数组的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

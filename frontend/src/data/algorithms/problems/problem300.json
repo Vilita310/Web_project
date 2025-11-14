@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "id": 300,
+    "title": "最长递增子序列",
+    "difficulty": "中等",
+    "leetcodeId": 300,
+    "category": "dynamic_programming",
+    "patterns": [
+      "dynamic_programming_lis"
+    ],
+    "tags": [
+      "数组",
+      "二分查找",
+      "动态规划"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。子序列 是由数组派生而来的序列，删除（或不删除）数组中的元素而不改变其余元素的顺序。例如，[3,6,2,7] 是数组 [0,3,1,6,2,2,7] 的子序列。",
+  "examples": [
+    {
+      "input": "nums = [10,9,2,5,3,7,101,18]",
+      "output": "4",
+      "explanation": "最长递增子序列是 [2,3,7,18]，因此长度为 4 。"
+    },
+    {
+      "input": "nums = [0,1,0,3,2,3]",
+      "output": "4",
+      "explanation": "最长递增子序列是 [0,1,2,3]，因此长度为 4 。"
+    },
+    {
+      "input": "nums = [7,7,7,7,7,7,7]",
+      "output": "1",
+      "explanation": "最长递增子序列的长度是 1 。"
+    }
+  ],
+  "constraints": [
+    "1 <= nums.length <= 2500",
+    "-10⁴ <= nums[i] <= 10⁴"
+  ],
+  "hints": [
+    "你能将算法的时间复杂度降低到 O(n log(n)) 吗？"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "dp",
+      "name": "动态规划",
+      "timeComplexity": "O(n²)",
+      "spaceComplexity": "O(n)",
+      "description": "使用动态规划，dp[i]表示以nums[i]结尾的最长递增子序列长度",
+      "code": {
+        "javascript": "/**\n * 最长递增子序列 - 使用动态规划，dp[i]表示以nums[i]结尾的最长递增子序列长度\n */\n\nfunction lengthOfLIS(nums) {\n    if (!nums.length) return 0;\n    \n    const dp = new Array(nums.length).fill(1);\n    let maxLength = 1;\n    \n    for (let i = 1; i < nums.length; i++) {\n        for (let j = 0; j < i; j++) {\n            if (nums[i] > nums[j]) {\n                dp[i] = Math.max(dp[i], dp[j] + 1);\n            }\n        }\n        maxLength = Math.max(maxLength, dp[i]);\n    }\n    \n    return maxLength;\n}\n\n\n/**\n * 测试lengthOfLIS函数\n */\nfunction testLengthOfLIS() {\n    console.log(\"=== lengthOfLIS测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: nums = [10,9,2,5,3,7,101,18]\");\n    console.log(\"期望输出: 4\");\n    console.log(\"说明: 最长递增子序列是 [2,3,7,18]，因此长度为 4 。\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testLengthOfLIS();",
+        "python": "\"\"\"\n最长递增子序列 - 使用动态规划，dp[i]表示以nums[i]结尾的最长递增子序列长度\n\"\"\"\n\ndef lengthOfLIS(nums):\n    if not nums:\n        return 0\n    \n    dp = [1] * len(nums)\n    max_length = 1\n    \n    for i in range(1, len(nums)):\n        for j in range(i):\n            if nums[i] > nums[j]:\n                dp[i] = max(dp[i], dp[j] + 1)\n        max_length = max(max_length, dp[i])\n    \n    return max_length\n\n\ndef test_lengthOfLIS():\n    \"\"\"测试lengthOfLIS函数\"\"\"\n    print(\"=== lengthOfLIS测试 ===\")\n\n    # 测试用例\n    print(\"输入: nums = [10,9,2,5,3,7,101,18]\")\n    print(\"期望输出: 4\")\n    print(\"说明: 最长递增子序列是 [2,3,7,18]，因此长度为 4 。\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_lengthOfLIS()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 最长递增子序列解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "nums = [10,9,2,5,3,7,101,18]",
+      "output": "4",
+      "explanation": "最长递增子序列是 [2,3,7,18]，因此长度为 4 。"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "最长递增子序列变种练习",
+      "description": "基于最长递增子序列的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

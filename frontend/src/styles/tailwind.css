@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 自定义样式层 */
+@layer base {
+  html {
+    @apply dark;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* 科技风格卡片 */
+  .tech-card-hero {
+    @apply bg-content1 border border-divider rounded-large p-6;
+    @apply shadow-large backdrop-blur-md;
+    @apply transition-all duration-300 ease-in-out;
+    @apply hover:shadow-2xl hover:scale-[1.02];
+  }
+
+  /* 科技风格按钮增强 */
+  .tech-button-hero {
+    @apply relative overflow-hidden;
+    @apply before:absolute before:inset-0 before:bg-gradient-to-r before:from-primary/20 before:to-secondary/20;
+    @apply before:translate-x-[-100%] before:transition-transform before:duration-500;
+    @apply hover:before:translate-x-0;
+  }
+
+  /* 发光效果 */
+  .glow-primary {
+    @apply shadow-lg shadow-primary/25;
+  }
+
+  .glow-secondary {
+    @apply shadow-lg shadow-secondary/25;
+  }
+}
+
+@layer utilities {
+  /* 玻璃效果 */
+  .glass {
+    @apply bg-background/80 backdrop-blur-xl border border-white/10;
+  }
+
+  /* 渐变背景 */
+  .gradient-bg {
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1d3e 50%, #2a2d4e 100%);
+  }
+}

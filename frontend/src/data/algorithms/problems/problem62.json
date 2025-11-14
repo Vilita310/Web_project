@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "id": 62,
+    "title": "不同路径",
+    "difficulty": "中等",
+    "leetcodeId": 62,
+    "category": "dynamic_programming",
+    "patterns": [
+      "dynamic_programming_2d"
+    ],
+    "tags": [
+      "数学",
+      "动态规划",
+      "组合数学"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为 \"Start\" ）。机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为 \"Finish\" ）。问总共有多少条不同的路径？",
+  "examples": [
+    {
+      "input": "m = 3, n = 7",
+      "output": "28",
+      "explanation": "3x7网格有28条不同路径"
+    },
+    {
+      "input": "m = 3, n = 2",
+      "output": "3",
+      "explanation": "从左上角到右下角有3条路径"
+    }
+  ],
+  "constraints": [
+    "1 <= m, n <= 100"
+  ],
+  "hints": [
+    "这是一个经典的动态规划问题",
+    "dp[i][j] = dp[i-1][j] + dp[i][j-1]",
+    "也可以使用组合数学公式求解"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "dynamic_programming",
+      "name": "动态规划",
+      "timeComplexity": "O(m*n)",
+      "spaceComplexity": "O(m*n)",
+      "description": "使用二维DP数组计算路径数",
+      "code": {
+        "javascript": "/**\n * 不同路径 - 使用二维DP数组计算路径数\n */\n\nfunction uniquePaths(m, n) {\n    const dp = Array(m).fill().map(() => Array(n).fill(1));\n\n    for (let i = 1; i < m; i++) {\n        for (let j = 1; j < n; j++) {\n            dp[i][j] = dp[i-1][j] + dp[i][j-1];\n        }\n    }\n\n    return dp[m-1][n-1];\n}\n\n\n/**\n * 测试uniquePaths函数\n */\nfunction testUniquePaths() {\n    console.log(\"=== uniquePaths测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: m = 3, n = 7\");\n    console.log(\"期望输出: 28\");\n    console.log(\"说明: 3x7网格有28条不同路径\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testUniquePaths();",
+        "python": "\"\"\"\n不同路径 - 使用二维DP数组计算路径数\n\"\"\"\n\ndef uniquePaths(m, n):\n    dp = [[1] * n for _ in range(m)]\n\n    for i in range(1, m):\n        for j in range(1, n):\n            dp[i][j] = dp[i-1][j] + dp[i][j-1]\n\n    return dp[m-1][n-1]\n\n\ndef test_uniquePaths():\n    \"\"\"测试uniquePaths函数\"\"\"\n    print(\"=== uniquePaths测试 ===\")\n\n    # 测试用例\n    print(\"输入: m = 3, n = 7\")\n    print(\"期望输出: 28\")\n    print(\"说明: 3x7网格有28条不同路径\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_uniquePaths()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 不同路径解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "m = 3, n = 7",
+      "output": "28",
+      "explanation": "3x7网格有28条不同路径"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "不同路径变种练习",
+      "description": "基于不同路径的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

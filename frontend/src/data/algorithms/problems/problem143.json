@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "id": 143,
+    "title": "重排链表",
+    "difficulty": "中等",
+    "leetcodeId": 143,
+    "category": "linked_list",
+    "patterns": [
+      "linked_list_reorder"
+    ],
+    "tags": [
+      "栈",
+      "递归",
+      "链表",
+      "双指针"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给定一个单链表 L 的头节点 head ，单链表 L 表示为：L0 → L1 → … → Ln - 1 → Ln。请将其重新排列后变为：L0 → Ln → L1 → Ln - 1 → L2 → Ln - 2 → …。不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。",
+  "examples": [
+    {
+      "input": "head = [1,2,3,4]",
+      "output": "[1,4,2,3]",
+      "explanation": "重排链表：1->4->2->3"
+    },
+    {
+      "input": "head = [1,2,3,4,5]",
+      "output": "[1,5,2,4,3]",
+      "explanation": "重排链表：1->5->2->4->3"
+    }
+  ],
+  "constraints": [
+    "链表的长度范围为 [1, 5 * 10^4]",
+    "1 <= node.val <= 1000"
+  ],
+  "hints": [
+    "找到链表的中点",
+    "反转后半部分链表",
+    "合并两个链表"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "three_steps",
+      "name": "三步法",
+      "timeComplexity": "O(n)",
+      "spaceComplexity": "O(1)",
+      "description": "找中点、反转、合并三步完成重排",
+      "code": {
+        "javascript": "/**\n * 重排链表 - 找中点、反转、合并三步完成重排\n */\n\nfunction reorderList(head) {\n    if (!head || !head.next) return;\n\n    // 找到中点\n    let slow = head, fast = head;\n    while (fast.next && fast.next.next) {\n        slow = slow.next;\n        fast = fast.next.next;\n    }\n\n    // 分割链表\n    let second = slow.next;\n    slow.next = null;\n\n    // 反转后半部分\n    let prev = null;\n    while (second) {\n        let temp = second.next;\n        second.next = prev;\n        prev = second;\n        second = temp;\n    }\n\n    // 合并两个链表\n    let first = head;\n    second = prev;\n    while (second) {\n        let temp1 = first.next;\n        let temp2 = second.next;\n        first.next = second;\n        second.next = temp1;\n        first = temp1;\n        second = temp2;\n    }\n}\n\n\n/**\n * 测试reorderList函数\n */\nfunction testReorderList() {\n    console.log(\"=== reorderList测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: head = [1,2,3,4]\");\n    console.log(\"期望输出: [1,4,2,3]\");\n    console.log(\"说明: 重排链表：1->4->2->3\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testReorderList();",
+        "python": "\"\"\"\n重排链表 - 找中点、反转、合并三步完成重排\n\"\"\"\n\ndef reorderList(head):\n    if not head or not head.next:\n        return\n\n    # 找到中点\n    slow = fast = head\n    while fast.next and fast.next.next:\n        slow = slow.next\n        fast = fast.next.next\n\n    # 分割链表\n    second = slow.next\n    slow.next = None\n\n    # 反转后半部分\n    prev = None\n    while second:\n        temp = second.next\n        second.next = prev\n        prev = second\n        second = temp\n\n    # 合并两个链表\n    first = head\n    second = prev\n    while second:\n        temp1 = first.next\n        temp2 = second.next\n        first.next = second\n        second.next = temp1\n        first = temp1\n        second = temp2\n\n\ndef test_reorderList():\n    \"\"\"测试reorderList函数\"\"\"\n    print(\"=== reorderList测试 ===\")\n\n    # 测试用例\n    print(\"输入: head = [1,2,3,4]\")\n    print(\"期望输出: [1,4,2,3]\")\n    print(\"说明: 重排链表：1->4->2->3\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_reorderList()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 重排链表解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "head = [1,2,3,4]",
+      "output": "[1,4,2,3]",
+      "explanation": "重排链表：1->4->2->3"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "重排链表变种练习",
+      "description": "基于重排链表的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

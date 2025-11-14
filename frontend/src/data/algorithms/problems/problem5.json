@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "id": 5,
+    "title": "最长回文子串",
+    "difficulty": "中等",
+    "leetcodeId": 5,
+    "category": "string",
+    "patterns": [
+      "expand_around_center"
+    ],
+    "tags": [
+      "字符串",
+      "动态规划"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给你一个字符串 s，找到 s 中最长的回文子串。",
+  "examples": [
+    {
+      "input": "s = \"babad\"",
+      "output": "\"bab\"",
+      "explanation": "\"aba\" 同样是符合题意的答案。"
+    },
+    {
+      "input": "s = \"cbbd\"",
+      "output": "\"bb\"",
+      "explanation": "最长回文子串是 \"bb\"。"
+    }
+  ],
+  "constraints": [
+    "1 <= s.length <= 1000",
+    "s 仅由数字和英文字母组成"
+  ],
+  "hints": [
+    "你可以从每个字符开始扩展来寻找回文。",
+    "注意奇数长度和偶数长度的回文。"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "expand_around_center",
+      "name": "中心扩展算法",
+      "timeComplexity": "O(n²)",
+      "spaceComplexity": "O(1)",
+      "description": "从每个可能的中心点扩展来寻找最长回文子串",
+      "code": {
+        "javascript": "/**\n * 最长回文子串 - 从每个可能的中心点扩展来寻找最长回文子串\n */\n\nfunction longestPalindrome(s) {\n    if (!s || s.length < 1) return \"\";\n    \n    let start = 0, end = 0;\n    \n    function expandAroundCenter(left, right) {\n        while (left >= 0 && right < s.length && s[left] === s[right]) {\n            left--;\n            right++;\n        }\n        return right - left - 1;\n    }\n    \n    for (let i = 0; i < s.length; i++) {\n        let len1 = expandAroundCenter(i, i);\n        let len2 = expandAroundCenter(i, i + 1);\n        let len = Math.max(len1, len2);\n        \n        if (len > end - start) {\n            start = i - Math.floor((len - 1) / 2);\n            end = i + Math.floor(len / 2);\n        }\n    }\n    \n    return s.substring(start, end + 1);\n}\n\n\n/**\n * 测试longestPalindrome函数\n */\nfunction testLongestPalindrome() {\n    console.log(\"=== longestPalindrome测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: s = \"babad\"\");\n    console.log(\"期望输出: \"bab\"\");\n    console.log(\"说明: \"aba\" 同样是符合题意的答案。\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testLongestPalindrome();",
+        "python": "\"\"\"\n最长回文子串 - 从每个可能的中心点扩展来寻找最长回文子串\n\"\"\"\n\ndef longestPalindrome(s):\n    if not s:\n        return \"\"\n    \n    start = 0\n    max_len = 1\n    \n    def expand_around_center(left, right):\n        while left >= 0 and right < len(s) and s[left] == s[right]:\n            left -= 1\n            right += 1\n        return right - left - 1\n    \n    for i in range(len(s)):\n        len1 = expand_around_center(i, i)\n        len2 = expand_around_center(i, i + 1)\n        current_max = max(len1, len2)\n        \n        if current_max > max_len:\n            max_len = current_max\n            start = i - (current_max - 1) // 2\n    \n    return s[start:start + max_len]\n\n\ndef test_longestPalindrome():\n    \"\"\"测试longestPalindrome函数\"\"\"\n    print(\"=== longestPalindrome测试 ===\")\n\n    # 测试用例\n    print(\"输入: s = \"babad\"\")\n    print(\"期望输出: \"bab\"\")\n    print(\"说明: \"aba\" 同样是符合题意的答案。\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_longestPalindrome()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 最长回文子串解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "s = \"babad\"",
+      "output": "\"bab\"",
+      "explanation": "\"aba\" 同样是符合题意的答案。"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "最长回文子串变种练习",
+      "description": "基于最长回文子串的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

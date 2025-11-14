@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "id": 217,
+    "title": "存在重复元素",
+    "difficulty": "简单",
+    "leetcodeId": 217,
+    "category": "array",
+    "patterns": [
+      "hash_table"
+    ],
+    "tags": [
+      "数组",
+      "哈希表",
+      "排序"
+    ],
+    "estimatedTime": "15分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给你一个整数数组 nums 。如果任一值在数组中出现 至少两次 ，返回 true ；如果数组中每个元素互不相同，返回 false 。",
+  "examples": [
+    {
+      "input": "nums = [1,2,3,1]",
+      "output": "true",
+      "explanation": "元素 1 在索引 0 和 3 出现。"
+    },
+    {
+      "input": "nums = [1,2,3,4]",
+      "output": "false",
+      "explanation": "所有元素都是唯一的。"
+    },
+    {
+      "input": "nums = [1,1,1,3,3,4,3,2,4,2]",
+      "output": "true",
+      "explanation": "存在重复元素。"
+    }
+  ],
+  "constraints": [
+    "1 <= nums.length <= 10⁵",
+    "-10⁹ <= nums[i] <= 10⁹"
+  ],
+  "hints": [
+    "这个问题可以用多种方法解决。"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "set",
+      "name": "哈希集合",
+      "timeComplexity": "O(n)",
+      "spaceComplexity": "O(n)",
+      "description": "使用哈希集合检测重复元素",
+      "code": {
+        "javascript": "/**\n * 存在重复元素 - 使用哈希集合检测重复元素\n */\n\nfunction containsDuplicate(nums) {\n    const seen = new Set();\n    for (const num of nums) {\n        if (seen.has(num)) {\n            return true;\n        }\n        seen.add(num);\n    }\n    return false;\n}\n\n\n/**\n * 测试containsDuplicate函数\n */\nfunction testContainsDuplicate() {\n    console.log(\"=== containsDuplicate测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: nums = [1,2,3,1]\");\n    console.log(\"期望输出: true\");\n    console.log(\"说明: 元素 1 在索引 0 和 3 出现。\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testContainsDuplicate();",
+        "python": "\"\"\"\n存在重复元素 - 使用哈希集合检测重复元素\n\"\"\"\n\ndef containsDuplicate(nums):\n    seen = set()\n    for num in nums:\n        if num in seen:\n            return True\n        seen.add(num)\n    return False\n\n\ndef test_containsDuplicate():\n    \"\"\"测试containsDuplicate函数\"\"\"\n    print(\"=== containsDuplicate测试 ===\")\n\n    # 测试用例\n    print(\"输入: nums = [1,2,3,1]\")\n    print(\"期望输出: true\")\n    print(\"说明: 元素 1 在索引 0 和 3 出现。\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_containsDuplicate()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 存在重复元素解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "nums = [1,2,3,1]",
+      "output": "true",
+      "explanation": "元素 1 在索引 0 和 3 出现。"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "存在重复元素变种练习",
+      "description": "基于存在重复元素的变种问题",
+      "difficulty": "简单",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

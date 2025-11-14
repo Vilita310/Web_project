@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "id": 70,
+    "title": "爬楼梯",
+    "difficulty": "简单",
+    "leetcodeId": 70,
+    "category": "dynamic_programming",
+    "patterns": [
+      "dynamic_programming_1d"
+    ],
+    "tags": [
+      "记忆化搜索",
+      "数学",
+      "动态规划"
+    ],
+    "estimatedTime": "15分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "假设你正在爬楼梯。需要 n 阶你才能到达楼顶。每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？",
+  "examples": [
+    {
+      "input": "n = 2",
+      "output": "2",
+      "explanation": "有两种方法可以爬到楼顶。\n1. 1 阶 + 1 阶\n2. 2 阶"
+    },
+    {
+      "input": "n = 3",
+      "output": "3",
+      "explanation": "有三种方法可以爬到楼顶。\n1. 1 阶 + 1 阶 + 1 阶\n2. 1 阶 + 2 阶\n3. 2 阶 + 1 阶"
+    }
+  ],
+  "constraints": [
+    "1 <= n <= 45"
+  ],
+  "hints": [
+    "这是一个斐波那契数列问题",
+    "到达第 n 阶的方法数等于到达第 n-1 阶的方法数加上到达第 n-2 阶的方法数",
+    "可以使用动态规划或者记忆化递归"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "dynamic_programming",
+      "name": "动态规划",
+      "timeComplexity": "O(n)",
+      "spaceComplexity": "O(1)",
+      "description": "使用动态规划，优化空间复杂度",
+      "code": {
+        "javascript": "/**\n * 爬楼梯 - 使用动态规划，优化空间复杂度\n */\n\nfunction climbStairs(n) {\n    if (n <= 2) return n;\n    let prev2 = 1, prev1 = 2;\n    for (let i = 3; i <= n; i++) {\n        const current = prev1 + prev2;\n        prev2 = prev1;\n        prev1 = current;\n    }\n    return prev1;\n}\n\n/**\n * 测试climbStairs函数\n */\nfunction testClimbStairs() {\n    console.log(\"=== climbStairs测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: n = 2\");\n    console.log(\"期望输出: 2\");\n    console.log(\"说明: 有两种方法可以爬到楼顶。\\n1. 1 阶 + 1 阶\\n2. 2 阶\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testClimbStairs();",
+        "python": "\"\"\"\n爬楼梯 - 使用动态规划，优化空间复杂度\n\"\"\"\n\ndef climbStairs(n):\n    if n <= 2: return n\n    prev2, prev1 = 1, 2\n    for i in range(3, n + 1):\n        current = prev1 + prev2\n        prev2 = prev1\n        prev1 = current\n    return prev1\n\n\ndef test_climbStairs():\n    \"\"\"测试climbStairs函数\"\"\"\n    print(\"=== climbStairs测试 ===\")\n\n    # 测试用例\n    print(\"输入: n = 2\")\n    print(\"期望输出: 2\")\n    print(\"说明: 有两种方法可以爬到楼顶。\n1. 1 阶 + 1 阶\n2. 2 阶\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_climbStairs()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 爬楼梯解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "n = 2",
+      "output": "2",
+      "explanation": "有两种方法可以爬到楼顶。\n1. 1 阶 + 1 阶\n2. 2 阶"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "爬楼梯变种练习",
+      "description": "基于爬楼梯的变种问题",
+      "difficulty": "简单",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

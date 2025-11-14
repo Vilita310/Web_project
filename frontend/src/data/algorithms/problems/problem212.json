@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "id": 212,
+    "title": "单词搜索 II",
+    "difficulty": "困难",
+    "leetcodeId": 212,
+    "category": "trie",
+    "patterns": [
+      "trie_dfs_grid"
+    ],
+    "tags": [
+      "字典树",
+      "数组",
+      "字符串",
+      "回溯",
+      "矩阵"
+    ],
+    "estimatedTime": "45分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给定一个 m x n 二维字符网格 board 和一个单词列表 words，返回所有在二维网格上的单词。单词必须按照字母顺序，通过相邻的单元格内的字母构成，其中\"相邻\"单元格是那些水平相邻或垂直相邻的单元格。同一个单元格内的字母在一个单词中不允许被重复使用。",
+  "examples": [
+    {
+      "input": "board = [[\"o\",\"a\",\"a\",\"n\"],[\"e\",\"t\",\"a\",\"e\"],[\"i\",\"h\",\"k\",\"r\"],[\"i\",\"f\",\"l\",\"v\"]], words = [\"oath\",\"pea\",\"eat\",\"rain\"]",
+      "output": "[\"eat\",\"oath\"]",
+      "explanation": ""
+    }
+  ],
+  "constraints": [
+    "m == board.length",
+    "n == board[i].length",
+    "1 <= m, n <= 12",
+    "board[i][j] 是一个小写英文字母",
+    "1 <= words.length <= 3 * 10⁴",
+    "1 <= words[i].length <= 10",
+    "words[i] 由小写英文字母组成",
+    "words 中的所有字符串互不相同"
+  ],
+  "hints": [
+    "构建字典树来存储所有单词",
+    "在二维网格上进行DFS搜索",
+    "使用字典树可以提前终止搜索"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "trie_dfs",
+      "name": "字典树+DFS",
+      "timeComplexity": "O(M·N·4^L)",
+      "spaceComplexity": "O(K·L)",
+      "description": "构建字典树存储单词，DFS搜索网格",
+      "code": {
+        "javascript": "/**\n * 单词搜索 II - 构建字典树存储单词，DFS搜索网格\n */\n\nclass TrieNode {\n    constructor() {\n        this.children = {};\n        this.word = null;\n    }\n}\n\nfunction findWords(board, words) {\n    // 构建字典树\n    const root = new TrieNode();\n    for (const word of words) {\n        let node = root;\n        for (const char of word) {\n            if (!node.children[char]) {\n                node.children[char] = new TrieNode();\n            }\n            node = node.children[char];\n        }\n        node.word = word;\n    }\n\n    const result = [];\n    const rows = board.length;\n    const cols = board[0].length;\n\n    function dfs(row, col, node) {\n        if (row < 0 || row >= rows || col < 0 || col >= cols) {\n            return;\n        }\n\n        const char = board[row][col];\n        if (!node.children[char]) {\n            return;\n        }\n\n        node = node.children[char];\n        if (node.word) {\n            result.push(node.word);\n            node.word = null; // 避免重复添加\n        }\n\n        board[row][col] = '#'; // 标记为已访问\n\n        // 搜索四个方向\n        dfs(row + 1, col, node);\n        dfs(row - 1, col, node);\n        dfs(row, col + 1, node);\n        dfs(row, col - 1, node);\n\n        board[row][col] = char; // 回溯\n    }\n\n    // 从每个位置开始搜索\n    for (let i = 0; i < rows; i++) {\n        for (let j = 0; j < cols; j++) {\n            dfs(i, j, root);\n        }\n    }\n\n    return result;\n}\n\n\n/**\n * 测试findWords函数\n */\nfunction testFindWords() {\n    console.log(\"=== findWords测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: board = [[\"o\",\"a\",\"a\",\"n\"],[\"e\",\"t\",\"a\",\"e\"],[\"i\",\"h\",\"k\",\"r\"],[\"i\",\"f\",\"l\",\"v\"]], words = [\"oath\",\"pea\",\"eat\",\"rain\"]\");\n    console.log(\"期望输出: [\"eat\",\"oath\"]\");\n    \n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testFindWords();",
+        "python": "\"\"\"\n单词搜索 II - 构建字典树存储单词，DFS搜索网格\n\"\"\"\n\nclass TrieNode:\n    def __init__(self):\n        self.children = {}\n        self.word = None\n\ndef findWords(board, words):\n    # 构建字典树\n    root = TrieNode()\n    for word in words:\n        node = root\n        for char in word:\n            if char not in node.children:\n                node.children[char] = TrieNode()\n            node = node.children[char]\n        node.word = word\n\n    result = []\n    rows, cols = len(board), len(board[0])\n\n    def dfs(row, col, node):\n        if row < 0 or row >= rows or col < 0 or col >= cols:\n            return\n\n        char = board[row][col]\n        if char not in node.children:\n            return\n\n        node = node.children[char]\n        if node.word:\n            result.append(node.word)\n            node.word = None  # 避免重复添加\n\n        board[row][col] = '#'  # 标记为已访问\n\n        # 搜索四个方向\n        dfs(row + 1, col, node)\n        dfs(row - 1, col, node)\n        dfs(row, col + 1, node)\n        dfs(row, col - 1, node)\n\n        board[row][col] = char  # 回溯\n\n    # 从每个位置开始搜索\n    for i in range(rows):\n        for j in range(cols):\n            dfs(i, j, root)\n\n    return result\n\n\ndef test___init__():\n    \"\"\"测试__init__函数\"\"\"\n    print(\"=== __init__测试 ===\")\n\n    # 测试用例\n    print(\"输入: board = [[\"o\",\"a\",\"a\",\"n\"],[\"e\",\"t\",\"a\",\"e\"],[\"i\",\"h\",\"k\",\"r\"],[\"i\",\"f\",\"l\",\"v\"]], words = [\"oath\",\"pea\",\"eat\",\"rain\"]\")\n    print(\"期望输出: [\"eat\",\"oath\"]\")\n    \n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test___init__()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 单词搜索 II解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "board = [[\"o\",\"a\",\"a\",\"n\"],[\"e\",\"t\",\"a\",\"e\"],[\"i\",\"h\",\"k\",\"r\"],[\"i\",\"f\",\"l\",\"v\"]], words = [\"oath\",\"pea\",\"eat\",\"rain\"]",
+      "output": "[\"eat\",\"oath\"]",
+      "explanation": ""
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "单词搜索 II变种练习",
+      "description": "基于单词搜索 II的变种问题",
+      "difficulty": "困难",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

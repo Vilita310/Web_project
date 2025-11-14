@@ -1,0 +1,15 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景渐变 -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#A0783B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D4926F;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- 圆角矩形背景 -->
+  <rect x="0" y="0" width="32" height="32" rx="6" fill="url(#bgGradient)"/>
+
+  <!-- 字母 L -->
+  <path d="M8 8 L8 24 L20 24 L20 20 L12 20 L12 8 Z" fill="white"/>
+</svg>

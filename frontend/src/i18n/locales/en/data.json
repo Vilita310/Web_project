@@ -1,0 +1,41 @@
+{
+  "chapters": {
+    "array": "Array",
+    "string": "String",
+    "linkedList": "Linked List",
+    "tree": "Tree",
+    "graph": "Graph",
+    "dynamicProgramming": "Dynamic Programming",
+    "backtracking": "Backtracking"
+  },
+  "patterns": {
+    "array_two_pointers": "Array Two Pointers",
+    "array_sliding_window": "Sliding Window",
+    "string_manipulation": "String Manipulation",
+    "linkedlist_traversal": "Linked List Traversal",
+    "tree_traversal": "Tree Traversal",
+    "binary_search": "Binary Search",
+    "dynamic_programming": "Dynamic Programming"
+  },
+  "problems": {
+    "1": "Two Sum",
+    "167": "Two Sum II - Input Array Is Sorted",
+    "15": "3Sum",
+    "121": "Best Time to Buy and Sell Stock",
+    "125": "Valid Palindrome"
+  },
+  "difficulties": {
+    "简单": "Easy",
+    "中等": "Medium",
+    "困难": "Hard"
+  },
+  "tags": {
+    "数组": "Array",
+    "哈希表": "Hash Table",
+    "双指针": "Two Pointers",
+    "字符串": "String",
+    "动态规划": "Dynamic Programming",
+    "树": "Tree",
+    "图": "Graph"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "id": 139,
+    "title": "单词拆分",
+    "difficulty": "中等",
+    "leetcodeId": 139,
+    "category": "dynamic_programming",
+    "patterns": [
+      "dynamic_programming_word_break"
+    ],
+    "tags": [
+      "字典树",
+      "记忆化搜索",
+      "字符串",
+      "动态规划"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给你一个字符串 s 和一个字符串列表 wordDict 作为字典。请你判断是否可以利用字典中出现的单词拼接出 s 。注意：不要求字典中出现的单词全部都使用，并且字典中的单词可以重复使用。",
+  "examples": [
+    {
+      "input": "s = \"leetcode\", wordDict = [\"leet\",\"code\"]",
+      "output": "true",
+      "explanation": "返回 true 因为 \"leetcode\" 可以由 \"leet\" 和 \"code\" 拼接成。"
+    },
+    {
+      "input": "s = \"applepenapple\", wordDict = [\"apple\",\"pen\"]",
+      "output": "true",
+      "explanation": "返回 true 因为 \"applepenapple\" 可以由 \"apple\" \"pen\" \"apple\" 拼接成。"
+    },
+    {
+      "input": "s = \"catsandog\", wordDict = [\"cats\",\"dog\",\"sand\",\"and\",\"cat\"]",
+      "output": "false",
+      "explanation": "无法拼接成给定字符串。"
+    }
+  ],
+  "constraints": [
+    "1 <= s.length <= 300",
+    "1 <= wordDict.length <= 1000",
+    "1 <= wordDict[i].length <= 20",
+    "s 和 wordDict[i] 仅由小写英文字母组成",
+    "wordDict 中的所有字符串 互不相同"
+  ],
+  "hints": [
+    "可以使用动态规划。",
+    "dp[i] 表示字符串的前 i 个字符是否可以被拆分。"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "dp",
+      "name": "动态规划",
+      "timeComplexity": "O(n²)",
+      "spaceComplexity": "O(n)",
+      "description": "使用动态规划判断字符串是否可以被拆分",
+      "code": {
+        "javascript": "/**\n * 单词拆分 - 使用动态规划判断字符串是否可以被拆分\n */\n\nfunction wordBreak(s, wordDict) {\n    const wordSet = new Set(wordDict);\n    const dp = new Array(s.length + 1).fill(false);\n    dp[0] = true;\n    \n    for (let i = 1; i <= s.length; i++) {\n        for (let j = 0; j < i; j++) {\n            if (dp[j] && wordSet.has(s.substring(j, i))) {\n                dp[i] = true;\n                break;\n            }\n        }\n    }\n    \n    return dp[s.length];\n}\n\n\n/**\n * 测试wordBreak函数\n */\nfunction testWordBreak() {\n    console.log(\"=== wordBreak测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: s = \"leetcode\", wordDict = [\"leet\",\"code\"]\");\n    console.log(\"期望输出: true\");\n    console.log(\"说明: 返回 true 因为 \"leetcode\" 可以由 \"leet\" 和 \"code\" 拼接成。\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testWordBreak();",
+        "python": "\"\"\"\n单词拆分 - 使用动态规划判断字符串是否可以被拆分\n\"\"\"\n\ndef wordBreak(s, wordDict):\n    word_set = set(wordDict)\n    dp = [False] * (len(s) + 1)\n    dp[0] = True\n    \n    for i in range(1, len(s) + 1):\n        for j in range(i):\n            if dp[j] and s[j:i] in word_set:\n                dp[i] = True\n                break\n    \n    return dp[len(s)]\n\n\ndef test_wordBreak():\n    \"\"\"测试wordBreak函数\"\"\"\n    print(\"=== wordBreak测试 ===\")\n\n    # 测试用例\n    print(\"输入: s = \"leetcode\", wordDict = [\"leet\",\"code\"]\")\n    print(\"期望输出: true\")\n    print(\"说明: 返回 true 因为 \"leetcode\" 可以由 \"leet\" 和 \"code\" 拼接成。\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_wordBreak()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 单词拆分解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "s = \"leetcode\", wordDict = [\"leet\",\"code\"]",
+      "output": "true",
+      "explanation": "返回 true 因为 \"leetcode\" 可以由 \"leet\" 和 \"code\" 拼接成。"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "单词拆分变种练习",
+      "description": "基于单词拆分的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "id": 76,
+    "title": "最小覆盖子串",
+    "difficulty": "困难",
+    "leetcodeId": 76,
+    "category": "string",
+    "patterns": [
+      "sliding_window_advanced"
+    ],
+    "tags": [
+      "哈希表",
+      "字符串",
+      "滑动窗口"
+    ],
+    "estimatedTime": "45分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给你一个字符串 s 、一个字符串 t 。返回 s 中涵盖 t 所有字符的最小子串。如果 s 中不存在涵盖 t 所有字符的子串，则返回空字符串 \"\" 。",
+  "examples": [
+    {
+      "input": "s = \"ADOBECODEBANC\", t = \"ABC\"",
+      "output": "\"BANC\"",
+      "explanation": "最小覆盖子串 \"BANC\" 包含了 t = \"ABC\" 的所有字符"
+    },
+    {
+      "input": "s = \"a\", t = \"a\"",
+      "output": "\"a\"",
+      "explanation": "整个字符串 s 就是最小覆盖子串"
+    },
+    {
+      "input": "s = \"a\", t = \"aa\"",
+      "output": "\"\"",
+      "explanation": "t 中两个字符 'a' 均应包含在 s 的子串中"
+    }
+  ],
+  "constraints": [
+    "1 <= s.length, t.length <= 10^5",
+    "s 和 t 由英文字母组成"
+  ],
+  "hints": [
+    "使用滑动窗口技术",
+    "维护窗口内字符的频次",
+    "当窗口包含所有字符时，尝试收缩左边界"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "sliding_window",
+      "name": "滑动窗口",
+      "timeComplexity": "O(|s| + |t|)",
+      "spaceComplexity": "O(|s| + |t|)",
+      "description": "使用滑动窗口找到最小覆盖子串",
+      "code": {
+        "javascript": "/**\n * 最小覆盖子串 - 使用滑动窗口找到最小覆盖子串\n */\n\nfunction minWindow(s, t) {\n    if (s.length < t.length) return \"\";\n\n    const tCount = {};\n    for (const char of t) {\n        tCount[char] = (tCount[char] || 0) + 1;\n    }\n\n    let left = 0, right = 0;\n    let required = Object.keys(tCount).length;\n    let formed = 0;\n    const windowCounts = {};\n\n    let minLen = Infinity;\n    let minLeft = 0;\n\n    while (right < s.length) {\n        const char = s[right];\n        windowCounts[char] = (windowCounts[char] || 0) + 1;\n\n        if (tCount[char] && windowCounts[char] === tCount[char]) {\n            formed++;\n        }\n\n        while (left <= right && formed === required) {\n            if (right - left + 1 < minLen) {\n                minLen = right - left + 1;\n                minLeft = left;\n            }\n\n            const leftChar = s[left];\n            windowCounts[leftChar]--;\n            if (tCount[leftChar] && windowCounts[leftChar] < tCount[leftChar]) {\n                formed--;\n            }\n            left++;\n        }\n        right++;\n    }\n\n    return minLen === Infinity ? \"\" : s.substring(minLeft, minLeft + minLen);\n}\n\n\n/**\n * 测试minWindow函数\n */\nfunction testMinWindow() {\n    console.log(\"=== minWindow测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: s = \"ADOBECODEBANC\", t = \"ABC\"\");\n    console.log(\"期望输出: \"BANC\"\");\n    console.log(\"说明: 最小覆盖子串 \"BANC\" 包含了 t = \"ABC\" 的所有字符\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testMinWindow();",
+        "python": "\"\"\"\n最小覆盖子串 - 使用滑动窗口找到最小覆盖子串\n\"\"\"\n\ndef minWindow(s, t):\n    if len(s) < len(t):\n        return \"\"\n\n    from collections import Counter, defaultdict\n\n    t_count = Counter(t)\n    required = len(t_count)\n\n    left = right = 0\n    formed = 0\n    window_counts = defaultdict(int)\n\n    min_len = float('inf')\n    min_left = 0\n\n    while right < len(s):\n        char = s[right]\n        window_counts[char] += 1\n\n        if char in t_count and window_counts[char] == t_count[char]:\n            formed += 1\n\n        while left <= right and formed == required:\n            if right - left + 1 < min_len:\n                min_len = right - left + 1\n                min_left = left\n\n            left_char = s[left]\n            window_counts[left_char] -= 1\n            if left_char in t_count and window_counts[left_char] < t_count[left_char]:\n                formed -= 1\n            left += 1\n\n        right += 1\n\n    return \"\" if min_len == float('inf') else s[min_left:min_left + min_len]\n\n\ndef test_minWindow():\n    \"\"\"测试minWindow函数\"\"\"\n    print(\"=== minWindow测试 ===\")\n\n    # 测试用例\n    print(\"输入: s = \"ADOBECODEBANC\", t = \"ABC\"\")\n    print(\"期望输出: \"BANC\"\")\n    print(\"说明: 最小覆盖子串 \"BANC\" 包含了 t = \"ABC\" 的所有字符\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_minWindow()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 最小覆盖子串解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "s = \"ADOBECODEBANC\", t = \"ABC\"",
+      "output": "\"BANC\"",
+      "explanation": "最小覆盖子串 \"BANC\" 包含了 t = \"ABC\" 的所有字符"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "最小覆盖子串变种练习",
+      "description": "基于最小覆盖子串的变种问题",
+      "difficulty": "困难",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

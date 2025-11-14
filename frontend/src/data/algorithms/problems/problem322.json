@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "id": 322,
+    "title": "零钱兑换",
+    "difficulty": "中等",
+    "leetcodeId": 322,
+    "category": "dynamic_programming",
+    "patterns": [
+      "dynamic_programming_coin"
+    ],
+    "tags": [
+      "广度优先搜索",
+      "数组",
+      "动态规划"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给你一个整数数组 coins ，表示不同面额的硬币；以及一个整数 amount ，表示总金额。计算并返回可以凑成总金额所需的 最少的硬币个数 。如果没有任何一种硬币组合能组成总金额，返回 -1 。你可以认为每种硬币的数量是无限的。",
+  "examples": [
+    {
+      "input": "coins = [1, 2, 5], amount = 11",
+      "output": "3",
+      "explanation": "11 = 5 + 5 + 1"
+    },
+    {
+      "input": "coins = [2], amount = 3",
+      "output": "-1",
+      "explanation": "无法凑成总金额。"
+    },
+    {
+      "input": "coins = [1], amount = 0",
+      "output": "0",
+      "explanation": "不需要任何硬币。"
+    }
+  ],
+  "constraints": [
+    "1 <= coins.length <= 12",
+    "1 <= coins[i] <= 2³¹ - 1",
+    "0 <= amount <= 10⁴"
+  ],
+  "hints": [
+    "你可以使用动态规划解决这个问题。",
+    "考虑自底向上的方法。"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "dp",
+      "name": "动态规划",
+      "timeComplexity": "O(amount × coins.length)",
+      "spaceComplexity": "O(amount)",
+      "description": "使用动态规划，dp[i]表示凑成金额i所需的最少硬币数",
+      "code": {
+        "javascript": "/**\n * 零钱兑换 - 使用动态规划，dp[i]表示凑成金额i所需的最少硬币数\n */\n\nfunction coinChange(coins, amount) {\n    const dp = new Array(amount + 1).fill(amount + 1);\n    dp[0] = 0;\n    \n    for (let i = 1; i <= amount; i++) {\n        for (const coin of coins) {\n            if (coin <= i) {\n                dp[i] = Math.min(dp[i], dp[i - coin] + 1);\n            }\n        }\n    }\n    \n    return dp[amount] > amount ? -1 : dp[amount];\n}\n\n\n/**\n * 测试coinChange函数\n */\nfunction testCoinChange() {\n    console.log(\"=== coinChange测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: coins = [1, 2, 5], amount = 11\");\n    console.log(\"期望输出: 3\");\n    console.log(\"说明: 11 = 5 + 5 + 1\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testCoinChange();",
+        "python": "\"\"\"\n零钱兑换 - 使用动态规划，dp[i]表示凑成金额i所需的最少硬币数\n\"\"\"\n\ndef coinChange(coins, amount):\n    dp = [amount + 1] * (amount + 1)\n    dp[0] = 0\n    \n    for i in range(1, amount + 1):\n        for coin in coins:\n            if coin <= i:\n                dp[i] = min(dp[i], dp[i - coin] + 1)\n    \n    return dp[amount] if dp[amount] <= amount else -1\n\n\ndef test_coinChange():\n    \"\"\"测试coinChange函数\"\"\"\n    print(\"=== coinChange测试 ===\")\n\n    # 测试用例\n    print(\"输入: coins = [1, 2, 5], amount = 11\")\n    print(\"期望输出: 3\")\n    print(\"说明: 11 = 5 + 5 + 1\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_coinChange()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 零钱兑换解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "coins = [1, 2, 5], amount = 11",
+      "output": "3",
+      "explanation": "11 = 5 + 5 + 1"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "零钱兑换变种练习",
+      "description": "基于零钱兑换的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

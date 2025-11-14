@@ -1,0 +1,1081 @@
+/* 科技风主题样式 */
+
+/* 引入优化字体 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Han+Sans+SC:wght@300;400;500;600;700&display=swap');
+
+/* 全局背景设置 - 默认浅色背景 */
+html, body {
+  background: #FAF9F6;
+  min-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: 'Inter', 'SF Pro Text', 'Source Han Sans SC', 'PingFang SC', 'Microsoft YaHei UI', 'Hiragino Sans GB', sans-serif !important;
+}
+
+/* 深色主题背景 */
+.tech-theme html,
+.tech-theme body {
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1d3e 50%, #2a2d4e 100%) !important;
+  background-attachment: fixed !important;
+}
+
+.tech-theme html {
+  background-color: #0a0e27 !important;
+}
+
+.tech-theme body {
+  background-color: #0a0e27 !important;
+}
+
+:root {
+  /* 科技风配色方案 - 深色模式默认蓝色系 */
+  --tech-primary: #58A6FF;        /* 蓝色 */
+  --tech-secondary: #A5A3FF;      /* 紫蓝色 */
+  --tech-accent: #6366f1;         /* 靛蓝 */
+  --tech-warning: #f59e0b;        /* 橙色警告 */
+  --tech-info: #58A6FF;           /* 信息蓝色 */
+
+  /* 背景色 */
+  --tech-bg-primary: #0a0e27;     /* 深空蓝 */
+  --tech-bg-secondary: #1a1d3e;   /* 深紫蓝 */
+  --tech-bg-tertiary: #2a2d4e;    /* 中紫蓝 */
+
+  /* 文本色 */
+  --tech-text-primary: #ffffff;    /* 主文本 */
+  --tech-text-secondary: #cbd5e1;  /* 次文本 - 更清晰 */
+  --tech-text-muted: #9ca3af;      /* 弱文本 - 更清晰 */
+
+  /* 边框和分割线 */
+  --tech-border: #2a2d4e;
+  --tech-border-light: #3a3d5e;
+
+  /* 卡片和组件背景 */
+  --tech-card-bg: rgba(26, 29, 62, 0.8);    /* 卡片背景 */
+  --tech-header-bg: rgba(10, 14, 39, 0.9);  /* 头部背景 */
+  --tech-code-bg: #1a1d3e;                  /* 代码背景 */
+  --tech-input-bg: #2a2d4e;                 /* 输入框背景 */
+  --tech-card-header: #1a1d3e;              /* 卡片头部 */
+
+  /* 阴影和发光效果 */
+  --tech-glow-primary: 0 0 20px rgba(212, 146, 111, 0.4);
+  --tech-glow-secondary: 0 0 15px rgba(181, 112, 74, 0.4);
+  --tech-glow-accent: 0 0 10px rgba(160, 120, 59, 0.4);
+
+  /* 多模态功能配色 */
+  --tech-voice-active: #D4926F;      /* 语音活跃暖棕 */
+  --tech-drawing-active: #f59e0b;    /* 手绘活跃橙 */
+  --tech-upload-active: #B5704A;     /* 上传活跃深暖棕 */
+
+  /* 动画时长 */
+  --tech-transition-fast: 0.2s;
+  --tech-transition-normal: 0.3s;
+  --tech-transition-slow: 0.5s;
+}
+
+/* 全局科技风样式 */
+.tech-theme {
+  background: var(--tech-bg-primary);
+  color: var(--tech-text-primary);
+  font-family: 'Inter', 'SF Pro Text', 'Source Han Sans SC', 'PingFang SC', 'Microsoft YaHei UI', 'Hiragino Sans GB', sans-serif;
+}
+
+/* 深色主题全局背景覆盖 - 确保整个页面都是深蓝色背景 */
+.tech-theme body,
+.tech-theme html {
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1d3e 50%, #2a2d4e 100%) !important;
+  background-attachment: fixed !important;
+  min-height: 100vh !important;
+  height: auto !important;
+  background-color: #0a0e27 !important;
+}
+
+/* 强制覆盖所有可能导致黑色背景的设置 */
+.tech-theme,
+.tech-theme *:not(.tech-card):not(.ant-card):not(textarea) {
+  background-color: transparent !important;
+}
+
+.tech-theme #root {
+  background: transparent !important;
+}
+
+.tech-theme .ant-layout {
+  background: transparent !important;
+}
+
+.tech-theme .ant-layout-content {
+  background: transparent !important;
+}
+
+/* 浅色主题Layout样式 */
+.light-theme .ant-layout,
+.light-theme .ant-layout-content {
+  background: #F5F1E8 !important;
+}
+
+/* 科技风背景 */
+.tech-background {
+  position: relative;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1d3e 50%, #2a2d4e 100%);
+}
+
+/* 浅色主题背景 */
+.light-theme .tech-background {
+  background: #F5F1E8;
+}
+
+/* 科技风网格背景 */
+.tech-grid {
+  background:
+    linear-gradient(rgba(0, 212, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(135deg, #0a0e27 0%, #1a1d3e 50%, #2a2d4e 100%);
+  background-size: 50px 50px, 50px 50px, 100% 100%;
+  background-attachment: local, local, fixed;
+}
+
+/* 科技风卡片 */
+.tech-card {
+  background: rgba(26, 29, 62, 0.8) !important;
+  border: 1px solid var(--tech-border) !important;
+  border-radius: 12px !important;
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  transition: all 0.3s ease !important;
+}
+
+.tech-card:hover {
+  border-color: var(--tech-primary) !important;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    var(--tech-glow-primary) !important;
+  transform: translateY(-2px);
+}
+
+/* 科技风按钮 */
+.tech-button {
+  background: linear-gradient(135deg, var(--tech-primary), var(--tech-secondary)) !important;
+  border: none !important;
+  color: #2D1810 !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  box-shadow: var(--tech-glow-primary) !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tech-button:hover {
+  background: linear-gradient(135deg, var(--tech-secondary), var(--tech-primary)) !important;
+  box-shadow: var(--tech-glow-secondary) !important;
+  transform: scale(1.05);
+}
+
+.tech-button-danger {
+  background: linear-gradient(135deg, var(--tech-warning), #ff8080) !important;
+  box-shadow: 0 0 15px rgba(255, 107, 107, 0.3) !important;
+}
+
+.tech-button-success {
+  background: linear-gradient(135deg, var(--tech-accent), #0891b2) !important;
+  box-shadow: var(--tech-glow-accent) !important;
+}
+
+/* 科技风输入框 */
+.tech-input {
+  background: rgba(26, 29, 62, 0.6) !important;
+  border: 1px solid var(--tech-border) !important;
+  color: var(--tech-text-primary) !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+}
+
+.tech-input:focus {
+  border-color: var(--tech-primary) !important;
+  box-shadow: var(--tech-glow-primary) !important;
+}
+
+/* 修复Select组件中tag的颜色 */
+.tech-input .ant-select-selection-item {
+  background: #e0e0e0 !important;
+  color: #333333 !important;
+  border: 1px solid #cccccc !important;
+}
+
+.tech-input .ant-select-selection-item-remove {
+  color: #666666 !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+
+.tech-input .ant-select-selection-item-remove:hover {
+  color: #333333 !important;
+}
+
+.tech-input .ant-select-selection-item-content {
+  color: #333333 !important;
+}
+
+/* 科技风进度条 */
+.tech-progress .ant-progress-bg {
+  background: linear-gradient(90deg, var(--tech-primary), var(--tech-accent)) !important;
+  box-shadow: var(--tech-glow-primary);
+}
+
+.tech-progress .ant-progress-outer {
+  background: rgba(26, 29, 62, 0.6) !important;
+}
+
+/* 科技风标签 */
+.tech-tag {
+  background: rgba(0, 212, 255, 0.1) !important;
+  border: 1px solid var(--tech-primary) !important;
+  color: var(--tech-primary) !important;
+  box-shadow: inset 0 0 10px rgba(0, 212, 255, 0.1);
+}
+
+.tech-tag-success {
+  background: rgba(6, 182, 212, 0.1) !important;
+  border-color: var(--tech-accent) !important;
+  color: var(--tech-accent) !important;
+}
+
+.tech-tag-warning {
+  background: rgba(245, 158, 11, 0.1) !important;
+  border-color: var(--tech-warning) !important;
+  color: var(--tech-warning) !important;
+}
+
+/* 科技风头部导航 */
+.tech-header {
+  background: rgba(10, 14, 39, 0.95) !important;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--tech-border) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 极简导航栏 */
+.minimal-header {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(20px);
+}
+
+.minimal-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(245, 241, 232, 0.6) 0%, rgba(245, 241, 232, 0.2) 50%, transparent 100%);
+  pointer-events: none;
+}
+
+/* 深色主题下的导航栏 */
+.tech-theme .minimal-header::before {
+  background: linear-gradient(180deg, rgba(10, 14, 39, 0.8) 0%, rgba(10, 14, 39, 0.2) 50%, transparent 100%);
+}
+
+.tech-header .ant-menu {
+  background: transparent !important;
+  border: none !important;
+}
+
+.tech-header .ant-menu-item {
+  color: var(--tech-text-secondary) !important;
+  border-radius: 6px !important;
+  margin: 0 4px !important;
+  transition: all 0.3s ease !important;
+}
+
+.tech-header .ant-menu-item:hover {
+  color: var(--tech-primary) !important;
+  background: rgba(0, 212, 255, 0.1) !important;
+  box-shadow: inset 0 0 10px rgba(0, 212, 255, 0.1);
+}
+
+.tech-header .ant-menu-item-selected {
+  color: var(--tech-primary) !important;
+  background: rgba(0, 212, 255, 0.15) !important;
+  box-shadow: var(--tech-glow-primary);
+}
+
+/* 科技风子菜单样式 */
+.tech-header .ant-menu-submenu {
+  color: var(--tech-text-secondary) !important;
+}
+
+.tech-header .ant-menu-submenu-title {
+  color: var(--tech-text-secondary) !important;
+  border-radius: 6px !important;
+  margin: 0 4px !important;
+  transition: all 0.3s ease !important;
+}
+
+.tech-header .ant-menu-submenu-title:hover {
+  color: var(--tech-primary) !important;
+  background: rgba(0, 212, 255, 0.1) !important;
+}
+
+.tech-header .ant-menu-submenu-open .ant-menu-submenu-title,
+.tech-header .ant-menu-submenu-selected .ant-menu-submenu-title {
+  color: var(--tech-primary) !important;
+  background: rgba(0, 212, 255, 0.15) !important;
+}
+
+/* 下拉菜单样式 */
+.tech-header .ant-menu-submenu .ant-menu {
+  background: rgba(10, 14, 39, 0.98) !important;
+  border: 1px solid var(--tech-border) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(20px);
+}
+
+.tech-header .ant-menu-submenu .ant-menu-item {
+  color: var(--tech-text-primary) !important;
+  margin: 4px 8px !important;
+  border-radius: 6px !important;
+}
+
+.tech-header .ant-menu-submenu .ant-menu-item:hover {
+  color: var(--tech-primary) !important;
+  background: rgba(0, 212, 255, 0.1) !important;
+  box-shadow: inset 0 0 10px rgba(0, 212, 255, 0.1);
+}
+
+.tech-header .ant-menu-submenu .ant-menu-item-selected {
+  color: var(--tech-primary) !important;
+  background: rgba(0, 212, 255, 0.2) !important;
+  box-shadow: var(--tech-glow-primary);
+}
+
+/* 科技风文本样式 */
+.tech-title {
+  color: var(--tech-primary) !important;
+  text-shadow: var(--tech-glow-primary);
+  font-weight: 700 !important;
+}
+
+.tech-text {
+  color: var(--tech-text-primary) !important;
+}
+
+.tech-text-secondary {
+  color: var(--tech-text-secondary) !important;
+}
+
+/* 科技风代码编辑器 */
+.tech-editor {
+  border: 1px solid var(--tech-border) !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    var(--tech-glow-primary);
+}
+
+/* 科技风模态框 */
+.tech-modal .ant-modal-content {
+  background: var(--tech-bg-secondary) !important;
+  border: 1px solid var(--tech-border) !important;
+  border-radius: 16px !important;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    var(--tech-glow-secondary) !important;
+}
+
+.tech-modal .ant-modal-header {
+  background: transparent !important;
+  border-bottom: 1px solid var(--tech-border) !important;
+}
+
+.tech-modal .ant-modal-title {
+  color: var(--tech-primary) !important;
+}
+
+/* 科技风通知/Alert */
+.tech-alert {
+  background: rgba(26, 29, 62, 0.8) !important;
+  border: 1px solid var(--tech-info) !important;
+  border-radius: 8px !important;
+  color: var(--tech-text-primary) !important;
+}
+
+.tech-alert .ant-alert-message {
+  color: var(--tech-text-primary) !important;
+}
+
+.tech-alert .ant-alert-description {
+  color: var(--tech-text-secondary) !important;
+}
+
+.tech-alert-success {
+  border-color: var(--tech-accent) !important;
+  background: rgba(0, 255, 65, 0.1) !important;
+}
+
+.tech-alert-success .ant-alert-message {
+  color: var(--tech-text-primary) !important;
+}
+
+.tech-alert-success .ant-alert-description {
+  color: var(--tech-text-secondary) !important;
+}
+
+.tech-alert-warning {
+  border-color: var(--tech-warning) !important;
+  background: rgba(255, 107, 107, 0.1) !important;
+}
+
+/* 科技风滚动条 */
+.tech-theme ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.tech-theme ::-webkit-scrollbar-track {
+  background: var(--tech-bg-secondary);
+}
+
+.tech-theme ::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--tech-primary), var(--tech-secondary));
+  border-radius: 4px;
+}
+
+.tech-theme ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--tech-secondary), var(--tech-primary));
+}
+
+/* 科技风动画效果 */
+.tech-fade-in {
+  animation: techFadeIn 0.6s ease-out;
+}
+
+@keyframes techFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* 科技风loading */
+.tech-loading {
+  color: var(--tech-primary);
+  animation: techSpin 1s linear infinite;
+}
+
+@keyframes techSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 多模态输入样式 */
+.tech-multimodal-input {
+  background: rgba(26, 29, 62, 0.9) !important;
+  border: 1px solid var(--tech-border) !important;
+  border-radius: 12px !important;
+  padding: 16px !important;
+  backdrop-filter: blur(15px);
+  transition: all var(--tech-transition-normal) ease !important;
+}
+
+.tech-multimodal-input:hover {
+  border-color: var(--tech-primary) !important;
+  box-shadow: var(--tech-glow-primary) !important;
+}
+
+/* 语音输入按钮 */
+.tech-voice-button {
+  background: linear-gradient(135deg, var(--tech-voice-active), #059669) !important;
+  border: none !important;
+  color: #2D1810 !important;
+  border-radius: 50% !important;
+  width: 48px !important;
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all var(--tech-transition-normal) ease !important;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.4) !important;
+}
+
+.tech-voice-button:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.6) !important;
+}
+
+.tech-voice-button.recording {
+  animation: voicePulse 1s infinite !important;
+}
+
+@keyframes voicePulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
+  50% { transform: scale(1.1); box-shadow: 0 0 30px rgba(16, 185, 129, 0.8); }
+}
+
+/* 手绘输入区域 */
+.tech-drawing-canvas {
+  background: rgba(26, 29, 62, 0.6) !important;
+  border: 2px dashed var(--tech-drawing-active) !important;
+  border-radius: 12px !important;
+  min-height: 200px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all var(--tech-transition-normal) ease !important;
+  cursor: crosshair !important;
+}
+
+.tech-drawing-canvas:hover {
+  border-color: var(--tech-primary) !important;
+  background: rgba(26, 29, 62, 0.8) !important;
+}
+
+.tech-drawing-canvas.active {
+  border-style: solid !important;
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.4) !important;
+}
+
+/* 文件上传区域 */
+.tech-upload-area {
+  background: rgba(26, 29, 62, 0.6) !important;
+  border: 2px dashed var(--tech-upload-active) !important;
+  border-radius: 12px !important;
+  padding: 24px !important;
+  text-align: center !important;
+  transition: all var(--tech-transition-normal) ease !important;
+  cursor: pointer !important;
+}
+
+.tech-upload-area:hover {
+  border-color: var(--tech-primary) !important;
+  background: rgba(26, 29, 62, 0.8) !important;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.4) !important;
+}
+
+.tech-upload-area.dragover {
+  border-style: solid !important;
+  background: rgba(139, 92, 246, 0.1) !important;
+  transform: scale(1.02) !important;
+}
+
+/* 多模态切换标签 */
+.tech-modal-tabs {
+  background: transparent !important;
+  border: none !important;
+}
+
+.tech-modal-tabs .ant-tabs-tab {
+  background: rgba(26, 29, 62, 0.6) !important;
+  border: 1px solid var(--tech-border) !important;
+  border-radius: 8px 8px 0 0 !important;
+  margin-right: 8px !important;
+  transition: all var(--tech-transition-normal) ease !important;
+}
+
+.tech-modal-tabs .ant-tabs-tab:hover {
+  border-color: var(--tech-primary) !important;
+  background: rgba(26, 29, 62, 0.8) !important;
+}
+
+.tech-modal-tabs .ant-tabs-tab-active {
+  background: rgba(0, 212, 255, 0.1) !important;
+  border-color: var(--tech-primary) !important;
+  box-shadow: inset 0 0 10px rgba(0, 212, 255, 0.2) !important;
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+  .tech-grid {
+    background-size: 25px 25px;
+  }
+
+  .tech-multimodal-input {
+    padding: 12px !important;
+  }
+
+  .tech-voice-button {
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
+
+/* AI聊天打字动画 */
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--tech-text-secondary);
+  font-style: italic;
+}
+
+.typing-dots {
+  display: flex;
+  gap: 4px;
+}
+
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--tech-primary);
+  animation: typingAnimation 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typingAnimation {
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 核心功能卡片悬停效果 */
+.tech-card:hover .hover-glow {
+  opacity: 1 !important;
+}
+
+.tech-card:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 15px 35px rgba(0, 255, 255, 0.3) !important;
+}
+
+/* 根据颜色调整悬停阴影 */
+.tech-card[data-color="cyan"]:hover {
+  box-shadow: 0 15px 35px rgba(0, 255, 255, 0.3) !important;
+}
+
+.tech-card[data-color="purple"]:hover {
+  box-shadow: 0 15px 35px rgba(124, 58, 237, 0.3) !important;
+}
+
+.tech-card[data-color="green"]:hover {
+  box-shadow: 0 15px 35px rgba(0, 255, 65, 0.3) !important;
+}
+
+.tech-card[data-color="red"]:hover {
+  box-shadow: 0 15px 35px rgba(255, 107, 107, 0.3) !important;
+}
+
+/* Tooltip样式优化 */
+.ant-tooltip {
+  z-index: 9999 !important;
+}
+
+.ant-tooltip-inner {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.60), rgba(26, 29, 62, 0.60)) !important;
+  backdrop-filter: blur(15px) !important;
+  border: 1px solid rgba(0, 255, 255, 0.3) !important;
+  border-radius: 12px !important;
+  color: #ffffff !important;
+  font-size: 13px !important;
+  padding: 16px 20px !important;
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  max-width: 350px !important;
+  line-height: 1.6 !important;
+  position: relative !important;
+}
+
+.ant-tooltip-inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.05), rgba(124, 58, 237, 0.05));
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.ant-tooltip-arrow {
+  display: none !important;
+}
+
+/* 悬停卡片标题样式 */
+.ant-tooltip-inner > div > div:first-child {
+  background: linear-gradient(135deg, #00ffff, #7c3aed) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  margin-bottom: 12px !important;
+  text-shadow: none !important;
+}
+
+/* 悬停卡片内容样式 */
+.ant-tooltip-inner > div > div:last-child {
+  color: rgba(255, 255, 255, 0.9) !important;
+  line-height: 1.7 !important;
+  font-size: 13px !important;
+}
+
+/* 移除动画效果，避免闪烁 */
+.ant-tooltip {
+  animation: none !important;
+}
+
+.ant-tooltip-inner {
+  transition: none !important;
+}
+
+/* 悬停卡片中的列表项 */
+.ant-tooltip-inner li,
+.ant-tooltip-inner div[style*="•"] {
+  margin: 6px 0 !important;
+  position: relative !important;
+}
+
+.ant-tooltip-inner li::before,
+.ant-tooltip-inner div:contains("•")::before {
+  content: "▸";
+  color: #00ffff;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+/* 全局字体设置 - 最高优先级 */
+*,
+*::before,
+*::after {
+  font-family: 'Inter', 'SF Pro Text', 'Source Han Sans SC', 'PingFang SC', 'Microsoft YaHei UI', 'Hiragino Sans GB', sans-serif !important;
+}
+
+/* 特定元素字体设置 */
+body, html, div, span, h1, h2, h3, h4, h5, h6, p, a, button, input, textarea, select {
+  font-family: 'Inter', 'SF Pro Text', 'Source Han Sans SC', 'PingFang SC', 'Microsoft YaHei UI', 'Hiragino Sans GB', sans-serif !important;
+}
+
+/* Ant Design 组件字体设置 */
+.ant-typography,
+.ant-typography *,
+.ant-btn,
+.ant-card,
+.ant-menu,
+.ant-input,
+.ant-select,
+.ant-tag,
+.ant-steps,
+.ant-progress,
+.ant-tooltip,
+.ant-message,
+.ant-notification,
+.ant-layout,
+.ant-layout-header,
+.ant-layout-content,
+.ant-layout-footer {
+  font-family: 'Inter', 'SF Pro Text', 'Source Han Sans SC', 'PingFang SC', 'Microsoft YaHei UI', 'Hiragino Sans GB', sans-serif !important;
+}
+
+/* List 组件样式覆盖 - 移除白色背景 */
+.tech-card .ant-list-item {
+  /* background: transparent !important; */ /* 注释掉以允许自定义背景 */
+}
+
+.tech-card .ant-list-item-meta {
+  background: transparent !important;
+}
+
+.tech-card .ant-list-item-meta-content {
+  background: transparent !important;
+}
+
+.tech-card .ant-list-item-meta-description {
+  background: transparent !important;
+}
+
+.tech-card .ant-space {
+  background: transparent !important;
+}
+
+/* 更强的覆盖 - 针对所有可能的白色背景，但排除数字图标 */
+.tech-card .ant-list-item *:not(.lesson-number-icon),
+.tech-card .ant-list-item-meta *:not(.lesson-number-icon),
+.tech-card .ant-space *:not(.lesson-number-icon) {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* 特别针对 description 区域 */
+.tech-card .ant-list-item .ant-space.ant-space-vertical {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* 覆盖数字图标的背景颜色 - 比全局透明规则更具体 */
+.lesson-number-icon {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #2D1810 !important;
+}
+
+/* 更强的选择器优先级 */
+.tech-card .ant-list-item .lesson-number-icon {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #2D1810 !important;
+}
+
+/* 最强优先级 */
+div.lesson-number-icon[style] {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #2D1810 !important;
+}
+
+/* 覆盖任何可能的透明背景设置 */
+.lesson-number-icon,
+.lesson-number-icon * {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #2D1810 !important;
+}
+
+/* 特别针对 ant design list item meta avatar */
+.ant-list-item-meta-avatar .lesson-number-icon {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #2D1810 !important;
+}
+
+/* 隐藏滚动条样式 */
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+/* 登录注册按钮优化样式 */
+.tech-login-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-login-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.tech-login-button:hover::before {
+  left: 100%;
+}
+
+.tech-login-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.4), 0 0 40px rgba(124, 58, 237, 0.2) !important;
+  border-color: rgba(168, 85, 247, 0.8) !important;
+}
+
+.tech-login-button:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3) !important;
+}
+
+.tech-login-button .anticon {
+  transition: all 0.3s ease;
+}
+
+.tech-login-button:hover .anticon {
+  transform: scale(1.1);
+  color: #fff !important;
+}
+
+/* 为按钮添加脉冲动画效果 */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3), 0 0 20px rgba(124, 58, 237, 0.1);
+  }
+  50% {
+    box-shadow: 0 6px 16px rgba(124, 58, 237, 0.4), 0 0 30px rgba(124, 58, 237, 0.2);
+  }
+  100% {
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3), 0 0 20px rgba(124, 58, 237, 0.1);
+  }
+}
+
+.tech-login-button.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* AI黑板互动动画 */
+@keyframes drawHandwriting {
+  0% {
+    stroke-dasharray: 0, 500;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    stroke-dasharray: 400, 500;
+    opacity: 1;
+  }
+  100% {
+    stroke-dasharray: 400, 500;
+    opacity: 0.6;
+  }
+}
+
+@keyframes progressFlow {
+  0% {
+    left: -8px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes drawLine {
+  0% {
+    stroke-dasharray: 0, 300;
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    stroke-dasharray: 250, 300;
+    opacity: 1;
+  }
+  100% {
+    stroke-dasharray: 250, 300;
+    opacity: 0.8;
+  }
+}
+
+@keyframes nodeAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  60% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes arrowGlow {
+  0% {
+    opacity: 0;
+    filter: brightness(1);
+  }
+  60% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+    filter: brightness(1.5);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes teacherPulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes teacherRipple {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0.3; }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .tech-login-button {
+    font-size: 12px !important;
+    padding: 6px 12px !important;
+    height: 32px !important;
+  }
+}
+

@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "id": 133,
+    "title": "克隆图",
+    "difficulty": "中等",
+    "leetcodeId": 133,
+    "category": "graph",
+    "patterns": [
+      "graph_clone"
+    ],
+    "tags": [
+      "深度优先搜索",
+      "广度优先搜索",
+      "图",
+      "哈希表"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。",
+  "examples": [
+    {
+      "input": "adjList = [[2,4],[1,3],[2,4],[1,3]]",
+      "output": "[[2,4],[1,3],[2,4],[1,3]]",
+      "explanation": "共有 4 个节点。节点 1 和节点 3 相连，节点 2 和节点 4 相连。"
+    },
+    {
+      "input": "adjList = [[]]",
+      "output": "[[]]",
+      "explanation": "输入包含一个空列表。给定节点没有邻居。"
+    },
+    {
+      "input": "adjList = []",
+      "output": "[]",
+      "explanation": "这个图是空的，它不含任何节点。"
+    }
+  ],
+  "constraints": [
+    "节点数不超过 100",
+    "每个节点值 Node.val 都是唯一的，1 <= Node.val <= 100",
+    "无向图是一个简单图，这意味着图中没有重复的边，也没有自环",
+    "由于图是无向的，如果节点 p 是节点 q 的邻居，那么节点 q 也必须是节点 p 的邻居",
+    "图是连通图，你可以从给定节点访问到所有节点"
+  ],
+  "hints": [
+    "使用HashMap存储已访问的节点",
+    "可以使用DFS或BFS遍历图",
+    "克隆节点时要处理循环引用"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "dfs_clone",
+      "name": "DFS深拷贝",
+      "timeComplexity": "O(N + M)",
+      "spaceComplexity": "O(N)",
+      "description": "使用DFS和HashMap进行图的深拷贝",
+      "code": {
+        "javascript": "/**\n * 克隆图 - 使用DFS和HashMap进行图的深拷贝\n */\n\nfunction cloneGraph(node) {\n    if (!node) return null;\n\n    const visited = new Map();\n\n    function dfs(node) {\n        if (visited.has(node.val)) {\n            return visited.get(node.val);\n        }\n\n        const cloneNode = new Node(node.val);\n        visited.set(node.val, cloneNode);\n\n        for (const neighbor of node.neighbors) {\n            cloneNode.neighbors.push(dfs(neighbor));\n        }\n\n        return cloneNode;\n    }\n\n    return dfs(node);\n}\n\n\n/**\n * 测试cloneGraph函数\n */\nfunction testCloneGraph() {\n    console.log(\"=== cloneGraph测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: adjList = [[2,4],[1,3],[2,4],[1,3]]\");\n    console.log(\"期望输出: [[2,4],[1,3],[2,4],[1,3]]\");\n    console.log(\"说明: 共有 4 个节点。节点 1 和节点 3 相连，节点 2 和节点 4 相连。\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testCloneGraph();",
+        "python": "\"\"\"\n克隆图 - 使用DFS和HashMap进行图的深拷贝\n\"\"\"\n\ndef cloneGraph(node):\n    if not node:\n        return None\n\n    visited = {}\n\n    def dfs(node):\n        if node.val in visited:\n            return visited[node.val]\n\n        clone_node = Node(node.val)\n        visited[node.val] = clone_node\n\n        for neighbor in node.neighbors:\n            clone_node.neighbors.append(dfs(neighbor))\n\n        return clone_node\n\n    return dfs(node)\n\n\ndef test_cloneGraph():\n    \"\"\"测试cloneGraph函数\"\"\"\n    print(\"=== cloneGraph测试 ===\")\n\n    # 测试用例\n    print(\"输入: adjList = [[2,4],[1,3],[2,4],[1,3]]\")\n    print(\"期望输出: [[2,4],[1,3],[2,4],[1,3]]\")\n    print(\"说明: 共有 4 个节点。节点 1 和节点 3 相连，节点 2 和节点 4 相连。\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_cloneGraph()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 克隆图解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "adjList = [[2,4],[1,3],[2,4],[1,3]]",
+      "output": "[[2,4],[1,3],[2,4],[1,3]]",
+      "explanation": "共有 4 个节点。节点 1 和节点 3 相连，节点 2 和节点 4 相连。"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "克隆图变种练习",
+      "description": "基于克隆图的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

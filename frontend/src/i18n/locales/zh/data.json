@@ -1,0 +1,41 @@
+{
+  "chapters": {
+    "array": "数组",
+    "string": "字符串",
+    "linkedList": "链表",
+    "tree": "树",
+    "graph": "图",
+    "dynamicProgramming": "动态规划",
+    "backtracking": "回溯"
+  },
+  "patterns": {
+    "array_two_pointers": "数组双指针",
+    "array_sliding_window": "滑动窗口",
+    "string_manipulation": "字符串操作",
+    "linkedlist_traversal": "链表遍历",
+    "tree_traversal": "树遍历",
+    "binary_search": "二分查找",
+    "dynamic_programming": "动态规划"
+  },
+  "problems": {
+    "1": "两数之和",
+    "167": "两数之和 II - 输入有序数组",
+    "15": "三数之和",
+    "121": "买卖股票的最佳时机",
+    "125": "验证回文串"
+  },
+  "difficulties": {
+    "简单": "简单",
+    "中等": "中等",
+    "困难": "困难"
+  },
+  "tags": {
+    "数组": "数组",
+    "哈希表": "哈希表",
+    "双指针": "双指针",
+    "字符串": "字符串",
+    "动态规划": "动态规划",
+    "树": "树",
+    "图": "图"
+  }
+}

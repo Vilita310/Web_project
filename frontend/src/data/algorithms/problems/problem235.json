@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "id": 235,
+    "title": "二叉搜索树的最近公共祖先",
+    "difficulty": "简单",
+    "leetcodeId": 235,
+    "category": "tree",
+    "patterns": [
+      "tree_lca_bst"
+    ],
+    "tags": [
+      "树",
+      "深度优先搜索",
+      "二叉搜索树"
+    ],
+    "estimatedTime": "15分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。百度百科中最近公共祖先的定义为：\"对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。\"",
+  "examples": [
+    {
+      "input": "root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8",
+      "output": "6",
+      "explanation": "节点 2 和节点 8 的最近公共祖先是 6。"
+    },
+    {
+      "input": "root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4",
+      "output": "2",
+      "explanation": "节点 2 和节点 4 的最近公共祖先是 2, 因为根据定义最近公共祖先节点可以为节点本身。"
+    }
+  ],
+  "constraints": [
+    "所有节点的值都是唯一的",
+    "p、q 为不同节点且均存在于给定的二叉搜索树中"
+  ],
+  "hints": [
+    "利用BST的性质：左子树小于根节点，右子树大于根节点",
+    "如果p和q都小于当前节点，在左子树找",
+    "如果p和q都大于当前节点，在右子树找",
+    "否则当前节点就是LCA"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "bst_property",
+      "name": "BST性质",
+      "timeComplexity": "O(h)",
+      "spaceComplexity": "O(1)",
+      "description": "利用BST的性质找到最近公共祖先",
+      "code": {
+        "javascript": "/**\n * 二叉搜索树的最近公共祖先 - 利用BST的性质找到最近公共祖先\n */\n\nfunction lowestCommonAncestor(root, p, q) {\n    while (root) {\n        if (p.val < root.val && q.val < root.val) {\n            root = root.left;\n        } else if (p.val > root.val && q.val > root.val) {\n            root = root.right;\n        } else {\n            return root;\n        }\n    }\n    return null;\n}\n\n\n/**\n * 测试lowestCommonAncestor函数\n */\nfunction testLowestCommonAncestor() {\n    console.log(\"=== lowestCommonAncestor测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8\");\n    console.log(\"期望输出: 6\");\n    console.log(\"说明: 节点 2 和节点 8 的最近公共祖先是 6。\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testLowestCommonAncestor();",
+        "python": "\"\"\"\n二叉搜索树的最近公共祖先 - 利用BST的性质找到最近公共祖先\n\"\"\"\n\ndef lowestCommonAncestor(root, p, q):\n    while root:\n        if p.val < root.val and q.val < root.val:\n            root = root.left\n        elif p.val > root.val and q.val > root.val:\n            root = root.right\n        else:\n            return root\n    return None\n\n\ndef test_lowestCommonAncestor():\n    \"\"\"测试lowestCommonAncestor函数\"\"\"\n    print(\"=== lowestCommonAncestor测试 ===\")\n\n    # 测试用例\n    print(\"输入: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8\")\n    print(\"期望输出: 6\")\n    print(\"说明: 节点 2 和节点 8 的最近公共祖先是 6。\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_lowestCommonAncestor()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 二叉搜索树的最近公共祖先解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8",
+      "output": "6",
+      "explanation": "节点 2 和节点 8 的最近公共祖先是 6。"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "二叉搜索树的最近公共祖先变种练习",
+      "description": "基于二叉搜索树的最近公共祖先的变种问题",
+      "difficulty": "简单",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

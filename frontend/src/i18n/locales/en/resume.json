@@ -1,0 +1,304 @@
+{
+  "title": "🧾 AI Smart Resume Builder",
+  "subtitle": "Auto-generate personalized resumes based on your learning achievements and project experience",
+  "steps": {
+    "generate": "Smart Generation",
+    "template": "Choose Template",
+    "edit": "Edit Resume",
+    "export": "Export Resume"
+  },
+  "generation": {
+    "title": "🚀 AI Smart Resume Generation",
+    "description": "Auto-generate personalized resumes based on your learning achievements and project experience"
+  },
+  "templates": {
+    "title": "🎨 Choose Resume Template",
+    "description": "Select the resume template style that suits you best",
+    "styles": {
+      "modern": "Modern",
+      "classic": "Classic",
+      "creative": "Creative",
+      "minimal": "Minimal"
+    }
+  },
+  "sections": {
+    "personalInfo": "Personal Information",
+    "summary": "Professional Summary",
+    "experience": "Work Experience",
+    "education": "Education",
+    "skills": "Skills",
+    "projects": "Project Experience",
+    "achievements": "Achievements",
+    "certifications": "Certifications"
+  },
+  "actions": {
+    "generate": "Generate Resume",
+    "preview": "Preview Resume",
+    "download": "Download PDF",
+    "share": "Share Resume",
+    "edit": "Edit Content"
+  },
+  "progress": {
+    "analyzing": "Analyzing Learning Records",
+    "generating": "Generating Resume Content",
+    "formatting": "Formatting Layout",
+    "completed": "Resume Generation Completed"
+  },
+  "templates": {
+    "modernTech": {
+      "name": "Modern Tech",
+      "description": "Perfect for tech positions, highlighting project experience and technical skills",
+      "features": ["Project-driven", "Skills-focused", "ATS-friendly"]
+    },
+    "professional": {
+      "name": "Professional Business",
+      "description": "Traditional business style, suitable for formal occasions",
+      "features": ["Clean & Professional", "Clear Hierarchy", "Traditional Layout"]
+    },
+    "creative": {
+      "name": "Creative Design",
+      "description": "Creative and innovative, perfect for design and creative roles",
+      "features": ["Visually Outstanding", "Creative Layout", "Highly Personalized"]
+    },
+    "minimal": {
+      "name": "Minimal Style",
+      "description": "Minimalist design, content-focused",
+      "features": ["Minimalist Design", "Content-focused", "High Readability"]
+    }
+  },
+  "skillLevels": {
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced",
+    "expert": "Expert"
+  },
+  "projectTypes": {
+    "web": "Web Application",
+    "mobile": "Mobile App",
+    "backend": "Backend Service",
+    "fullstack": "Full Stack Project",
+    "data": "Data Science",
+    "ai": "AI/Machine Learning",
+    "other": "Other"
+  },
+  "placeholders": {
+    "name": "User Name",
+    "email": "user@example.com",
+    "phone": "+1 (555) 123-4567",
+    "location": "New York, NY",
+    "title": "Software Engineer"
+  },
+  "defaultSummary": "Experienced {level} developer with expertise in {skills} and other technologies. Completed {projectCount} hands-on projects on LeadCode platform, demonstrating solid programming fundamentals and practical project experience.",
+  "skillCategories": {
+    "programmingLanguages": "Programming Languages",
+    "frameworks": "Frameworks & Libraries",
+    "tools": "Tools & Software",
+    "databases": "Databases",
+    "other": "Other Skills"
+  },
+  "buttons": {
+    "generateResume": "Generate Resume",
+    "preview": "Preview",
+    "edit": "Edit",
+    "download": "Download",
+    "optimize": "AI Optimize",
+    "selectTemplate": "Select Template"
+  },
+  "status": {
+    "generating": "Generating...",
+    "optimizing": "AI Optimizing...",
+    "ready": "Resume Ready"
+  },
+  "warnings": {
+    "insufficient": {
+      "title": "Requirements Not Met",
+      "content": "Please complete at least one project before generating a resume."
+    }
+  },
+  "education": {
+    "institution": "LeadCode Online Learning Platform",
+    "degree": "Technical Skills Certification",
+    "duration": "Present",
+    "achievements": {
+      "courses": "Completed {count} technical courses",
+      "skills": "Mastered {count} technical skills",
+      "projects": "Completed {count} hands-on projects"
+    }
+  },
+  "projects": {
+    "descriptionTemplate": "{type} developed using {tech} technology stack",
+    "achievements": {
+      "completion": "Successfully completed {type} project development",
+      "certification": "Received project completion certification"
+    },
+    "duration": "Project Development Period"
+  },
+  "certifications": {
+    "leadcodeCompletion": "LeadCode Project Completion Certification",
+    "description": "Completed multiple hands-on projects on LeadCode platform, demonstrating excellent programming skills and project management abilities"
+  },
+  "messages": {
+    "generateSuccess": "Resume generated successfully!",
+    "generateFailed": "Resume generation failed, please try again",
+    "saveSuccess": "Resume saved successfully!",
+    "needProject": "Please complete at least one project before generating a resume",
+    "goToProjects": "Go to Projects",
+    "aiOptimizeFailed": "AI resume optimization failed",
+    "optimizationApplied": "Optimization suggestion applied",
+    "templateSwitched": "Switched to {name} template"
+  },
+  "aiOptimization": {
+    "warning": "Please generate a resume first",
+    "prompt": "As a professional HR and resume expert, please analyze the following resume content and provide optimization suggestions:\n\nResume Content:\n{resumeContent}\n\nPlease provide specific optimization suggestions for the following aspects:\n1. Personal summary/self-introduction improvements\n2. Project experience description optimization\n3. Skills presentation improvements\n4. Education background enhancement\n5. Overall structure and format suggestions\n\nPlease return optimization suggestions in JSON format:\n{\n  \"summary\": \"Optimized personal summary\",\n  \"suggestions\": [\n    {\n      \"type\": \"Project Experience\",\n      \"original\": \"Original content\",\n      \"improved\": \"Improved content\",\n      \"reason\": \"Optimization reason\"\n    }\n  ],\n  \"improvements\": [\"Specific improvement 1\", \"Specific improvement 2\"]\n}",
+    "completedTitle": "✨ AI Resume Optimization Complete",
+    "overallScore": "Overall Score",
+    "optimizationSummary": "Optimization Summary",
+    "improvements": "Key Improvements",
+    "suggestionsTitle": "✨ AI Resume Optimization Suggestions"
+  },
+  "userDataOverview": {
+    "title": "Your Learning Achievements",
+    "masteredSkills": "Mastered Skills",
+    "completedProjects": "Completed Projects",
+    "completedCourses": "Completed Courses",
+    "resumeVersions": "Resume Versions",
+    "yourSkills": "Your Skills",
+    "yourProjects": "Your Projects"
+  },
+  "resumePreview": {
+    "noData": "No resume data available",
+    "personalSummary": "Personal Summary",
+    "skills": "Skills",
+    "programmingLanguages": "Programming Languages",
+    "frameworks": "Frameworks & Libraries",
+    "tools": "Tools & Platforms",
+    "otherSkills": "Other Skills",
+    "projectExperience": "Project Experience",
+    "techStack": "Tech Stack",
+    "achievements": "Project Achievements",
+    "education": "Education",
+    "certifications": "Certifications"
+  },
+  "versionHistory": {
+    "title": "Resume Version History",
+    "version": "Version",
+    "template": "Template",
+    "restore": "Restore This Version",
+    "preview": "Preview"
+  },
+  "generateResume": "Smart Generation",
+  "resumePreview": "Resume Preview",
+  "editResume": "Edit Resume",
+  "selectTemplate": "Select Template",
+  "noResumeGenerated": "Please generate a resume first",
+  "versionHistoryBtn": "Version History",
+  "shareResume": "Share Resume",
+  "exportResume": "Export Resume",
+  "aiGenerating": "AI Generating Resume...",
+  "aiOptimizing": "AI Optimizing...",
+  "currentTemplate": "Current Template",
+  "selectTemplateBtn": "Select Template",
+  "buttons": {
+    "ok": "OK",
+    "cancel": "Cancel"
+  },
+  "editor": {
+    "title": "Edit Resume",
+    "subtitle": "Edit your resume content with real-time saving",
+    "cancel": "Cancel",
+    "save": "Save Resume",
+    "editSection": "Edit Section",
+    "sections": {
+      "personalInfo": "Personal Information",
+      "skills": "Skills",
+      "projectExperience": "Project Experience",
+      "education": "Education",
+      "certifications": "Certifications"
+    },
+    "personalInfo": {
+      "name": "Name",
+      "title": "Position",
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location",
+      "summary": "Personal Summary",
+      "namePlaceholder": "Enter your name",
+      "titlePlaceholder": "e.g., Frontend Developer",
+      "emailPlaceholder": "your.email@example.com",
+      "phonePlaceholder": "+1 (555) 123-4567",
+      "locationPlaceholder": "e.g., New York, NY",
+      "summaryPlaceholder": "Briefly describe your professional background, skills, and career goals..."
+    },
+    "skills": {
+      "skillsCategory": "Skills Category",
+      "skillsCategoryDesc": "Group your skills by category to help HR quickly understand your tech stack",
+      "programmingLanguages": "Programming Languages",
+      "frameworks": "Frameworks & Libraries",
+      "tools": "Tools & Platforms",
+      "others": "Other Skills",
+      "programmingPlaceholder": "e.g., JavaScript, Python, Java",
+      "frameworksPlaceholder": "e.g., React, Vue, Node.js",
+      "toolsPlaceholder": "e.g., Git, Docker, AWS",
+      "othersPlaceholder": "e.g., UI Design, Project Management"
+    },
+    "projects": {
+      "addProject": "Add Project",
+      "projectTitle": "Project",
+      "deleteConfirm": "Are you sure you want to delete this project?",
+      "name": "Project Name",
+      "duration": "Duration",
+      "description": "Description",
+      "technologies": "Tech Stack",
+      "repository": "Project Link",
+      "achievements": "Achievements",
+      "namePlaceholder": "Project name",
+      "durationPlaceholder": "e.g., Jan 2023 - Jun 2023",
+      "descriptionPlaceholder": "Describe the project background, features, and your contributions...",
+      "technologiesPlaceholder": "Select or enter tech stack",
+      "repositoryPlaceholder": "GitHub or demo link",
+      "achievementsPlaceholder": "Project achievements and highlights"
+    },
+    "education": {
+      "educationTitle": "Education",
+      "deleteConfirm": "Are you sure you want to delete this education record?",
+      "addEducation": "Add Education",
+      "institution": "School/Institution",
+      "degree": "Degree/Course",
+      "duration": "Duration",
+      "details": "Details",
+      "institutionPlaceholder": "School or institution name",
+      "degreePlaceholder": "e.g., Computer Science Bachelor",
+      "durationPlaceholder": "e.g., Sep 2018 - Jun 2022",
+      "detailsPlaceholder": "e.g., GPA, awards, major courses"
+    },
+    "certifications": {
+      "addCertification": "Add Certification",
+      "deleteConfirm": "Are you sure you want to delete?",
+      "name": "Certification Name",
+      "issuer": "Issuer",
+      "date": "Date Obtained",
+      "score": "Score",
+      "namePlaceholder": "Certification or award name",
+      "issuerPlaceholder": "Issuing organization",
+      "datePlaceholder": "Date obtained",
+      "scorePlaceholder": "Score"
+    },
+    "validation": {
+      "nameRequired": "Please enter your name",
+      "titleRequired": "Please enter target position",
+      "emailRequired": "Please enter email",
+      "emailInvalid": "Invalid email format",
+      "phoneRequired": "Please enter phone number",
+      "summaryRequired": "Please enter personal summary",
+      "projectNameRequired": "Please enter project name",
+      "projectDescRequired": "Please enter project description",
+      "institutionRequired": "Please enter school or institution name",
+      "degreeRequired": "Please enter degree or course information",
+      "durationRequired": "Please enter study duration",
+      "certNameRequired": "Please enter certification name",
+      "certIssuerRequired": "Please enter issuer",
+      "certDateRequired": "Please enter date obtained",
+      "checkFormContent": "Please check form content"
+    }
+  }
+}

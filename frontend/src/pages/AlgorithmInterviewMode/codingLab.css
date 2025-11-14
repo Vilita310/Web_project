@@ -1,0 +1,225 @@
+/* SmartCodingLab 算法面试模式样式 */
+
+.tech-card {
+  background: var(--tech-card-bg);
+  border: 1px solid var(--tech-border);
+  box-shadow: 0 2px 8px rgba(212, 146, 111, 0.1);
+}
+
+.tech-title {
+  color: var(--tech-primary);
+  font-weight: 600;
+}
+
+/* 语音识别动画 */
+@keyframes microphonePulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* 思考动画 */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* AI教师卡片样式 */
+.ai-teacher-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(212, 146, 111, 0.05), rgba(160, 120, 59, 0.05));
+}
+
+.ai-teacher-card .ant-card-head {
+  background: linear-gradient(135deg, var(--tech-primary), var(--tech-accent));
+  border-bottom: 1px solid rgba(212, 146, 111, 0.3);
+}
+
+.ai-teacher-card .ant-card-head-title {
+  color: white;
+}
+
+/* 面试控制面板样式 */
+.interview-control-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(212, 146, 111, 0.2);
+  box-shadow: 0 8px 32px rgba(212, 146, 111, 0.1);
+}
+
+.interview-status-badge {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+
+.interview-status-preparation {
+  background: linear-gradient(135deg, #faad14 0%, #ffc53d 100%);
+}
+
+.interview-status-active {
+  background: linear-gradient(135deg, #52c41a 0%, #73d13d 100%);
+}
+
+.interview-status-completed {
+  background: linear-gradient(135deg, #1890ff 0%, #40a9ff 100%);
+}
+
+/* 计时器样式 */
+.timer-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid;
+}
+
+.timer-normal {
+  background: linear-gradient(135deg, rgba(212, 146, 111, 0.2), rgba(160, 120, 59, 0.2));
+  border-color: rgba(212, 146, 111, 0.5);
+}
+
+.timer-warning {
+  background: linear-gradient(135deg, rgba(255, 77, 79, 0.2), rgba(255, 107, 107, 0.2));
+  border-color: rgba(255, 77, 79, 0.5);
+}
+
+/* 对话消息样式 */
+.interview-message {
+  max-width: 85%;
+  padding: 10px 14px;
+  border-radius: 18px;
+  font-size: 12px;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.interview-message.candidate {
+  background: linear-gradient(135deg, var(--tech-primary), var(--tech-accent));
+  color: white;
+  border-radius: 18px 18px 4px 18px;
+  box-shadow: 0 4px 12px rgba(212, 146, 111, 0.25);
+}
+
+.interview-message.interviewer {
+  background: rgba(212, 146, 111, 0.15);
+  color: var(--tech-text-primary);
+  border: 1px solid rgba(212, 146, 111, 0.2);
+  border-radius: 18px 18px 18px 4px;
+  box-shadow: 0 2px 8px rgba(212, 146, 111, 0.1);
+}
+
+.interview-message.error {
+  background: linear-gradient(135deg, rgba(255, 77, 79, 0.2), rgba(255, 107, 107, 0.2));
+}
+
+.interview-message.loading {
+  background: rgba(212, 146, 111, 0.1);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* 语音状态指示器 */
+.voice-status-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 12px;
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+}
+
+.voice-status-listening {
+  background: linear-gradient(135deg, rgba(82, 196, 26, 0.1), rgba(115, 209, 61, 0.1));
+  border: 1px solid rgba(82, 196, 26, 0.3);
+}
+
+.voice-status-idle {
+  background: rgba(212, 146, 111, 0.05);
+  border: 1px solid rgba(212, 146, 111, 0.2);
+}
+
+/* 提示卡片样式 */
+.tip-card {
+  padding: 8px 12px;
+  background: rgba(82, 196, 26, 0.1);
+  border-radius: 6px;
+  border: 1px solid rgba(82, 196, 26, 0.2);
+  font-size: 12px;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+  .interview-control-panel {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .timer-display {
+    justify-content: center;
+  }
+
+  .interview-message {
+    max-width: 90%;
+  }
+}
+
+/* 主题变量 */
+:root {
+  --tech-primary: #d4926f;
+  --tech-accent: #a0783b;
+  --tech-secondary: #8b6f3d;
+  --tech-card-bg: #ffffff;
+  --tech-border: rgba(212, 146, 111, 0.3);
+  --tech-text-primary: #2c3e50;
+  --tech-text-secondary: #7f8c8d;
+
+  /* 浅色模式下的橙色系 */
+  --tech-orange-bg: rgba(212, 146, 111, 0.1);
+  --tech-orange-border: rgba(212, 146, 111, 0.3);
+  --tech-orange-light: rgba(212, 146, 111, 0.05);
+  --tech-orange-shadow: rgba(212, 146, 111, 0.1);
+  --tech-warm-bg: rgba(160, 120, 59, 0.1);
+  --tech-warm-border: rgba(160, 120, 59, 0.3);
+  --tech-control-panel-border: rgba(212, 146, 111, 0.2);
+  --tech-control-panel-shadow: rgba(212, 146, 111, 0.1);
+}
+
+.tech-theme {
+  --tech-primary: #7dd3fc; /* 浅蓝色 */
+  --tech-accent: #38bdf8; /* 天空蓝 */
+  --tech-secondary: #0ea5e9; /* 深蓝色 */
+  --tech-card-bg: rgba(255, 255, 255, 0.05);
+  --tech-border: rgba(125, 211, 252, 0.2);
+  --tech-text-primary: #ffffff;
+  --tech-text-secondary: #bdc3c7;
+
+  /* 深色模式下的蓝色系 */
+  --tech-orange-bg: rgba(125, 211, 252, 0.1);
+  --tech-orange-border: rgba(125, 211, 252, 0.3);
+  --tech-orange-light: rgba(125, 211, 252, 0.05);
+  --tech-orange-shadow: rgba(125, 211, 252, 0.1);
+  --tech-warm-bg: rgba(56, 189, 248, 0.1);
+  --tech-warm-border: rgba(56, 189, 248, 0.3);
+  --tech-control-panel-border: rgba(125, 211, 252, 0.2);
+  --tech-control-panel-shadow: rgba(125, 211, 252, 0.1);
+}

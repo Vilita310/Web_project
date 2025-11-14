@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "id": 79,
+    "title": "单词搜索",
+    "difficulty": "中等",
+    "leetcodeId": 79,
+    "category": "backtracking",
+    "patterns": [
+      "backtracking_grid"
+    ],
+    "tags": [
+      "数组",
+      "回溯",
+      "矩阵"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给定一个 m x n 二维字符网格 board 和一个字符串单词 word 。如果 word 存在于网格中，返回 true ；否则，返回 false 。单词必须按照字母顺序，通过相邻的单元格内的字母构成，其中\"相邻\"单元格是那些水平相邻或垂直相邻的单元格。同一个单元格内的字母不允许被重复使用。",
+  "examples": [
+    {
+      "input": "board = [[\"A\",\"B\",\"C\",\"E\"],[\"S\",\"F\",\"C\",\"S\"],[\"A\",\"D\",\"E\",\"E\"]], word = \"ABCCED\"",
+      "output": "true",
+      "explanation": "可以在网格中找到单词 ABCCED"
+    },
+    {
+      "input": "board = [[\"A\",\"B\",\"C\",\"E\"],[\"S\",\"F\",\"C\",\"S\"],[\"A\",\"D\",\"E\",\"E\"]], word = \"SEE\"",
+      "output": "true",
+      "explanation": "可以在网格中找到单词 SEE"
+    },
+    {
+      "input": "board = [[\"A\",\"B\",\"C\",\"E\"],[\"S\",\"F\",\"C\",\"S\"],[\"A\",\"D\",\"E\",\"E\"]], word = \"ABCB\"",
+      "output": "false",
+      "explanation": "不能重复使用同一个单元格"
+    }
+  ],
+  "constraints": [
+    "m == board.length",
+    "n = board[i].length",
+    "1 <= m, n <= 6",
+    "1 <= word.length <= 15",
+    "board 和 word 仅由大小写英文字母组成"
+  ],
+  "hints": [
+    "使用回溯算法进行深度优先搜索",
+    "标记已访问的单元格，回溯时恢复",
+    "从每个可能的起始位置开始搜索"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "backtracking",
+      "name": "回溯算法",
+      "timeComplexity": "O(N * 4^L)",
+      "spaceComplexity": "O(L)",
+      "description": "使用回溯算法在网格中搜索单词",
+      "code": {
+        "javascript": "/**\n * 单词搜索 - 使用回溯算法在网格中搜索单词\n */\n\nfunction exist(board, word) {\n    const rows = board.length;\n    const cols = board[0].length;\n\n    function backtrack(row, col, index) {\n        if (index === word.length) return true;\n\n        if (row < 0 || row >= rows || col < 0 || col >= cols ||\n            board[row][col] !== word[index]) {\n            return false;\n        }\n\n        const temp = board[row][col];\n        board[row][col] = '#'; // 标记为已访问\n\n        const found = backtrack(row + 1, col, index + 1) ||\n                     backtrack(row - 1, col, index + 1) ||\n                     backtrack(row, col + 1, index + 1) ||\n                     backtrack(row, col - 1, index + 1);\n\n        board[row][col] = temp; // 恢复\n        return found;\n    }\n\n    for (let i = 0; i < rows; i++) {\n        for (let j = 0; j < cols; j++) {\n            if (backtrack(i, j, 0)) {\n                return true;\n            }\n        }\n    }\n    return false;\n}\n\n\n/**\n * 测试exist函数\n */\nfunction testExist() {\n    console.log(\"=== exist测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: board = [[\"A\",\"B\",\"C\",\"E\"],[\"S\",\"F\",\"C\",\"S\"],[\"A\",\"D\",\"E\",\"E\"]], word = \"ABCCED\"\");\n    console.log(\"期望输出: true\");\n    console.log(\"说明: 可以在网格中找到单词 ABCCED\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testExist();",
+        "python": "\"\"\"\n单词搜索 - 使用回溯算法在网格中搜索单词\n\"\"\"\n\ndef exist(board, word):\n    rows, cols = len(board), len(board[0])\n\n    def backtrack(row, col, index):\n        if index == len(word):\n            return True\n\n        if (row < 0 or row >= rows or col < 0 or col >= cols or\n            board[row][col] != word[index]):\n            return False\n\n        temp = board[row][col]\n        board[row][col] = '#'  # 标记为已访问\n\n        found = (backtrack(row + 1, col, index + 1) or\n                backtrack(row - 1, col, index + 1) or\n                backtrack(row, col + 1, index + 1) or\n                backtrack(row, col - 1, index + 1))\n\n        board[row][col] = temp  # 恢复\n        return found\n\n    for i in range(rows):\n        for j in range(cols):\n            if backtrack(i, j, 0):\n                return True\n    return False\n\n\ndef test_exist():\n    \"\"\"测试exist函数\"\"\"\n    print(\"=== exist测试 ===\")\n\n    # 测试用例\n    print(\"输入: board = [[\"A\",\"B\",\"C\",\"E\"],[\"S\",\"F\",\"C\",\"S\"],[\"A\",\"D\",\"E\",\"E\"]], word = \"ABCCED\"\")\n    print(\"期望输出: true\")\n    print(\"说明: 可以在网格中找到单词 ABCCED\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_exist()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 单词搜索解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "board = [[\"A\",\"B\",\"C\",\"E\"],[\"S\",\"F\",\"C\",\"S\"],[\"A\",\"D\",\"E\",\"E\"]], word = \"ABCCED\"",
+      "output": "true",
+      "explanation": "可以在网格中找到单词 ABCCED"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "单词搜索变种练习",
+      "description": "基于单词搜索的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

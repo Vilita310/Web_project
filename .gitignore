@@ -1,0 +1,103 @@
+# Environment variables
+.env
+.env.local
+.env.production
+.env.staging
+
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Build outputs
+/frontend/dist/
+/frontend/build/
+*.egg-info/
+
+# IDE and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+.nyc_output/
+
+# Cache
+.cache/
+.parcel-cache/
+
+# Temporary files
+tmp/
+temp/
+
+# 生产环境配置文件
+.env.prod
+.env.production.local
+
+# 数据库文件
+*.db
+*.sqlite
+*.sqlite3
+
+# 备份文件
+backups/
+*.backup
+*.bak
+*.sql
+
+# SSL证书和密钥
+ssl/
+*.pem
+*.key
+*.crt
+*.csr
+*.p12
+
+# 安全相关文件
+secrets/
+keys/
+credentials/
+auth/
+
+# Docker相关
+.dockerignore
+
+# 监控和日志
+monitoring/
+prometheus-data/
+
+# 项目特定文件
+/uploads/code/*.py
+/uploads/code/*.js
+/uploads/code/*.ts
+*.db-shm
+*.db-wal
+create_*_user.py
+test_*.py
+temp_*.py
+
+# AI模型缓存
+.ai_cache/
+model_cache/
+
+# 用户上传的代码和文件
+/uploads/user_files/

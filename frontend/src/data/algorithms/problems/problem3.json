@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "id": 3,
+    "title": "无重复字符的最长子串",
+    "difficulty": "中等",
+    "leetcodeId": 3,
+    "category": "string",
+    "patterns": [
+      "sliding_window"
+    ],
+    "tags": [
+      "哈希表",
+      "字符串",
+      "滑动窗口"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度。",
+  "examples": [
+    {
+      "input": "s = \"abcabcbb\"",
+      "output": "3",
+      "explanation": "因为无重复字符的最长子串是 \"abc\"，所以其长度为 3。"
+    },
+    {
+      "input": "s = \"bbbbb\"",
+      "output": "1",
+      "explanation": "因为无重复字符的最长子串是 \"b\"，所以其长度为 1。"
+    },
+    {
+      "input": "s = \"pwwkew\"",
+      "output": "3",
+      "explanation": "因为无重复字符的最长子串是 \"wke\"，所以其长度为 3。"
+    }
+  ],
+  "constraints": [
+    "0 <= s.length <= 5 * 10⁴",
+    "s 由英文字母、数字、符号和空格组成"
+  ],
+  "hints": [
+    "你可以使用滑动窗口的方法。",
+    "使用哈希集合来检测重复字符。",
+    "当遇到重复字符时，移动左指针。"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "sliding_window",
+      "name": "滑动窗口",
+      "timeComplexity": "O(n)",
+      "spaceComplexity": "O(min(m,n))",
+      "description": "使用滑动窗口和哈希集合来找到最长无重复子串",
+      "code": {
+        "javascript": "/**\n * 无重复字符的最长子串 - 使用滑动窗口和哈希集合来找到最长无重复子串\n */\n\nfunction lengthOfLongestSubstring(s) {\n    const charSet = new Set();\n    let left = 0, maxLength = 0;\n    \n    for (let right = 0; right < s.length; right++) {\n        while (charSet.has(s[right])) {\n            charSet.delete(s[left]);\n            left++;\n        }\n        charSet.add(s[right]);\n        maxLength = Math.max(maxLength, right - left + 1);\n    }\n    \n    return maxLength;\n}\n\n\n/**\n * 测试lengthOfLongestSubstring函数\n */\nfunction testLengthOfLongestSubstring() {\n    console.log(\"=== lengthOfLongestSubstring测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: s = \"abcabcbb\"\");\n    console.log(\"期望输出: 3\");\n    console.log(\"说明: 因为无重复字符的最长子串是 \"abc\"，所以其长度为 3。\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testLengthOfLongestSubstring();",
+        "python": "\"\"\"\n无重复字符的最长子串 - 使用滑动窗口和哈希集合来找到最长无重复子串\n\"\"\"\n\ndef lengthOfLongestSubstring(s):\n    char_set = set()\n    left = 0\n    max_length = 0\n    \n    for right in range(len(s)):\n        while s[right] in char_set:\n            char_set.remove(s[left])\n            left += 1\n        char_set.add(s[right])\n        max_length = max(max_length, right - left + 1)\n    \n    return max_length\n\n\ndef test_lengthOfLongestSubstring():\n    \"\"\"测试lengthOfLongestSubstring函数\"\"\"\n    print(\"=== lengthOfLongestSubstring测试 ===\")\n\n    # 测试用例\n    print(\"输入: s = \"abcabcbb\"\")\n    print(\"期望输出: 3\")\n    print(\"说明: 因为无重复字符的最长子串是 \"abc\"，所以其长度为 3。\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_lengthOfLongestSubstring()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 无重复字符的最长子串解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "s = \"abcabcbb\"",
+      "output": "3",
+      "explanation": "因为无重复字符的最长子串是 \"abc\"，所以其长度为 3。"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "无重复字符的最长子串变种练习",
+      "description": "基于无重复字符的最长子串的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

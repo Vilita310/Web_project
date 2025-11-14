@@ -1,0 +1,217 @@
+{
+  "loading": {
+    "title": "正在加载课程数据...",
+    "failed": "加载失败",
+    "failedDescription": "加载课程数据失败，请刷新页面重试",
+    "reload": "重新加载"
+  },
+  "navigation": {
+    "backToLearning": "返回学习中心"
+  },
+  "chapters": {
+    "title": "课程章节",
+    "lessons": "课时",
+    "duration": "时长",
+    "progress": "完成进度"
+  },
+  "time": {
+    "hours": "小时",
+    "minutes": "分钟",
+    "hour": "小时",
+    "minute": "分钟"
+  },
+  "buttons": {
+    "startLearning": "开始学习",
+    "continueLearning": "继续学习",
+    "study": "学习",
+    "review": "复习",
+    "enterProjectCenter": "进入项目中心"
+  },
+  "status": {
+    "completed": "已完成",
+    "inProgress": "学习中",
+    "locked": "未解锁",
+    "pending": "待开始"
+  },
+  "courseData": {
+    "pythonData": {
+      "title": "Python数据科学",
+      "description": "Python数据处理与分析完整教程",
+      "instructor": "AI助教小数",
+      "level": "初级",
+      "chapters": {
+        "pythonBasics": {
+          "title": "Python基础",
+          "description": "Python语言基础语法和核心概念",
+          "lessons": {
+            "setup": "Python环境搭建",
+            "variables": "变量与数据类型",
+            "control": "控制流程",
+            "functions": "函数定义",
+            "modules": "模块与包",
+            "files": "文件操作",
+            "exceptions": "异常处理",
+            "practice": "综合练习"
+          }
+        }
+      }
+    },
+    "dataScientist": {
+      "title": "数据科学家课程",
+      "description": "数据分析、统计建模、机器学习，从数据洞察到商业价值",
+      "instructor": "AI助教小科",
+      "level": "初级到高级",
+      "chapters": {
+        "pythonDataScience": {
+          "title": "Python数据科学基础",
+          "description": "掌握Python数据科学核心库与基础技能",
+          "lessons": {
+            "jupyter": "Python环境与Jupyter",
+            "numpy": "NumPy数组操作",
+            "pandas": "Pandas数据处理",
+            "matplotlib": "Matplotlib可视化",
+            "seaborn": "Seaborn高级图表"
+          }
+        },
+        "statistics": {
+          "title": "统计分析与数据探索",
+          "description": "掌握统计学基础和数据探索性分析",
+          "lessons": {
+            "descriptive": "描述性统计",
+            "distributions": "概率分布",
+            "hypothesis": "假设检验",
+            "correlation": "相关性分析",
+            "dataCleaning": "数据清洗技巧"
+          }
+        },
+        "machineLearning": {
+          "title": "机器学习实战",
+          "description": "从基础算法到模型优化的完整机器学习流程",
+          "lessons": {
+            "supervised": "监督学习基础",
+            "regression": "线性回归与分类",
+            "trees": "决策树与随机森林",
+            "evaluation": "模型评估与调优"
+          }
+        }
+      }
+    },
+    "reactFullstack": {
+      "title": "JavaScript全栈工程师",
+      "description": "完整的JavaScript全栈开发学习路径，从前端基础到后端开发，从数据库到部署运维的全技术栈覆盖",
+      "instructor": "AI助教团队",
+      "level": "初级到高级",
+      "chapters": {
+        "javascriptBasics": {
+          "title": "JavaScript基础开发",
+          "description": "现代JavaScript语法、DOM操作、异步编程和模块化开发基础",
+          "lessons": {
+            "setup": "JavaScript环境搭建与语法基础",
+            "variables": "变量声明与数据类型",
+            "functions": "函数与作用域",
+            "objects": "对象与数组操作",
+            "dom": "DOM操作与事件处理",
+            "async": "异步编程：Promise与async/await",
+            "es6": "ES6+新特性与模块化",
+            "debugging": "错误处理与调试技巧",
+            "webapi": "Web API与浏览器特性",
+            "project": "JavaScript项目实战"
+          }
+        },
+        "typescript": {
+          "title": "TypeScript企业级开发",
+          "description": "TypeScript类型系统、高级特性，为现代化开发打基础",
+          "lessons": {
+            "basics": "TypeScript基础与环境搭建",
+            "advanced": "TypeScript高级类型系统",
+            "react": "TypeScript与React集成开发",
+            "enterprise": "TypeScript企业级项目实战"
+          }
+        },
+        "database": {
+          "title": "数据库集成开发",
+          "description": "高级数据库技术：MongoDB、Redis、ORM框架和性能优化",
+          "lessons": {
+            "mysql": "Node.js与MySQL集成开发",
+            "prisma": "Prisma ORM框架使用",
+            "mongodb": "MongoDB与NoSQL数据库",
+            "redis": "Redis缓存与Session管理",
+            "optimization": "数据库性能优化与监控",
+            "architecture": "全栈数据库架构实战"
+          }
+        },
+        "reactDevelopment": {
+          "title": "React前端开发",
+          "description": "基于TypeScript的React组件开发、状态管理和高级特性",
+          "lessons": {
+            "intro": "React简介与环境搭建",
+            "jsx": "JSX语法详解与组件状态管理",
+            "events": "React事件绑定",
+            "useState": "useState深入与表单控制",
+            "parentChild": "组件通信-父传子",
+            "childParent": "组件通信-子传父与兄弟通信",
+            "context": "Context跨层通信",
+            "useEffect": "useEffect副作用管理",
+            "customHooks": "自定义Hook开发",
+            "project": "B站评论案例综合实战"
+          }
+        },
+        "mysql": {
+          "title": "MySQL数据库基础",
+          "description": "MySQL数据库、SQL语法、数据库设计和基础操作",
+          "lessons": {
+            "setup": "MySQL环境搭建与基础概念",
+            "database": "数据库和表的创建管理",
+            "datatypes": "数据类型与约束条件",
+            "queries": "SQL基础查询语句",
+            "advanced": "高级查询与连接操作",
+            "indexing": "索引设计与性能优化",
+            "procedures": "存储过程与触发器",
+            "transactions": "事务处理与并发控制",
+            "security": "数据库安全与备份恢复",
+            "enterprise": "MySQL企业级应用实战"
+          }
+        },
+        "nodejs": {
+          "title": "Node.js后端开发",
+          "description": "Node.js服务端开发、Express框架、API设计和数据库集成",
+          "lessons": {
+            "setup": "Node.js环境搭建与核心概念",
+            "modules": "模块系统与包管理",
+            "express": "Express框架基础",
+            "routing": "路由设计与中间件开发",
+            "api": "RESTful API设计与开发",
+            "upload": "文件上传与处理",
+            "auth": "用户认证与权限管理",
+            "error": "错误处理与日志管理",
+            "optimization": "性能优化与安全防护",
+            "enterprise": "Node.js企业级项目实战"
+          }
+        },
+        "database": {
+          "title": "数据库集成开发",
+          "description": "高级数据库技术：MongoDB、Redis、ORM框架和性能优化",
+          "lessons": {
+            "mysql": "Node.js与MySQL集成开发",
+            "prisma": "Prisma ORM框架使用",
+            "mongodb": "MongoDB与NoSQL数据库",
+            "redis": "Redis缓存与Session管理",
+            "optimization": "数据库性能优化与监控",
+            "architecture": "全栈数据库架构实战"
+          }
+        },
+        "docker": {
+          "title": "Docker容器化部署",
+          "description": "Docker容器技术、Kubernetes编排和云平台部署",
+          "lessons": {
+            "basics": "Docker基础与容器技术",
+            "compose": "Docker Compose多容器编排",
+            "kubernetes": "Kubernetes容器编排",
+            "cicd": "CI/CD自动化部署流水线",
+            "cloud": "云平台部署与监控实战"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "id": 417,
+    "title": "太平洋大西洋水流问题",
+    "difficulty": "中等",
+    "leetcodeId": 417,
+    "category": "graph",
+    "patterns": [
+      "graph_dfs_from_boundary"
+    ],
+    "tags": [
+      "深度优先搜索",
+      "广度优先搜索",
+      "数组",
+      "矩阵"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "有一个 m × n 的矩形岛屿，与 太平洋 和 大西洋 相邻。 \"太平洋\" 处于大陆的左边界和上边界，而 \"大西洋\" 处于大陆的右边界和下边界。这个岛被分割成一个由若干方形单元格组成的网格。给定一个 m x n 的整数矩阵 heights ， heights[r][c] 表示坐标 (r, c) 上单元格 高于海平面的高度 。岛上雨水较多，如果相邻单元格的高度 小于或等于 当前单元格的高度，雨水可以直接向北、南、东、西流向相邻单元格。水可以从海洋中的任何单元格流入海洋。返回网格坐标 result 的 2D 列表 ，其中 result[i] = [ri, ci] 表示雨水从单元格 (ri, ci) 流动 既可到达太平洋也可到达大西洋 。",
+  "examples": [
+    {
+      "input": "heights = [[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1],[6,7,1,4,5],[5,1,1,2,4]]",
+      "output": "[[0,4],[1,3],[1,4],[2,2],[3,0],[3,1],[4,0]]",
+      "explanation": "以下单元格可以流到太平洋和大西洋：\n(0,4): 从 (0,4) 开始，可以到达太平洋和大西洋\n..."
+    }
+  ],
+  "constraints": [
+    "m == heights.length",
+    "n == heights[r].length",
+    "1 <= m, n <= 200",
+    "0 <= heights[r][c] <= 10⁵"
+  ],
+  "hints": [
+    "从海洋边界开始反向DFS",
+    "分别从太平洋和大西洋的边界开始搜索",
+    "找到既能到达太平洋又能到达大西洋的节点"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "reverse_dfs",
+      "name": "反向DFS",
+      "timeComplexity": "O(m × n)",
+      "spaceComplexity": "O(m × n)",
+      "description": "从海洋边界开始反向DFS搜索",
+      "code": {
+        "javascript": "/**\n * 太平洋大西洋水流问题 - 从海洋边界开始反向DFS搜索\n */\n\nfunction pacificAtlantic(heights) {\n    const m = heights.length;\n    const n = heights[0].length;\n\n    // 能到达太平洋和大西洋的标记\n    const pacificReachable = Array(m).fill(null).map(() => Array(n).fill(false));\n    const atlanticReachable = Array(m).fill(null).map(() => Array(n).fill(false));\n\n    const directions = [[0, 1], [1, 0], [0, -1], [-1, 0]];\n\n    function dfs(row, col, reachable, prevHeight) {\n        // 边界检查和高度检查\n        if (row < 0 || row >= m || col < 0 || col >= n || reachable[row][col] || heights[row][col] < prevHeight) {\n            return;\n        }\n\n        reachable[row][col] = true;\n\n        for (const [dr, dc] of directions) {\n            dfs(row + dr, col + dc, reachable, heights[row][col]);\n        }\n    }\n\n    // 从太平洋边界开始DFS（上边界和左边界）\n    for (let i = 0; i < m; i++) {\n        dfs(i, 0, pacificReachable, heights[i][0]); // 左边界\n    }\n    for (let j = 0; j < n; j++) {\n        dfs(0, j, pacificReachable, heights[0][j]); // 上边界\n    }\n\n    // 从大西洋边界开始DFS（下边界和右边界）\n    for (let i = 0; i < m; i++) {\n        dfs(i, n - 1, atlanticReachable, heights[i][n - 1]); // 右边界\n    }\n    for (let j = 0; j < n; j++) {\n        dfs(m - 1, j, atlanticReachable, heights[m - 1][j]); // 下边界\n    }\n\n    // 找到既能到达太平洋又能到达大西洋的节点\n    const result = [];\n    for (let i = 0; i < m; i++) {\n        for (let j = 0; j < n; j++) {\n            if (pacificReachable[i][j] && atlanticReachable[i][j]) {\n                result.push([i, j]);\n            }\n        }\n    }\n\n    return result;\n}\n\n\n/**\n * 测试pacificAtlantic函数\n */\nfunction testPacificAtlantic() {\n    console.log(\"=== pacificAtlantic测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: heights = [[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1],[6,7,1,4,5],[5,1,1,2,4]]\");\n    console.log(\"期望输出: [[0,4],[1,3],[1,4],[2,2],[3,0],[3,1],[4,0]]\");\n    console.log(\"说明: 以下单元格可以流到太平洋和大西洋：\n(0,4): 从 (0,4) 开始，可以到达太平洋和大西洋\n...\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testPacificAtlantic();",
+        "python": "\"\"\"\n太平洋大西洋水流问题 - 从海洋边界开始反向DFS搜索\n\"\"\"\n\ndef pacificAtlantic(heights):\n    m, n = len(heights), len(heights[0])\n\n    # 能到达太平洋和大西洋的标记\n    pacific_reachable = [[False] * n for _ in range(m)]\n    atlantic_reachable = [[False] * n for _ in range(m)]\n\n    directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]\n\n    def dfs(row, col, reachable, prev_height):\n        # 边界检查和高度检查\n        if (row < 0 or row >= m or col < 0 or col >= n or\n            reachable[row][col] or heights[row][col] < prev_height):\n            return\n\n        reachable[row][col] = True\n\n        for dr, dc in directions:\n            dfs(row + dr, col + dc, reachable, heights[row][col])\n\n    # 从太平洋边界开始DFS\n    for i in range(m):\n        dfs(i, 0, pacific_reachable, heights[i][0])  # 左边界\n    for j in range(n):\n        dfs(0, j, pacific_reachable, heights[0][j])  # 上边界\n\n    # 从大西洋边界开始DFS\n    for i in range(m):\n        dfs(i, n - 1, atlantic_reachable, heights[i][n - 1])  # 右边界\n    for j in range(n):\n        dfs(m - 1, j, atlantic_reachable, heights[m - 1][j])  # 下边界\n\n    # 找到既能到达太平洋又能到达大西洋的节点\n    result = []\n    for i in range(m):\n        for j in range(n):\n            if pacific_reachable[i][j] and atlantic_reachable[i][j]:\n                result.append([i, j])\n\n    return result\n\n\ndef test_pacificAtlantic():\n    \"\"\"测试pacificAtlantic函数\"\"\"\n    print(\"=== pacificAtlantic测试 ===\")\n\n    # 测试用例\n    print(\"输入: heights = [[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1],[6,7,1,4,5],[5,1,1,2,4]]\")\n    print(\"期望输出: [[0,4],[1,3],[1,4],[2,2],[3,0],[3,1],[4,0]]\")\n    print(\"说明: 以下单元格可以流到太平洋和大西洋：\n(0,4): 从 (0,4) 开始，可以到达太平洋和大西洋\n...\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_pacificAtlantic()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 太平洋大西洋水流问题解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "heights = [[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1],[6,7,1,4,5],[5,1,1,2,4]]",
+      "output": "[[0,4],[1,3],[1,4],[2,2],[3,0],[3,1],[4,0]]",
+      "explanation": "以下单元格可以流到太平洋和大西洋：\n(0,4): 从 (0,4) 开始，可以到达太平洋和大西洋\n..."
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "太平洋大西洋水流问题变种练习",
+      "description": "基于太平洋大西洋水流问题的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "meta": {
+    "id": 11,
+    "title": "盛最多水的容器",
+    "difficulty": "中等",
+    "leetcodeId": 11,
+    "category": "array",
+    "patterns": [
+      "array_two_pointers"
+    ],
+    "tags": [
+      "贪心",
+      "数组",
+      "双指针"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给定一个长度为 n 的整数数组 height 。有 n 条垂线，第 i 条线的两个端点是 (i, 0) 和 (i, height[i]) 。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。返回容器可以储存的最大水量。说明：你不能倾斜容器。",
+  "examples": [
+    {
+      "input": "height = [1,8,6,2,5,4,8,3,7]",
+      "output": "49",
+      "explanation": "图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 49。"
+    }
+  ],
+  "functionInfo": {
+    "javascript": {
+      "functionName": "maxArea",
+      "parameters": ["height"],
+      "template": "function maxArea(height) {\n    // 在这里实现你的代码\n    \n}"
+    },
+    "python": {
+      "functionName": "maxArea",
+      "parameters": ["height"],
+      "template": "def maxArea(height):\n    # 在这里实现你的代码\n    pass"
+    }
+  },
+  "testCases": [
+    {
+      "id": 1,
+      "input": {
+        "height": [1,8,6,2,5,4,8,3,7]
+      },
+      "expected": 49,
+      "description": "标准测试用例"
+    },
+    {
+      "id": 2,
+      "input": {
+        "height": [1,1]
+      },
+      "expected": 1,
+      "description": "最小情况"
+    },
+    {
+      "id": 3,
+      "input": {
+        "height": [4,3,2,1,4]
+      },
+      "expected": 16,
+      "description": "对称情况"
+    },
+    {
+      "id": 4,
+      "input": {
+        "height": [1,2,1]
+      },
+      "expected": 2,
+      "description": "中间最高"
+    }
+  ],
+  "constraints": [
+    "n == height.length",
+    "2 <= n <= 10⁵",
+    "0 <= height[i] <= 10⁴"
+  ],
+  "hints": [
+    "使用双指针的方法",
+    "面积的计算公式是 min(height[left], height[right]) * (right - left)",
+    "移动较短的指针，因为移动较长的指针不会得到更大的面积"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "two_pointers",
+      "name": "双指针",
+      "timeComplexity": "O(n)",
+      "spaceComplexity": "O(1)",
+      "description": "使用双指针，移动较短的指针",
+      "code": {
+        "javascript": "/**\n * 盛最多水的容器 - 使用双指针，移动较短的指针\n */\n\nfunction maxArea(height) {\n    let left = 0, right = height.length - 1, maxWater = 0;\n    while (left < right) {\n        const width = right - left;\n        const currentHeight = Math.min(height[left], height[right]);\n        maxWater = Math.max(maxWater, width * currentHeight);\n        if (height[left] < height[right]) left++;\n        else right--;\n    }\n    return maxWater;\n}\n\n\n/**\n * 测试maxArea函数\n */\nfunction testMaxArea() {\n    console.log(\"=== maxArea测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: height = [1,8,6,2,5,4,8,3,7]\");\n    console.log(\"期望输出: 49\");\n    console.log(\"说明: 图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 49。\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testMaxArea();",
+        "python": "\"\"\"\n盛最多水的容器 - 使用双指针，移动较短的指针\n\"\"\"\n\ndef maxArea(height):\n    left, right = 0, len(height) - 1\n    max_water = 0\n    while left < right:\n        width = right - left\n        current_height = min(height[left], height[right])\n        max_water = max(max_water, width * current_height)\n        if height[left] < height[right]:\n            left += 1\n        else:\n            right -= 1\n    return max_water\n\n\ndef test_maxArea():\n    \"\"\"测试maxArea函数\"\"\"\n    print(\"=== maxArea测试 ===\")\n\n    # 测试用例\n    print(\"输入: height = [1,8,6,2,5,4,8,3,7]\")\n    print(\"期望输出: 49\")\n    print(\"说明: 图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 49。\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_maxArea()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 盛最多水的容器解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "height = [1,8,6,2,5,4,8,3,7]",
+      "output": "49",
+      "explanation": "图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 49。"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "盛最多水的容器变种练习",
+      "description": "基于盛最多水的容器的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

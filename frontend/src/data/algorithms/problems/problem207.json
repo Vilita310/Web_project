@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "id": 207,
+    "title": "课程表",
+    "difficulty": "中等",
+    "leetcodeId": 207,
+    "category": "graph",
+    "patterns": [
+      "topological_sort"
+    ],
+    "tags": [
+      "深度优先搜索",
+      "广度优先搜索",
+      "图",
+      "拓扑排序"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "你这个学期必须选修 numCourses 门课程，记为 0 到 numCourses - 1 。在选修某些课程之前需要一些先修课程。 先修课程按数组 prerequisites 给出，其中 prerequisites[i] = [ai, bi] ，表示如果要学习课程 ai 则 必须 先学习课程 bi 。例如，先修课程对 [0, 1] 表示：想要学习课程 0 ，你需要先完成课程 1 。请你判断是否可能完成所有课程的学习？如果可以，返回 true ；否则，返回 false 。",
+  "examples": [
+    {
+      "input": "numCourses = 2, prerequisites = [[1,0]]",
+      "output": "true",
+      "explanation": "总共有 2 门课程。学习课程 1 之前，你需要完成课程 0 。这是可能的。"
+    },
+    {
+      "input": "numCourses = 2, prerequisites = [[1,0],[0,1]]",
+      "output": "false",
+      "explanation": "总共有 2 门课程。学习课程 1 之前，你需要先完成​课程 0 ；并且学习课程 0 之前，你还应先完成课程 1 。这是不可能的。"
+    }
+  ],
+  "constraints": [
+    "1 <= numCourses <= 10^5",
+    "0 <= prerequisites.length <= 5000",
+    "prerequisites[i].length == 2",
+    "0 <= ai, bi < numCourses",
+    "prerequisites[i] 中的所有课程对 互不相同"
+  ],
+  "hints": [
+    "这是一个拓扑排序问题",
+    "可以使用DFS检测环",
+    "也可以使用BFS和入度数组"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "topological_sort",
+      "name": "拓扑排序",
+      "timeComplexity": "O(V + E)",
+      "spaceComplexity": "O(V + E)",
+      "description": "使用BFS进行拓扑排序，检测是否存在环",
+      "code": {
+        "javascript": "/**\n * 课程表 - 使用BFS进行拓扑排序，检测是否存在环\n */\n\nfunction canFinish(numCourses, prerequisites) {\n    // 构建邻接表和入度数组\n    const graph = Array(numCourses).fill().map(() => []);\n    const inDegree = Array(numCourses).fill(0);\n\n    for (const [course, prereq] of prerequisites) {\n        graph[prereq].push(course);\n        inDegree[course]++;\n    }\n\n    // 找到所有入度为0的课程\n    const queue = [];\n    for (let i = 0; i < numCourses; i++) {\n        if (inDegree[i] === 0) {\n            queue.push(i);\n        }\n    }\n\n    let completed = 0;\n    while (queue.length > 0) {\n        const course = queue.shift();\n        completed++;\n\n        // 移除该课程，更新相邻课程的入度\n        for (const nextCourse of graph[course]) {\n            inDegree[nextCourse]--;\n            if (inDegree[nextCourse] === 0) {\n                queue.push(nextCourse);\n            }\n        }\n    }\n\n    return completed === numCourses;\n}\n\n\n/**\n * 测试canFinish函数\n */\nfunction testCanFinish() {\n    console.log(\"=== canFinish测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: numCourses = 2, prerequisites = [[1,0]]\");\n    console.log(\"期望输出: true\");\n    console.log(\"说明: 总共有 2 门课程。学习课程 1 之前，你需要完成课程 0 。这是可能的。\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testCanFinish();",
+        "python": "\"\"\"\n课程表 - 使用BFS进行拓扑排序，检测是否存在环\n\"\"\"\n\ndef canFinish(numCourses, prerequisites):\n    from collections import deque, defaultdict\n\n    # 构建邻接表和入度数组\n    graph = defaultdict(list)\n    in_degree = [0] * numCourses\n\n    for course, prereq in prerequisites:\n        graph[prereq].append(course)\n        in_degree[course] += 1\n\n    # 找到所有入度为0的课程\n    queue = deque([i for i in range(numCourses) if in_degree[i] == 0])\n\n    completed = 0\n    while queue:\n        course = queue.popleft()\n        completed += 1\n\n        # 移除该课程，更新相邻课程的入度\n        for next_course in graph[course]:\n            in_degree[next_course] -= 1\n            if in_degree[next_course] == 0:\n                queue.append(next_course)\n\n    return completed == numCourses\n\n\ndef test_canFinish():\n    \"\"\"测试canFinish函数\"\"\"\n    print(\"=== canFinish测试 ===\")\n\n    # 测试用例\n    print(\"输入: numCourses = 2, prerequisites = [[1,0]]\")\n    print(\"期望输出: true\")\n    print(\"说明: 总共有 2 门课程。学习课程 1 之前，你需要完成课程 0 。这是可能的。\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_canFinish()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 课程表解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "numCourses = 2, prerequisites = [[1,0]]",
+      "output": "true",
+      "explanation": "总共有 2 门课程。学习课程 1 之前，你需要完成课程 0 。这是可能的。"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "课程表变种练习",
+      "description": "基于课程表的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

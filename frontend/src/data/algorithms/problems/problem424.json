@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "id": 424,
+    "title": "替换后的最长重复字符",
+    "difficulty": "中等",
+    "leetcodeId": 424,
+    "category": "sliding_window",
+    "patterns": [
+      "sliding_window_char_replacement"
+    ],
+    "tags": [
+      "哈希表",
+      "字符串",
+      "滑动窗口"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给你一个字符串 s 和一个整数 k 。你可以选择字符串中的任一字符，并将其更改为任何其他大写英文字符。该操作最多可执行 k 次。在执行上述操作后，返回包含相同字母的最长子字符串的长度。",
+  "examples": [
+    {
+      "input": "s = \"ABAB\", k = 2",
+      "output": "4",
+      "explanation": "用两个'A'替换两个'B',反之亦然。"
+    },
+    {
+      "input": "s = \"AABABBA\", k = 1",
+      "output": "4",
+      "explanation": "将中间的一个'A'替换为'B',字符串变为 \"AABBBBA\"。子字符串 \"BBBB\" 有最长重复字母, 答案为 4。"
+    }
+  ],
+  "constraints": [
+    "1 <= s.length <= 10⁵",
+    "s 仅由大写英文字母组成",
+    "0 <= k <= s.length"
+  ],
+  "hints": [
+    "使用滑动窗口技术",
+    "维护窗口内字符的频次",
+    "当需要替换的字符数超过k时，收缩左边界"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "sliding_window",
+      "name": "滑动窗口",
+      "timeComplexity": "O(n)",
+      "spaceComplexity": "O(26) = O(1)",
+      "description": "使用滑动窗口维护最长重复字符子串",
+      "code": {
+        "javascript": "/**\n * 替换后的最长重复字符 - 使用滑动窗口维护最长重复字符子串\n */\n\nfunction characterReplacement(s, k) {\n    const charCount = new Array(26).fill(0);\n    let left = 0;\n    let maxCharCount = 0;\n    let maxLength = 0;\n\n    for (let right = 0; right < s.length; right++) {\n        const rightChar = s.charCodeAt(right) - 65; // 'A' = 65\n        charCount[rightChar]++;\n        maxCharCount = Math.max(maxCharCount, charCount[rightChar]);\n\n        // 如果窗口大小减去最多字符数大于k，需要收缩窗口\n        if (right - left + 1 - maxCharCount > k) {\n            const leftChar = s.charCodeAt(left) - 65;\n            charCount[leftChar]--;\n            left++;\n        }\n\n        maxLength = Math.max(maxLength, right - left + 1);\n    }\n\n    return maxLength;\n}\n\n\n/**\n * 测试characterReplacement函数\n */\nfunction testCharacterReplacement() {\n    console.log(\"=== characterReplacement测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: s = \"ABAB\", k = 2\");\n    console.log(\"期望输出: 4\");\n    console.log(\"说明: 用两个'A'替换两个'B',反之亦然。\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testCharacterReplacement();",
+        "python": "\"\"\"\n替换后的最长重复字符 - 使用滑动窗口维护最长重复字符子串\n\"\"\"\n\ndef characterReplacement(s, k):\n    char_count = [0] * 26\n    left = 0\n    max_char_count = 0\n    max_length = 0\n\n    for right in range(len(s)):\n        right_char = ord(s[right]) - ord('A')\n        char_count[right_char] += 1\n        max_char_count = max(max_char_count, char_count[right_char])\n\n        # 如果窗口大小减去最多字符数大于k，需要收缩窗口\n        if right - left + 1 - max_char_count > k:\n            left_char = ord(s[left]) - ord('A')\n            char_count[left_char] -= 1\n            left += 1\n\n        max_length = max(max_length, right - left + 1)\n\n    return max_length\n\n\ndef test_characterReplacement():\n    \"\"\"测试characterReplacement函数\"\"\"\n    print(\"=== characterReplacement测试 ===\")\n\n    # 测试用例\n    print(\"输入: s = \"ABAB\", k = 2\")\n    print(\"期望输出: 4\")\n    print(\"说明: 用两个'A'替换两个'B',反之亦然。\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_characterReplacement()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 替换后的最长重复字符解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "s = \"ABAB\", k = 2",
+      "output": "4",
+      "explanation": "用两个'A'替换两个'B',反之亦然。"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "替换后的最长重复字符变种练习",
+      "description": "基于替换后的最长重复字符的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

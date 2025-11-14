@@ -1,0 +1,242 @@
+/* ImpactMetricsSection样式 */
+
+.container {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 80px 0;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.wrapper {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.title {
+  font-size: 2.3rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.mainContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.leftSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rightSection {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.radarSection {
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.radarTitle {
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.radarSubtitle {
+  margin-top: 20px;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.radarContainer {
+  position: relative;
+  display: inline-block;
+  margin: 20px 0;
+}
+
+.radarSvg {
+  display: block;
+}
+
+.radarLabels {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.radarLabel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  pointer-events: none;
+}
+
+.radarLabelText {
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.9;
+  white-space: nowrap;
+}
+
+.radarLabelValue {
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.radarPoint {
+  transition: all 0.3s ease;
+}
+
+.dataCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.statItem {
+  padding: 32px 24px;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.statItem:hover {
+  transform: translateY(-2px);
+}
+
+.statValue {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+.aiFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.aiFeatureItem {
+  padding: 24px;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.aiFeatureItem:hover {
+  transform: translateY(-1px);
+}
+
+.aiFeatureHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.aiFeatureIcon {
+  font-size: 20px;
+}
+
+.aiFeatureTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.aiFeatureDescription {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.85;
+  margin-bottom: 8px;
+}
+
+.aiFeatureHighlight {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  opacity: 0.9;
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+  .mainContent {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .dataCards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 60px 0;
+  }
+
+  .wrapper {
+    padding: 0 16px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .radarSection {
+    padding: 24px;
+  }
+
+  .statItem {
+    padding: 24px 16px;
+  }
+
+  .statValue {
+    font-size: 1.8rem;
+  }
+}

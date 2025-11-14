@@ -1,0 +1,99 @@
+{
+  "welcome": "欢迎回来，{{name}}",
+  "continueStudy": "连续学习",
+  "days": "天",
+  "points": "积分",
+  "continueLearning": "继续学习",
+  "stats": {
+    "studyDays": "学习天数",
+    "completedCourses": "完成课程",
+    "codingPractice": "编程练习",
+    "projectExperience": "项目经验",
+    "courses": "门",
+    "problems": "道",
+    "projects": "个"
+  },
+  "courseProgress": {
+    "title": "课程进度",
+    "viewAll": "查看全部",
+    "completed": "已完成",
+    "active": "学习中",
+    "upcoming": "未开始",
+    "courses": {
+      "pythonBasics": "Python基础",
+      "sqlDatabase": "SQL数据库",
+      "dataProcessing": "数据处理与分析",
+      "sparkBigData": "Spark大数据处理",
+      "machineLearning": "机器学习基础"
+    }
+  },
+  "skillLevel": {
+    "title": "技能水平"
+  },
+  "smartRecommendations": {
+    "title": "智能推荐",
+    "startLearning": "开始学习",
+    "items": [
+      {
+        "title": "Apache Kafka 实战",
+        "type": "课程",
+        "difficulty": "中级",
+        "duration": "6小时",
+        "reason": "基于你的Spark学习进度推荐"
+      },
+      {
+        "title": "实时数据流处理项目",
+        "type": "项目",
+        "difficulty": "高级",
+        "duration": "2周",
+        "reason": "提升项目实战经验"
+      },
+      {
+        "title": "Docker容器化部署",
+        "type": "技能",
+        "difficulty": "中级",
+        "duration": "4小时",
+        "reason": "完善DevOps技能栈"
+      }
+    ]
+  },
+  "todayTasks": {
+    "title": "今日任务",
+    "urgent": "紧急",
+    "view": "查看",
+    "tasks": [
+      "提交数据分析项目报告",
+      "完成Spark章节测验",
+      "参加直播答疑课",
+      "更新简历项目经验"
+    ],
+    "deadlines": [
+      "今天 18:00",
+      "明天 20:00",
+      "周五 19:30",
+      "本周日"
+    ]
+  },
+  "recentActivities": {
+    "title": "最近活动",
+    "activities": [
+      "完成了《Python数据处理》第5章",
+      "解决了3道算法练习题",
+      "提交了电商数据分析项目",
+      "获得了数据清洗专家徽章"
+    ],
+    "times": [
+      "2小时前",
+      "5小时前",
+      "1天前",
+      "2天前"
+    ]
+  },
+  "studyCalendar": {
+    "title": "学习日历"
+  },
+  "userProfile": {
+    "level": "L3 进阶学员",
+    "path": "数据工程师"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "id": 371,
+    "title": "两整数之和",
+    "difficulty": "中等",
+    "leetcodeId": 371,
+    "category": "bit_manipulation",
+    "patterns": [
+      "bit_manipulation_add"
+    ],
+    "tags": [
+      "位运算",
+      "数学"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给你两个整数 a 和 b ，不使用 运算符 + 和 - ，计算并返回两整数之和。",
+  "examples": [
+    {
+      "input": "a = 1, b = 2",
+      "output": "3",
+      "explanation": "1 + 2 = 3"
+    },
+    {
+      "input": "a = 2, b = 3",
+      "output": "5",
+      "explanation": "2 + 3 = 5"
+    }
+  ],
+  "constraints": [
+    "-1000 <= a, b <= 1000"
+  ],
+  "hints": [
+    "使用位运算模拟加法过程",
+    "异或运算可以得到不考虑进位的和",
+    "与运算后左移一位可以得到进位"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "bit_manipulation",
+      "name": "位运算",
+      "timeComplexity": "O(1)",
+      "spaceComplexity": "O(1)",
+      "description": "使用位运算实现加法",
+      "code": {
+        "javascript": "/**\n * 两整数之和 - 使用位运算实现加法\n */\n\nfunction getSum(a, b) {\n    while (b !== 0) {\n        // 计算不考虑进位的和\n        const sum = a ^ b;\n        // 计算进位\n        const carry = (a & b) << 1;\n\n        a = sum;\n        b = carry;\n    }\n\n    return a;\n}\n\n\n/**\n * 测试getSum函数\n */\nfunction testGetSum() {\n    console.log(\"=== getSum测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: a = 1, b = 2\");\n    console.log(\"期望输出: 3\");\n    console.log(\"说明: 1 + 2 = 3\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testGetSum();",
+        "python": "\"\"\"\n两整数之和 - 使用位运算实现加法\n\"\"\"\n\ndef getSum(a, b):\n    # 32位掩码，用于处理负数\n    mask = 0xFFFFFFFF\n\n    while b != 0:\n        # 计算不考虑进位的和\n        sum_without_carry = (a ^ b) & mask\n        # 计算进位\n        carry = ((a & b) << 1) & mask\n\n        a = sum_without_carry\n        b = carry\n\n    # 如果a是负数（最高位是1），需要转换为Python的负数表示\n    return a if a <= 0x7FFFFFFF else ~(a ^ mask)\n\n\ndef test_getSum():\n    \"\"\"测试getSum函数\"\"\"\n    print(\"=== getSum测试 ===\")\n\n    # 测试用例\n    print(\"输入: a = 1, b = 2\")\n    print(\"期望输出: 3\")\n    print(\"说明: 1 + 2 = 3\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_getSum()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 两整数之和解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "a = 1, b = 2",
+      "output": "3",
+      "explanation": "1 + 2 = 3"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "两整数之和变种练习",
+      "description": "基于两整数之和的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

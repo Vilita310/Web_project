@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "id": 33,
+    "title": "搜索旋转排序数组",
+    "difficulty": "中等",
+    "leetcodeId": 33,
+    "category": "array",
+    "patterns": [
+      "binary_search_rotated"
+    ],
+    "tags": [
+      "数组",
+      "二分查找"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "整数数组 nums 按升序排列，数组中的值 互不相同 。在传递给函数之前，nums 在预先未知的某个下标 k（0 <= k < nums.length）上进行了 旋转，使数组变为 [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]]（下标 从 0 开始 计数）。例如， [0,1,2,4,5,6,7] 在下标 3 处经旋转后可能变为 [4,5,6,7,0,1,2] 。给你 旋转后 的数组 nums 和一个整数 target ，如果 nums 中存在这个目标值 target ，则返回它的下标，否则返回 -1 。你必须设计一个时间复杂度为 O(log n) 的算法解决此问题。",
+  "examples": [
+    {
+      "input": "nums = [4,5,6,7,0,1,2], target = 0",
+      "output": "4",
+      "explanation": "target 在下标 4 处。"
+    },
+    {
+      "input": "nums = [4,5,6,7,0,1,2], target = 3",
+      "output": "-1",
+      "explanation": "target 不存在于数组中。"
+    },
+    {
+      "input": "nums = [1], target = 0",
+      "output": "-1",
+      "explanation": "target 不存在于数组中。"
+    }
+  ],
+  "constraints": [
+    "1 <= nums.length <= 5000",
+    "-10⁴ <= nums[i] <= 10⁴",
+    "nums 中的每个值都 独一无二",
+    "题目数据保证 nums 在预先未知的某个下标上进行了旋转",
+    "-10⁴ <= target <= 10⁴"
+  ],
+  "hints": [
+    "数组本来是升序排列的，但在某一点上进行了旋转。",
+    "如果中间的元素小于最右边元素，则右半部分是排序的，否则左半部分是排序的。"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "binary_search",
+      "name": "二分查找",
+      "timeComplexity": "O(log n)",
+      "spaceComplexity": "O(1)",
+      "description": "使用二分查找，通过判断哪一边是有序的来缩小搜索范围",
+      "code": {
+        "javascript": "/**\n * 搜索旋转排序数组 - 使用二分查找，通过判断哪一边是有序的来缩小搜索范围\n */\n\nfunction search(nums, target) {\n    let left = 0, right = nums.length - 1;\n    \n    while (left <= right) {\n        const mid = Math.floor((left + right) / 2);\n        \n        if (nums[mid] === target) {\n            return mid;\n        }\n        \n        // 判断左半部分是否有序\n        if (nums[left] <= nums[mid]) {\n            if (nums[left] <= target && target < nums[mid]) {\n                right = mid - 1;\n            } else {\n                left = mid + 1;\n            }\n        } else {\n            // 右半部分有序\n            if (nums[mid] < target && target <= nums[right]) {\n                left = mid + 1;\n            } else {\n                right = mid - 1;\n            }\n        }\n    }\n    \n    return -1;\n}\n\n\n/**\n * 测试search函数\n */\nfunction testSearch() {\n    console.log(\"=== search测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: nums = [4,5,6,7,0,1,2], target = 0\");\n    console.log(\"期望输出: 4\");\n    console.log(\"说明: target 在下标 4 处。\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testSearch();",
+        "python": "\"\"\"\n搜索旋转排序数组 - 使用二分查找，通过判断哪一边是有序的来缩小搜索范围\n\"\"\"\n\ndef search(nums, target):\n    left, right = 0, len(nums) - 1\n    \n    while left <= right:\n        mid = (left + right) // 2\n        \n        if nums[mid] == target:\n            return mid\n        \n        # 判断左半部分是否有序\n        if nums[left] <= nums[mid]:\n            if nums[left] <= target < nums[mid]:\n                right = mid - 1\n            else:\n                left = mid + 1\n        else:\n            # 右半部分有序\n            if nums[mid] < target <= nums[right]:\n                left = mid + 1\n            else:\n                right = mid - 1\n    \n    return -1\n\n\ndef test_search():\n    \"\"\"测试search函数\"\"\"\n    print(\"=== search测试 ===\")\n\n    # 测试用例\n    print(\"输入: nums = [4,5,6,7,0,1,2], target = 0\")\n    print(\"期望输出: 4\")\n    print(\"说明: target 在下标 4 处。\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_search()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 搜索旋转排序数组解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "nums = [4,5,6,7,0,1,2], target = 0",
+      "output": "4",
+      "explanation": "target 在下标 4 处。"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "搜索旋转排序数组变种练习",
+      "description": "基于搜索旋转排序数组的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

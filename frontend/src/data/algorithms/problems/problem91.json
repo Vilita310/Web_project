@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "id": 91,
+    "title": "解码方法",
+    "difficulty": "中等",
+    "leetcodeId": 91,
+    "category": "dynamic_programming",
+    "patterns": [
+      "dynamic_programming_decode"
+    ],
+    "tags": [
+      "字符串",
+      "动态规划"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "一条包含字母 A-Z 的消息通过以下映射进行了 编码 ：'A' -> \"1\", 'B' -> \"2\", ..., 'Z' -> \"26\"。要 解码 已编码的消息，所有数字必须基于上述映射的方法，反向映射回字母（可能有多种方法）。例如，\"11106\" 可以映射为：\"AAJF\" (将消息分组为 (1 1 10 6))，\"KJF\" (将消息分组为 (11 10 6))。注意，消息不能分组为  (1 11 06) ，因为 \"06\" 不能映射为 \"F\" ，这是由于 \"6\" 和 \"06\" 在映射中并不等价。给你一个只含数字的 非空 字符串 s ，请计算并返回 解码 方法的 总数 。",
+  "examples": [
+    {
+      "input": "s = \"12\"",
+      "output": "2",
+      "explanation": "它可以解码为 \"AB\"（1 2）或者 \"L\"（12）"
+    },
+    {
+      "input": "s = \"226\"",
+      "output": "3",
+      "explanation": "它可以解码为 \"BZ\" (2 26), \"VF\" (22 6), 或者 \"BBF\" (2 2 6)"
+    },
+    {
+      "input": "s = \"06\"",
+      "output": "0",
+      "explanation": "\"06\" 不能映射到 \"F\" ，因为字符串含有前导零"
+    }
+  ],
+  "constraints": [
+    "1 <= s.length <= 100",
+    "s 只包含数字，并且可能包含前导零"
+  ],
+  "hints": [
+    "使用动态规划",
+    "考虑单个数字和两个数字的组合",
+    "注意处理前导零的情况"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "dynamic_programming",
+      "name": "动态规划",
+      "timeComplexity": "O(n)",
+      "spaceComplexity": "O(n)",
+      "description": "使用动态规划计算解码方法总数",
+      "code": {
+        "javascript": "/**\n * 解码方法 - 使用动态规划计算解码方法总数\n */\n\nfunction numDecodings(s) {\n    if (!s || s[0] === '0') return 0;\n\n    const n = s.length;\n    const dp = new Array(n + 1).fill(0);\n    dp[0] = 1;\n    dp[1] = 1;\n\n    for (let i = 2; i <= n; i++) {\n        const oneDigit = parseInt(s[i - 1]);\n        const twoDigits = parseInt(s.substring(i - 2, i));\n\n        if (oneDigit >= 1) {\n            dp[i] += dp[i - 1];\n        }\n\n        if (twoDigits >= 10 && twoDigits <= 26) {\n            dp[i] += dp[i - 2];\n        }\n    }\n\n    return dp[n];\n}\n\n\n/**\n * 测试numDecodings函数\n */\nfunction testNumDecodings() {\n    console.log(\"=== numDecodings测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: s = \"12\"\");\n    console.log(\"期望输出: 2\");\n    console.log(\"说明: 它可以解码为 \"AB\"（1 2）或者 \"L\"（12）\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testNumDecodings();",
+        "python": "\"\"\"\n解码方法 - 使用动态规划计算解码方法总数\n\"\"\"\n\ndef numDecodings(s):\n    if not s or s[0] == '0':\n        return 0\n\n    n = len(s)\n    dp = [0] * (n + 1)\n    dp[0] = 1\n    dp[1] = 1\n\n    for i in range(2, n + 1):\n        one_digit = int(s[i - 1])\n        two_digits = int(s[i - 2:i])\n\n        if one_digit >= 1:\n            dp[i] += dp[i - 1]\n\n        if 10 <= two_digits <= 26:\n            dp[i] += dp[i - 2]\n\n    return dp[n]\n\n\ndef test_numDecodings():\n    \"\"\"测试numDecodings函数\"\"\"\n    print(\"=== numDecodings测试 ===\")\n\n    # 测试用例\n    print(\"输入: s = \"12\"\")\n    print(\"期望输出: 2\")\n    print(\"说明: 它可以解码为 \"AB\"（1 2）或者 \"L\"（12）\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_numDecodings()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 解码方法解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "s = \"12\"",
+      "output": "2",
+      "explanation": "它可以解码为 \"AB\"（1 2）或者 \"L\"（12）"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "解码方法变种练习",
+      "description": "基于解码方法的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

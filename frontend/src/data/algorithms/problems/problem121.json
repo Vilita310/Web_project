@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "id": 121,
+    "title": "买卖股票的最佳时机",
+    "difficulty": "简单",
+    "leetcodeId": 121,
+    "category": "array",
+    "patterns": [
+      "array_dynamic_programming"
+    ],
+    "tags": [
+      "数组",
+      "动态规划"
+    ],
+    "estimatedTime": "15分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0 。",
+  "examples": [
+    {
+      "input": "prices = [7,1,5,3,6,4]",
+      "output": "5",
+      "explanation": "在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格；同时，你不能在买入前卖出股票。"
+    }
+  ],
+  "constraints": [
+    "1 <= prices.length <= 10⁵",
+    "0 <= prices[i] <= 10⁴"
+  ],
+  "hints": [
+    "记录迄今为止见过的最低价格",
+    "对于每个价格，计算如果今天卖出能获得的利润"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "one_pass",
+      "name": "一次遍历",
+      "timeComplexity": "O(n)",
+      "spaceComplexity": "O(1)",
+      "description": "维护最低买入价格和最大利润",
+      "code": {
+        "javascript": "/**\n * 买卖股票的最佳时机 - 维护最低买入价格和最大利润\n */\n\nfunction maxProfit(prices) {\n    let minPrice = Infinity, maxProfit = 0;\n    for (let price of prices) {\n        if (price < minPrice) minPrice = price;\n        else if (price - minPrice > maxProfit) maxProfit = price - minPrice;\n    }\n    return maxProfit;\n}\n\n\n/**\n * 测试maxProfit函数\n */\nfunction testMaxProfit() {\n    console.log(\"=== maxProfit测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: prices = [7,1,5,3,6,4]\");\n    console.log(\"期望输出: 5\");\n    console.log(\"说明: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格；同时，你不能在买入前卖出股票。\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testMaxProfit();",
+        "python": "\"\"\"\n买卖股票的最佳时机 - 维护最低买入价格和最大利润\n\"\"\"\n\ndef maxProfit(prices):\n    min_price = float('inf')\n    max_profit = 0\n    for price in prices:\n        if price < min_price:\n            min_price = price\n        elif price - min_price > max_profit:\n            max_profit = price - min_price\n    return max_profit\n\n\ndef test_maxProfit():\n    \"\"\"测试maxProfit函数\"\"\"\n    print(\"=== maxProfit测试 ===\")\n\n    # 测试用例\n    print(\"输入: prices = [7,1,5,3,6,4]\")\n    print(\"期望输出: 5\")\n    print(\"说明: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格；同时，你不能在买入前卖出股票。\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_maxProfit()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 买卖股票的最佳时机解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "prices = [7,1,5,3,6,4]",
+      "output": "5",
+      "explanation": "在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格；同时，你不能在买入前卖出股票。"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "买卖股票的最佳时机变种练习",
+      "description": "基于买卖股票的最佳时机的变种问题",
+      "difficulty": "简单",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

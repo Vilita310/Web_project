@@ -1,0 +1,217 @@
+{
+  "loading": {
+    "title": "Loading course data...",
+    "failed": "Loading Failed",
+    "failedDescription": "Failed to load course data, please refresh the page and try again",
+    "reload": "Reload"
+  },
+  "navigation": {
+    "backToLearning": "Back to Learning Center"
+  },
+  "chapters": {
+    "title": "Course Chapters",
+    "lessons": "lessons",
+    "duration": "Duration",
+    "progress": "Progress"
+  },
+  "time": {
+    "hours": "hours",
+    "minutes": "minutes",
+    "hour": "hour",
+    "minute": "minute"
+  },
+  "buttons": {
+    "startLearning": "Start Learning",
+    "continueLearning": "Continue Learning",
+    "study": "Study",
+    "review": "Review",
+    "enterProjectCenter": "Enter Project Center"
+  },
+  "status": {
+    "completed": "Completed",
+    "inProgress": "In Progress",
+    "locked": "Locked",
+    "pending": "Pending"
+  },
+  "courseData": {
+    "pythonData": {
+      "title": "Python Data Science",
+      "description": "Complete Python data processing and analysis tutorial",
+      "instructor": "AI Teaching Assistant Data",
+      "level": "Beginner",
+      "chapters": {
+        "pythonBasics": {
+          "title": "Python Fundamentals",
+          "description": "Python language basic syntax and core concepts",
+          "lessons": {
+            "setup": "Python Environment Setup",
+            "variables": "Variables and Data Types",
+            "control": "Control Flow",
+            "functions": "Function Definition",
+            "modules": "Modules and Packages",
+            "files": "File Operations",
+            "exceptions": "Exception Handling",
+            "practice": "Comprehensive Practice"
+          }
+        }
+      }
+    },
+    "dataScientist": {
+      "title": "Data Scientist Course",
+      "description": "Data analysis, statistical modeling, machine learning - from data insights to business value",
+      "instructor": "AI Teaching Assistant Science",
+      "level": "Beginner to Advanced",
+      "chapters": {
+        "pythonDataScience": {
+          "title": "Python Data Science Fundamentals",
+          "description": "Master Python data science core libraries and fundamental skills",
+          "lessons": {
+            "jupyter": "Python Environment and Jupyter",
+            "numpy": "NumPy Array Operations",
+            "pandas": "Pandas Data Processing",
+            "matplotlib": "Matplotlib Visualization",
+            "seaborn": "Seaborn Advanced Charts"
+          }
+        },
+        "statistics": {
+          "title": "Statistical Analysis and Data Exploration",
+          "description": "Master statistical fundamentals and exploratory data analysis",
+          "lessons": {
+            "descriptive": "Descriptive Statistics",
+            "distributions": "Probability Distributions",
+            "hypothesis": "Hypothesis Testing",
+            "correlation": "Correlation Analysis",
+            "dataCleaning": "Data Cleaning Techniques"
+          }
+        },
+        "machineLearning": {
+          "title": "Machine Learning in Practice",
+          "description": "Complete machine learning workflow from basic algorithms to model optimization",
+          "lessons": {
+            "supervised": "Supervised Learning Basics",
+            "regression": "Linear Regression and Classification",
+            "trees": "Decision Trees and Random Forest",
+            "evaluation": "Model Evaluation and Tuning"
+          }
+        }
+      }
+    },
+    "reactFullstack": {
+      "title": "JavaScript Full-Stack Engineer",
+      "description": "Complete JavaScript full-stack development learning path, from frontend basics to backend development, comprehensive technology stack coverage from database to deployment and operations",
+      "instructor": "AI Teaching Team",
+      "level": "Beginner to Advanced",
+      "chapters": {
+        "javascriptBasics": {
+          "title": "JavaScript Basic Development",
+          "description": "Modern JavaScript syntax, DOM operations, asynchronous programming and modular development basics",
+          "lessons": {
+            "setup": "JavaScript Environment Setup and Syntax Basics",
+            "variables": "Variable Declaration and Data Types",
+            "functions": "Functions and Scope",
+            "objects": "Object and Array Operations",
+            "dom": "DOM Operations and Event Handling",
+            "async": "Asynchronous Programming: Promise and async/await",
+            "es6": "ES6+ New Features and Modularization",
+            "debugging": "Error Handling and Debugging Techniques",
+            "webapi": "Web API and Browser Features",
+            "project": "JavaScript Project Practice"
+          }
+        },
+        "typescript": {
+          "title": "TypeScript Enterprise Development",
+          "description": "TypeScript type system, advanced features, laying foundation for modern development",
+          "lessons": {
+            "basics": "TypeScript Basics and Environment Setup",
+            "advanced": "TypeScript Advanced Type System",
+            "react": "TypeScript and React Integration Development",
+            "enterprise": "TypeScript Enterprise Project Practice"
+          }
+        },
+        "database": {
+          "title": "Database Integration Development",
+          "description": "Advanced database technologies: MongoDB, Redis, ORM frameworks and performance optimization",
+          "lessons": {
+            "mysql": "Node.js and MySQL Integration Development",
+            "prisma": "Prisma ORM Framework Usage",
+            "mongodb": "MongoDB and NoSQL Database",
+            "redis": "Redis Cache and Session Management",
+            "optimization": "Database Performance Optimization and Monitoring",
+            "architecture": "Full-stack Database Architecture Practice"
+          }
+        },
+        "reactDevelopment": {
+          "title": "React Frontend Development",
+          "description": "TypeScript-based React component development, state management and advanced features",
+          "lessons": {
+            "intro": "React Introduction and Environment Setup",
+            "jsx": "JSX Syntax Explained and Component State Management",
+            "events": "React Event Binding",
+            "useState": "useState Deep Dive and Form Control",
+            "parentChild": "Component Communication - Parent to Child",
+            "childParent": "Component Communication - Child to Parent and Sibling Communication",
+            "context": "Context Cross-layer Communication",
+            "useEffect": "useEffect Side Effect Management",
+            "customHooks": "Custom Hook Development",
+            "project": "Bilibili Comments Case Comprehensive Practice"
+          }
+        },
+        "mysql": {
+          "title": "MySQL Database Fundamentals",
+          "description": "MySQL database, SQL syntax, database design and basic operations",
+          "lessons": {
+            "setup": "MySQL Environment Setup and Basic Concepts",
+            "database": "Database and Table Creation Management",
+            "datatypes": "Data Types and Constraints",
+            "queries": "SQL Basic Query Statements",
+            "advanced": "Advanced Queries and Join Operations",
+            "indexing": "Index Design and Performance Optimization",
+            "procedures": "Stored Procedures and Triggers",
+            "transactions": "Transaction Processing and Concurrency Control",
+            "security": "Database Security and Backup Recovery",
+            "enterprise": "MySQL Enterprise Application Practice"
+          }
+        },
+        "nodejs": {
+          "title": "Node.js Backend Development",
+          "description": "Node.js server-side development, Express framework, API design and database integration",
+          "lessons": {
+            "setup": "Node.js Environment Setup and Core Concepts",
+            "modules": "Module System and Package Management",
+            "express": "Express Framework Basics",
+            "routing": "Route Design and Middleware Development",
+            "api": "RESTful API Design and Development",
+            "upload": "File Upload and Processing",
+            "auth": "User Authentication and Permission Management",
+            "error": "Error Handling and Log Management",
+            "optimization": "Performance Optimization and Security Protection",
+            "enterprise": "Node.js Enterprise Project Practice"
+          }
+        },
+        "database": {
+          "title": "Database Integration Development",
+          "description": "Advanced database technologies: MongoDB, Redis, ORM frameworks and performance optimization",
+          "lessons": {
+            "mysql": "Node.js and MySQL Integration Development",
+            "prisma": "Prisma ORM Framework Usage",
+            "mongodb": "MongoDB and NoSQL Database",
+            "redis": "Redis Cache and Session Management",
+            "optimization": "Database Performance Optimization and Monitoring",
+            "architecture": "Full-stack Database Architecture Practice"
+          }
+        },
+        "docker": {
+          "title": "Docker Containerized Deployment",
+          "description": "Docker container technology, Kubernetes orchestration and cloud platform deployment",
+          "lessons": {
+            "basics": "Docker Basics and Container Technology",
+            "compose": "Docker Compose Multi-container Orchestration",
+            "kubernetes": "Kubernetes Container Orchestration",
+            "cicd": "CI/CD Automated Deployment Pipeline",
+            "cloud": "Cloud Platform Deployment and Monitoring Practice"
+          }
+        }
+      }
+    }
+  }
+}

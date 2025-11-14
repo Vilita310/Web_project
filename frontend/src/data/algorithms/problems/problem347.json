@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "id": 347,
+    "title": "前 K 个高频元素",
+    "difficulty": "中等",
+    "leetcodeId": 347,
+    "category": "heap",
+    "patterns": [
+      "heap_top_k"
+    ],
+    "tags": [
+      "数组",
+      "哈希表",
+      "分治",
+      "桶排序",
+      "计数",
+      "快速选择",
+      "排序",
+      "堆"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给你一个整数数组 nums 和一个整数 k ，请你返回其中出现频率前 k 高的元素。你可以按 任意顺序 返回答案。",
+  "examples": [
+    {
+      "input": "nums = [1,1,1,2,2,3], k = 2",
+      "output": "[1,2]",
+      "explanation": "元素1出现3次，元素2出现2次，是出现频率最高的两个元素"
+    },
+    {
+      "input": "nums = [1], k = 1",
+      "output": "[1]",
+      "explanation": "只有一个元素，直接返回"
+    }
+  ],
+  "constraints": [
+    "1 <= nums.length <= 10⁵",
+    "k 的取值范围是 [1, 数组中不相同的元素的个数]",
+    "题目数据保证答案唯一，换句话说，数组中前 k 个高频元素的集合是唯一的"
+  ],
+  "hints": [
+    "使用哈希表统计每个元素的频率",
+    "可以使用堆来维护前k个高频元素",
+    "也可以使用桶排序的思想"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "heap",
+      "name": "小顶堆",
+      "timeComplexity": "O(n log k)",
+      "spaceComplexity": "O(n + k)",
+      "description": "使用小顶堆维护前k个高频元素",
+      "code": {
+        "javascript": "/**\n * 前 K 个高频元素 - 使用小顶堆维护前k个高频元素\n */\n\nfunction topKFrequent(nums, k) {\n    // 统计频率\n    const freqMap = new Map();\n    for (const num of nums) {\n        freqMap.set(num, (freqMap.get(num) || 0) + 1);\n    }\n\n    // 使用小顶堆维护前k个高频元素\n    class MinHeap {\n        constructor() {\n            this.heap = [];\n        }\n\n        push(item) {\n            this.heap.push(item);\n            this.heapifyUp(this.heap.length - 1);\n        }\n\n        pop() {\n            if (this.heap.length === 0) return null;\n            const min = this.heap[0];\n            const last = this.heap.pop();\n            if (this.heap.length > 0) {\n                this.heap[0] = last;\n                this.heapifyDown(0);\n            }\n            return min;\n        }\n\n        heapifyUp(index) {\n            const parent = Math.floor((index - 1) / 2);\n            if (parent >= 0 && this.heap[parent][1] > this.heap[index][1]) {\n                [this.heap[parent], this.heap[index]] = [this.heap[index], this.heap[parent]];\n                this.heapifyUp(parent);\n            }\n        }\n\n        heapifyDown(index) {\n            const left = 2 * index + 1;\n            const right = 2 * index + 2;\n            let smallest = index;\n\n            if (left < this.heap.length && this.heap[left][1] < this.heap[smallest][1]) {\n                smallest = left;\n            }\n            if (right < this.heap.length && this.heap[right][1] < this.heap[smallest][1]) {\n                smallest = right;\n            }\n\n            if (smallest !== index) {\n                [this.heap[smallest], this.heap[index]] = [this.heap[index], this.heap[smallest]];\n                this.heapifyDown(smallest);\n            }\n        }\n\n        size() {\n            return this.heap.length;\n        }\n\n        top() {\n            return this.heap[0];\n        }\n    }\n\n    const heap = new MinHeap();\n\n    for (const [num, freq] of freqMap) {\n        heap.push([num, freq]);\n        if (heap.size() > k) {\n            heap.pop();\n        }\n    }\n\n    const result = [];\n    while (heap.size() > 0) {\n        result.push(heap.pop()[0]);\n    }\n\n    return result;\n}\n\n\n/**\n * 测试topKFrequent函数\n */\nfunction testTopKFrequent() {\n    console.log(\"=== topKFrequent测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: nums = [1,1,1,2,2,3], k = 2\");\n    console.log(\"期望输出: [1,2]\");\n    console.log(\"说明: 元素1出现3次，元素2出现2次，是出现频率最高的两个元素\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testTopKFrequent();",
+        "python": "\"\"\"\n前 K 个高频元素 - 使用小顶堆维护前k个高频元素\n\"\"\"\n\nimport heapq\nfrom collections import Counter\n\ndef topKFrequent(nums, k):\n    # 统计频率\n    freq_map = Counter(nums)\n\n    # 使用小顶堆维护前k个高频元素\n    heap = []\n\n    for num, freq in freq_map.items():\n        heapq.heappush(heap, (freq, num))\n        if len(heap) > k:\n            heapq.heappop(heap)\n\n    return [num for freq, num in heap]\n\n\ndef test_topKFrequent():\n    \"\"\"测试topKFrequent函数\"\"\"\n    print(\"=== topKFrequent测试 ===\")\n\n    # 测试用例\n    print(\"输入: nums = [1,1,1,2,2,3], k = 2\")\n    print(\"期望输出: [1,2]\")\n    print(\"说明: 元素1出现3次，元素2出现2次，是出现频率最高的两个元素\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_topKFrequent()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 前 K 个高频元素解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "nums = [1,1,1,2,2,3], k = 2",
+      "output": "[1,2]",
+      "explanation": "元素1出现3次，元素2出现2次，是出现频率最高的两个元素"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "前 K 个高频元素变种练习",
+      "description": "基于前 K 个高频元素的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

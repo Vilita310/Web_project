@@ -1,0 +1,891 @@
+/* AlgorithmHub 页面样式 - 科技风格 */
+
+.algorithm-hub {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(0, 212, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(135deg, #0a0e27 0%, #1a1d3e 50%, #2a2d4e 100%);
+  background-size: 50px 50px, 50px 50px, 100% 100%;
+  background-attachment: local, local, fixed;
+  padding: 24px;
+  color: #ffffff;
+}
+
+.hub-header {
+  margin-bottom: 24px;
+}
+
+/* 三行布局样式 */
+.hub-content {
+  margin-top: 24px;
+  padding: 0 24px;
+}
+
+/* 第一行：知识图谱样式 */
+.hub-content .knowledge-graph .ant-card-body {
+  padding: 24px !important;
+}
+
+.hub-content .knowledge-graph canvas {
+  height: 400px !important;
+  width: 100% !important;
+}
+
+/* 第二行：课程目录样式 - 左右分栏布局 */
+.hub-content .course-directory {
+  width: 100%;
+}
+
+.hub-content .course-directory .ant-card-body {
+  padding: 0 !important;
+  display: flex;
+  min-height: 400px;
+}
+
+/* 左侧章节列表 */
+.course-directory-sidebar {
+  flex: 0 0 300px;
+  background: rgba(26, 29, 62, 0.4);
+  border-radius: 12px 0 0 12px;
+  padding: 16px;
+  border-right: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.course-chapter-item {
+  padding: 14px 16px;
+  margin-bottom: 8px;
+  background: rgba(26, 29, 62, 0.6);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.course-chapter-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #00d4ff, #8b5cf6);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.course-chapter-item:hover {
+  background: rgba(26, 29, 62, 0.8);
+  border-color: rgba(0, 212, 255, 0.4);
+  transform: translateX(6px);
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
+}
+
+.course-chapter-item:hover::before {
+  transform: scaleY(1);
+}
+
+.course-chapter-item.active {
+  background: rgba(0, 212, 255, 0.15);
+  border-color: rgba(0, 212, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  transform: translateX(6px);
+}
+
+.course-chapter-item.active::before {
+  transform: scaleY(1);
+}
+
+.chapter-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.chapter-progress {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* 右侧详情内容 */
+.course-directory-content {
+  flex: 1;
+  background: rgba(26, 29, 62, 0.2);
+  border-radius: 0 12px 12px 0;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.course-content-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #9ca3af;
+  text-align: center;
+}
+
+.course-content-empty .ant-typography {
+  color: #9ca3af !important;
+  margin-top: 12px;
+}
+
+/* 第三行：作品集样式 - 全宽显示 */
+.hub-content .artwork-gallery {
+  width: 100%;
+}
+
+.hub-content .artwork-gallery .ant-card-body {
+  padding: 16px !important;
+}
+
+/* 优化作品集为网格展示 */
+.hub-content .artworks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+/* 进度概览卡片 - 科技风格 */
+.progress-overview-card {
+  background: rgba(26, 29, 62, 0.8) !important;
+  border: 1px solid #333 !important;
+  border-radius: 12px !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+.progress-overview-card .ant-card-head {
+  background: rgba(0, 212, 255, 0.1) !important;
+  border-bottom: 1px solid #333 !important;
+}
+
+.progress-overview-card .ant-card-head-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #00d4ff !important;
+  text-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+}
+
+.progress-overview-card .ant-card-body {
+  background: transparent !important;
+  color: #ffffff !important;
+}
+
+/* 紧凑版进度卡片样式 */
+.compact-progress {
+  max-width: 100%;
+}
+
+.compact-progress .ant-card-head {
+  padding: 8px 12px !important;
+  min-height: auto !important;
+}
+
+.compact-progress .ant-card-head-title {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+.compact-progress .ant-card-body {
+  padding: 12px !important;
+}
+
+.compact-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.stat-item:last-child {
+  border-bottom: none;
+}
+
+.stat-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: #00d4ff;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
+  min-width: 40px;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: #9ca3af;
+  flex: 1;
+  margin-left: 8px;
+}
+
+.stat-item .ant-progress {
+  width: 60px;
+  margin: 0;
+}
+
+.compact-recommendation {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.recommendation-text {
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.compact-recommendation .ant-btn {
+  font-size: 11px;
+  height: 28px;
+  border-radius: 6px;
+}
+
+.recommended-next {
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid #00d4ff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: inset 0 0 20px rgba(0, 212, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.recommended-next::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+  animation: scanLine 3s ease-in-out infinite;
+}
+
+@keyframes scanLine {
+  0%, 100% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+}
+
+.recommendation-card {
+  background: rgba(26, 29, 62, 0.95) !important;
+  border: 1px solid #00d4ff !important;
+  border-radius: 12px !important;
+  box-shadow: 0 0 25px rgba(0, 212, 255, 0.4) !important;
+  transition: all 0.3s ease !important;
+  position: relative;
+}
+
+.recommendation-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 40px rgba(0, 212, 255, 0.6) !important;
+}
+
+/* 学习功能卡片 - 科技风格 */
+.learning-actions-card {
+  background: rgba(26, 29, 62, 0.8) !important;
+  border: 1px solid #333 !important;
+  border-radius: 12px !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+.learning-actions-card .ant-card-head {
+  background: rgba(139, 92, 246, 0.1) !important;
+  border-bottom: 1px solid #333 !important;
+}
+
+.learning-actions-card .ant-card-head-title {
+  color: #8b5cf6 !important;
+  text-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+}
+
+.learning-actions-card .ant-card-body {
+  padding: 24px;
+  background: transparent !important;
+}
+
+.action-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid #444;
+  background: rgba(26, 29, 62, 0.6) !important;
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+}
+
+.action-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 212, 255, 0.4);
+  border-color: #00d4ff;
+}
+
+.action-card.voice-learning {
+  background: rgba(16, 185, 129, 0.1) !important;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.action-card.voice-learning:hover {
+  border-color: #10b981;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(16, 185, 129, 0.4);
+}
+
+.action-card.blackboard-learning {
+  background: rgba(0, 212, 255, 0.1) !important;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.action-card.blackboard-learning:hover {
+  border-color: #00d4ff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 212, 255, 0.4);
+}
+
+.action-card.coding-practice {
+  background: rgba(245, 158, 11, 0.1) !important;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.action-card.coding-practice:hover {
+  border-color: #f59e0b;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(245, 158, 11, 0.4);
+}
+
+.action-content {
+  text-align: center;
+  padding: 24px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.action-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.action-card:hover .action-content::before {
+  opacity: 0.6;
+}
+
+.action-icon {
+  font-size: 36px;
+  margin-bottom: 16px;
+  display: block;
+  color: #00d4ff;
+  filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.8));
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.action-card:hover .action-icon {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 20px rgba(0, 212, 255, 1));
+}
+
+.voice-learning .action-icon {
+  color: #10b981;
+  filter: drop-shadow(0 0 12px rgba(16, 185, 129, 0.8));
+}
+
+.voice-learning:hover .action-icon {
+  filter: drop-shadow(0 0 20px rgba(16, 185, 129, 1));
+}
+
+.coding-practice .action-icon {
+  color: #f59e0b;
+  filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.8));
+}
+
+.coding-practice:hover .action-icon {
+  filter: drop-shadow(0 0 20px rgba(245, 158, 11, 1));
+}
+
+.action-content h4 {
+  margin: 16px 0 12px 0;
+  color: #ffffff !important;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  transition: all 0.3s ease;
+}
+
+.action-card:hover .action-content h4 {
+  transform: translateY(-2px);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+.action-content .ant-typography {
+  color: #9ca3af !important;
+  margin-bottom: 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.action-card:hover .action-content .ant-typography {
+  color: #cbd5e1 !important;
+}
+
+/* 章节详情卡片 - 科技风格 */
+.chapter-details-card {
+  margin-top: 16px;
+  background: rgba(26, 29, 62, 0.8) !important;
+  border: 1px solid #333 !important;
+  border-radius: 12px !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+.chapter-details-card .ant-card-head {
+  background: rgba(6, 182, 212, 0.1) !important;
+  border-bottom: 1px solid #333 !important;
+}
+
+.chapter-details-card .ant-card-head-title {
+  color: #06b6d4 !important;
+  text-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+}
+
+.chapter-details-card .ant-card-body {
+  background: transparent !important;
+  color: #ffffff !important;
+}
+
+/* 学习路径卡片 - 科技风格 */
+.learning-path-card {
+  background: rgba(26, 29, 62, 0.8) !important;
+  border: 1px solid #333 !important;
+  border-radius: 12px !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+.learning-path-card .ant-card-head {
+  background: rgba(139, 92, 246, 0.1) !important;
+  border-bottom: 1px solid #333 !important;
+}
+
+.learning-path-card .ant-card-head-title {
+  color: #8b5cf6 !important;
+  text-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+}
+
+.learning-path-card .ant-card-body {
+  background: transparent !important;
+  color: #ffffff !important;
+}
+
+.timeline-content {
+  padding: 12px 0;
+  position: relative;
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, transparent, rgba(0, 212, 255, 0.3), transparent);
+}
+
+.week-chapters {
+  margin: 12px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.week-goals {
+  margin-top: 12px;
+  padding: 8px 12px;
+  background: rgba(0, 212, 255, 0.05);
+  border-radius: 8px;
+  border-left: 3px solid #00d4ff;
+}
+
+/* 时间轴节点美化 */
+.algorithm-hub .ant-timeline-item-head {
+  background: rgba(26, 29, 62, 0.9) !important;
+  border: 2px solid #00d4ff !important;
+}
+
+.algorithm-hub .ant-timeline-item-tail {
+  border-left: 2px solid rgba(0, 212, 255, 0.3) !important;
+}
+
+.algorithm-hub .ant-timeline-item-content {
+  margin-left: 24px !important;
+  background: rgba(26, 29, 62, 0.3);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.algorithm-hub .ant-timeline-item-content:hover {
+  background: rgba(26, 29, 62, 0.5);
+  border-color: rgba(0, 212, 255, 0.4);
+  transform: translateX(8px);
+}
+
+/* 响应式设计 - 三行布局 */
+@media (max-width: 1200px) {
+  .hub-content {
+    padding: 0 16px;
+  }
+
+  .hub-content .artworks-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .algorithm-hub {
+    padding: 12px;
+  }
+
+  .hub-content {
+    padding: 0 8px;
+  }
+
+  /* 第一行在移动端调整 */
+  .hub-content .knowledge-graph canvas {
+    height: 300px !important;
+  }
+
+  /* 第二行在移动端调整 - 课程目录保持纵向 */
+  .hub-content .course-directory .ant-collapse-header {
+    padding: 10px 12px !important;
+  }
+
+  .hub-content .course-directory .ant-collapse-content-box {
+    padding: 12px !important;
+  }
+
+  /* 第三行在移动端调整 */
+  .hub-content .artworks-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* 移动端行间距调整 */
+  .hub-content > div {
+    margin-bottom: 16px !important;
+  }
+}
+
+/* 增强动画效果 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 212, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* 三行布局动画序列 */
+/* 第一行动画 */
+.hub-content > div:nth-child(1) {
+  animation: fadeInUp 0.8s ease-out 0.1s both;
+}
+
+.hub-content > div:nth-child(1) .knowledge-graph {
+  animation: scaleIn 0.8s ease-out 0.3s both;
+}
+
+.hub-content > div:nth-child(1) .compact-progress {
+  animation: slideInRight 0.8s ease-out 0.2s both;
+}
+
+/* 第二行动画 */
+.hub-content > div:nth-child(2) {
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.hub-content > div:nth-child(2) .course-directory {
+  animation: slideInLeft 0.8s ease-out 0.5s both;
+}
+
+/* 第三行动画 */
+.hub-content > div:nth-child(3) {
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.hub-content > div:nth-child(3) .artwork-gallery {
+  animation: slideInRight 0.8s ease-out 0.7s both;
+}
+
+/* 特殊卡片动画 */
+.progress-overview-card {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.action-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.action-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+  opacity: 0;
+}
+
+.action-card:hover::after {
+  animation: shimmer 1.5s ease-in-out;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* 科技风滚动条 */
+.left-sidebar::-webkit-scrollbar,
+.right-sidebar::-webkit-scrollbar,
+.main-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.left-sidebar::-webkit-scrollbar-track,
+.right-sidebar::-webkit-scrollbar-track,
+.main-content::-webkit-scrollbar-track {
+  background: #1a1d3e;
+  border-radius: 4px;
+}
+
+.left-sidebar::-webkit-scrollbar-thumb,
+.right-sidebar::-webkit-scrollbar-thumb,
+.main-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #00d4ff, #8b5cf6);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+.left-sidebar::-webkit-scrollbar-thumb:hover,
+.right-sidebar::-webkit-scrollbar-thumb:hover,
+.main-content::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #8b5cf6, #00d4ff);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+}
+
+/* 通用科技风文本样式 */
+.algorithm-hub .ant-typography h1,
+.algorithm-hub .ant-typography h2,
+.algorithm-hub .ant-typography h3,
+.algorithm-hub .ant-typography h4,
+.algorithm-hub .ant-typography h5 {
+  color: #ffffff !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.algorithm-hub .ant-typography {
+  color: #cbd5e1 !important;
+}
+
+.algorithm-hub .ant-statistic-title {
+  color: #9ca3af !important;
+}
+
+.algorithm-hub .ant-statistic-content {
+  color: #00d4ff !important;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+/* 进度条科技风格 */
+.algorithm-hub .ant-progress-bg {
+  background: linear-gradient(90deg, #00d4ff, #06b6d4) !important;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
+}
+
+.algorithm-hub .ant-progress-outer {
+  background: rgba(26, 29, 62, 0.6) !important;
+}
+
+/* 标签科技风格 */
+.algorithm-hub .ant-tag {
+  background: rgba(0, 212, 255, 0.1) !important;
+  border: 1px solid #00d4ff !important;
+  color: #00d4ff !important;
+  border-radius: 8px;
+  box-shadow: inset 0 0 10px rgba(0, 212, 255, 0.1);
+}
+
+.algorithm-hub .ant-tag[color="blue"] {
+  background: rgba(0, 212, 255, 0.15) !important;
+  border-color: #00d4ff !important;
+  color: #00d4ff !important;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+.algorithm-hub .ant-tag[color="green"] {
+  background: rgba(16, 185, 129, 0.15) !important;
+  border-color: #10b981 !important;
+  color: #10b981 !important;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+}
+
+.algorithm-hub .ant-tag[color="orange"] {
+  background: rgba(245, 158, 11, 0.15) !important;
+  border-color: #f59e0b !important;
+  color: #f59e0b !important;
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+}
+
+/* 按钮科技风格 */
+.algorithm-hub .ant-btn-primary {
+  background: linear-gradient(135deg, #00d4ff, #8b5cf6) !important;
+  border: none !important;
+  color: #000 !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.4) !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.algorithm-hub .ant-btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.algorithm-hub .ant-btn-primary:hover {
+  background: linear-gradient(135deg, #8b5cf6, #00d4ff) !important;
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.6) !important;
+  transform: scale(1.05) translateY(-2px);
+}
+
+.algorithm-hub .ant-btn-primary:hover::before {
+  left: 100%;
+}
+
+/* 统计数据增强显示 */
+.algorithm-hub .ant-statistic-content-value {
+  background: linear-gradient(135deg, #00d4ff, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700 !important;
+}
+
+/* 优化徽章样式 */
+.algorithm-hub .ant-badge {
+  z-index: 1;
+}
+
+.algorithm-hub .ant-badge-count {
+  background: linear-gradient(135deg, #00d4ff, #8b5cf6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.4) !important;
+}
+
+/* 增加加载状态动画 */
+.algorithm-hub .ant-spin-dot {
+  background: #00d4ff !important;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.6) !important;
+}
+
+/* 优化工具提示样式 */
+.algorithm-hub .ant-tooltip-inner {
+  background: rgba(26, 29, 62, 0.95) !important;
+  border: 1px solid #00d4ff !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3) !important;
+}
+
+.algorithm-hub .ant-tooltip-arrow::before {
+  background: rgba(26, 29, 62, 0.95) !important;
+  border: 1px solid #00d4ff !important;
+}

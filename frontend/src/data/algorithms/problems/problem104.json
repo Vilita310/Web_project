@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "id": 104,
+    "title": "二叉树的最大深度",
+    "difficulty": "简单",
+    "leetcodeId": 104,
+    "category": "tree",
+    "patterns": [
+      "tree_traversal"
+    ],
+    "tags": [
+      "树",
+      "深度优先搜索",
+      "广度优先搜索"
+    ],
+    "estimatedTime": "15分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给定一个二叉树，找出其最大深度。二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。",
+  "examples": [
+    {
+      "input": "root = [3,9,20,null,null,15,7]",
+      "output": "3",
+      "explanation": "最大深度是 3。"
+    },
+    {
+      "input": "root = [1,null,2]",
+      "output": "2",
+      "explanation": "最大深度是 2。"
+    }
+  ],
+  "constraints": [
+    "树中节点的数量在 [0, 10⁴] 区间内",
+    "-100 <= Node.val <= 100"
+  ],
+  "hints": [
+    "可以使用递归或者迭代的方法。"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "recursive",
+      "name": "递归",
+      "timeComplexity": "O(n)",
+      "spaceComplexity": "O(h)",
+      "description": "递归计算左右子树的最大深度",
+      "code": {
+        "javascript": "/**\n * 二叉树的最大深度 - 递归计算左右子树的最大深度\n */\n\nfunction maxDepth(root) {\n    if (!root) return 0;\n    \n    return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));\n}\n\n\n/**\n * 测试maxDepth函数\n */\nfunction testMaxDepth() {\n    console.log(\"=== maxDepth测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: root = [3,9,20,null,null,15,7]\");\n    console.log(\"期望输出: 3\");\n    console.log(\"说明: 最大深度是 3。\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testMaxDepth();",
+        "python": "\"\"\"\n二叉树的最大深度 - 递归计算左右子树的最大深度\n\"\"\"\n\ndef maxDepth(root):\n    if not root:\n        return 0\n    \n    return 1 + max(maxDepth(root.left), maxDepth(root.right))\n\n\ndef test_maxDepth():\n    \"\"\"测试maxDepth函数\"\"\"\n    print(\"=== maxDepth测试 ===\")\n\n    # 测试用例\n    print(\"输入: root = [3,9,20,null,null,15,7]\")\n    print(\"期望输出: 3\")\n    print(\"说明: 最大深度是 3。\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_maxDepth()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 二叉树的最大深度解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "root = [3,9,20,null,null,15,7]",
+      "output": "3",
+      "explanation": "最大深度是 3。"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "二叉树的最大深度变种练习",
+      "description": "基于二叉树的最大深度的变种问题",
+      "difficulty": "简单",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

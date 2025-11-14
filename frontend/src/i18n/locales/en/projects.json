@@ -1,0 +1,384 @@
+{
+  "title": "Project Fusion Center",
+  "subtitle": "AI-driven Project Fusion Center",
+  "navigation": {
+    "aiGenerate": "AI Generate Project",
+    "aiAssistant": "AI Assistant"
+  },
+  "direction": {
+    "title": "Choose Development Direction",
+    "frontend": "Frontend Development",
+    "backend": "Backend Development",
+    "fullstack": "Full Stack Development"
+  },
+  "techStack": {
+    "title": "Select Tech Stack",
+    "selected": "selected"
+  },
+  "projectManagement": {
+    "title": "Project Management",
+    "inProgress": "In Progress",
+    "completed": "Completed",
+    "nextStep": "Next Step"
+  },
+  "learningStats": {
+    "title": "Learning Statistics",
+    "totalProjects": "Total Projects",
+    "skillImprovement": "Skill Improvement",
+    "codeLines": "Code Lines",
+    "studyTime": "Study Time"
+  },
+  "bigTechMatching": {
+    "title": "Big Tech Project Matching",
+    "description": "Based on your {count} selected tech stacks",
+    "noTechStack": "Please select your tech stack on the left, AI will match the most similar big tech projects for you",
+    "withTechStack": "Real-time analysis of your {techList} tech stack matching with big tech projects",
+    "similarity": "Similarity",
+    "coreFeatures": " core features",
+    "difficulty": "Difficulty",
+    "highMatch": "High Match",
+    "partialMatch": "Partial Match",
+    "needLearning": "Need Learning",
+    "startBuilding": "Start Building",
+    "viewDetails": "View Details"
+  },
+  "projectDetails": {
+    "title": "Project Details",
+    "similarity": "Tech Stack Compatibility",
+    "projectScale": "Project Scale",
+    "userScale": "User Scale",
+    "performance": "Performance Metrics",
+    "difficultyLevel": "Difficulty Level",
+    "coreFeatures": "Core Features",
+    "startBuilding": "Start Building This Project"
+  },
+  "selectProject": {
+    "title": "Select Project",
+    "clickProject": "Click any big tech project on the left",
+    "viewDetails": "View detailed information and tech stack compatibility"
+  },
+  "customProject": {
+    "title": "Custom Project Generation",
+    "inputIdea": "Enter Your Project Idea",
+    "placeholder": "For example: I want to build an intelligent shopping recommendation system where users can upload product images and AI automatically identifies and recommends similar products...",
+    "willUseTechStack": "Will use your selected tech stack",
+    "generateProject": "Generate Custom Project",
+    "aiGenerating": "AI Generating...",
+    "enterIdea": "Please enter your project idea first",
+    "selectTechStack": "Please select tech stack on the left first"
+  },
+  "matchingStats": {
+    "title": "Matching Statistics",
+    "matchedProjects": "Matched Projects",
+    "highestMatch": "Highest Match",
+    "selectedTech": "Selected Tech",
+    "bigTechProjects": "Big Tech Projects"
+  },
+  "aiAssistantDrawer": {
+    "title": "AI Smart Assistant",
+    "greeting": "AI Assistant: Hello! I'm your project development assistant, I can help you:",
+    "features": {
+      "analyze": "Analyze project requirements and technical solutions",
+      "optimize": "Provide code optimization suggestions",
+      "architecture": "Generate project architecture diagrams",
+      "debug": "Assist with debugging and problem solving",
+      "docs": "Auto-generate documentation and comments"
+    },
+    "placeholder": "Please enter your question...",
+    "sendMessage": "Send Message"
+  },
+  "codeEditor": {
+    "title": "Project Workspace",
+    "projectFiles": "Project Files",
+    "codeEditor": "Code Editor",
+    "templateReady": "Start your project development here...",
+    "aiReady": "AI has prepared project templates and best practice code for you"
+  },
+  "messages": {
+    "enterIdea": "Please enter your project idea first",
+    "projectGenerated": "Custom project generated successfully! Launching ProjectStudio...",
+    "generationFailed": "Project generation failed, please try again later",
+    "progressUpdated": "Project progress updated: {rate}% completed",
+    "codeFusionSteps": {
+      "analyzing": "Analyzing user codebase...",
+      "extracting": "Extracting reusable modules...",
+      "generating": "Generating project architecture...",
+      "fusing": "Fusing code snippets...",
+      "optimizing": "Optimizing code quality...",
+      "documenting": "Generating documentation and tests..."
+    },
+    "codeFusionComplete": "Code fusion completed! Launching ProjectStudio..."
+  },
+  "stats": {
+    "total": "Total Projects",
+    "matched": "Matched Projects",
+    "completed": "Completed",
+    "companies": "Partner Companies"
+  },
+  "filters": {
+    "all": "All Projects",
+    "recommended": "Recommended",
+    "difficulty": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    },
+    "category": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "fullstack": "Full Stack",
+      "mobile": "Mobile",
+      "ai": "AI/ML",
+      "data": "Data Science"
+    }
+  },
+  "project": {
+    "difficulty": "Difficulty",
+    "duration": "Duration",
+    "skills": "Tech Stack",
+    "company": "Source Company",
+    "description": "Description",
+    "requirements": "Requirements",
+    "startProject": "Start Project",
+    "viewDetails": "View Details"
+  },
+  "studio": {
+    "title": "🧱 Project Workshop Studio",
+    "subtitle": "AI-driven smart development environment with real-time code guidance and project building",
+    "features": {
+      "aiTeacher": "AI Teacher Voice Guidance",
+      "codeReview": "Real-time Code Review",
+      "smartHints": "Smart Development Hints",
+      "projectBuild": "Auto Project Building"
+    }
+  },
+  "bigTechProjects": {
+    "alibaba-ecommerce": {
+      "title": "Alibaba E-commerce Platform",
+      "company": "Alibaba",
+      "description": "High-concurrency e-commerce system supporting tens of millions of users shopping online simultaneously"
+    },
+    "tencent-social": {
+      "title": "Tencent Social Platform",
+      "company": "Tencent",
+      "description": "Real-time social platform supporting instant messaging and social features"
+    },
+    "bytedance-content": {
+      "title": "ByteDance Content Platform",
+      "company": "ByteDance",
+      "description": "Intelligent content recommendation platform based on machine learning personalization"
+    },
+    "meituan-delivery": {
+      "title": "Meituan Delivery System",
+      "company": "Meituan",
+      "description": "Intelligent delivery scheduling system with real-time route optimization"
+    },
+    "didi-mobility": {
+      "title": "Didi Mobility Platform",
+      "company": "Didi",
+      "description": "Smart mobility platform with real-time driver and passenger matching"
+    }
+  },
+  "projectFeatures": {
+    "alibaba": ["Product Management", "Order System", "Payment Integration", "User System", "Recommendation Engine"],
+    "tencent": ["Real-time Chat", "Social Feed", "Group Features", "Voice Call", "Video Call"],
+    "bytedance": ["Content Recommendation", "Video Player", "User Profiling", "AI Algorithms", "Data Analytics"],
+    "meituan": ["Order Management", "Delivery Scheduling", "Route Optimization", "Real-time Tracking", "Payment System"],
+    "didi": ["Real-time Location", "Smart Matching", "Route Planning", "Payment System", "Rating System"]
+  },
+  "projectMetrics": {
+    "scales": {
+      "millionsUsers": "Tens of millions of users",
+      "billionUsers": "Billions of users",
+      "billionContent": "Billions of content",
+      "millionOrders": "Millions of orders/day",
+      "millionDaily": "Tens of millions daily active"
+    },
+    "performance": {
+      "availability": "99.9% availability",
+      "millisecond": "Millisecond response",
+      "smartRecommend": "Smart recommendation",
+      "delivery30min": "30-minute delivery",
+      "secondMatch": "Second-level matching"
+    }
+  },
+  "skillClusters": {
+    "frontend": "Frontend Development",
+    "backend": "Backend Development",
+    "data": "Data Related"
+  },
+  "projectTemplates": {
+    "aiChatbot": {
+      "title": "AI Chatbot Platform",
+      "duration": "3-5 days",
+      "stretchSkills": ["AI Integration", "Real-time Communication", "API Integration"],
+      "description": "Build intelligent chatbot with GPT model integration, supporting multi-turn conversations and context understanding",
+      "features": [
+        "🤖 GPT Model Integration",
+        "💬 Real-time Chat Interface",
+        "📚 Knowledge Base Management",
+        "🔄 Conversation History",
+        "⚙️ Personalized Configuration"
+      ],
+      "architecture": {
+        "frontend": ["React Components", "State Management", "WebSocket"],
+        "backend": ["FastAPI Service", "OpenAI Integration", "Session Management"],
+        "aiService": ["Prompt Engineering", "Conversation Management", "Knowledge Retrieval"],
+        "deployment": ["Docker Container", "Nginx Proxy", "Environment Configuration"]
+      },
+      "fusionSources": ["React Component Development", "API Call Practice", "Python Backend Development"],
+      "readiness": "Ready to Start"
+    },
+    "dataVisualization": {
+      "title": "Data Visualization Dashboard",
+      "duration": "4-6 days",
+      "stretchSkills": ["Data Visualization", "Interactive Charts", "Real-time Data"],
+      "description": "Create interactive data dashboard with multiple chart types and real-time data updates",
+      "features": [
+        "📊 Multiple Chart Types",
+        "🔄 Real-time Data Updates",
+        "🎛️ Interactive Filtering",
+        "📱 Responsive Design",
+        "⬇️ Data Export Features"
+      ],
+      "architecture": {
+        "frontend": ["React+D3 Charts", "Data Binding", "Interaction Control"],
+        "backend": ["Data API", "WebSocket Push", "Data Processing"],
+        "dataLayer": ["Pandas Analysis", "Data Cleaning", "Computing Engine"],
+        "deployment": ["Static Deployment", "API Service", "Data Source Configuration"]
+      },
+      "fusionSources": ["Data Processing Practice", "Chart Component Development", "API Design Practice"],
+      "readiness": "Ready to Start"
+    },
+    "microserviceEcommerce": {
+      "title": "Microservice E-commerce System",
+      "duration": "2-3 weeks",
+      "stretchSkills": ["Microservice Architecture", "Containerized Deployment", "Distributed Systems"],
+      "description": "Build enterprise-level microservice e-commerce platform with user management, product management, order system, etc.",
+      "features": [
+        "🏗️ Microservice Architecture",
+        "🛒 Shopping Cart System",
+        "💳 Payment Integration",
+        "📦 Order Management",
+        "🔐 JWT Authentication"
+      ],
+      "architecture": {
+        "frontend": ["React Application", "State Management", "Routing System"],
+        "services": ["User Service", "Product Service", "Order Service", "Payment Service"],
+        "infrastructure": ["API Gateway", "Service Registry", "Configuration Center"],
+        "deployment": ["Docker Cluster", "Load Balancing", "Monitoring System"]
+      },
+      "fusionSources": ["React Project Experience", "Node.js API Development", "Database Design"],
+      "readiness": "Requires Prerequisites"
+    }
+  },
+  "myProjects": {
+    "aiAssistant": {
+      "title": "AI Customer Assistant",
+      "nextTask": "Implement conversation history feature",
+      "timeSpent": "12 hours",
+      "lastActivity": "2 hours ago"
+    },
+    "todoApp": {
+      "completedAt": "3 days ago"
+    },
+    "dashboardProject": {
+      "title": "Data Visualization Dashboard",
+      "plannedStart": "Next week"
+    }
+  },
+  "customProjectGeneration": {
+    "titleTemplate": "Custom Project Based on {idea}",
+    "durationWeeks": "2-3 weeks",
+    "descriptionTemplate": "Customized project based on your idea \\\"{idea}\\\" and selected tech stack",
+    "features": [
+      "🎯 Fully Personalized Design",
+      "💡 Based on Your Creative Ideas",
+      "🔧 Matches Your Tech Stack",
+      "📚 Detailed Development Guidance",
+      "🚀 End-to-End Implementation"
+    ],
+    "fusionSources": ["Your Creative Ideas", "Selected Tech Stack", "AI Smart Generation"],
+    "readiness": "Ready to Start"
+  },
+  "aiProjectGeneration": {
+    "titleTemplate": "Smart Application Based on {skills}",
+    "durationWeeks": "1-2 weeks",
+    "descriptionTemplate": "Tailored project based on your skill stack, leveraging your strengths in {skillList}",
+    "features": [
+      "🎯 Personalized Feature Design",
+      "📈 Skill Improvement Path",
+      "🔧 Code Fusion Optimization",
+      "📝 Complete Development Documentation",
+      "🚀 One-click Deployment Configuration"
+    ],
+    "fusionSources": ["Existing Mini Projects", "Classroom Practice Code", "Algorithm Implementation"],
+    "readiness": "Ready to Start"
+  },
+  "projectProgress": {
+    "defaultProjectName": "Development Project",
+    "defaultNextTask": "Continue Development",
+    "defaultTimeSpent": "0 hours",
+    "justNow": "Just now"
+  },
+  "learningObjectives": {
+    "techStackMastery": "Master {techStack} tech stack",
+    "archDesign": "Improve project architecture design capabilities",
+    "enterpriseStandards": "Learn enterprise-level development standards"
+  },
+  "companyNames": {
+    "alibaba": "Alibaba",
+    "tencent": "Tencent",
+    "bytedance": "ByteDance",
+    "meituan": "Meituan",
+    "didi": "Didi"
+  },
+  "codeEditor": {
+    "title": "Code Editor",
+    "loadingFiles": "Loading files...",
+    "loadingCode": "Loading project files...",
+    "backToProjects": "Back to Projects",
+    "readyToCode": "Ready to Code",
+    "loading": "Loading...",
+    "runCode": "Run Code",
+    "running": "Running",
+    "runProject": "Run Project",
+    "starting": "Starting...",
+    "save": "Save",
+    "outputConsole": "Output Console",
+    "clickRunToExecute": "Click Run button to execute code",
+    "executingCode": "Executing code...",
+    "projectRunning": "🚀 Starting project environment...",
+    "creatingEnvironment": "📦 Creating Docker container environment...",
+    "environmentCreated": "✅ Environment created successfully",
+    "installingDependencies": "📋 Installing project dependencies...",
+    "dependenciesInstalled": "✅ Dependencies installed",
+    "runningMainFile": "🏃 Running main file",
+    "executionSuccess": "Program executed successfully, no output",
+    "executionFailed": "Execution failed",
+    "networkError": "Network error",
+    "cannotConnect": "Cannot connect to execution server",
+    "codeSaved": "Code downloaded",
+    "fileLoaded": "File loaded successfully",
+    "fileSaved": "Saved",
+    "projectRunSuccess": "Project run successfully!",
+    "projectRunFailed": "Project run failed",
+    "codeExecutionSuccess": "Code executed successfully!",
+    "codeExecutionFailed": "Code execution failed",
+    "environmentReady": "Environment is ready, you can start debugging and running projects!",
+    "breakpointSet": "Breakpoint set at line {line}",
+    "watchingVariable": "Watching variable: {name}",
+    "aiWelcome": "👋 Welcome to AI Programming Assistant! I can help you with:\n\n🔍 Code review and optimization\n⚡ Performance analysis and improvement\n🚀 Deployment configuration and best practices\n🐛 Error diagnosis and solutions\n\nHow can I help you?",
+    "aiSorry": "Sorry, I can't reply right now. Please try again later.",
+    "aiError": "Sorry, an error occurred. Please try again later.",
+    "startingProjectEnvironment": "Starting project execution environment...",
+    "detectingNodeProject": "Node.js project detected, starting real runtime environment...",
+    "startProjectEnvironment": "Project environment startup failed",
+    "tooltips": {
+      "environmentManager": "Environment Manager",
+      "debugPanel": "Debug Panel",
+      "aiAssistant": "AI Assistant"
+    },
+    "nodeJsHelpTip": "📝 This is a Node.js project template!\n\n💡 The current execution environment doesn't support require modules, you can:\n\n1. Click package.json to view project structure\n2. Modify index.js to pure JavaScript code for testing\n3. Check README.md for complete runtime instructions\n\nFor simple testing:\nconsole.log(\"Hello from Node.js template!\");"
+  }
+}

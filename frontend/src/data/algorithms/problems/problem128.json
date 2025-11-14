@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "id": 128,
+    "title": "最长连续序列",
+    "difficulty": "中等",
+    "leetcodeId": 128,
+    "category": "array",
+    "patterns": [
+      "hash_set_consecutive"
+    ],
+    "tags": [
+      "并查集",
+      "数组",
+      "哈希表"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给定一个未排序的整数数组 nums ，找出数字连续的最长序列（不要求序列元素在原数组中连续）的长度。请你设计并实现时间复杂度为 O(n) 的算法解决此问题。",
+  "examples": [
+    {
+      "input": "nums = [100,4,200,1,3,2]",
+      "output": "4",
+      "explanation": "最长数字连续序列是 [1, 2, 3, 4]。它的长度为 4。"
+    },
+    {
+      "input": "nums = [0,3,7,2,5,8,4,6,0,1]",
+      "output": "9",
+      "explanation": "最长数字连续序列是 [0,1,2,3,4,5,6,7,8]。它的长度为 9。"
+    }
+  ],
+  "constraints": [
+    "0 <= nums.length <= 10⁵",
+    "-10⁹ <= nums[i] <= 10⁹"
+  ],
+  "hints": [
+    "考虑使用哈希集合来实现 O(n) 时间复杂度。"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "hash_set",
+      "name": "哈希集合",
+      "timeComplexity": "O(n)",
+      "spaceComplexity": "O(n)",
+      "description": "使用哈希集合，对每个可能的序列起点进行扩展",
+      "code": {
+        "javascript": "/**\n * 最长连续序列 - 使用哈希集合，对每个可能的序列起点进行扩展\n */\n\nfunction longestConsecutive(nums) {\n    const numSet = new Set(nums);\n    let longestStreak = 0;\n    \n    for (const num of numSet) {\n        // 只对序列的起点进行检查\n        if (!numSet.has(num - 1)) {\n            let currentNum = num;\n            let currentStreak = 1;\n            \n            while (numSet.has(currentNum + 1)) {\n                currentNum++;\n                currentStreak++;\n            }\n            \n            longestStreak = Math.max(longestStreak, currentStreak);\n        }\n    }\n    \n    return longestStreak;\n}\n\n\n/**\n * 测试longestConsecutive函数\n */\nfunction testLongestConsecutive() {\n    console.log(\"=== longestConsecutive测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: nums = [100,4,200,1,3,2]\");\n    console.log(\"期望输出: 4\");\n    console.log(\"说明: 最长数字连续序列是 [1, 2, 3, 4]。它的长度为 4。\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testLongestConsecutive();",
+        "python": "\"\"\"\n最长连续序列 - 使用哈希集合，对每个可能的序列起点进行扩展\n\"\"\"\n\ndef longestConsecutive(nums):\n    num_set = set(nums)\n    longest_streak = 0\n    \n    for num in num_set:\n        # 只对序列的起点进行检查\n        if num - 1 not in num_set:\n            current_num = num\n            current_streak = 1\n            \n            while current_num + 1 in num_set:\n                current_num += 1\n                current_streak += 1\n            \n            longest_streak = max(longest_streak, current_streak)\n    \n    return longest_streak\n\n\ndef test_longestConsecutive():\n    \"\"\"测试longestConsecutive函数\"\"\"\n    print(\"=== longestConsecutive测试 ===\")\n\n    # 测试用例\n    print(\"输入: nums = [100,4,200,1,3,2]\")\n    print(\"期望输出: 4\")\n    print(\"说明: 最长数字连续序列是 [1, 2, 3, 4]。它的长度为 4。\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_longestConsecutive()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 最长连续序列解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "nums = [100,4,200,1,3,2]",
+      "output": "4",
+      "explanation": "最长数字连续序列是 [1, 2, 3, 4]。它的长度为 4。"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "最长连续序列变种练习",
+      "description": "基于最长连续序列的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

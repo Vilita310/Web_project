@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "id": 19,
+    "title": "删除链表的倒数第N个结点",
+    "difficulty": "中等",
+    "leetcodeId": 19,
+    "category": "linked_list",
+    "patterns": [
+      "linked_list_two_pointers"
+    ],
+    "tags": [
+      "链表",
+      "双指针"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。",
+  "examples": [
+    {
+      "input": "head = [1,2,3,4,5], n = 2",
+      "output": "[1,2,3,5]",
+      "explanation": "删除倒数第2个节点4"
+    },
+    {
+      "input": "head = [1], n = 1",
+      "output": "[]",
+      "explanation": "删除唯一节点"
+    },
+    {
+      "input": "head = [1,2], n = 1",
+      "output": "[1]",
+      "explanation": "删除最后一个节点"
+    }
+  ],
+  "constraints": [
+    "链表中结点的数目为 sz",
+    "1 <= sz <= 30",
+    "0 <= Node.val <= 100",
+    "1 <= n <= sz"
+  ],
+  "hints": [
+    "使用双指针技术，让快指针先走n步",
+    "然后快慢指针同时移动，直到快指针到达末尾",
+    "注意处理删除头节点的特殊情况"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "two_pointers",
+      "name": "双指针",
+      "timeComplexity": "O(L)",
+      "spaceComplexity": "O(1)",
+      "description": "使用双指针一次遍历找到要删除的节点",
+      "code": {
+        "javascript": "/**\n * 删除链表的倒数第N个结点 - 使用双指针一次遍历找到要删除的节点\n */\n\nfunction removeNthFromEnd(head, n) {\n    const dummy = { next: head };\n    let first = dummy;\n    let second = dummy;\n\n    // 让first指针先走n+1步\n    for (let i = 0; i <= n; i++) {\n        first = first.next;\n    }\n\n    // 同时移动first和second指针\n    while (first !== null) {\n        first = first.next;\n        second = second.next;\n    }\n\n    // 删除second的下一个节点\n    second.next = second.next.next;\n\n    return dummy.next;\n}\n\n\n/**\n * 测试removeNthFromEnd函数\n */\nfunction testRemoveNthFromEnd() {\n    console.log(\"=== removeNthFromEnd测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: head = [1,2,3,4,5], n = 2\");\n    console.log(\"期望输出: [1,2,3,5]\");\n    console.log(\"说明: 删除倒数第2个节点4\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testRemoveNthFromEnd();",
+        "python": "\"\"\"\n删除链表的倒数第N个结点 - 使用双指针一次遍历找到要删除的节点\n\"\"\"\n\ndef removeNthFromEnd(head, n):\n    dummy = ListNode(0)\n    dummy.next = head\n    first = dummy\n    second = dummy\n\n    # 让first指针先走n+1步\n    for i in range(n + 1):\n        first = first.next\n\n    # 同时移动first和second指针\n    while first:\n        first = first.next\n        second = second.next\n\n    # 删除second的下一个节点\n    second.next = second.next.next\n\n    return dummy.next\n\n\ndef test_removeNthFromEnd():\n    \"\"\"测试removeNthFromEnd函数\"\"\"\n    print(\"=== removeNthFromEnd测试 ===\")\n\n    # 测试用例\n    print(\"输入: head = [1,2,3,4,5], n = 2\")\n    print(\"期望输出: [1,2,3,5]\")\n    print(\"说明: 删除倒数第2个节点4\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_removeNthFromEnd()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 删除链表的倒数第N个结点解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "head = [1,2,3,4,5], n = 2",
+      "output": "[1,2,3,5]",
+      "explanation": "删除倒数第2个节点4"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "删除链表的倒数第N个结点变种练习",
+      "description": "基于删除链表的倒数第N个结点的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

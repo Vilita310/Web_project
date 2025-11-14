@@ -1,0 +1,1095 @@
+/* AlgorithmHub 页面 - 浅色主题样式 */
+
+/* 全局背景覆盖 - 浅色主题 */
+.light-theme body,
+.light-theme html {
+  background: #F8F7F4 !important;
+  background-attachment: fixed !important;
+  min-height: 200vh !important;
+  height: auto !important;
+}
+
+.algorithm-hub.light-theme {
+  min-height: 200vh;
+  height: auto;
+  background: #FAF9F6;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(212, 146, 111, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(160, 120, 59, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(212, 146, 111, 0.02) 0%, transparent 50%);
+  padding: 24px;
+  color: #2c2c2c;
+}
+
+/* 浅色主题变量覆盖 */
+.algorithm-hub.light-theme {
+  --tech-primary: #D4926F;
+  --tech-secondary: #A0783B;
+  --tech-accent: #C7956B;
+  --tech-warning: #D4926F;
+  --tech-info: #A0783B;
+
+  /* 背景色 */
+  --tech-bg-primary: #FAF9F6;
+  --tech-bg-secondary: #F5F4F0;
+  --tech-bg-tertiary: #F0EFEB;
+
+  /* 文本色 */
+  --tech-text-primary: #2c2c2c;
+  --tech-text-secondary: #5a5a5a;
+  --tech-text-muted: #888888;
+
+  /* 边框和分割线 */
+  --tech-border: rgba(212, 146, 111, 0.2);
+  --tech-border-light: rgba(212, 146, 111, 0.15);
+
+  /* 卡片和组件背景 */
+  --tech-card-bg: rgba(250, 249, 246, 0.9);
+  --tech-header-bg: rgba(245, 244, 240, 0.95);
+  --tech-code-bg: #F8F7F4;
+  --tech-input-bg: #FFFFFF;
+  --tech-card-header: #F5F4F0;
+
+  /* 阴影效果 */
+  --tech-glow-primary: 0 4px 16px rgba(212, 146, 111, 0.15);
+  --tech-glow-secondary: 0 4px 12px rgba(160, 120, 59, 0.12);
+  --tech-glow-accent: 0 2px 8px rgba(199, 149, 107, 0.1);
+}
+
+/* 浅色主题背景 - 强制覆盖 */
+.light-theme .tech-background,
+.algorithm-hub.light-theme .tech-background {
+  background: #F8F7F4 !important;
+}
+
+/* 浅色主题网格背景 - 强制覆盖 */
+.light-theme .tech-grid,
+.algorithm-hub.light-theme .tech-grid {
+  background:
+    linear-gradient(rgba(212, 146, 111, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 146, 111, 0.08) 1px, transparent 1px),
+    #F8F7F4 !important;
+  background-size: 50px 50px, 50px 50px, 100% 100% !important;
+  background-attachment: local, local, fixed !important;
+}
+
+/* 浅色主题卡片 */
+.algorithm-hub.light-theme .ant-card,
+.algorithm-hub.light-theme .tech-card {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(212, 146, 111, 0.2) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(212, 146, 111, 0.08) !important;
+  backdrop-filter: blur(10px);
+}
+
+.algorithm-hub.light-theme .ant-card:hover,
+.algorithm-hub.light-theme .tech-card:hover {
+  border-color: var(--tech-primary) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), var(--tech-glow-primary) !important;
+  transform: translateY(-2px);
+}
+
+/* 浅色主题文本 */
+.algorithm-hub.light-theme .ant-typography h1,
+.algorithm-hub.light-theme .ant-typography h2,
+.algorithm-hub.light-theme .ant-typography h3,
+.algorithm-hub.light-theme .ant-typography h4,
+.algorithm-hub.light-theme .ant-typography h5 {
+  color: var(--tech-text-primary) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+}
+
+.algorithm-hub.light-theme .ant-typography {
+  color: var(--tech-text-secondary) !important;
+}
+
+.algorithm-hub.light-theme .tech-title {
+  color: var(--tech-primary) !important;
+  text-shadow: none;
+  font-weight: 700 !important;
+  background: linear-gradient(135deg, var(--tech-primary), var(--tech-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.algorithm-hub.light-theme .tech-text {
+  color: var(--tech-text-primary) !important;
+}
+
+.algorithm-hub.light-theme .tech-text-secondary {
+  color: var(--tech-text-secondary) !important;
+}
+
+/* 浅色主题按钮 */
+.algorithm-hub.light-theme .ant-btn-primary,
+.algorithm-hub.light-theme .tech-button {
+  background: linear-gradient(135deg, var(--tech-primary), var(--tech-secondary)) !important;
+  border: none !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  box-shadow: var(--tech-glow-primary) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.algorithm-hub.light-theme .ant-btn-primary:hover,
+.algorithm-hub.light-theme .tech-button:hover {
+  background: linear-gradient(135deg, var(--tech-secondary), var(--tech-primary)) !important;
+  box-shadow: var(--tech-glow-secondary) !important;
+  transform: scale(1.02) translateY(-1px);
+}
+
+/* 浅色主题输入框 */
+.algorithm-hub.light-theme .ant-input,
+.algorithm-hub.light-theme .tech-input {
+  background: var(--tech-input-bg) !important;
+  border: 1px solid rgba(212, 146, 111, 0.3) !important;
+  color: var(--tech-text-primary) !important;
+  border-radius: 8px !important;
+}
+
+.algorithm-hub.light-theme .ant-input:focus,
+.algorithm-hub.light-theme .tech-input:focus {
+  border-color: var(--tech-primary) !important;
+  box-shadow: 0 0 0 2px rgba(212, 146, 111, 0.1) !important;
+}
+
+/* 浅色主题进度条 */
+.algorithm-hub.light-theme .ant-progress-bg {
+  background: linear-gradient(90deg, var(--tech-primary), var(--tech-accent)) !important;
+  box-shadow: var(--tech-glow-primary);
+}
+
+.algorithm-hub.light-theme .ant-progress-outer {
+  background: rgba(212, 146, 111, 0.1) !important;
+}
+
+/* 浅色主题标签 */
+.algorithm-hub.light-theme .ant-tag {
+  background: rgba(212, 146, 111, 0.1) !important;
+  border: 1px solid rgba(212, 146, 111, 0.3) !important;
+  color: var(--tech-primary) !important;
+  border-radius: 6px;
+}
+
+.algorithm-hub.light-theme .ant-tag[color="blue"] {
+  background: rgba(212, 146, 111, 0.12) !important;
+  border-color: var(--tech-primary) !important;
+  color: var(--tech-primary) !important;
+}
+
+.algorithm-hub.light-theme .ant-tag[color="green"] {
+  background: rgba(160, 120, 59, 0.12) !important;
+  border-color: var(--tech-secondary) !important;
+  color: var(--tech-secondary) !important;
+}
+
+.algorithm-hub.light-theme .ant-tag[color="orange"] {
+  background: rgba(199, 149, 107, 0.12) !important;
+  border-color: var(--tech-accent) !important;
+  color: var(--tech-accent) !important;
+}
+
+/* 浅色主题章节项目 */
+.algorithm-hub.light-theme .course-chapter-item {
+  background: rgba(255, 255, 255, 0.7) !important;
+  border: 1px solid rgba(212, 146, 111, 0.2) !important;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.algorithm-hub.light-theme .course-chapter-item:hover {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(212, 146, 111, 0.4) !important;
+  transform: translateX(6px);
+  box-shadow: 0 4px 15px rgba(212, 146, 111, 0.15);
+}
+
+.algorithm-hub.light-theme .course-chapter-item.active {
+  background: rgba(212, 146, 111, 0.1) !important;
+  border-color: var(--tech-primary) !important;
+  box-shadow: 0 0 20px rgba(212, 146, 111, 0.2);
+}
+
+.algorithm-hub.light-theme .course-chapter-item::before {
+  background: linear-gradient(180deg, var(--tech-primary), var(--tech-secondary));
+}
+
+.algorithm-hub.light-theme .chapter-title {
+  color: var(--tech-text-primary);
+  font-weight: 600;
+}
+
+.algorithm-hub.light-theme .chapter-progress {
+  color: var(--tech-text-muted);
+}
+
+/* 浅色主题目录内容 */
+.algorithm-hub.light-theme .course-directory-sidebar {
+  background: rgba(255, 255, 255, 0.6) !important;
+  border-right: 1px solid rgba(212, 146, 111, 0.2) !important;
+}
+
+.algorithm-hub.light-theme .course-directory-content {
+  background: rgba(255, 255, 255, 0.4) !important;
+}
+
+.algorithm-hub.light-theme .course-content-empty {
+  color: var(--tech-text-muted);
+}
+
+/* 浅色主题动作卡片 */
+.algorithm-hub.light-theme .action-card {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(212, 146, 111, 0.2) !important;
+  border-radius: 12px;
+}
+
+.algorithm-hub.light-theme .action-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), var(--tech-glow-primary);
+  border-color: var(--tech-primary);
+}
+
+.algorithm-hub.light-theme .action-card.voice-learning {
+  background: rgba(160, 120, 59, 0.05) !important;
+  border: 1px solid rgba(160, 120, 59, 0.2);
+}
+
+.algorithm-hub.light-theme .action-card.voice-learning:hover {
+  border-color: var(--tech-secondary);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), var(--tech-glow-secondary);
+}
+
+.algorithm-hub.light-theme .action-card.blackboard-learning {
+  background: rgba(212, 146, 111, 0.05) !important;
+  border: 1px solid rgba(212, 146, 111, 0.2);
+}
+
+.algorithm-hub.light-theme .action-card.blackboard-learning:hover {
+  border-color: var(--tech-primary);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), var(--tech-glow-primary);
+}
+
+.algorithm-hub.light-theme .action-card.coding-practice {
+  background: rgba(199, 149, 107, 0.05) !important;
+  border: 1px solid rgba(199, 149, 107, 0.2);
+}
+
+.algorithm-hub.light-theme .action-card.coding-practice:hover {
+  border-color: var(--tech-accent);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), var(--tech-glow-accent);
+}
+
+/* 浅色主题图标 */
+.algorithm-hub.light-theme .action-icon {
+  color: var(--tech-primary);
+  filter: drop-shadow(0 2px 4px rgba(212, 146, 111, 0.2));
+}
+
+.algorithm-hub.light-theme .action-card:hover .action-icon {
+  filter: drop-shadow(0 4px 8px rgba(212, 146, 111, 0.3));
+}
+
+.algorithm-hub.light-theme .voice-learning .action-icon {
+  color: var(--tech-secondary);
+  filter: drop-shadow(0 2px 4px rgba(160, 120, 59, 0.2));
+}
+
+.algorithm-hub.light-theme .voice-learning:hover .action-icon {
+  filter: drop-shadow(0 4px 8px rgba(160, 120, 59, 0.3));
+}
+
+.algorithm-hub.light-theme .coding-practice .action-icon {
+  color: var(--tech-accent);
+  filter: drop-shadow(0 2px 4px rgba(199, 149, 107, 0.2));
+}
+
+.algorithm-hub.light-theme .coding-practice:hover .action-icon {
+  filter: drop-shadow(0 4px 8px rgba(199, 149, 107, 0.3));
+}
+
+/* 浅色主题统计数据 */
+.algorithm-hub.light-theme .ant-statistic-title {
+  color: var(--tech-text-secondary) !important;
+}
+
+.algorithm-hub.light-theme .ant-statistic-content {
+  color: var(--tech-primary) !important;
+}
+
+.algorithm-hub.light-theme .ant-statistic-content-value {
+  background: linear-gradient(135deg, var(--tech-primary), var(--tech-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700 !important;
+}
+
+/* 浅色主题时间轴 */
+.algorithm-hub.light-theme .ant-timeline-item-head {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 2px solid var(--tech-primary) !important;
+}
+
+.algorithm-hub.light-theme .ant-timeline-item-tail {
+  border-left: 2px solid rgba(212, 146, 111, 0.3) !important;
+}
+
+.algorithm-hub.light-theme .ant-timeline-item-content {
+  background: rgba(255, 255, 255, 0.6) !important;
+  border: 1px solid rgba(212, 146, 111, 0.2) !important;
+}
+
+.algorithm-hub.light-theme .ant-timeline-item-content:hover {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-color: rgba(212, 146, 111, 0.4) !important;
+}
+
+/* 浅色主题滚动条 */
+.algorithm-hub.light-theme ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.algorithm-hub.light-theme ::-webkit-scrollbar-track {
+  background: rgba(245, 244, 240, 0.8);
+  border-radius: 4px;
+}
+
+.algorithm-hub.light-theme ::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--tech-primary), var(--tech-secondary));
+  border-radius: 4px;
+  opacity: 0.7;
+}
+
+.algorithm-hub.light-theme ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--tech-secondary), var(--tech-primary));
+  opacity: 1;
+}
+
+/* 浅色主题工具提示 */
+.algorithm-hub.light-theme .ant-tooltip-inner {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(212, 146, 111, 0.3) !important;
+  color: var(--tech-text-primary) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+}
+
+.algorithm-hub.light-theme .ant-tooltip-arrow::before {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(212, 146, 111, 0.3) !important;
+}
+
+/* 浅色主题徽章 */
+.algorithm-hub.light-theme .ant-badge-count {
+  background: linear-gradient(135deg, var(--tech-primary), var(--tech-secondary)) !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  color: #ffffff !important;
+}
+
+/* 浅色主题加载动画 */
+.algorithm-hub.light-theme .ant-spin-dot {
+  background: var(--tech-primary) !important;
+}
+
+/* 优化浅色主题的阴影和层次感 */
+.algorithm-hub.light-theme .tech-card,
+.algorithm-hub.light-theme .ant-card {
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.05),
+    0 4px 12px rgba(212, 146, 111, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+}
+
+.algorithm-hub.light-theme .tech-card:hover,
+.algorithm-hub.light-theme .ant-card:hover {
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.08),
+    0 8px 24px rgba(212, 146, 111, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+/* CourseDirectory 浅色主题样式 */
+.algorithm-hub.light-theme .course-directory-layout {
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(250, 249, 246, 0.95) 50%,
+    rgba(255, 255, 255, 0.95) 100%) !important;
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.08) !important;
+}
+
+.algorithm-hub.light-theme .course-directory-sidebar {
+  background: linear-gradient(135deg,
+    rgba(212, 146, 111, 0.08) 0%,
+    rgba(255, 255, 255, 0.9) 100%) !important;
+  border-radius: 16px;
+}
+
+.algorithm-hub.light-theme .course-directory-sidebar::before {
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--tech-primary) 50%,
+    transparent 100%) !important;
+}
+
+.algorithm-hub.light-theme .course-directory-middle {
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.7) 0%,
+    rgba(212, 146, 111, 0.03) 50%,
+    rgba(255, 255, 255, 0.7) 100%) !important;
+}
+
+.algorithm-hub.light-theme .course-directory-middle::after {
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(212, 146, 111, 0.4) 50%,
+    transparent 100%) !important;
+}
+
+.algorithm-hub.light-theme .course-directory-content {
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(250, 249, 246, 0.8) 100%) !important;
+}
+
+/* 浅色主题章节项目 */
+.algorithm-hub.light-theme .chapter-item {
+  border: 1px solid rgba(212, 146, 111, 0.15) !important;
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(212, 146, 111, 0.03) 100%) !important;
+}
+
+.algorithm-hub.light-theme .chapter-item::before {
+  background: linear-gradient(135deg,
+    rgba(212, 146, 111, 0.08) 0%,
+    rgba(212, 146, 111, 0.04) 100%) !important;
+}
+
+.algorithm-hub.light-theme .chapter-item:hover {
+  border-color: rgba(212, 146, 111, 0.4) !important;
+  box-shadow:
+    0 8px 25px rgba(212, 146, 111, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+}
+
+.algorithm-hub.light-theme .chapter-item.active {
+  background: linear-gradient(135deg,
+    rgba(212, 146, 111, 0.12) 0%,
+    rgba(160, 120, 59, 0.06) 100%) !important;
+  border-color: var(--tech-primary) !important;
+  box-shadow:
+    0 12px 35px rgba(212, 146, 111, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 0 0 1px rgba(212, 146, 111, 0.3) !important;
+}
+
+/* 浅色主题模式项目 */
+.algorithm-hub.light-theme .pattern-item {
+  border: 1px solid rgba(212, 146, 111, 0.12) !important;
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(212, 146, 111, 0.02) 100%) !important;
+}
+
+.algorithm-hub.light-theme .pattern-item::before {
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(212, 146, 111, 0.06),
+    transparent) !important;
+}
+
+.algorithm-hub.light-theme .pattern-item:hover {
+  border-color: rgba(212, 146, 111, 0.3) !important;
+  box-shadow:
+    0 12px 30px rgba(212, 146, 111, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+}
+
+.algorithm-hub.light-theme .pattern-item.active {
+  background: linear-gradient(135deg,
+    rgba(212, 146, 111, 0.1) 0%,
+    rgba(160, 120, 59, 0.05) 100%) !important;
+  border-color: var(--tech-primary) !important;
+  box-shadow:
+    0 16px 40px rgba(212, 146, 111, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 0 20px rgba(212, 146, 111, 0.15) !important;
+}
+
+.algorithm-hub.light-theme .pattern-description {
+  color: var(--tech-text-muted) !important;
+}
+
+/* 浅色主题题目项目 */
+.algorithm-hub.light-theme .problem-item {
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(212, 146, 111, 0.02) 100%) !important;
+  border: 1px solid rgba(212, 146, 111, 0.1) !important;
+}
+
+.algorithm-hub.light-theme .problem-item::before {
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(212, 146, 111, 0.05),
+    transparent) !important;
+}
+
+.algorithm-hub.light-theme .problem-item:hover {
+  background: linear-gradient(135deg,
+    rgba(212, 146, 111, 0.05) 0%,
+    rgba(255, 255, 255, 0.9) 100%) !important;
+  border-color: rgba(212, 146, 111, 0.25) !important;
+  box-shadow:
+    0 8px 25px rgba(212, 146, 111, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+}
+
+.algorithm-hub.light-theme .problem-item.completed {
+  background: linear-gradient(135deg,
+    rgba(160, 120, 59, 0.08) 0%,
+    rgba(255, 255, 255, 0.8) 100%) !important;
+  border: 1px solid rgba(160, 120, 59, 0.2) !important;
+}
+
+.algorithm-hub.light-theme .problem-item.completed:hover {
+  background: linear-gradient(135deg,
+    rgba(160, 120, 59, 0.12) 0%,
+    rgba(255, 255, 255, 0.9) 100%) !important;
+  border-color: rgba(160, 120, 59, 0.3) !important;
+}
+
+/* 浅色主题头部样式 */
+.algorithm-hub.light-theme .sidebar-header::after {
+  background: linear-gradient(90deg, transparent, var(--tech-primary), transparent) !important;
+}
+
+.algorithm-hub.light-theme .pattern-list-header::after {
+  background: linear-gradient(90deg,
+    rgba(212, 146, 111, 0.4) 0%,
+    rgba(212, 146, 111, 0.1) 50%,
+    rgba(212, 146, 111, 0.4) 100%) !important;
+}
+
+.algorithm-hub.light-theme .problem-list-header {
+  background: linear-gradient(135deg,
+    rgba(212, 146, 111, 0.08) 0%,
+    rgba(255, 255, 255, 0.8) 100%) !important;
+  border: 1px solid rgba(212, 146, 111, 0.15) !important;
+}
+
+.algorithm-hub.light-theme .problem-list-header::before {
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(212, 146, 111, 0.04) 50%,
+    transparent 100%) !important;
+}
+
+/* 浅色主题占位符 */
+.algorithm-hub.light-theme .placeholder-content {
+  background: rgba(255, 255, 255, 0.6) !important;
+  border: 1px dashed rgba(212, 146, 111, 0.25) !important;
+}
+
+/* 浅色主题滚动条 */
+.algorithm-hub.light-theme .problem-items::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.4) !important;
+}
+
+.algorithm-hub.light-theme .problem-items::-webkit-scrollbar-thumb {
+  background: rgba(212, 146, 111, 0.3) !important;
+}
+
+.algorithm-hub.light-theme .problem-items::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 146, 111, 0.5) !important;
+}
+
+/* 浅色主题文本颜色覆盖 */
+.algorithm-hub.light-theme .pattern-list-header h4,
+.algorithm-hub.light-theme .sidebar-header span,
+.algorithm-hub.light-theme .problem-title-section h4 {
+  color: var(--tech-text-primary) !important;
+}
+
+.algorithm-hub.light-theme .pattern-item span,
+.algorithm-hub.light-theme .problem-item span {
+  color: var(--tech-text-primary) !important;
+}
+
+.algorithm-hub.light-theme .pattern-item.active span,
+.algorithm-hub.light-theme .chapter-item.active span {
+  color: var(--tech-primary) !important;
+}
+
+.algorithm-hub.light-theme .problem-title-section h4 {
+  color: var(--tech-primary) !important;
+}
+
+.algorithm-hub.light-theme .problem-title-section .ant-typography {
+  color: var(--tech-text-secondary) !important;
+}
+
+/* 浅色主题图标颜色 */
+.algorithm-hub.light-theme .anticon {
+  color: var(--tech-primary) !important;
+}
+
+.algorithm-hub.light-theme .chapter-item .anticon-star {
+  color: var(--tech-secondary) !important;
+}
+
+.algorithm-hub.light-theme .pattern-item .anticon-star {
+  color: var(--tech-accent) !important;
+}
+
+.algorithm-hub.light-theme .problem-item .anticon-bulb {
+  color: var(--tech-secondary) !important;
+}
+
+.algorithm-hub.light-theme .problem-item .anticon-check-circle {
+  color: var(--tech-secondary) !important;
+}
+
+.algorithm-hub.light-theme .problem-list-header .anticon-star {
+  color: var(--tech-accent) !important;
+}
+
+/* 全局浅色主题样式 */
+.light-theme {
+  background: #FAF9F6 !important;
+  color: var(--tech-text-primary) !important;
+}
+
+/* 浅色主题导航栏 */
+.light-theme .tech-header {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-bottom: 1px solid var(--tech-border) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+.light-theme .tech-header .ant-menu {
+  background: transparent !important;
+}
+
+.light-theme .tech-header .ant-menu-item {
+  color: var(--tech-text-secondary) !important;
+}
+
+.light-theme .tech-header .ant-menu-item:hover {
+  color: var(--tech-primary) !important;
+  background: rgba(212, 146, 111, 0.08) !important;
+}
+
+.light-theme .tech-header .ant-menu-item-selected {
+  color: var(--tech-primary) !important;
+  background: rgba(212, 146, 111, 0.12) !important;
+}
+
+.light-theme .tech-title {
+  color: var(--tech-primary) !important;
+}
+
+/* 浅色主题背景 */
+.light-theme .tech-background {
+  background: #FAF9F6 !important;
+}
+
+/* 浅色主题技术卡片 - SmartCodingLab专用 */
+.light-theme .tech-card {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(212, 146, 111, 0.2) !important;
+  color: #2c2c2c !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(212, 146, 111, 0.1) !important;
+}
+
+.light-theme .tech-card:hover {
+  background: rgba(255, 255, 255, 1) !important;
+  border-color: rgba(212, 146, 111, 0.4) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(212, 146, 111, 0.15) !important;
+}
+
+/* 浅色主题下技术卡片内的文本 */
+.light-theme .tech-card .ant-typography {
+  color: #2c2c2c !important;
+}
+
+.light-theme .tech-card .tech-title {
+  color: var(--tech-primary) !important;
+}
+
+/* 浅色主题下的按钮样式优化 */
+.light-theme .tech-button,
+.light-theme .ant-btn-primary {
+  background: linear-gradient(135deg, var(--tech-primary), var(--tech-secondary)) !important;
+  border: none !important;
+  color: white !important;
+  box-shadow: var(--tech-glow-primary) !important;
+}
+
+.light-theme .tech-button:hover,
+.light-theme .ant-btn-primary:hover {
+  background: linear-gradient(135deg, var(--tech-secondary), var(--tech-primary)) !important;
+  box-shadow: var(--tech-glow-secondary) !important;
+  transform: translateY(-1px);
+}
+
+/* 浅色主题下的输入框 */
+.light-theme .tech-input,
+.light-theme .ant-input {
+  background: var(--tech-input-bg) !important;
+  border: 1px solid var(--tech-border) !important;
+  color: var(--tech-text-primary) !important;
+}
+
+.light-theme .tech-input:focus,
+.light-theme .ant-input:focus {
+  border-color: var(--tech-primary) !important;
+  box-shadow: 0 0 0 2px rgba(212, 146, 111, 0.2) !important;
+}
+
+/* 浅色主题下的选择器 */
+.light-theme .ant-select-selector {
+  background: var(--tech-input-bg) !important;
+  border: 1px solid var(--tech-border) !important;
+  color: var(--tech-text-primary) !important;
+}
+
+/* 浅色主题下的图标颜色 */
+.light-theme .anticon {
+  color: var(--tech-primary) !important;
+}
+
+/* 浅色主题下的标签 */
+.light-theme .ant-tag {
+  background: rgba(212, 146, 111, 0.1) !important;
+  border: 1px solid rgba(212, 146, 111, 0.3) !important;
+  color: var(--tech-primary) !important;
+}
+
+/* 浅色主题下的进度条 */
+.light-theme .ant-progress-bg {
+  background: linear-gradient(90deg, var(--tech-primary), var(--tech-secondary)) !important;
+}
+
+/* 浅色主题下的特定文本颜色覆盖 - 基于GitHub commit的正确配色 */
+.light-theme {
+  /* 文本颜色 - 使用温暖的灰色系 */
+  --tech-text-primary: #2C2A2E;
+  --tech-text-secondary: #5A5A5A;
+  --tech-text-muted: #888888;
+
+  /* 主要品牌色 - 使用温暖的橙棕色系 */
+  --tech-primary: #D4926F;
+  --tech-secondary: #A0783B;
+  --tech-accent: #B5704A;
+
+  /* 边框和分割线 */
+  --tech-border: rgba(212, 146, 111, 0.2);
+
+  /* 背景色 - 使用温暖的浅色系 */
+  --tech-card-bg: #ffffff;
+  --tech-header-bg: #FAF9F6;
+  --tech-input-bg: #ffffff;
+  --tech-code-bg: #F8F7F4;
+  --tech-bg-primary: #FAF9F6;
+  --tech-bg-secondary: #F5F4F0;
+  --tech-bg-tertiary: #F0EFEB;
+
+  /* 阴影和发光效果 */
+  --tech-glow-primary: 0 4px 16px rgba(212, 146, 111, 0.15);
+  --tech-glow-secondary: 0 4px 12px rgba(160, 120, 59, 0.12);
+  --tech-glow-accent: 0 2px 8px rgba(181, 112, 74, 0.1);
+
+  /* 悬停状态 */
+  --tech-hover: #F5F4F0;
+}
+
+/* 浅色主题下的导航栏优化 */
+.light-theme .tech-header {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-bottom: 1px solid rgba(212, 146, 111, 0.2) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* 浅色主题下的下拉菜单 */
+.light-theme .ant-dropdown {
+  background: white !important;
+  border: 1px solid rgba(212, 146, 111, 0.2) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-theme .ant-dropdown .ant-dropdown-menu-item {
+  color: #2c2c2c !important;
+}
+
+.light-theme .ant-dropdown .ant-dropdown-menu-item:hover {
+  background: rgba(212, 146, 111, 0.1) !important;
+}
+
+/* 浅色主题下的测试用例样式 */
+.light-theme .ant-list-item {
+  background: var(--tech-code-bg) !important;
+  border: 1px solid var(--tech-border) !important;
+  border-radius: 8px !important;
+}
+
+.light-theme .ant-list-item:hover {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-color: var(--tech-primary) !important;
+}
+
+/* 强制覆盖测试用例标签样式 */
+.light-theme .ant-list .ant-tag {
+  background: var(--tech-primary) !important;
+  color: white !important;
+  border: none !important;
+}
+
+/* 失败状态的标签保持红色 */
+.light-theme .ant-list .ant-tag[style*="#ff4d4f"] {
+  background: #ff4d4f !important;
+  color: white !important;
+}
+
+/* 强制覆盖List Item的内联样式 */
+.light-theme .ant-list-item[style] {
+  background: var(--tech-code-bg) !important;
+  border: 1px solid var(--tech-border) !important;
+}
+
+/* 浅色主题下测试用例卡片标题 */
+.light-theme .ant-card-head-title {
+  color: var(--tech-text-primary) !important;
+}
+
+/* 浅色主题下测试用例内容文本 */
+.light-theme .ant-typography {
+  color: var(--tech-text-primary) !important;
+}
+
+.light-theme .ant-typography[style*="color: var(--tech-text-muted)"] {
+  color: var(--tech-text-muted) !important;
+}
+
+/* 浅色主题下测试用例列表背景 */
+.light-theme .ant-list {
+  background: transparent !important;
+}
+
+/* 测试用例卡片样式强制覆盖 */
+.light-theme .ant-card[style*="background"] {
+  background: var(--tech-card-bg) !important;
+  border: 1px solid var(--tech-border) !important;
+}
+
+/* 测试用例详情区域背景 */
+.light-theme div[style*="background"][style*="fontFamily: 'monospace'"] {
+  background: var(--tech-code-bg) !important;
+  border: 1px solid var(--tech-border) !important;
+  border-radius: 4px !important;
+}
+
+/* 浅色主题下问题标题样式 */
+.light-theme .tech-title {
+  color: var(--tech-primary) !important;
+  font-weight: 600 !important;
+}
+
+/* 浅色主题下卡片标题 */
+.light-theme .ant-card-head .ant-card-head-title {
+  color: var(--tech-text-primary) !important;
+  font-weight: 600 !important;
+}
+
+/* 强制覆盖span元素的颜色 */
+.light-theme span[style*="color: var(--tech-primary)"] {
+  color: #D4926F !important;
+}
+
+.light-theme span[style*="color: var(--tech-accent)"] {
+  color: #B5704A !important;
+}
+
+.light-theme span[style*="color: var(--tech-secondary)"] {
+  color: #A0783B !important;
+}
+
+/* 专门针对测试用例中的输入输出标签 */
+.light-theme span[style*="color: var(--tech-primary)"][style*="fontWeight: 'bold'"] {
+  color: #D4926F !important;
+}
+
+.light-theme span[style*="color: var(--tech-secondary)"][style*="fontWeight: 'bold'"] {
+  color: #A0783B !important;
+}
+
+/* 强制覆盖测试用例区域的所有颜色 */
+.light-theme .ant-list-item span[style*="color"] {
+  color: #2C2A2E !important;
+}
+
+.light-theme .ant-list-item span[style*="fontWeight: 'bold'"] {
+  color: #D4926F !important;
+}
+
+/* 输入标签颜色 */
+.light-theme span:contains("输入") {
+  color: #D4926F !important;
+}
+
+/* 输出标签颜色 */
+.light-theme span:contains("输出") {
+  color: #A0783B !important;
+}
+
+/* 强制覆盖所有Ant Design默认颜色 - 针对测试用例 */
+.light-theme .ant-tag[color="green"],
+.light-theme .ant-tag-green {
+  background: rgba(160, 120, 59, 0.12) !important;
+  border-color: #A0783B !important;
+  color: #A0783B !important;
+}
+
+.light-theme .ant-tag[color="cyan"],
+.light-theme .ant-tag-cyan {
+  background: rgba(212, 146, 111, 0.12) !important;
+  border-color: #D4926F !important;
+  color: #D4926F !important;
+}
+
+.light-theme .ant-tag[color="blue"],
+.light-theme .ant-tag-blue {
+  background: rgba(212, 146, 111, 0.12) !important;
+  border-color: #D4926F !important;
+  color: #D4926F !important;
+}
+
+/* 强制覆盖任何绿色系颜色 */
+.light-theme .ant-tag[color="#52c41a"],
+.light-theme .ant-tag[color="#87d068"],
+.light-theme .ant-tag[color="#00b96b"],
+.light-theme .ant-tag[color="#13c2c2"] {
+  background: rgba(160, 120, 59, 0.12) !important;
+  border-color: #A0783B !important;
+  color: #A0783B !important;
+}
+
+/* 强制覆盖测试用例卡片区域中的所有内容 */
+.light-theme [title*="测试"] .ant-card,
+.light-theme [title*="test"] .ant-card {
+  background: var(--tech-card-bg) !important;
+  border: 1px solid var(--tech-border) !important;
+}
+
+.light-theme [title*="测试"] .ant-card .ant-tag,
+.light-theme [title*="test"] .ant-card .ant-tag {
+  background: var(--tech-primary) !important;
+  border-color: var(--tech-primary) !important;
+  color: white !important;
+}
+
+/* 覆盖CheckCircleOutlined和其他图标颜色 */
+.light-theme .anticon-check-circle {
+  color: #B5704A !important;
+}
+
+.light-theme .anticon-close-circle {
+  color: #ff4d4f !important;
+}
+
+/* SmartCodingLab页面专用样式强制覆盖 */
+.light-theme .ant-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(212, 146, 111, 0.2) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(212, 146, 111, 0.1) !important;
+}
+
+.light-theme .ant-card .ant-card-head {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(212, 146, 111, 0.2) !important;
+}
+
+.light-theme .ant-card .ant-card-body {
+  background: transparent !important;
+}
+
+/* 强制覆盖所有内联样式的背景色 */
+.light-theme div[style*="background: #2a2a2a"],
+.light-theme div[style*="background:#2a2a2a"] {
+  background: #ffffff !important;
+}
+
+.light-theme div[style*="background: #1e1e1e"],
+.light-theme div[style*="background:#1e1e1e"] {
+  background: #F8F7F4 !important;
+}
+
+.light-theme div[style*="border: 1px solid #444"],
+.light-theme div[style*="border:1px solid #444"] {
+  border: 1px solid rgba(212, 146, 111, 0.2) !important;
+}
+
+.light-theme div[style*="border: 1px solid #333"],
+.light-theme div[style*="border:1px solid #333"] {
+  border: 1px solid rgba(212, 146, 111, 0.2) !important;
+}
+
+/* 强制覆盖页面根容器 */
+.light-theme.tech-background {
+  background: #FAF9F6 !important;
+}
+
+/* 强制覆盖所有使用tech-card-bg变量的元素 */
+.light-theme [style*="var(--tech-card-bg)"] {
+  background: #ffffff !important;
+}
+
+/* 强制覆盖测试用例相关的所有颜色 */
+.light-theme .ant-card-head-title,
+.light-theme .ant-card-head .ant-card-head-title {
+  color: var(--tech-text-primary) !important;
+}
+
+/* 强制覆盖包含测试用例的卡片标题颜色 */
+.light-theme [title*="测试"] .ant-card-head-title,
+.light-theme [title*="test"] .ant-card-head-title {
+  color: var(--tech-text-primary) !important;
+}
+
+/* 强制覆盖所有可能的蓝绿色文字 */
+.light-theme span[style*="color: cyan"],
+.light-theme span[style*="color: #00ffff"],
+.light-theme span[style*="color: #00d4ff"],
+.light-theme span[style*="color: rgb(0, 255, 255)"] {
+  color: var(--tech-primary) !important;
+}
+
+.light-theme div[style*="color: cyan"],
+.light-theme div[style*="color: #00ffff"],
+.light-theme div[style*="color: #00d4ff"],
+.light-theme div[style*="color: rgb(0, 255, 255)"] {
+  color: var(--tech-primary) !important;
+}
+
+/* 强制覆盖任何蓝色文字 */
+.light-theme span[style*="color: blue"],
+.light-theme span[style*="color: #0000ff"],
+.light-theme span[style*="color: #1890ff"],
+.light-theme span[style*="color: rgb(24, 144, 255)"] {
+  color: var(--tech-primary) !important;
+}
+
+.light-theme div[style*="color: blue"],
+.light-theme div[style*="color: #0000ff"],
+.light-theme div[style*="color: #1890ff"],
+.light-theme div[style*="color: rgb(24, 144, 255)"] {
+  color: var(--tech-primary) !important;
+}

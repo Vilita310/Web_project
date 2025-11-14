@@ -1,0 +1,84 @@
+{
+  "title": "💼 AI Smart Job Center",
+  "subtitle": "AI algorithm intelligently matches positions, one-click batch application, full progress tracking",
+  "stats": {
+    "matchRate": "Smart Match Accuracy",
+    "responseTime": "Average Response Time",
+    "passRate": "Interview Pass Rate"
+  },
+  "filters": {
+    "location": "Location",
+    "salary": "Salary Range",
+    "experience": "Experience",
+    "company": "Company Type",
+    "position": "Position Type",
+    "all": "All",
+    "beijing": "Beijing",
+    "shanghai": "Shanghai",
+    "shenzhen": "Shenzhen",
+    "hangzhou": "Hangzhou",
+    "under10k": "Under $10K",
+    "10k20k": "$10K-$20K",
+    "20k30k": "$20K-$30K",
+    "over30k": "Over $30K"
+  },
+  "job": {
+    "title": "Position",
+    "company": "Company",
+    "location": "Location",
+    "salary": "Salary",
+    "experience": "Experience Required",
+    "education": "Education Required",
+    "skills": "Skills Required",
+    "benefits": "Benefits",
+    "description": "Job Description",
+    "requirements": "Requirements",
+    "matchScore": "Match Score",
+    "publishTime": "Posted"
+  },
+  "status": {
+    "notApplied": "Not Applied",
+    "applied": "Applied",
+    "interviewing": "Interviewing",
+    "rejected": "Rejected",
+    "offered": "Offered"
+  },
+  "actions": {
+    "applyNow": "Apply Now",
+    "batchApply": "Batch Apply",
+    "favorite": "Save Job",
+    "viewDetails": "View Details",
+    "selectHighMatch": "🎯 Select High Match",
+    "confirmApply": "Confirm Application"
+  },
+  "smartRecommendation": {
+    "title": "⚡ Smart Quick Application",
+    "features": [
+      "• Auto-select 90%+ match positions",
+      "• Priority for urgent hiring",
+      "• Avoid duplicate applications to same company"
+    ]
+  },
+  "applicationStats": {
+    "thisMonth": "This Month",
+    "successRate": "Success Rate",
+    "replies": "Got Replies",
+    "interviews": "Interview Invites",
+    "offers": "Job Offers"
+  },
+  "recentApplications": {
+    "title": "Recent Applications",
+    "position": "Position",
+    "company": "Company",
+    "time": "Time",
+    "status": "Status"
+  },
+  "tips": {
+    "title": "💡 Professional Tips",
+    "items": [
+      "Choose positions with 85%+ match rate",
+      "Avoid multiple applications to same company",
+      "Focus on newly posted urgent positions"
+    ]
+  }
+}

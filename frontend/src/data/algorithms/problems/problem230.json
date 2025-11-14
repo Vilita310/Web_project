@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "id": 230,
+    "title": "二叉搜索树中第K小的元素",
+    "difficulty": "中等",
+    "leetcodeId": 230,
+    "category": "tree",
+    "patterns": [
+      "tree_kth_element"
+    ],
+    "tags": [
+      "树",
+      "深度优先搜索",
+      "二叉搜索树"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给定一个二叉搜索树的根节点 root ，和一个整数 k ，请你设计一个算法查找其中第 k 个最小元素（从 1 开始计数）。",
+  "examples": [
+    {
+      "input": "root = [3,1,4,null,2], k = 1",
+      "output": "1",
+      "explanation": "第1小的元素是1"
+    },
+    {
+      "input": "root = [5,3,6,2,4,null,null,1], k = 3",
+      "output": "3",
+      "explanation": "第3小的元素是3"
+    }
+  ],
+  "constraints": [
+    "树中的节点数为 n",
+    "1 <= k <= n <= 10^4",
+    "0 <= Node.val <= 10^4"
+  ],
+  "hints": [
+    "利用BST中序遍历得到有序序列的性质",
+    "可以在遍历过程中计数，找到第k个元素后停止",
+    "也可以先统计左子树节点数量"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "inorder_traversal",
+      "name": "中序遍历",
+      "timeComplexity": "O(H + k)",
+      "spaceComplexity": "O(H)",
+      "description": "中序遍历BST，计数找到第k小元素",
+      "code": {
+        "javascript": "/**\n * 二叉搜索树中第K小的元素 - 中序遍历BST，计数找到第k小元素\n */\n\nfunction kthSmallest(root, k) {\n    let count = 0;\n    let result = 0;\n\n    function inorder(node) {\n        if (!node) return;\n\n        inorder(node.left);\n\n        count++;\n        if (count === k) {\n            result = node.val;\n            return;\n        }\n\n        inorder(node.right);\n    }\n\n    inorder(root);\n    return result;\n}\n\n\n/**\n * 测试kthSmallest函数\n */\nfunction testKthSmallest() {\n    console.log(\"=== kthSmallest测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: root = [3,1,4,null,2], k = 1\");\n    console.log(\"期望输出: 1\");\n    console.log(\"说明: 第1小的元素是1\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testKthSmallest();",
+        "python": "\"\"\"\n二叉搜索树中第K小的元素 - 中序遍历BST，计数找到第k小元素\n\"\"\"\n\ndef kthSmallest(root, k):\n    def inorder(node):\n        if not node:\n            return []\n        return inorder(node.left) + [node.val] + inorder(node.right)\n\n    return inorder(root)[k - 1]\n\n# 更优化的解法\ndef kthSmallest(root, k):\n    def inorder(node):\n        nonlocal count, result\n        if not node:\n            return\n\n        inorder(node.left)\n\n        count += 1\n        if count == k:\n            result = node.val\n            return\n\n        inorder(node.right)\n\n    count = 0\n    result = 0\n    inorder(root)\n    return result\n\n\ndef test_kthSmallest():\n    \"\"\"测试kthSmallest函数\"\"\"\n    print(\"=== kthSmallest测试 ===\")\n\n    # 测试用例\n    print(\"输入: root = [3,1,4,null,2], k = 1\")\n    print(\"期望输出: 1\")\n    print(\"说明: 第1小的元素是1\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_kthSmallest()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 二叉搜索树中第K小的元素解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "root = [3,1,4,null,2], k = 1",
+      "output": "1",
+      "explanation": "第1小的元素是1"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "二叉搜索树中第K小的元素变种练习",
+      "description": "基于二叉搜索树中第K小的元素的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

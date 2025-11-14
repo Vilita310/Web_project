@@ -1,0 +1,148 @@
+{
+  "meta": {
+    "id": 1,
+    "title": "两数之和",
+    "difficulty": "简单",
+    "leetcodeId": 1,
+    "category": "array",
+    "patterns": [
+      "array_two_pointers"
+    ],
+    "tags": [
+      "数组",
+      "哈希表"
+    ],
+    "estimatedTime": "15分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target 的那两个整数，并返回它们的数组下标。你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。你可以按任意顺序返回答案。",
+  "examples": [
+    {
+      "input": "nums = [2,7,11,15], target = 9",
+      "output": "[0,1]",
+      "explanation": "因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。"
+    },
+    {
+      "input": "nums = [3,2,4], target = 6",
+      "output": "[1,2]",
+      "explanation": "因为 nums[1] + nums[2] == 6 ，返回 [1, 2] 。"
+    },
+    {
+      "input": "nums = [3,3], target = 6",
+      "output": "[0,1]",
+      "explanation": "因为 nums[0] + nums[1] == 6 ，返回 [0, 1] 。"
+    }
+  ],
+  "constraints": [
+    "2 <= nums.length <= 10⁴",
+    "-10⁹ <= nums[i] <= 10⁹",
+    "-10⁹ <= target <= 10⁹",
+    "只会存在一个有效答案"
+  ],
+  "functionInfo": {
+    "javascript": {
+      "functionName": "twoSum",
+      "parameters": ["nums", "target"],
+      "template": "function twoSum(nums, target) {\n    // 在这里实现你的代码\n    \n}"
+    },
+    "python": {
+      "functionName": "twoSum",
+      "parameters": ["nums", "target"],
+      "template": "def twoSum(nums, target):\n    # 在这里实现你的代码\n    pass"
+    }
+  },
+  "testCases": [
+    {
+      "id": 1,
+      "input": {
+        "nums": [2,7,11,15],
+        "target": 9
+      },
+      "expected": [0,1],
+      "description": "标准测试用例"
+    },
+    {
+      "id": 2,
+      "input": {
+        "nums": [3,2,4],
+        "target": 6
+      },
+      "expected": [1,2],
+      "description": "不同顺序"
+    },
+    {
+      "id": 3,
+      "input": {
+        "nums": [3,3],
+        "target": 6
+      },
+      "expected": [0,1],
+      "description": "相同元素"
+    }
+  ],
+  "hints": [
+    "一个简单的实现是使用两层 for 循环，时间复杂度是 O(n²)",
+    "你可以使用哈希表将时间复杂度降低到 O(n)",
+    "当遍历到数字 x 时，检查哈希表中是否存在 target - x"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "hash_table",
+      "name": "哈希表",
+      "timeComplexity": "O(n)",
+      "spaceComplexity": "O(n)",
+      "description": "使用哈希表存储已遍历的数字，实现 O(1) 时间复杂度的查找",
+      "code": {
+        "javascript": "/**\n * 两数之和 - 哈希表解法\n * @param {number[]} nums\n * @param {number} target\n * @return {number[]}\n */\nfunction twoSum(nums, target) {\n    // 使用哈希表存储已遍历的数字和索引\n    const map = new Map();\n\n    for (let i = 0; i < nums.length; i++) {\n        const complement = target - nums[i];\n\n        // 检查互补数是否存在\n        if (map.has(complement)) {\n            return [map.get(complement), i];\n        }\n\n        // 存储当前数字和索引\n        map.set(nums[i], i);\n    }\n\n    return []; // 题目保证有解，这里不会执行到\n}\n\n// 测试用例\nfunction testTwoSum() {\n    console.log(\"=== 两数之和测试 ===\");\n\n    // 测试用例1\n    const nums1 = [2, 7, 11, 15];\n    const target1 = 9;\n    const result1 = twoSum(nums1, target1);\n    console.log(`输入: nums = [${nums1}], target = ${target1}`);\n    console.log(`输出: [${result1}]`);\n    console.log(`期望: [0, 1]`);\n    console.log(`结果: ${JSON.stringify(result1) === JSON.stringify([0, 1]) ? '✅ 通过' : '❌ 失败'}`);\n\n    // 测试用例2\n    const nums2 = [3, 2, 4];\n    const target2 = 6;\n    const result2 = twoSum(nums2, target2);\n    console.log(`\\n输入: nums = [${nums2}], target = ${target2}`);\n    console.log(`输出: [${result2}]`);\n    console.log(`期望: [1, 2]`);\n    console.log(`结果: ${JSON.stringify(result2) === JSON.stringify([1, 2]) ? '✅ 通过' : '❌ 失败'}`);\n\n    // 测试用例3\n    const nums3 = [3, 3];\n    const target3 = 6;\n    const result3 = twoSum(nums3, target3);\n    console.log(`\\n输入: nums = [${nums3}], target = ${target3}`);\n    console.log(`输出: [${result3}]`);\n    console.log(`期望: [0, 1]`);\n    console.log(`结果: ${JSON.stringify(result3) === JSON.stringify([0, 1]) ? '✅ 通过' : '❌ 失败'}`);\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testTwoSum();",
+        "python": "def twoSum(nums, target):\n    \"\"\"\n    两数之和 - 哈希表解法\n\n    Args:\n        nums: 整数数组\n        target: 目标和\n\n    Returns:\n        两个数的索引数组\n    \"\"\"\n    # 使用哈希表存储已遍历的数字和索引\n    hash_map = {}\n\n    for i, num in enumerate(nums):\n        complement = target - num\n\n        # 检查互补数是否存在\n        if complement in hash_map:\n            return [hash_map[complement], i]\n\n        # 存储当前数字和索引\n        hash_map[num] = i\n\n    return []  # 题目保证有解，这里不会执行到\n\ndef test_two_sum():\n    \"\"\"测试两数之和函数\"\"\"\n    print(\"=== 两数之和测试 ===\")\n\n    # 测试用例1\n    nums1 = [2, 7, 11, 15]\n    target1 = 9\n    result1 = twoSum(nums1, target1)\n    print(f\"输入: nums = {nums1}, target = {target1}\")\n    print(f\"输出: {result1}\")\n    print(f\"期望: [0, 1]\")\n    print(f\"结果: {'✅ 通过' if result1 == [0, 1] else '❌ 失败'}\")\n\n    # 测试用例2\n    nums2 = [3, 2, 4]\n    target2 = 6\n    result2 = twoSum(nums2, target2)\n    print(f\"\\n输入: nums = {nums2}, target = {target2}\")\n    print(f\"输出: {result2}\")\n    print(f\"期望: [1, 2]\")\n    print(f\"结果: {'✅ 通过' if result2 == [1, 2] else '❌ 失败'}\")\n\n    # 测试用例3\n    nums3 = [3, 3]\n    target3 = 6\n    result3 = twoSum(nums3, target3)\n    print(f\"\\n输入: nums = {nums3}, target = {target3}\")\n    print(f\"输出: {result3}\")\n    print(f\"期望: [0, 1]\")\n    print(f\"结果: {'✅ 通过' if result3 == [0, 1] else '❌ 失败'}\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_two_sum()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 两数之和解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "nums = [2,7,11,15], target = 9",
+      "output": "[0,1]",
+      "explanation": "因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "两数之和变种练习",
+      "description": "基于两数之和的变种问题",
+      "difficulty": "简单",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

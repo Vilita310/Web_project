@@ -1,0 +1,619 @@
+{
+  "title": "🎓 AI 智能课堂",
+  "stages": {
+    "theory": "理论学习",
+    "practice": "练习巩固",
+    "project": "迷你项目",
+    "career": "职业准备"
+  },
+  "features": {
+    "aiTeacher": "AI教师",
+    "smartBoard": "智能黑板",
+    "voiceInteraction": "语音交互",
+    "multimodal": "多模态输入",
+    "notes": "智能笔记",
+    "assistant": "AI助教"
+  },
+  "theory": {
+    "title": "💡 理论学习阶段",
+    "description": "AI教师为您详细讲解核心概念和原理",
+    "topics": "教学主题",
+    "keyPoints": "核心要点",
+    "examples": "代码示例"
+  },
+  "practice": {
+    "title": "💪 练习巩固阶段",
+    "description": "通过实际编程练习加深理解",
+    "exercises": "练习题目",
+    "hints": "智能提示",
+    "solutions": "参考答案"
+  },
+  "project": {
+    "title": "🏗️ 迷你项目阶段",
+    "description": "应用所学知识完成实际项目",
+    "requirements": "项目要求",
+    "architecture": "架构设计",
+    "implementation": "实现步骤",
+    "testing": "测试验证"
+  },
+  "career": {
+    "title": "💼 职业准备阶段",
+    "description": "为求职面试做好充分准备",
+    "resumeGeneration": "简历生成",
+    "interviewPrep": "面试准备",
+    "codeInterview": "代码面试",
+    "behavioralInterview": "表达面试"
+  },
+  "tools": {
+    "codeEditor": "绘图工具",
+    "terminal": "终端",
+    "fileExplorer": "文件管理",
+    "debugger": "调试器",
+    "preview": "预览",
+    "whiteboard": "白板绘制"
+  },
+  "buttons": {
+    "aiTeacher": "AI助教",
+    "aiDebug": "AI Debug",
+    "codeExamples": "代码示例",
+    "developmentTips": "🔧 开发提示",
+    "projectArchitecture": "项目架构",
+    "editorMoved": "编辑器已移至中间栏",
+    "runCode": "运行代码",
+    "submitCode": "提交代码",
+    "runFirst": "请先运行代码",
+    "evaluating": "评估中..."
+  },
+  "interactions": {
+    "askQuestion": "向AI提问",
+    "voiceInput": "语音输入",
+    "drawOnBoard": "白板绘制",
+    "uploadImage": "上传图片",
+    "runCode": "运行代码",
+    "getHint": "获取提示",
+    "submitCode": "提交代码",
+    "runFirst": "请先运行代码",
+    "evaluating": "评估中..."
+  },
+  "progress": {
+    "currentLesson": "当前课程",
+    "completedLessons": "已完成课程",
+    "totalLessons": "总课程数",
+    "progressPercent": "完成进度",
+    "timeSpent": "学习时长",
+    "nextLesson": "下一节课"
+  },
+  "welcome": {
+    "greeting": "👋 欢迎来到{{title}}的AI智能课堂！我是你的专属AI导师，随时为你答疑解惑。",
+    "letsStart": "让我们开始学习之旅吧！"
+  },
+  "codeExamples": {
+    "functionDefinition": "函数定义",
+    "fibonacciDescription": "递归函数实现斐波那契数列",
+    "calculateFibonacci": "计算前10个斐波那契数",
+    "listComprehension": "列表推导式",
+    "dataProcessing": "数据处理示例",
+    "filterEvenSquare": "筛选偶数并平方",
+    "classDefinition": "类定义",
+    "objectOriented": "面向对象编程示例",
+    "fileOperations": "文件操作",
+    "errorHandling": "错误处理和文件处理"
+  },
+  "solutionHints": {
+    "basicConcepts": "先掌握基本概念",
+    "practiceMore": "需要多加练习",
+    "almostThere": "快到了，继续加油！",
+    "perfectSolution": "完美解答！"
+  },
+  "aiTeacher": {
+    "thinking": "AI老师正在思考...",
+    "responding": "正在生成回复...",
+    "readyToHelp": "我在这里帮助你学习！",
+    "askAnything": "随时问我关于课程的任何问题。"
+  },
+  "codeDebugging": {
+    "hints": [
+      "检查变量命名是否规范，使用有意义的名称",
+      "确保代码缩进正确，Python对缩进敏感",
+      "添加注释说明复杂逻辑，提高代码可读性",
+      "考虑边界情况，如空输入或异常值的处理",
+      "优化算法复杂度，避免不必要的嵌套循环"
+    ]
+  },
+  "codeExecution": {
+    "pleaseEnterCode": "请输入代码",
+    "executionSuccess": "代码执行成功",
+    "noOutput": "代码执行成功，无输出",
+    "executionError": "执行错误",
+    "variableAssigned": "变量已赋值",
+    "codeDefinedSuccess": "代码定义成功"
+  },
+  "resumeTemplates": {
+    "loading": {
+      "technical": "技术简历模板加载中...",
+      "projectFocused": "项目导向简历模板加载中...",
+      "resultOriented": "结果导向简历模板加载中..."
+    },
+    "defaultCourse": "全栈开发课程",
+    "defaultProject": "全栈项目开发"
+  },
+  "comments": {
+    "calculateFibonacci": "计算前10个斐波那契数",
+    "dataProcessingExample": "数据处理示例",
+    "filterEvenSquare": "筛选偶数并平方",
+    "evenSquares": "偶数的平方"
+  },
+  "navigation": {
+    "backToCourse": "返回课程",
+    "previousLesson": "上一课",
+    "nextLesson": "下一课",
+    "hideLeftSidebar": "隐藏左侧栏",
+    "showLeftSidebar": "显示左侧栏",
+    "hideRightSidebar": "隐藏右侧栏",
+    "showRightSidebar": "显示右侧栏"
+  },
+  "stageHeaders": {
+    "theoryLearning": "理论学习",
+    "practiceConsolidation": "练习巩固",
+    "miniProject": "迷你项目",
+    "careerPreparation": "职业准备",
+    "projectDevelopment": "项目开发"
+  },
+  "codeTemplates": {
+    "practiceCode": "# 练习代码",
+    "hello": "Hello, Python!",
+    "projectTemplate": "// 迷你项目代码模板",
+    "projectWelcome": "欢迎来到迷你项目开发!",
+    "todoComment": "// TODO: 在这里编写你的项目代码"
+  },
+  "sidebar": {
+    "smartNotes": "智能笔记",
+    "aiAssistant": "AI助教",
+    "noteContent": "笔记内容...",
+    "saveNote": "保存笔记"
+  },
+  "aiTeacher": {
+    "recording": "🎤 录音中...",
+    "thinking": "🤔 思考中...",
+    "generating": "🎵 生成中...",
+    "speaking": "🔊 播放中...",
+    "aiInterviewer": "AI面试官",
+    "aiTeacher": "AI教师",
+    "aiThinking": "AI正在思考...",
+    "recordingStatus": "🎤 {role}正在录音...",
+    "thinkingStatus": "🤔 {role}正在思考回复...",
+    "generatingStatus": "🎵 {role}正在生成语音...",
+    "speakingStatus": "🔊 {role}语音播放中...",
+    "interviewDescription": "AI面试官智能对话",
+    "browserNotSupported": "浏览器不支持语音识别",
+    "preparingLecture": "🤖 AI教师正在准备讲解\"{topic}\"...",
+    "teacherExplanation": "📚 AI教师讲解：\n\n{content}",
+    "drawingOnBoard": "🎨 AI教师正在黑板上绘制相关内容...",
+    "voiceLecture": "🎙️ AI教师语音讲解：\n\n{content}",
+    "serviceUnavailable": "❌ 抱歉，AI教师服务暂时不可用：{error}",
+    "smartBlackboard": "AI智能黑板",
+    "drawing": "正在绘制...",
+    "drawingTools": "绘图工具",
+    "hideDrawingTools": "隐藏绘图工具",
+    "showDrawingTools": "显示绘图工具",
+    "teacherDescription": "让AI教师为你讲解概念，并在黑板上绘制示意图"
+  },
+  "screenshot": {
+    "askQuestion": "📸 截图提问",
+    "capturing": "📸 截图中..."
+  },
+  "blackboard": {
+    "selectTopic": "选择教学主题",
+    "loadingContent": "课程内容加载中...",
+    "whatIs": "什么是{{topic}}？",
+    "basicPrinciples": "{{topic}}的基本原理",
+    "componentDevelopment": "组件化开发思想",
+    "virtualDomMechanism": "Virtual DOM机制",
+    "reactFundamentals": "React框架基础",
+    "startLearning": "开始学习课程内容"
+  },
+  "testCases": {
+    "input": "输入",
+    "output": "输出"
+  },
+  "courseContent": {
+    "react-fullstack": {
+      "1": {
+        "1": {
+          "title": "React简介与环境搭建",
+          "description": "学习React框架的核心理念和现代化开发环境搭建",
+          "theory": {
+            "topic": "React框架基础",
+            "content": "React是由Facebook开发的用于构建用户界面的JavaScript库。它采用组件化的开发思想，通过Virtual DOM机制实现高效的界面更新。React的核心特点包括：组件化架构、声明式编程、单向数据流和丰富的生态系统。",
+            "keyPoints": [
+              "组件化开发思想 - 将界面拆分为独立、可复用的组件",
+              "Virtual DOM机制 - 在内存中维护虚拟DOM树，优化真实DOM操作",
+              "声明式编程范式 - 描述界面应该是什么样子，而不是如何操作",
+              "JSX语法糖 - 在JavaScript中编写类似HTML的语法",
+              "单向数据流 - 数据从父组件流向子组件，保持应用状态的可预测性"
+            ]
+          },
+          "practice": {
+            "title": "环境搭建实践",
+            "description": "动手搭建React开发环境，创建第一个React应用",
+            "problem": "创建一个简单的个人介绍卡片组件，包含姓名、职业、头像和联系方式。要求使用函数组件和props传递数据。"
+          },
+          "project": {
+            "title": "React项目脚手架工具",
+            "description": "构建一个自动化React项目创建工具，帮助开发者快速搭建React项目环境",
+            "features": [
+              "一键创建React项目模板",
+              "预配置ESLint和Prettier代码规范",
+              "集成常用开发依赖和工具",
+              "自动生成项目文档和README",
+              "支持TypeScript模板选择",
+              "内置路由和状态管理配置"
+            ],
+            "techStack": ["React", "Node.js", "CLI工具", "Template Engine", "ESLint", "Prettier"],
+            "deliverables": [
+              "CLI命令行工具",
+              "项目模板库",
+              "配置文件生成器",
+              "使用文档和示例",
+              "单元测试套件"
+            ]
+          },
+          "career": {
+            "title": "React开发者入门指南",
+            "skills": ["React基础", "JSX语法", "组件概念", "开发环境", "Virtual DOM", "现代前端工具链"],
+            "projectValue": {
+              "title": "React项目脚手架工具在项目中的价值体现",
+              "description": "作为项目核心开发工具，实现React项目自动化创建，将项目初始化时间从数小时缩短至几分钟，为开发团队提供标准化开发环境和高效工程化体验。"
+            }
+          }
+        },
+        "3": {
+          "title": "React事件绑定",
+          "description": "掌握React中的事件处理机制，实现用户交互功能",
+          "theory": {
+            "topic": "React事件系统",
+            "content": "React使用SyntheticEvent合成事件系统，提供了跨浏览器的一致事件处理体验。事件绑定采用驼峰命名法，通过JSX属性的方式进行绑定。React事件系统具有以下特点：跨浏览器兼容性、事件委托机制、阻止默认行为和事件冒泡控制。",
+            "keyPoints": [
+              "React事件绑定语法：on + 事件名称 = { 事件处理程序 }",
+              "SyntheticEvent合成事件提供跨浏览器兼容性",
+              "事件处理函数中可以接收事件对象参数",
+              "支持传递自定义参数和事件对象",
+              "事件委托机制提升性能"
+            ]
+          },
+          "practice": {
+            "title": "React事件处理练习",
+            "description": "通过实际案例掌握各种事件处理技巧",
+            "problem": "创建一个交互式计数器组件，要求：1. 显示当前计数值 2. 点击+按钮增加计数 3. 点击-按钮减少计数 4. 点击重置按钮清零 5. 双击计数显示区域也能重置"
+          },
+          "project": {
+            "title": "交互式游戏界面",
+            "description": "开发一个简单的点击游戏，展示React事件处理能力",
+            "features": [
+              "点击计分系统",
+              "键盘快捷键支持",
+              "鼠标悬停特效",
+              "触摸设备兼容",
+              "实时分数显示",
+              "游戏时间统计"
+            ],
+            "techStack": ["React", "CSS Animations", "Event Handling", "Responsive Design"],
+            "deliverables": [
+              "可玩的小游戏",
+              "事件处理最佳实践文档",
+              "性能优化指南",
+              "跨设备兼容方案"
+            ]
+          },
+          "career": {
+            "title": "React事件处理技能评估",
+            "skills": ["事件绑定", "事件对象", "参数传递", "事件委托", "性能优化"],
+            "projectValue": {
+              "title": "交互式游戏界面在项目中的价值体现",
+              "description": "作为用户交互功能的核心实现，展示了React事件处理的完整应用，为用户提供流畅的交互体验，提升了产品的用户参与度和粘性。"
+            }
+          }
+        }
+      }
+    }
+  },
+  "progress": {
+    "learningPath": "学习路径",
+    "overallProgress": "整体进度"
+  },
+  "messages": {
+    "codeExecutionSuccess": "代码执行成功！",
+    "codeExecutionFailed": "代码执行失败",
+    "executionError": "运行错误",
+    "runtimeError": "运行时错误",
+    "testCaseError": "运行错误",
+    "testCase": "测试用例",
+    "error": "错误",
+    "basicRun": "基础运行",
+    "success": "成功",
+    "passed": "通过",
+    "failed": "失败",
+    "testCases": "测试用例",
+    "cases": "个",
+    "case": "用例",
+    "input": "输入",
+    "expected": "期望",
+    "actual": "实际",
+    "exception": "异常",
+    "serverConnectionFailed": "无法连接到执行服务器",
+    "speechRecognitionFailed": "语音识别失败，请重试",
+    "aiTeacherNotAvailable": "AI Teacher暂时无法回复，请稍后重试",
+    "voicePlaybackFailed": "语音播放失败，请稍后重试",
+    "aiTeacherReady": "🎤 AI Teacher已准备就绪，请开始语音提问！",
+    "writeCodeFirst": "请先编写一些代码再进行调试",
+    "analyzingCode": "🔍 开始分析代码...",
+    "aiAnalyzingCode": "🤖 AI正在深度分析您的代码...",
+    "aiDebugComplete": "✅ AI Debug 代码分析完成！请查看AI助教窗口的详细调试报告",
+    "aiDebugFailed": "AI Debug 分析失败，请重试",
+    "noOutput": "程序执行成功，无输出",
+    "intelligentDetectionEnabled": "已启用智能语言检测",
+    "languageSwitched": "已切换到",
+    "startSpeaking": "请开始说话...",
+    "microphonePermissionDenied": "麦克风权限被拒绝或设备不可用",
+    "analysisFailedRetry": "抱歉，架构分析失败。请稍后重试。",
+    "analyzingProjectArchitecture": "请分析这个滑动窗口可视化项目的架构设计",
+    "analyzingArchitecture": "正在分析项目架构...",
+    "aiDefaultReply": "我现在无法回复，请稍后重试。",
+    "courseLearning": "课程学习",
+    "programmingPractice": "编程练习",
+    "practiceSkills": "练习编程技能",
+    "technicalPosition": "技术岗位",
+    "canvasNotFound": "找不到黑板canvas元素",
+    "analyzeBlackboardContent": "请分析这个黑板上的内容，并提供相关的教学建议或解答问题。",
+    "screenshotQuestion": "📸 截图提问"
+  },
+  "languageMenu": {
+    "autoDetect": "智能检测",
+    "recommended": "推荐",
+    "chinese": "中文",
+    "english": "English",
+    "japanese": "日本語",
+    "defaultLanguage": "中文"
+  },
+  "codeEditor": {
+    "defaultTitle": "代码练习",
+    "runResult": "运行结果",
+    "sampleCode": "示例代码",
+    "basicVariables": "基础变量和操作",
+    "arrayOperations": "数组操作",
+    "listOperations": "列表操作"
+  },
+  "resumeTemplates": {
+    "technical": "💻 技术导向型",
+    "projectFocused": "🚀 项目导向型",
+    "resultOriented": "📊 成果导向型"
+  },
+  "aiInterviewer": {
+    "greeting": "👋 你好！我是AI面试官。这是一场{title}面试，我会根据你的回答进行深入交流。请放松心情，用语音或文字与我对话。准备好了吗？",
+    "practiceTitle": "练习题目: {title}",
+    "practiceDescription": "题目描述: {description}",
+    "interviewContext": "面试练习",
+    "teachingContext": "课堂教学",
+    "interviewScenario": "面试场景：{title}。应聘者回答：{response}",
+    "codeExampleRequest": "用户请求代码示例。请提供相关的编程示例代码，包括:",
+    "hintRequest": "用户请求解题提示。请提供以下提示:"
+  },
+  "fallbacks": {
+    "projectValueTitle": "在项目中的价值体现",
+    "projectValueDescription": "作为项目核心功能，实现技术方案，为用户提供优质的使用体验。"
+  },
+  "errors": {
+    "loadProgressFailed": "加载学习进度失败",
+    "recognitionFailed": "识别失败",
+    "aiReplyFailed": "AI回复失败",
+    "ttsRequestFailed": "TTS请求失败",
+    "audioPlayError": "音频播放错误",
+    "openaiTtsError": "OpenAI TTS错误",
+    "imageAnalysisFailed": "AI图像分析失败",
+    "cannotAnalyzeImage": "抱歉，我无法分析这个图片。",
+    "screenshotAnalysisFailed": "抱歉，截图分析失败了。错误信息：",
+    "dataLoading": "数据加载中",
+    "aiServiceError": "抱歉，AI服务暂时遇到问题：",
+    "pleaseRetry": "。请稍后再试，或者换个问题问我。",
+    "voiceGenerationFailed": "语音生成失败",
+    "voiceFailedButTextReady": "⚠️ 语音生成失败，但文字内容已准备好",
+    "aiServiceUnavailable": "❌ 抱歉，AI教师服务暂时不可用：",
+    "noSpeechDetected": "没有检测到语音，请大声说话",
+    "unknownDuration": "未知时长",
+    "projectPractice": "项目实战 • 技能应用 • 综合练习",
+    "frontendDevelopment": "前端开发",
+    "frameworkApplication": "框架应用",
+    "projectDevelopmentSkill": "项目实战",
+    "resumeOptimization": "简历优化 • 面试准备 • 技能评估 • 职业规划"
+  },
+  "timeEstimates": {
+    "theory": "20-25分钟",
+    "practice": "25-30分钟",
+    "project": "30-40分钟",
+    "career": "20-25分钟",
+    "estimated": "预计"
+  },
+  "labels": {
+    "modernTechStack": "现代化技术栈",
+    "projectDeliverables": "📦 项目交付物：",
+    "commonMistakes": "常见错误",
+    "developmentWorkflow": "开发流程"
+  },
+  "architecture": {
+    "analysisPrompt": "请分析这个滑动窗口可视化项目的架构设计",
+    "analyzing": "正在分析项目架构...",
+    "expert": "AI架构专家",
+    "analysisFailed": "抱歉，架构分析失败。请稍后重试。"
+  },
+  "voice": {
+    "playbackFailed": "语音播放失败:",
+    "generationFailed": "语音生成失败:"
+  },
+  "context": {
+    "course": "课程",
+    "chapter": "章节",
+    "currentStage": "当前学习阶段",
+    "learningStage": "学习阶段",
+    "practiceTitle": "练习题目",
+    "practiceDescription": "题目描述",
+    "programmingPractice": "编程练习",
+    "practiceSkills": "练习编程技能",
+    "technicalPosition": "技术岗位",
+    "interviewPractice": "面试练习",
+    "classroomTeaching": "课堂教学",
+    "blackboardAnalysis": "教学黑板分析"
+  },
+  "codeRequest": {
+    "keywords": ["代码示例", "示例代码", "代码例子"],
+    "prefix": "用户请求代码示例。请提供相关的编程示例代码，包括:"
+  },
+  "hintRequest": {
+    "keywords": ["解题提示", "提示", "怎么做", "如何解决"],
+    "prefix": "用户请求解题提示。请提供以下提示:"
+  },
+  "ui": {
+    "editor": "编辑器",
+    "blackboardScreenshot": "黑板截图",
+    "voiceToText": "语音转文字",
+    "handwritingRecognition": "手绘识别",
+    "imageAnalysis": "图片分析",
+    "voice": "🎤 语音",
+    "screenshot": "📸 截图",
+    "imageAnalysisShort": "🔍 图像分析",
+    "askAnything": "问我任何问题...",
+    "aiGeneratedContent": "✨ AI智能生成的内容",
+    "invalidCallback": "❌ 板书回调函数无效",
+    "aiDrawingOnBoard": "🎨 AI教师正在黑板上绘制相关内容...",
+    "interviewEnd": "面试结束！感谢参与。现在回到正常的学习模式。",
+    "optimizationTime": "优化解法耗时"
+  },
+  "errors": {
+    "cannotFindCanvas": "找不到黑板canvas元素",
+    "ttsRequestFailed": "TTS请求失败",
+    "audioPlayError": "音频播放错误:",
+    "openaiTtsError": "OpenAI TTS错误:",
+    "screenshotError": "截图提问错误:",
+    "aiTeacherError": "AI Teacher对话错误:",
+    "aiArchitectureError": "AI架构解析失败:",
+    "resumeServiceWarning": "AI简历生成服务暂不可用，使用了模板内容："
+  },
+  "codeEditor": {
+    "speechRecognitionError": "语音识别错误:",
+    "aiProgrammingTeacher": "AI编程教师",
+    "aiDebugAssistant": "AI调试助手",
+    "aiTeacherDialogError": "AI Teacher对话错误:",
+    "aiDebugError": "AI Debug错误:",
+    "defaultErrorReply": "抱歉，我现在无法回复。请稍后重试。",
+    "debugAnalysisError": "抱歉，代码调试分析失败。请稍后重试或检查网络连接。",
+    "audioPlaybackFailed": "音频播放失败",
+    "ttsGenerationFailed": "TTS生成失败:",
+    "codeExamples": {
+      "functionDefinition": "函数定义",
+      "listComprehension": "列表推导式",
+      "asyncFunction": "异步函数",
+      "arrayMethods": "数组方法",
+      "classAndInterface": "类和接口",
+      "setOperations": "集合操作",
+      "templateAndSTL": "模板和STL",
+      "genericsAndTypes": "泛型和类型",
+      "concurrentProgramming": "并发编程",
+      "ownershipAndBorrowing": "所有权和借用",
+      "classAndNamespace": "类和命名空间",
+      "recursiveFibonacci": "递归函数实现斐波那契数列",
+      "dataProcessingWithComprehension": "使用列表推导式处理数据",
+      "asyncDataFetching": "异步数据获取和错误处理",
+      "functionalArrayMethods": "数组的函数式编程方法",
+      "objectOrientedBasics": "面向对象编程基础",
+      "javaStreamAPI": "Java Stream API 的使用",
+      "templateFunctionAndSTL": "模板函数和STL容器使用",
+      "genericInterfaceAndClass": "泛型接口和类的实现",
+      "goroutinesAndWaitGroup": "Goroutines 和 WaitGroup 的使用",
+      "rustOwnershipSystem": "Rust 的所有权系统演示",
+      "phpClassAndStaticMethods": "PHP 类和静态方法的使用",
+      "evenSquares": "偶数的平方:",
+      "squareNumbers": "平方数:"
+    },
+    "debugHints": [
+      "检查变量命名是否规范，使用有意义的名称",
+      "确保代码缩进正确，Python对缩进敏感",
+      "添加注释说明复杂逻辑，提高代码可读性",
+      "考虑边界情况，如空输入或异常值的处理",
+      "优化算法复杂度，避免不必要的嵌套循环"
+    ]
+  },
+  "aiVoiceChat": {
+    "title": "AI语音助手",
+    "welcomeInterview": "👋 你好！我是AI面试官。这是一场{{context}}，我会根据你的回答进行深入交流。请放松心情，用语音或文字与我对话。准备好了吗？",
+    "welcomeAssistant": "👋 你好！我是你的AI学习助手。我可以帮你解答{{context}}任何问题，你可以用语音或文字和我对话！",
+    "welcomeBasic": "👋 你好！我是你的AI学习助手。我可以帮你解答任何问题，你可以用语音或文字和我对话！",
+    "inputPlaceholder": "输入你的问题，或点击麦克风进行语音输入... (当前: {{language}})",
+    "thinking": "AI正在思考中...",
+    "startRecording": "开始语音输入 ({{language}})",
+    "stopRecording": "停止录音",
+    "speechNotSupported": "您的浏览器不支持语音识别功能",
+    "clearChat": "清空对话",
+    "conversationCleared": "👋 对话已清空！有什么{{context}}问题想问我吗？",
+    "conversationClearedBasic": "👋 对话已清空！有什么问题想问我吗？",
+    "languageMenu": {
+      "autoDetect": "智能检测语言",
+      "recommended": "推荐",
+      "chinese": "中文",
+      "defaultLanguage": "默认语言"
+    },
+    "messages": {
+      "intelligentDetectionEnabled": "已启用智能语言检测",
+      "languageSwitched": "语言已切换到",
+      "ttsGenerating": "AI语音生成中... {{progress}}%",
+      "aiSpeaking": "AI正在语音回复...",
+      "ttsPlaybackFailed": "语音播放失败，请查看文字回复",
+      "languageSwitchToZh": "已切换到中文模式",
+      "networkError": "网络连接失败，请检查网络连接后重试",
+      "aiReplyFailed": "AI回复失败，请重试"
+    },
+    "errors": {
+      "speechRecognition": "语音识别错误:",
+      "languageNotSupported": "当前语言不支持，已切换到中文模式",
+      "networkFailed": "网络连接失败，请检查网络后重试",
+      "interviewApiFailed": "面试API调用失败",
+      "generalError": "抱歉，我现在无法回复。请稍后重试。",
+      "languageError": "当前语言模式出现问题，已切换到中文模式。请重新发送消息。",
+      "ttsRequestFailed": "TTS请求失败",
+      "audioPlaybackFailed": "音频播放失败"
+    },
+    "status": {
+      "detected": "检测"
+    }
+  },
+  "aiBlackboard": {
+    "saveSuccess": "📋 当前画布状态已保存到历史记录",
+    "textInputPlaceholder": "输入文字内容，按Enter确认...",
+    "editTextPlaceholder": "编辑模板文字: {{text}}",
+    "templates": {
+      "basicFlowchart": "🔄 基础流程图",
+      "arrayStructure": "📊 数组结构",
+      "linkedListStructure": "🔗 链表结构",
+      "binaryTree": "🌳 二叉树",
+      "recursiveFlow": "🔁 递归流程",
+      "dynamicProgrammingTable": "📋 动态规划表",
+      "twoPointers": "👆 双指针",
+      "slidingWindow": "🪟 滑动窗口",
+      "complexityAnalysis": "⏱️ 复杂度分析",
+      "mindMap": "🧠 思维导图",
+      "comparisonTable": "📊 对比表格"
+    },
+    "templateElements": {
+      "recursiveFunction": "递归函数",
+      "terminationCondition": "终止条件?",
+      "returnResult": "返回结果",
+      "processingLogic": "处理逻辑",
+      "recursiveCall": "递归调用",
+      "slidingDirection": "滑动方向",
+      "timeComplexity": "时间复杂度",
+      "spaceComplexity": "空间复杂度",
+      "constant": "常数",
+      "linear": "线性",
+      "logarithmic": "对数",
+      "quadratic": "平方"
+    }
+  }
+}

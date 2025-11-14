@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "id": 54,
+    "title": "螺旋矩阵",
+    "difficulty": "中等",
+    "leetcodeId": 54,
+    "category": "array",
+    "patterns": [
+      "matrix_simulation"
+    ],
+    "tags": [
+      "数组",
+      "矩阵",
+      "模拟"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给你一个 m 行 n 列的矩阵 matrix ，请按照 顺时针螺旋顺序 ，返回矩阵中的所有元素。",
+  "examples": [
+    {
+      "input": "matrix = [[1,2,3],[4,5,6],[7,8,9]]",
+      "output": "[1,2,3,6,9,8,7,4,5]",
+      "explanation": "按顺时针螺旋顺序遍历矩阵"
+    },
+    {
+      "input": "matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]",
+      "output": "[1,2,3,4,8,12,11,10,9,5,6,7]",
+      "explanation": "3行4列矩阵的螺旋遍历"
+    }
+  ],
+  "constraints": [
+    "m == matrix.length",
+    "n == matrix[i].length",
+    "1 <= m, n <= 10",
+    "-100 <= matrix[i][j] <= 100"
+  ],
+  "hints": [
+    "模拟螺旋遍历的过程",
+    "维护四个边界：上、下、左、右",
+    "按顺序遍历：右→下→左→上，然后收缩边界"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "simulation",
+      "name": "模拟法",
+      "timeComplexity": "O(m*n)",
+      "spaceComplexity": "O(1)",
+      "description": "模拟螺旋遍历过程，维护四个边界",
+      "code": {
+        "javascript": "/**\n * 螺旋矩阵 - 模拟螺旋遍历过程，维护四个边界\n */\n\nfunction spiralOrder(matrix) {\n    if (!matrix || matrix.length === 0) return [];\n\n    const result = [];\n    let top = 0, bottom = matrix.length - 1;\n    let left = 0, right = matrix[0].length - 1;\n\n    while (top <= bottom && left <= right) {\n        // 从左到右\n        for (let col = left; col <= right; col++) {\n            result.push(matrix[top][col]);\n        }\n        top++;\n\n        // 从上到下\n        for (let row = top; row <= bottom; row++) {\n            result.push(matrix[row][right]);\n        }\n        right--;\n\n        if (top <= bottom) {\n            // 从右到左\n            for (let col = right; col >= left; col--) {\n                result.push(matrix[bottom][col]);\n            }\n            bottom--;\n        }\n\n        if (left <= right) {\n            // 从下到上\n            for (let row = bottom; row >= top; row--) {\n                result.push(matrix[row][left]);\n            }\n            left++;\n        }\n    }\n\n    return result;\n}\n\n\n/**\n * 测试spiralOrder函数\n */\nfunction testSpiralOrder() {\n    console.log(\"=== spiralOrder测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: matrix = [[1,2,3],[4,5,6],[7,8,9]]\");\n    console.log(\"期望输出: [1,2,3,6,9,8,7,4,5]\");\n    console.log(\"说明: 按顺时针螺旋顺序遍历矩阵\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testSpiralOrder();",
+        "python": "\"\"\"\n螺旋矩阵 - 模拟螺旋遍历过程，维护四个边界\n\"\"\"\n\ndef spiralOrder(matrix):\n    if not matrix or not matrix[0]:\n        return []\n\n    result = []\n    top, bottom = 0, len(matrix) - 1\n    left, right = 0, len(matrix[0]) - 1\n\n    while top <= bottom and left <= right:\n        # 从左到右\n        for col in range(left, right + 1):\n            result.append(matrix[top][col])\n        top += 1\n\n        # 从上到下\n        for row in range(top, bottom + 1):\n            result.append(matrix[row][right])\n        right -= 1\n\n        if top <= bottom:\n            # 从右到左\n            for col in range(right, left - 1, -1):\n                result.append(matrix[bottom][col])\n            bottom -= 1\n\n        if left <= right:\n            # 从下到上\n            for row in range(bottom, top - 1, -1):\n                result.append(matrix[row][left])\n            left += 1\n\n    return result\n\n\ndef test_spiralOrder():\n    \"\"\"测试spiralOrder函数\"\"\"\n    print(\"=== spiralOrder测试 ===\")\n\n    # 测试用例\n    print(\"输入: matrix = [[1,2,3],[4,5,6],[7,8,9]]\")\n    print(\"期望输出: [1,2,3,6,9,8,7,4,5]\")\n    print(\"说明: 按顺时针螺旋顺序遍历矩阵\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_spiralOrder()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 螺旋矩阵解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "matrix = [[1,2,3],[4,5,6],[7,8,9]]",
+      "output": "[1,2,3,6,9,8,7,4,5]",
+      "explanation": "按顺时针螺旋顺序遍历矩阵"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "螺旋矩阵变种练习",
+      "description": "基于螺旋矩阵的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

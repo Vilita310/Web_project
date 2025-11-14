@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "id": 198,
+    "title": "打家劫舍",
+    "difficulty": "中等",
+    "leetcodeId": 198,
+    "category": "dynamic_programming",
+    "patterns": [
+      "dynamic_programming_1d"
+    ],
+    "tags": [
+      "数组",
+      "动态规划"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。给定一个代表每个房屋存放金额的非负整数数组，计算你 不触动警报装置的情况下 ，一夜之内能够偷窃到的最高金额。",
+  "examples": [
+    {
+      "input": "nums = [1,2,3,1]",
+      "output": "4",
+      "explanation": "偷窃 1 号房屋 (金额 = 1) ，然后偷窃 3 号房屋 (金额 = 3)。偷窃到的最高金额 = 1 + 3 = 4 。"
+    },
+    {
+      "input": "nums = [2,7,9,3,1]",
+      "output": "12",
+      "explanation": "偷窃 1 号房屋 (金额 = 2), 偷窃 3 号房屋 (金额 = 9)，接着偷窃 5 号房屋 (金额 = 1)。偷窃到的最高金额 = 2 + 9 + 1 = 12 。"
+    }
+  ],
+  "constraints": [
+    "1 <= nums.length <= 100",
+    "0 <= nums[i] <= 400"
+  ],
+  "hints": [
+    "这道题目是动态规划的经典问题。",
+    "每个房屋都有两种状态：偷或不偷。",
+    "如果偷当前房屋，就不能偷前一个房屋。如果不偷当前房屋，最大金额就是前一个房屋的最大金额。"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "dp",
+      "name": "动态规划",
+      "timeComplexity": "O(n)",
+      "spaceComplexity": "O(1)",
+      "description": "使用动态规划，记录偷到当前房屋的最大金额",
+      "code": {
+        "javascript": "/**\n * 打家劫舍 - 使用动态规划，记录偷到当前房屋的最大金额\n */\n\nfunction rob(nums) {\n    if (nums.length === 0) return 0;\n    if (nums.length === 1) return nums[0];\n    \n    let prev2 = nums[0];\n    let prev1 = Math.max(nums[0], nums[1]);\n    \n    for (let i = 2; i < nums.length; i++) {\n        let current = Math.max(prev1, prev2 + nums[i]);\n        prev2 = prev1;\n        prev1 = current;\n    }\n    \n    return prev1;\n}\n\n\n/**\n * 测试rob函数\n */\nfunction testRob() {\n    console.log(\"=== rob测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: nums = [1,2,3,1]\");\n    console.log(\"期望输出: 4\");\n    console.log(\"说明: 偷窃 1 号房屋 (金额 = 1) ，然后偷窃 3 号房屋 (金额 = 3)。偷窃到的最高金额 = 1 + 3 = 4 。\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testRob();",
+        "python": "\"\"\"\n打家劫舍 - 使用动态规划，记录偷到当前房屋的最大金额\n\"\"\"\n\ndef rob(nums):\n    if not nums:\n        return 0\n    if len(nums) == 1:\n        return nums[0]\n    \n    prev2 = nums[0]\n    prev1 = max(nums[0], nums[1])\n    \n    for i in range(2, len(nums)):\n        current = max(prev1, prev2 + nums[i])\n        prev2 = prev1\n        prev1 = current\n    \n    return prev1\n\n\ndef test_rob():\n    \"\"\"测试rob函数\"\"\"\n    print(\"=== rob测试 ===\")\n\n    # 测试用例\n    print(\"输入: nums = [1,2,3,1]\")\n    print(\"期望输出: 4\")\n    print(\"说明: 偷窃 1 号房屋 (金额 = 1) ，然后偷窃 3 号房屋 (金额 = 3)。偷窃到的最高金额 = 1 + 3 = 4 。\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_rob()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 打家劫舍解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "nums = [1,2,3,1]",
+      "output": "4",
+      "explanation": "偷窃 1 号房屋 (金额 = 1) ，然后偷窃 3 号房屋 (金额 = 3)。偷窃到的最高金额 = 1 + 3 = 4 。"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "打家劫舍变种练习",
+      "description": "基于打家劫舍的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

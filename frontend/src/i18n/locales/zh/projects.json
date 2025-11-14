@@ -1,0 +1,383 @@
+{
+  "title": "项目融合中心",
+  "navigation": {
+    "aiGenerate": "AI 生成项目",
+    "aiAssistant": "AI 助手"
+  },
+  "direction": {
+    "title": "选择开发方向",
+    "frontend": "前端开发",
+    "backend": "后端开发",
+    "fullstack": "全栈开发"
+  },
+  "techStack": {
+    "title": "选择技术栈",
+    "selected": "已选择"
+  },
+  "projectManagement": {
+    "title": "项目管理",
+    "inProgress": "进行中",
+    "completed": "已完成",
+    "nextStep": "下一步"
+  },
+  "learningStats": {
+    "title": "学习统计",
+    "totalProjects": "总项目数",
+    "skillImprovement": "技能提升",
+    "codeLines": "代码行数",
+    "studyTime": "学习时长"
+  },
+  "bigTechMatching": {
+    "title": "大厂项目匹配",
+    "description": "基于您选择的 {count} 个技术栈",
+    "noTechStack": "请先在左侧选择您掌握的技术栈，AI 将为您匹配最相似的大厂项目",
+    "withTechStack": "实时分析您掌握的 {techList} 与大厂项目的技术栈匹配度",
+    "similarity": "相似度",
+    "coreFeatures": "个核心功能",
+    "difficulty": "难度",
+    "highMatch": "高度匹配",
+    "partialMatch": "部分匹配",
+    "needLearning": "需要学习",
+    "startBuilding": "开始构建",
+    "viewDetails": "查看详情"
+  },
+  "projectDetails": {
+    "title": "项目详情",
+    "similarity": "技术栈匹配度",
+    "projectScale": "项目规模",
+    "userScale": "用户规模",
+    "performance": "性能指标",
+    "difficultyLevel": "难度等级",
+    "coreFeatures": "核心功能",
+    "startBuilding": "开始构建此项目"
+  },
+  "selectProject": {
+    "title": "选择项目",
+    "clickProject": "点击左侧任意大厂项目",
+    "viewDetails": "查看详细信息和技术栈匹配度"
+  },
+  "customProject": {
+    "title": "定制项目生成",
+    "inputIdea": "输入您的项目想法",
+    "placeholder": "例如：我想做一个智能购物推荐系统，用户可以上传商品图片，AI自动识别并推荐相似商品...",
+    "willUseTechStack": "将使用您选择的技术栈",
+    "generateProject": "生成专属项目",
+    "aiGenerating": "AI 生成中...",
+    "enterIdea": "请先输入您的项目想法",
+    "selectTechStack": "请先在左侧选择技术栈"
+  },
+  "matchingStats": {
+    "title": "匹配统计",
+    "matchedProjects": "已匹配项目",
+    "highestMatch": "最高匹配度",
+    "selectedTech": "选择技术栈",
+    "bigTechProjects": "大厂项目"
+  },
+  "aiAssistantDrawer": {
+    "title": "AI 智能助手",
+    "greeting": "AI助手: 您好！我是您的项目开发助手，可以帮助您：",
+    "features": {
+      "analyze": "分析项目需求和技术方案",
+      "optimize": "提供代码优化建议",
+      "architecture": "生成项目架构图",
+      "debug": "协助调试和问题解决",
+      "docs": "自动生成文档和注释"
+    },
+    "placeholder": "请输入您的问题...",
+    "sendMessage": "发送消息"
+  },
+  "codeEditor": {
+    "title": "项目工作台",
+    "projectFiles": "项目文件",
+    "codeEditor": "代码编辑器",
+    "templateReady": "在这里开始您的项目开发...",
+    "aiReady": "AI 已为您准备了项目模板和最佳实践代码"
+  },
+  "messages": {
+    "enterIdea": "请先输入您的项目想法",
+    "projectGenerated": "个性化项目生成成功！正在启动 ProjectStudio...",
+    "generationFailed": "项目生成失败，请稍后重试",
+    "progressUpdated": "项目进度已更新：{rate}% 完成",
+    "codeFusionSteps": {
+      "analyzing": "分析用户代码库...",
+      "extracting": "提取可复用模块...",
+      "generating": "生成项目架构...",
+      "fusing": "融合代码片段...",
+      "optimizing": "优化代码质量...",
+      "documenting": "生成文档和测试..."
+    },
+    "codeFusionComplete": "代码融合完成！正在启动 ProjectStudio..."
+  },
+  "stats": {
+    "total": "累计项目",
+    "matched": "匹配项目",
+    "completed": "已完成",
+    "companies": "合作企业"
+  },
+  "filters": {
+    "all": "全部项目",
+    "recommended": "推荐项目",
+    "difficulty": {
+      "beginner": "入门",
+      "intermediate": "进阶",
+      "advanced": "高级"
+    },
+    "category": {
+      "frontend": "前端开发",
+      "backend": "后端开发",
+      "fullstack": "全栈开发",
+      "mobile": "移动开发",
+      "ai": "人工智能",
+      "data": "数据科学"
+    }
+  },
+  "project": {
+    "difficulty": "难度",
+    "duration": "预计时长",
+    "skills": "技术栈",
+    "company": "来源企业",
+    "description": "项目描述",
+    "requirements": "技能要求",
+    "startProject": "开始项目",
+    "viewDetails": "查看详情"
+  },
+  "studio": {
+    "title": "🧱 项目实战工作室",
+    "subtitle": "AI驱动的智能开发环境，提供实时代码指导和项目构建",
+    "features": {
+      "aiTeacher": "AI教师语音讲解",
+      "codeReview": "实时代码评审",
+      "smartHints": "智能开发提示",
+      "projectBuild": "自动项目构建"
+    }
+  },
+  "bigTechProjects": {
+    "alibaba-ecommerce": {
+      "title": "阿里巴巴电商平台",
+      "company": "阿里巴巴",
+      "description": "高并发电商系统，支持千万级用户同时在线购物"
+    },
+    "tencent-social": {
+      "title": "腾讯社交平台",
+      "company": "腾讯",
+      "description": "实时社交平台，支持即时通讯和社交功能"
+    },
+    "bytedance-content": {
+      "title": "字节跳动内容平台",
+      "company": "字节跳动",
+      "description": "智能内容推荐平台，基于机器学习的个性化推荐"
+    },
+    "meituan-delivery": {
+      "title": "美团配送系统",
+      "company": "美团",
+      "description": "智能配送调度系统，实时优化配送路线"
+    },
+    "didi-mobility": {
+      "title": "滴滴出行平台",
+      "company": "滴滴",
+      "description": "智能出行平台，实时匹配司机和乘客"
+    }
+  },
+  "projectFeatures": {
+    "alibaba": ["商品管理", "订单系统", "支付集成", "用户系统", "推荐算法"],
+    "tencent": ["实时聊天", "朋友圈", "群组功能", "语音通话", "视频通话"],
+    "bytedance": ["内容推荐", "视频播放", "用户画像", "AI算法", "数据分析"],
+    "meituan": ["订单管理", "配送调度", "路线优化", "实时追踪", "支付系统"],
+    "didi": ["实时定位", "智能匹配", "路径规划", "支付系统", "评价系统"]
+  },
+  "projectMetrics": {
+    "scales": {
+      "millionsUsers": "千万级用户",
+      "billionUsers": "亿级用户",
+      "billionContent": "十亿级内容",
+      "millionOrders": "百万订单/日",
+      "millionDaily": "千万日活"
+    },
+    "performance": {
+      "availability": "99.9%可用性",
+      "millisecond": "毫秒级响应",
+      "smartRecommend": "智能推荐",
+      "delivery30min": "30分钟送达",
+      "secondMatch": "秒级匹配"
+    }
+  },
+  "skillClusters": {
+    "frontend": "前端开发",
+    "backend": "后端开发",
+    "data": "数据相关"
+  },
+  "projectTemplates": {
+    "aiChatbot": {
+      "title": "AI 聊天机器人平台",
+      "duration": "3-5天",
+      "stretchSkills": ["AI调用", "实时通信", "API集成"],
+      "description": "构建智能聊天机器人，集成GPT模型，支持多轮对话和上下文理解",
+      "features": [
+        "🤖 GPT模型集成",
+        "💬 实时对话界面",
+        "📚 知识库管理",
+        "🔄 对话历史记录",
+        "⚙️ 个性化配置"
+      ],
+      "architecture": {
+        "frontend": ["React组件", "状态管理", "WebSocket"],
+        "backend": ["FastAPI服务", "OpenAI集成", "Session管理"],
+        "aiService": ["提示词工程", "对话管理", "知识检索"],
+        "deployment": ["Docker容器", "Nginx代理", "环境配置"]
+      },
+      "fusionSources": ["React组件开发", "API调用实践", "Python后端开发"],
+      "readiness": "立即开始"
+    },
+    "dataVisualization": {
+      "title": "数据可视化仪表板",
+      "duration": "4-6天",
+      "stretchSkills": ["数据可视化", "交互式图表", "实时数据"],
+      "description": "创建交互式数据仪表板，支持多种图表类型和实时数据更新",
+      "features": [
+        "📊 多种图表类型",
+        "🔄 实时数据更新",
+        "🎛️ 交互式筛选",
+        "📱 响应式设计",
+        "⬇️ 数据导出功能"
+      ],
+      "architecture": {
+        "frontend": ["React+D3图表", "数据绑定", "交互控制"],
+        "backend": ["数据API", "WebSocket推送", "数据处理"],
+        "dataLayer": ["Pandas分析", "数据清洗", "计算引擎"],
+        "deployment": ["静态部署", "API服务", "数据源配置"]
+      },
+      "fusionSources": ["数据处理练习", "图表组件开发", "API设计实践"],
+      "readiness": "立即开始"
+    },
+    "microserviceEcommerce": {
+      "title": "微服务电商系统",
+      "duration": "2-3周",
+      "stretchSkills": ["微服务架构", "容器化部署", "分布式系统"],
+      "description": "构建企业级微服务电商平台，包含用户管理、商品管理、订单系统等",
+      "features": [
+        "🏗️ 微服务架构",
+        "🛒 购物车系统",
+        "💳 支付集成",
+        "📦 订单管理",
+        "🔐 JWT认证"
+      ],
+      "architecture": {
+        "frontend": ["React应用", "状态管理", "路由系统"],
+        "services": ["用户服务", "商品服务", "订单服务", "支付服务"],
+        "infrastructure": ["API网关", "服务注册", "配置中心"],
+        "deployment": ["Docker集群", "负载均衡", "监控系统"]
+      },
+      "fusionSources": ["React项目经验", "Node.js API开发", "数据库设计"],
+      "readiness": "需要预习"
+    }
+  },
+  "myProjects": {
+    "aiAssistant": {
+      "title": "AI 客服助手",
+      "nextTask": "实现对话历史功能",
+      "timeSpent": "12小时",
+      "lastActivity": "2小时前"
+    },
+    "todoApp": {
+      "completedAt": "3天前"
+    },
+    "dashboardProject": {
+      "title": "数据可视化看板",
+      "plannedStart": "下周"
+    }
+  },
+  "customProjectGeneration": {
+    "titleTemplate": "基于{idea}的定制项目",
+    "durationWeeks": "2-3周",
+    "descriptionTemplate": "根据您的想法\"{idea}\"和选择的技术栈定制的个性化项目",
+    "features": [
+      "🎯 完全个性化设计",
+      "💡 基于您的创意想法",
+      "🔧 匹配您的技术栈",
+      "📚 详细开发指导",
+      "🚀 端到端实现"
+    ],
+    "fusionSources": ["您的创意想法", "选择的技术栈", "AI智能生成"],
+    "readiness": "立即开始"
+  },
+  "aiProjectGeneration": {
+    "titleTemplate": "基于{skills}的智能应用",
+    "durationWeeks": "1-2周",
+    "descriptionTemplate": "根据您的技能栈量身定制的项目，充分发挥您在{skillList}方面的优势",
+    "features": [
+      "🎯 个性化功能设计",
+      "📈 技能提升路径",
+      "🔧 代码融合优化",
+      "📝 完整开发文档",
+      "🚀 一键部署配置"
+    ],
+    "fusionSources": ["现有mini项目", "课堂练习代码", "算法实现"],
+    "readiness": "立即开始"
+  },
+  "projectProgress": {
+    "defaultProjectName": "开发项目",
+    "defaultNextTask": "继续开发",
+    "defaultTimeSpent": "0小时",
+    "justNow": "刚刚"
+  },
+  "learningObjectives": {
+    "techStackMastery": "掌握{techStack}技术栈",
+    "archDesign": "提升项目架构设计能力",
+    "enterpriseStandards": "学习企业级开发规范"
+  },
+  "companyNames": {
+    "alibaba": "阿里巴巴",
+    "tencent": "腾讯",
+    "bytedance": "字节跳动",
+    "meituan": "美团",
+    "didi": "滴滴"
+  },
+  "codeEditor": {
+    "title": "代码编辑器",
+    "loadingFiles": "加载文件中...",
+    "loadingCode": "正在加载项目文件...",
+    "backToProjects": "返回项目",
+    "readyToCode": "就绪编码",
+    "loading": "加载中...",
+    "runCode": "运行代码",
+    "running": "运行中",
+    "runProject": "运行项目",
+    "starting": "启动中...",
+    "save": "保存",
+    "outputConsole": "输出控制台",
+    "clickRunToExecute": "点击 Run 按钮执行代码",
+    "executingCode": "代码执行中...",
+    "projectRunning": "🚀 正在启动项目环境...",
+    "creatingEnvironment": "📦 创建Docker容器环境...",
+    "environmentCreated": "✅ 环境创建成功",
+    "installingDependencies": "📋 安装项目依赖...",
+    "dependenciesInstalled": "✅ 依赖安装完成",
+    "runningMainFile": "🏃 运行主文件",
+    "executionSuccess": "程序执行成功，无输出",
+    "executionFailed": "执行失败",
+    "networkError": "网络错误",
+    "cannotConnect": "无法连接到执行服务器",
+    "codeSaved": "代码已下载",
+    "fileLoaded": "文件加载成功",
+    "fileSaved": "已保存",
+    "projectRunSuccess": "项目运行成功！",
+    "projectRunFailed": "项目运行失败",
+    "codeExecutionSuccess": "代码执行成功！",
+    "codeExecutionFailed": "代码执行失败",
+    "environmentReady": "环境已就绪，可以开始调试和运行项目！",
+    "breakpointSet": "断点已设置在第 {line} 行",
+    "watchingVariable": "开始监视变量: {name}",
+    "aiWelcome": "👋 欢迎来到 AI 编程助手！我可以帮助您：\n\n🔍 代码审查和优化\n⚡ 性能分析和改进\n🚀 部署配置和最佳实践\n🐛 错误诊断和解决方案\n\n有什么需要帮助的吗？",
+    "aiSorry": "抱歉，我现在无法回复。请稍后重试。",
+    "aiError": "抱歉，发生了错误。请稍后重试。",
+    "startingProjectEnvironment": "启动项目执行环境...",
+    "detectingNodeProject": "检测到Node.js项目，将启动真实运行环境...",
+    "startProjectEnvironment": "项目环境启动失败",
+    "tooltips": {
+      "environmentManager": "环境管理",
+      "debugPanel": "调试面板",
+      "aiAssistant": "AI助手"
+    },
+    "nodeJsHelpTip": "📝 这是一个Node.js项目模板！\n\n💡 当前执行环境不支持require模块，你可以:\n\n1. 点击package.json查看项目结构\n2. 修改index.js为纯JavaScript代码进行测试\n3. 查看README.md了解完整的运行方式\n\n例如简单测试:\nconsole.log(\"Hello from Node.js template!\");"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "id": 211,
+    "title": "添加与搜索单词 - 数据结构设计",
+    "difficulty": "中等",
+    "leetcodeId": 211,
+    "category": "trie",
+    "patterns": [
+      "trie_wildcard"
+    ],
+    "tags": [
+      "深度优先搜索",
+      "设计",
+      "字典树",
+      "字符串"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "请你设计一个数据结构，支持 添加新单词 和 查找字符串是否与任何先前添加的字符串匹配 。实现词典类 WordDictionary ：WordDictionary() 初始化词典对象；void addWord(word) 将 word 添加到数据结构中，之后可以对它进行匹配；bool search(word) 如果数据结构中存在字符串与 word 匹配，则返回 true ；否则，返回 false 。word 中可能包含一些 '.' ，每个 . 都可以表示任何一个字母。",
+  "examples": [
+    {
+      "input": "[\"WordDictionary\",\"addWord\",\"addWord\",\"addWord\",\"search\",\"search\",\"search\",\"search\"]\n[[],[\"bad\"],[\"dad\"],[\"mad\"],[\"pad\"],[\"bad\"],[\".ad\"],[\"b..\"]]",
+      "output": "[null,null,null,null,false,true,true,true]",
+      "explanation": "WordDictionary wordDictionary = new WordDictionary();\nwordDictionary.addWord(\"bad\");\nwordDictionary.addWord(\"dad\");\nwordDictionary.addWord(\"mad\");\nwordDictionary.search(\"pad\"); // 返回 False\nwordDictionary.search(\"bad\"); // 返回 True\nwordDictionary.search(\".ad\"); // 返回 True\nwordDictionary.search(\"b..\"); // 返回 True"
+    }
+  ],
+  "constraints": [
+    "1 <= word.length <= 25",
+    "addWord 中的 word 由小写英文字母组成",
+    "search 中的 word 由 '.' 或小写英文字母组成",
+    "最多调用 10⁴ 次 addWord 和 search"
+  ],
+  "hints": [
+    "使用字典树（Trie）数据结构",
+    "对于 '.' 字符，需要递归搜索所有可能的路径"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "trie_dfs",
+      "name": "字典树+DFS",
+      "timeComplexity": "O(M·26^N)",
+      "spaceComplexity": "O(ALPHABET_SIZE·N·M)",
+      "description": "使用字典树存储单词，DFS处理通配符",
+      "code": {
+        "javascript": "/**\n * 添加与搜索单词 - 数据结构设计 - 使用字典树存储单词，DFS处理通配符\n */\n\nclass TrieNode {\n    constructor() {\n        this.children = {};\n        this.isEnd = false;\n    }\n}\n\nclass WordDictionary {\n    constructor() {\n        this.root = new TrieNode();\n    }\n\n    addWord(word) {\n        let node = this.root;\n        for (const char of word) {\n            if (!node.children[char]) {\n                node.children[char] = new TrieNode();\n            }\n            node = node.children[char];\n        }\n        node.isEnd = true;\n    }\n\n    search(word) {\n        return this.searchHelper(word, 0, this.root);\n    }\n\n    searchHelper(word, index, node) {\n        if (index === word.length) {\n            return node.isEnd;\n        }\n\n        const char = word[index];\n        if (char === '.') {\n            for (const child of Object.values(node.children)) {\n                if (this.searchHelper(word, index + 1, child)) {\n                    return true;\n                }\n            }\n            return false;\n        } else {\n            if (!node.children[char]) {\n                return false;\n            }\n            return this.searchHelper(word, index + 1, node.children[char]);\n        }\n    }\n}\n\n\n/**\n * 测试TrieNode函数\n */\nfunction testTrieNode() {\n    console.log(\"=== TrieNode测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: [\"WordDictionary\",\"addWord\",\"addWord\",\"addWord\",\"search\",\"search\",\"search\",\"search\"]\n[[],[\"bad\"],[\"dad\"],[\"mad\"],[\"pad\"],[\"bad\"],[\".ad\"],[\"b..\"]]\");\n    console.log(\"期望输出: [null,null,null,null,false,true,true,true]\");\n    console.log(\"说明: WordDictionary wordDictionary = new WordDictionary();\nwordDictionary.addWord(\"bad\");\nwordDictionary.addWord(\"dad\");\nwordDictionary.addWord(\"mad\");\nwordDictionary.search(\"pad\"); // 返回 False\nwordDictionary.search(\"bad\"); // 返回 True\nwordDictionary.search(\".ad\"); // 返回 True\nwordDictionary.search(\"b..\"); // 返回 True\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testTrieNode();",
+        "python": "\"\"\"\n添加与搜索单词 - 数据结构设计 - 使用字典树存储单词，DFS处理通配符\n\"\"\"\n\nclass TrieNode:\n    def __init__(self):\n        self.children = {}\n        self.is_end = False\n\nclass WordDictionary:\n    def __init__(self):\n        self.root = TrieNode()\n\n    def addWord(self, word):\n        node = self.root\n        for char in word:\n            if char not in node.children:\n                node.children[char] = TrieNode()\n            node = node.children[char]\n        node.is_end = True\n\n    def search(self, word):\n        return self.search_helper(word, 0, self.root)\n\n    def search_helper(self, word, index, node):\n        if index == len(word):\n            return node.is_end\n\n        char = word[index]\n        if char == '.':\n            for child in node.children.values():\n                if self.search_helper(word, index + 1, child):\n                    return True\n            return False\n        else:\n            if char not in node.children:\n                return False\n            return self.search_helper(word, index + 1, node.children[char])\n\n\ndef test___init__():\n    \"\"\"测试__init__函数\"\"\"\n    print(\"=== __init__测试 ===\")\n\n    # 测试用例\n    print(\"输入: [\"WordDictionary\",\"addWord\",\"addWord\",\"addWord\",\"search\",\"search\",\"search\",\"search\"]\n[[],[\"bad\"],[\"dad\"],[\"mad\"],[\"pad\"],[\"bad\"],[\".ad\"],[\"b..\"]]\")\n    print(\"期望输出: [null,null,null,null,false,true,true,true]\")\n    print(\"说明: WordDictionary wordDictionary = new WordDictionary();\nwordDictionary.addWord(\"bad\");\nwordDictionary.addWord(\"dad\");\nwordDictionary.addWord(\"mad\");\nwordDictionary.search(\"pad\"); // 返回 False\nwordDictionary.search(\"bad\"); // 返回 True\nwordDictionary.search(\".ad\"); // 返回 True\nwordDictionary.search(\"b..\"); // 返回 True\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test___init__()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 添加与搜索单词 - 数据结构设计解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "[\"WordDictionary\",\"addWord\",\"addWord\",\"addWord\",\"search\",\"search\",\"search\",\"search\"]\n[[],[\"bad\"],[\"dad\"],[\"mad\"],[\"pad\"],[\"bad\"],[\".ad\"],[\"b..\"]]",
+      "output": "[null,null,null,null,false,true,true,true]",
+      "explanation": "WordDictionary wordDictionary = new WordDictionary();\nwordDictionary.addWord(\"bad\");\nwordDictionary.addWord(\"dad\");\nwordDictionary.addWord(\"mad\");\nwordDictionary.search(\"pad\"); // 返回 False\nwordDictionary.search(\"bad\"); // 返回 True\nwordDictionary.search(\".ad\"); // 返回 True\nwordDictionary.search(\"b..\"); // 返回 True"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "添加与搜索单词 - 数据结构设计变种练习",
+      "description": "基于添加与搜索单词 - 数据结构设计的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

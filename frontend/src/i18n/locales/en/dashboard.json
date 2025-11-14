@@ -1,0 +1,188 @@
+{
+  "welcome": "Welcome back, {{name}}",
+  "continueStudy": "Study Streak",
+  "days": "days",
+  "points": "points",
+  "continueLearning": "Continue Learning",
+  "stats": {
+    "studyDays": "Study Days",
+    "completedCourses": "Completed Courses",
+    "codingPractice": "Coding Practice",
+    "projectExperience": "Project Experience",
+    "courses": "courses",
+    "problems": "problems",
+    "projects": "projects"
+  },
+  "courseProgress": {
+    "title": "Course Progress",
+    "viewAll": "View All",
+    "completed": "Completed",
+    "active": "In Progress",
+    "upcoming": "Upcoming",
+    "courses": {
+      "pythonBasics": "Python Basics",
+      "sqlDatabase": "SQL Database",
+      "dataProcessing": "Data Processing & Analysis",
+      "sparkBigData": "Spark Big Data Processing",
+      "machineLearning": "Machine Learning Basics"
+    }
+  },
+  "skillLevel": {
+    "title": "Skill Level"
+  },
+  "smartRecommendations": {
+    "title": "Smart Recommendations",
+    "startLearning": "Start Learning",
+    "items": [
+      {
+        "title": "Apache Kafka in Action",
+        "type": "Course",
+        "difficulty": "Intermediate",
+        "duration": "6 hours",
+        "reason": "Recommended based on your Spark learning progress"
+      },
+      {
+        "title": "Real-time Data Stream Processing Project",
+        "type": "Project",
+        "difficulty": "Advanced",
+        "duration": "2 weeks",
+        "reason": "Enhance hands-on project experience"
+      },
+      {
+        "title": "Docker Container Deployment",
+        "type": "Skill",
+        "difficulty": "Intermediate",
+        "duration": "4 hours",
+        "reason": "Complete your DevOps skill stack"
+      }
+    ]
+  },
+  "todayTasks": {
+    "title": "Today's Tasks",
+    "urgent": "Urgent",
+    "view": "View",
+    "tasks": [
+      "Submit data analysis project report",
+      "Complete Spark chapter quiz",
+      "Attend live Q&A session",
+      "Update resume with project experience"
+    ],
+    "deadlines": [
+      "Today 6:00 PM",
+      "Tomorrow 8:00 PM",
+      "Friday 7:30 PM",
+      "This Sunday"
+    ]
+  },
+  "recentActivities": {
+    "title": "Recent Activities",
+    "activities": [
+      "Completed Chapter 5 of Python Data Processing",
+      "Solved 3 algorithm practice problems",
+      "Submitted e-commerce data analysis project",
+      "Earned 'Data Cleaning Expert' badge"
+    ],
+    "times": [
+      "2 hours ago",
+      "5 hours ago",
+      "1 day ago",
+      "2 days ago"
+    ]
+  },
+  "studyCalendar": {
+    "title": "Study Calendar"
+  },
+  "userProfile": {
+    "level": "L3 Advanced Student",
+    "path": "Data Engineer"
+  },
+  "greetings": {
+    "morning": "Good morning",
+    "afternoon": "Good afternoon",
+    "evening": "Good evening"
+  },
+  "quickStart": {
+    "title": "🚀 Quick Start",
+    "continueLearning": "Continue Learning",
+    "continueReactHooks": "Continue React Hooks course",
+    "startNow": "Start Now",
+    "codePractice": "Code Practice",
+    "algorithmPractice": "Practice algorithms to improve skills",
+    "startCoding": "Start Coding",
+    "projectPractice": "Project Practice",
+    "aiGenerateProject": "AI Generate New Project",
+    "createProject": "Create Project",
+    "mockInterview": "Mock Interview",
+    "improvePerformance": "Improve interview performance",
+    "startInterview": "Start Interview"
+  },
+  "skillRadar": {
+    "title": "Skill Radar",
+    "aiSuggestion": "💡 AI Suggestion",
+    "improvementTip": "Focus on improving system design skills to significantly enhance your interview competitiveness"
+  },
+  "learningProgress": {
+    "title": "Learning Progress",
+    "viewAll": "View All",
+    "programmingPractice": "Programming Practice",
+    "aiLearning": "AI Learning Q&A",
+    "basicLearning": "Basic Programming Learning",
+    "reactDevelopment": "React Component Development",
+    "hoursAgo": "hours ago",
+    "today": "Today",
+    "justNow": "Just now",
+    "yesterday": "Yesterday",
+    "daysAgo": "days ago",
+    "completed": "Completed",
+    "inProgress": "In Progress",
+    "pending": "Pending"
+  },
+  "projectShowcase": {
+    "title": "Project Portfolio",
+    "manageProjects": "Manage Projects",
+    "viewDemo": "View Demo",
+    "details": "Details",
+    "ecommerceApp": "E-commerce Full-Stack App",
+    "dataVisualization": "Data Visualization Dashboard",
+    "usingTech": "Built with"
+  },
+  "recentActivity": {
+    "title": "Recent Activity",
+    "codeSubmission": "Submitted {{language}} code",
+    "aiChat": "AI Learning Q&A",
+    "conceptLearning": "Completed concept learning",
+    "projectWork": "Project development progress",
+    "learningActivity": "Learning activity",
+    "codeSuccess": "Code executed successfully, logic is correct",
+    "codeNeedsWork": "Code needs optimization, keep working",
+    "aiAnswered": "AI assistant answered technical questions",
+    "conceptMastered": "Mastered important programming concepts",
+    "projectProgress": "Made new progress in project development",
+    "goodProgress": "Learning progress is good"
+  },
+  "aiRecommendations": {
+    "title": "AI Personalized Recommendations",
+    "learningSuggestion": "Learning Suggestion",
+    "projectRecommendation": "Project Recommendation",
+    "nextAction": "Next Action",
+    "suggestLearning": "Suggested learning",
+    "recommendedProject": "Recommended project",
+    "basedOnSkills": "Based on your skill stack, recommended for hands-on projects",
+    "continueBasics": "Continue learning programming basics, practice more projects",
+    "keepCurrentPace": "Based on your learning progress, keep your current learning pace"
+  },
+  "statistics": {
+    "learningTime": "Learning Time",
+    "hours": "hours",
+    "learningSessions": "Learning Sessions",
+    "sessions": "sessions",
+    "projectWorks": "Project Works",
+    "pieces": "pieces",
+    "skillScore": "Skill Score",
+    "points": "points"
+  },
+  "loading": {
+    "userData": "Loading user data...",
+    "encouragement": "Keep up the good work! You've studied {{hours}} hours, maintain this pace 💪"
+  }
+}

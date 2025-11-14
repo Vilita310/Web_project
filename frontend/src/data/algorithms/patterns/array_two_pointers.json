@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "id": "array_two_pointers",
+    "name": "数组双指针",
+    "category": "array",
+    "difficulty": "基础",
+    "timeComplexity": "O(n)",
+    "spaceComplexity": "O(1)",
+    "version": "1.0",
+    "lastUpdated": "2024-01-20"
+  },
+
+  "theory": {
+    "concept": "双指针技术是一种高效的数组处理方法，通过维护两个指针来减少时间复杂度。这种技术特别适用于有序数组，能够将许多 O(n²) 的问题优化到 O(n)。\n\n🎯 **核心思想**：\n利用两个指针的相对位置和移动规律，避免不必要的重复计算，从而提高算法效率。",
+
+    "types": [
+      {
+        "name": "相向双指针",
+        "description": "两个指针从数组两端向中间移动",
+        "applicableScenarios": ["有序数组查找", "回文判断", "容器盛水问题"],
+        "example": "两数之和 II - 输入有序数组",
+        "pattern": "left = 0, right = n-1; while (left < right) { ... }"
+      },
+      {
+        "name": "同向双指针",
+        "description": "两个指针同向移动，通常一快一慢",
+        "applicableScenarios": ["数组去重", "滑动窗口", "链表环检测"],
+        "example": "删除排序数组中的重复项",
+        "pattern": "slow = 0; for (fast = 0; fast < n; fast++) { ... }"
+      },
+      {
+        "name": "快慢指针",
+        "description": "两个指针以不同速度移动",
+        "applicableScenarios": ["链表中点", "环形链表", "数组重复检测"],
+        "example": "环形链表检测",
+        "pattern": "slow++; fast += 2; 检测是否相遇"
+      }
+    ],
+
+    "advantages": [
+      "时间复杂度优化：通常可以从 O(n²) 优化到 O(n)",
+      "空间复杂度低：只需要常数级额外空间 O(1)",
+      "代码简洁：逻辑清晰，实现简单",
+      "适用性广：多种数组和字符串问题都可以应用"
+    ],
+
+    "disadvantages": [
+      "有序要求：相向双指针通常需要数组有序",
+      "理解难度：需要正确理解指针移动的条件",
+      "边界处理：容易出现边界条件错误"
+    ],
+
+    "keyPrinciples": [
+      "确定指针的初始位置和移动方向",
+      "明确指针移动的条件和停止条件",
+      "利用数组的有序性或特定性质",
+      "避免重复计算和不必要的比较"
+    ],
+
+    "commonPatterns": [
+      {
+        "pattern": "相向双指针查找",
+        "template": "int left = 0, right = nums.length - 1;\nwhile (left < right) {\n    int sum = nums[left] + nums[right];\n    if (sum == target) return new int[]{left, right};\n    else if (sum < target) left++;\n    else right--;\n}",
+        "useCases": ["两数之和", "三数之和", "盛最多水的容器"]
+      },
+      {
+        "pattern": "同向双指针去重",
+        "template": "int slow = 0;\nfor (int fast = 1; fast < nums.length; fast++) {\n    if (nums[fast] != nums[slow]) {\n        nums[++slow] = nums[fast];\n    }\n}\nreturn slow + 1;",
+        "useCases": ["删除重复项", "移除元素", "数组压缩"]
+      }
+    ]
+  },
+
+  "practiceProblems": [
+    {
+      "id": 1,
+      "title": "两数之和",
+      "difficulty": "简单",
+      "focus": "理解哈希表与双指针的区别",
+      "note": "无序数组用哈希表，有序数组用双指针"
+    },
+    {
+      "id": 167,
+      "title": "两数之和 II - 输入有序数组",
+      "difficulty": "中等",
+      "focus": "掌握相向双指针基本用法",
+      "note": "双指针经典应用，必须掌握"
+    },
+    {
+      "id": 15,
+      "title": "三数之和",
+      "difficulty": "中等",
+      "focus": "双指针结合排序的应用",
+      "note": "固定一个数，双指针找另外两个数"
+    },
+    {
+      "id": 11,
+      "title": "盛最多水的容器",
+      "difficulty": "中等",
+      "focus": "理解双指针移动的策略",
+      "note": "移动较短的指针才可能找到更大面积"
+    },
+    {
+      "id": 42,
+      "title": "接雨水",
+      "difficulty": "困难",
+      "focus": "双指针的高级应用",
+      "note": "结合动态规划思想的双指针"
+    }
+  ],
+
+  "learningPath": {
+    "prerequisites": [
+      "数组基础操作",
+      "循环和条件判断",
+      "基本的数学逻辑"
+    ],
+    "currentLevel": "数组双指针技术",
+    "nextTopics": [
+      "滑动窗口技术",
+      "二分查找算法",
+      "字符串双指针",
+      "链表双指针"
+    ],
+    "estimatedTime": "2-3小时理论学习 + 4-6小时练习"
+  },
+
+  "interactiveExamples": [
+    {
+      "title": "相向双指针演示",
+      "description": "在有序数组中查找两数之和",
+      "defaultInput": {
+        "array": [1, 2, 7, 11, 15],
+        "target": 9
+      },
+      "steps": [
+        "初始化：left = 0, right = 4",
+        "计算：nums[0] + nums[4] = 1 + 15 = 16 > 9",
+        "16 > 9，right--，现在 right = 3",
+        "计算：nums[0] + nums[3] = 1 + 11 = 12 > 9",
+        "12 > 9，right--，现在 right = 2",
+        "计算：nums[0] + nums[2] = 1 + 7 = 8 < 9",
+        "8 < 9，left++，现在 left = 1",
+        "计算：nums[1] + nums[2] = 2 + 7 = 9 = 9",
+        "找到答案：[1, 2]"
+      ]
+    }
+  ],
+
+  "commonMistakes": [
+    {
+      "mistake": "指针越界",
+      "description": "没有正确检查 left < right 的边界条件",
+      "correction": "始终确保 while (left < right) 条件正确"
+    },
+    {
+      "mistake": "无限循环",
+      "description": "指针移动条件错误，导致指针不移动",
+      "correction": "确保在每次循环中至少有一个指针移动"
+    },
+    {
+      "mistake": "重复计算",
+      "description": "没有跳过重复元素，导致重复结果",
+      "correction": "在三数之和等问题中要跳过重复元素"
+    },
+    {
+      "mistake": "移动策略错误",
+      "description": "不知道什么时候移动哪个指针",
+      "correction": "根据问题特性制定清晰的移动策略"
+    }
+  ],
+
+  "advancedTips": [
+    "在三数之和问题中，外层循环固定一个数，内层用双指针",
+    "处理重复元素时，要在移动指针后继续跳过重复值",
+    "双指针不仅适用于数组，也适用于字符串和链表",
+    "有时候需要在双指针基础上结合其他技术，如排序或哈希表"
+  ],
+
+  "realWorldApplications": [
+    {
+      "scenario": "数据去重",
+      "description": "在大型数据集中快速去除重复项",
+      "complexity": "O(n) 时间，O(1) 空间"
+    },
+    {
+      "scenario": "配对算法",
+      "description": "在排序数组中快速找到满足条件的配对",
+      "example": "推荐系统中的用户配对"
+    },
+    {
+      "scenario": "区间合并",
+      "description": "处理时间区间、范围查询等问题",
+      "example": "会议室预订系统"
+    }
+  ],
+
+  "practiceStrategy": {
+    "beginnerLevel": [
+      "先掌握基本的相向双指针（两数之和 II）",
+      "理解指针移动的逻辑",
+      "练习边界条件处理"
+    ],
+    "intermediateLevel": [
+      "练习三数之和，学会固定一个变量",
+      "掌握重复元素的处理",
+      "学习同向双指针的应用"
+    ],
+    "advancedLevel": [
+      "解决复杂的双指针问题（接雨水）",
+      "结合其他算法技术",
+      "优化空间和时间复杂度"
+    ]
+  }
+}

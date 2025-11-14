@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "id": 295,
+    "title": "数据流的中位数",
+    "difficulty": "困难",
+    "leetcodeId": 295,
+    "category": "heap",
+    "patterns": [
+      "heap_median"
+    ],
+    "tags": [
+      "设计",
+      "两个指针",
+      "数据流",
+      "排序",
+      "堆"
+    ],
+    "estimatedTime": "45分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "中位数是有序列表中间的数。如果列表长度是偶数，中位数则是中间两个数的平均值。例如，[2,3,4] 的中位数是 3，[2,3] 的中位数是 (2 + 3) / 2 = 2.5。设计一个支持以下两种操作的数据结构：void addNum(int num) - 从数据流中添加一个整数到数据结构中。double findMedian() - 返回目前所有元素的中位数。",
+  "examples": [
+    {
+      "input": "[\"MedianFinder\",\"addNum\",\"addNum\",\"findMedian\",\"addNum\",\"findMedian\"]\n[[],[1],[2],[],[3],[]]",
+      "output": "[null,null,null,1.5,null,2.0]",
+      "explanation": "MedianFinder medianFinder = new MedianFinder();\nmedianFinder.addNum(1);    // arr = [1]\nmedianFinder.addNum(2);    // arr = [1, 2]\nmedianFinder.findMedian(); // 返回 1.5 ((1 + 2) / 2)\nmedianFinder.addNum(3);    // arr = [1, 2, 3]\nmedianFinder.findMedian(); // return 2.0"
+    }
+  ],
+  "constraints": [
+    "最多会对 addNum、findMedian 进行 50000 次调用"
+  ],
+  "hints": [
+    "使用两个堆：最大堆存储较小的一半，最小堆存储较大的一半",
+    "保持两个堆的大小平衡",
+    "中位数要么是最大堆的顶部，要么是两个堆顶部的平均值"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "two_heaps",
+      "name": "双堆法",
+      "timeComplexity": "O(log n)",
+      "spaceComplexity": "O(n)",
+      "description": "使用最大堆和最小堆维护数据流的中位数",
+      "code": {
+        "javascript": "/**\n * 数据流的中位数 - 使用最大堆和最小堆维护数据流的中位数\n */\n\nclass MedianFinder {\n    constructor() {\n        this.maxHeap = []; // 存储较小的一半\n        this.minHeap = []; // 存储较大的一半\n    }\n\n    addNum(num) {\n        // 先加入最大堆\n        this.maxHeap.push(num);\n        this.maxHeap.sort((a, b) => b - a);\n\n        // 将最大堆的最大值移到最小堆\n        this.minHeap.push(this.maxHeap.shift());\n        this.minHeap.sort((a, b) => a - b);\n\n        // 保持平衡：最大堆的大小 >= 最小堆的大小\n        if (this.minHeap.length > this.maxHeap.length) {\n            this.maxHeap.push(this.minHeap.shift());\n            this.maxHeap.sort((a, b) => b - a);\n        }\n    }\n\n    findMedian() {\n        if (this.maxHeap.length > this.minHeap.length) {\n            return this.maxHeap[0];\n        } else {\n            return (this.maxHeap[0] + this.minHeap[0]) / 2;\n        }\n    }\n}\n\n\n/**\n * 测试MedianFinder函数\n */\nfunction testMedianFinder() {\n    console.log(\"=== MedianFinder测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: [\"MedianFinder\",\"addNum\",\"addNum\",\"findMedian\",\"addNum\",\"findMedian\"]\n[[],[1],[2],[],[3],[]]\");\n    console.log(\"期望输出: [null,null,null,1.5,null,2.0]\");\n    console.log(\"说明: MedianFinder medianFinder = new MedianFinder();\nmedianFinder.addNum(1);    // arr = [1]\nmedianFinder.addNum(2);    // arr = [1, 2]\nmedianFinder.findMedian(); // 返回 1.5 ((1 + 2) / 2)\nmedianFinder.addNum(3);    // arr = [1, 2, 3]\nmedianFinder.findMedian(); // return 2.0\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testMedianFinder();",
+        "python": "\"\"\"\n数据流的中位数 - 使用最大堆和最小堆维护数据流的中位数\n\"\"\"\n\nimport heapq\n\nclass MedianFinder:\n    def __init__(self):\n        self.max_heap = []  # 存储较小的一半（取负值实现最大堆）\n        self.min_heap = []  # 存储较大的一半\n\n    def addNum(self, num):\n        # 先加入最大堆\n        heapq.heappush(self.max_heap, -num)\n\n        # 将最大堆的最大值移到最小堆\n        heapq.heappush(self.min_heap, -heapq.heappop(self.max_heap))\n\n        # 保持平衡\n        if len(self.min_heap) > len(self.max_heap):\n            heapq.heappush(self.max_heap, -heapq.heappop(self.min_heap))\n\n    def findMedian(self):\n        if len(self.max_heap) > len(self.min_heap):\n            return -self.max_heap[0]\n        else:\n            return (-self.max_heap[0] + self.min_heap[0]) / 2\n\n\ndef test___init__():\n    \"\"\"测试__init__函数\"\"\"\n    print(\"=== __init__测试 ===\")\n\n    # 测试用例\n    print(\"输入: [\"MedianFinder\",\"addNum\",\"addNum\",\"findMedian\",\"addNum\",\"findMedian\"]\n[[],[1],[2],[],[3],[]]\")\n    print(\"期望输出: [null,null,null,1.5,null,2.0]\")\n    print(\"说明: MedianFinder medianFinder = new MedianFinder();\nmedianFinder.addNum(1);    // arr = [1]\nmedianFinder.addNum(2);    // arr = [1, 2]\nmedianFinder.findMedian(); // 返回 1.5 ((1 + 2) / 2)\nmedianFinder.addNum(3);    // arr = [1, 2, 3]\nmedianFinder.findMedian(); // return 2.0\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test___init__()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 数据流的中位数解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "[\"MedianFinder\",\"addNum\",\"addNum\",\"findMedian\",\"addNum\",\"findMedian\"]\n[[],[1],[2],[],[3],[]]",
+      "output": "[null,null,null,1.5,null,2.0]",
+      "explanation": "MedianFinder medianFinder = new MedianFinder();\nmedianFinder.addNum(1);    // arr = [1]\nmedianFinder.addNum(2);    // arr = [1, 2]\nmedianFinder.findMedian(); // 返回 1.5 ((1 + 2) / 2)\nmedianFinder.addNum(3);    // arr = [1, 2, 3]\nmedianFinder.findMedian(); // return 2.0"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "数据流的中位数变种练习",
+      "description": "基于数据流的中位数的变种问题",
+      "difficulty": "困难",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

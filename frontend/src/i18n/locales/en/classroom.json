@@ -1,0 +1,620 @@
+{
+  "title": "🎓 AI Smart Classroom",
+  "stages": {
+    "theory": "Theory Learning",
+    "practice": "Practice Consolidation",
+    "project": "Mini Project",
+    "career": "Career Preparation"
+  },
+  "features": {
+    "aiTeacher": "AI Teacher",
+    "smartBoard": "Smart Board",
+    "voiceInteraction": "Voice Interaction",
+    "multimodal": "Multimodal Input",
+    "notes": "Smart Notes",
+    "assistant": "AI Assistant"
+  },
+  "theory": {
+    "title": "💡 Theory Learning Stage",
+    "description": "AI teacher explains core concepts and principles in detail",
+    "topics": "Teaching Topics",
+    "keyPoints": "Key Points",
+    "examples": "Code Examples"
+  },
+  "practice": {
+    "title": "💪 Practice Consolidation Stage",
+    "description": "Deepen understanding through hands-on coding practice",
+    "exercises": "Practice Problems",
+    "hints": "Smart Hints",
+    "solutions": "Reference Solutions"
+  },
+  "project": {
+    "title": "🏗️ Mini Project Stage",
+    "description": "Apply learned knowledge to complete real projects",
+    "requirements": "Project Requirements",
+    "architecture": "Architecture Design",
+    "implementation": "Implementation Steps",
+    "testing": "Testing & Validation"
+  },
+  "career": {
+    "title": "💼 Career Preparation Stage",
+    "description": "Prepare thoroughly for job interviews",
+    "resumeGeneration": "Resume Generation",
+    "interviewPrep": "Interview Preparation",
+    "codeInterview": "Code Interview",
+    "behavioralInterview": "Behavioral Interview"
+  },
+  "tools": {
+    "codeEditor": "Code Editor",
+    "terminal": "Terminal",
+    "fileExplorer": "File Explorer",
+    "debugger": "Debugger",
+    "preview": "Preview",
+    "whiteboard": "Whiteboard"
+  },
+  "buttons": {
+    "aiTeacher": "AI Teacher",
+    "aiDebug": "AI Debug",
+    "codeExamples": "Code Examples",
+    "developmentTips": "🔧 Dev Tips",
+    "projectArchitecture": "Project Architecture",
+    "editorMoved": "Editor moved to center",
+    "runCode": "Run Code",
+    "submitCode": "Submit Code",
+    "runFirst": "Please run code first",
+    "evaluating": "Evaluating..."
+  },
+  "interactions": {
+    "askQuestion": "Ask AI",
+    "voiceInput": "Voice Input",
+    "drawOnBoard": "Draw on Board",
+    "uploadImage": "Upload Image",
+    "runCode": "Run Code",
+    "getHint": "Get Hint",
+    "submitCode": "Submit Code",
+    "runFirst": "Please run code first",
+    "evaluating": "Evaluating..."
+  },
+  "progress": {
+    "currentLesson": "Current Lesson",
+    "completedLessons": "Completed Lessons",
+    "totalLessons": "Total Lessons",
+    "progressPercent": "Progress",
+    "timeSpent": "Time Spent",
+    "nextLesson": "Next Lesson"
+  },
+  "welcome": {
+    "greeting": "👋 Welcome to {{title}} AI Smart Classroom! I'm your dedicated AI tutor, ready to answer any questions you have.",
+    "letsStart": "Let's start our learning journey!"
+  },
+  "codeExamples": {
+    "functionDefinition": "Function Definition",
+    "fibonacciDescription": "Recursive function implementing Fibonacci sequence",
+    "calculateFibonacci": "Calculate first 10 Fibonacci numbers",
+    "listComprehension": "List Comprehension",
+    "dataProcessing": "Data processing example",
+    "filterEvenSquare": "Filter even numbers and square them",
+    "classDefinition": "Class Definition",
+    "objectOriented": "Object-oriented programming example",
+    "fileOperations": "File Operations",
+    "errorHandling": "Error handling and file processing"
+  },
+  "solutionHints": {
+    "basicConcepts": "Master basic concepts first",
+    "practiceMore": "Need more practice",
+    "almostThere": "Almost there, keep going!",
+    "perfectSolution": "Perfect solution!"
+  },
+  "aiTeacher": {
+    "thinking": "AI Teacher is thinking...",
+    "responding": "Generating response...",
+    "readyToHelp": "I'm here to help you learn!",
+    "askAnything": "Feel free to ask me anything about the lesson.",
+    "noContent": "No content available"
+  },
+  "codeDebugging": {
+    "hints": [
+      "Check if variable names are standardized and use meaningful names",
+      "Ensure code indentation is correct, Python is sensitive to indentation",
+      "Add comments to explain complex logic and improve code readability",
+      "Consider edge cases, such as handling empty inputs or exception values",
+      "Optimize algorithm complexity, avoid unnecessary nested loops"
+    ]
+  },
+  "codeExecution": {
+    "pleaseEnterCode": "Please enter code",
+    "executionSuccess": "Code executed successfully",
+    "noOutput": "Code executed successfully, no output",
+    "executionError": "Execution error",
+    "variableAssigned": "Variable assigned",
+    "codeDefinedSuccess": "Code defined successfully"
+  },
+  "resumeTemplates": {
+    "loading": {
+      "technical": "Loading technical resume template...",
+      "projectFocused": "Loading project-focused resume template...",
+      "resultOriented": "Loading result-oriented resume template..."
+    },
+    "defaultCourse": "Full-Stack Development Course",
+    "defaultProject": "Full-Stack Project Development"
+  },
+  "comments": {
+    "calculateFibonacci": "Calculate first 10 Fibonacci numbers",
+    "dataProcessingExample": "Data processing example",
+    "filterEvenSquare": "Filter even numbers and square them",
+    "evenSquares": "Even squares"
+  },
+  "navigation": {
+    "backToCourse": "Back to Course",
+    "previousLesson": "Previous Lesson",
+    "nextLesson": "Next Lesson",
+    "hideLeftSidebar": "Hide Left Sidebar",
+    "showLeftSidebar": "Show Left Sidebar",
+    "hideRightSidebar": "Hide Right Sidebar",
+    "showRightSidebar": "Show Right Sidebar"
+  },
+  "stageHeaders": {
+    "theoryLearning": "Theory Learning",
+    "practiceConsolidation": "Practice Consolidation",
+    "miniProject": "Mini Project",
+    "careerPreparation": "Career Preparation",
+    "projectDevelopment": "Project Development"
+  },
+  "codeTemplates": {
+    "practiceCode": "# Practice Code",
+    "hello": "Hello, Python!",
+    "projectTemplate": "// Mini Project Code Template",
+    "projectWelcome": "Welcome to mini project development!",
+    "todoComment": "// TODO: Write your project code here"
+  },
+  "sidebar": {
+    "smartNotes": "Smart Notes",
+    "aiAssistant": "AI Assistant",
+    "noteContent": "Note content...",
+    "saveNote": "Save Note"
+  },
+  "aiTeacher": {
+    "recording": "🎤 Recording...",
+    "thinking": "🤔 Thinking...",
+    "generating": "🎵 Generating...",
+    "speaking": "🔊 Playing...",
+    "aiInterviewer": "AI Interviewer",
+    "aiTeacher": "AI Teacher",
+    "aiThinking": "AI is thinking...",
+    "recordingStatus": "🎤 {role} is recording...",
+    "thinkingStatus": "🤔 {role} is thinking...",
+    "generatingStatus": "🎵 {role} is generating voice...",
+    "speakingStatus": "🔊 {role} voice playing...",
+    "interviewDescription": "AI Interviewer Smart Conversation",
+    "browserNotSupported": "Browser does not support voice recognition",
+    "preparingLecture": "🤖 AI Teacher is preparing to explain \"{topic}\"...",
+    "teacherExplanation": "📚 AI Teacher Explanation:\n\n{content}",
+    "drawingOnBoard": "🎨 AI Teacher is drawing related content on the blackboard...",
+    "voiceLecture": "🎙️ AI Teacher Voice Explanation:\n\n{content}",
+    "serviceUnavailable": "❌ Sorry, AI Teacher service is temporarily unavailable: {error}",
+    "smartBlackboard": "AI Smart Blackboard",
+    "drawing": "Drawing...",
+    "drawingTools": "Drawing Tools",
+    "hideDrawingTools": "Hide Drawing Tools",
+    "showDrawingTools": "Show Drawing Tools",
+    "teacherDescription": "Let AI teacher explain concepts for you and draw diagrams on the blackboard"
+  },
+  "screenshot": {
+    "askQuestion": "📸 Screenshot Question",
+    "capturing": "📸 Capturing..."
+  },
+  "blackboard": {
+    "selectTopic": "Select Teaching Topic",
+    "loadingContent": "Course content loading...",
+    "whatIs": "What is {{topic}}?",
+    "basicPrinciples": "Basic principles of {{topic}}",
+    "componentDevelopment": "Component Development Approach",
+    "virtualDomMechanism": "Virtual DOM Mechanism",
+    "reactFundamentals": "React Fundamentals",
+    "startLearning": "Start learning course content"
+  },
+  "testCases": {
+    "input": "Input",
+    "output": "Output"
+  },
+  "courseContent": {
+    "react-fullstack": {
+      "1": {
+        "1": {
+          "title": "React Introduction and Environment Setup",
+          "description": "Learn React framework core concepts and modern development environment setup",
+          "theory": {
+            "topic": "React Framework Fundamentals",
+            "content": "React is a JavaScript library developed by Facebook for building user interfaces. It adopts a component-based development approach and achieves efficient interface updates through the Virtual DOM mechanism. React's core features include: component architecture, declarative programming, unidirectional data flow, and a rich ecosystem.",
+            "keyPoints": [
+              "Component-based development - Break down interfaces into independent, reusable components",
+              "Virtual DOM mechanism - Maintain virtual DOM tree in memory to optimize real DOM operations",
+              "Declarative programming paradigm - Describe what the interface should look like, not how to manipulate it",
+              "JSX syntax sugar - Write HTML-like syntax in JavaScript",
+              "Unidirectional data flow - Data flows from parent to child components, maintaining predictable application state"
+            ]
+          },
+          "practice": {
+            "title": "Environment Setup Practice",
+            "description": "Hands-on React development environment setup, create your first React application",
+            "problem": "Create a simple personal introduction card component that includes name, profession, avatar, and contact information. Use function components and props for data passing."
+          },
+          "project": {
+            "title": "React Project Scaffolding Tool",
+            "description": "Build an automated React project creation tool to help developers quickly set up React project environments",
+            "features": [
+              "One-click React project template creation",
+              "Pre-configured ESLint and Prettier code standards",
+              "Integrated common development dependencies and tools",
+              "Automatic generation of project documentation and README",
+              "Support for TypeScript template selection",
+              "Built-in routing and state management configuration"
+            ],
+            "techStack": ["React", "Node.js", "CLI Tools", "Template Engine", "ESLint", "Prettier"],
+            "deliverables": [
+              "CLI Command Line Tool",
+              "Project Template Library",
+              "Configuration File Generator",
+              "Usage Documentation and Examples",
+              "Unit Test Suite"
+            ]
+          },
+          "career": {
+            "title": "React Developer Getting Started Guide",
+            "skills": ["React Basics", "JSX Syntax", "Component Concepts", "Development Environment", "Virtual DOM", "Modern Frontend Toolchain"],
+            "projectValue": {
+              "title": "Value of React Project Scaffolding Tool in Projects",
+              "description": "As a core development tool for projects, enables automated React project creation, reducing project initialization time from hours to minutes, providing development teams with standardized development environments and efficient engineering experiences."
+            }
+          }
+        },
+        "3": {
+          "title": "React Event Binding",
+          "description": "Master React's event handling mechanism to implement user interaction functionality",
+          "theory": {
+            "topic": "React Event System",
+            "content": "React uses the SyntheticEvent system to provide a consistent cross-browser event handling experience. Event binding uses camelCase naming and is bound through JSX attributes. React's event system features: cross-browser compatibility, event delegation mechanism, preventDefault and event bubbling control.",
+            "keyPoints": [
+              "React event binding syntax: on + EventName = { event handler }",
+              "SyntheticEvent provides cross-browser compatibility",
+              "Event handlers can receive event object parameters",
+              "Support for passing custom parameters and event objects",
+              "Event delegation mechanism improves performance"
+            ]
+          },
+          "practice": {
+            "title": "React Event Handling Practice",
+            "description": "Master various event handling techniques through practical examples",
+            "problem": "Create an interactive counter component with requirements: 1. Display current count value 2. Click + button to increase count 3. Click - button to decrease count 4. Click reset button to clear 5. Double-click count display area to also reset"
+          },
+          "project": {
+            "title": "Interactive Game Interface",
+            "description": "Develop a simple click game showcasing React event handling capabilities",
+            "features": [
+              "Click scoring system",
+              "Keyboard shortcut support",
+              "Mouse hover effects",
+              "Touch device compatibility",
+              "Real-time score display",
+              "Game time statistics"
+            ],
+            "techStack": ["React", "CSS Animations", "Event Handling", "Responsive Design"],
+            "deliverables": [
+              "Playable mini-game",
+              "Event handling best practices documentation",
+              "Performance optimization guide",
+              "Cross-device compatibility solution"
+            ]
+          },
+          "career": {
+            "title": "React Event Handling Skills Assessment",
+            "skills": ["Event Binding", "Event Objects", "Parameter Passing", "Event Delegation", "Performance Optimization"],
+            "projectValue": {
+              "title": "Value of Interactive Game Interface in Projects",
+              "description": "As the core implementation of user interaction features, demonstrates complete application of React event handling, providing users with smooth interactive experiences and enhancing product user engagement and retention."
+            }
+          }
+        }
+      }
+    }
+  },
+  "progress": {
+    "learningPath": "Learning Path",
+    "overallProgress": "Overall Progress"
+  },
+  "messages": {
+    "codeExecutionSuccess": "Code executed successfully!",
+    "codeExecutionFailed": "Code execution failed",
+    "executionError": "Execution error",
+    "runtimeError": "Runtime error",
+    "testCaseError": "Test case error",
+    "testCase": "Test case",
+    "error": "Error",
+    "basicRun": "Basic run",
+    "success": "Success",
+    "passed": "Passed",
+    "failed": "Failed",
+    "testCases": "Test Cases",
+    "cases": "",
+    "case": "Case",
+    "input": "Input",
+    "expected": "Expected",
+    "actual": "Actual",
+    "exception": "Exception",
+    "serverConnectionFailed": "Cannot connect to execution server",
+    "speechRecognitionFailed": "Speech recognition failed, please try again",
+    "aiTeacherNotAvailable": "AI Teacher is temporarily unavailable, please try again later",
+    "voicePlaybackFailed": "Voice playback failed, please try again later",
+    "aiTeacherReady": "🎤 AI Teacher is ready, start voice questioning!",
+    "writeCodeFirst": "Please write some code first before debugging",
+    "analyzingCode": "🔍 Starting code analysis...",
+    "aiAnalyzingCode": "🤖 AI is deeply analyzing your code...",
+    "aiDebugComplete": "✅ AI Debug code analysis complete! Please check the detailed debugging report in AI Assistant window",
+    "aiDebugFailed": "AI Debug analysis failed, please try again",
+    "noOutput": "Code executed successfully, no output",
+    "intelligentDetectionEnabled": "Intelligent language detection enabled",
+    "languageSwitched": "Switched to",
+    "startSpeaking": "Please start speaking...",
+    "microphonePermissionDenied": "Microphone permission denied or device unavailable",
+    "analysisFailedRetry": "Sorry, architecture analysis failed. Please try again later.",
+    "analyzingProjectArchitecture": "Please analyze the architecture design of this sliding window visualization project",
+    "analyzingArchitecture": "Analyzing project architecture...",
+    "aiDefaultReply": "I cannot reply right now, please try again later.",
+    "courseLearning": "Course Learning",
+    "programmingPractice": "Programming Practice",
+    "practiceSkills": "Practice Programming Skills",
+    "technicalPosition": "Technical Position",
+    "canvasNotFound": "Cannot find blackboard canvas element",
+    "analyzeBlackboardContent": "Please analyze the content on this blackboard and provide relevant teaching suggestions or answer questions.",
+    "screenshotQuestion": "📸 Screenshot Question"
+  },
+  "languageMenu": {
+    "autoDetect": "Auto Detect",
+    "recommended": "Recommended",
+    "chinese": "中文",
+    "english": "English",
+    "japanese": "日本語",
+    "defaultLanguage": "Chinese"
+  },
+  "codeEditor": {
+    "defaultTitle": "Code Practice",
+    "runResult": "Execution Result",
+    "sampleCode": "Sample Code",
+    "basicVariables": "Basic Variables and Operations",
+    "arrayOperations": "Array Operations",
+    "listOperations": "List Operations"
+  },
+  "resumeTemplates": {
+    "technical": "💻 Technical-Focused",
+    "projectFocused": "🚀 Project-Focused",
+    "resultOriented": "📊 Result-Oriented"
+  },
+  "aiInterviewer": {
+    "greeting": "👋 Hello! I'm the AI interviewer. This is a {title} interview, and I'll have in-depth conversations based on your answers. Please relax and communicate with me through voice or text. Are you ready?",
+    "practiceTitle": "Practice Question: {title}",
+    "practiceDescription": "Question Description: {description}",
+    "interviewContext": "Interview Practice",
+    "teachingContext": "Classroom Teaching",
+    "interviewScenario": "Interview Scenario: {title}. Candidate's Answer: {response}",
+    "codeExampleRequest": "User requested code examples. Please provide relevant programming example code, including:",
+    "hintRequest": "User requested problem-solving hints. Please provide the following hints:"
+  },
+  "fallbacks": {
+    "projectValueTitle": "Value Demonstration in Projects",
+    "projectValueDescription": "As a core project functionality, implementing technical solutions to provide excellent user experience."
+  },
+  "errors": {
+    "loadProgressFailed": "Failed to load learning progress",
+    "recognitionFailed": "Recognition failed",
+    "aiReplyFailed": "AI reply failed",
+    "ttsRequestFailed": "TTS request failed",
+    "audioPlayError": "Audio playback error",
+    "openaiTtsError": "OpenAI TTS error",
+    "imageAnalysisFailed": "AI image analysis failed",
+    "cannotAnalyzeImage": "Sorry, I cannot analyze this image.",
+    "screenshotAnalysisFailed": "Sorry, screenshot analysis failed. Error message:",
+    "dataLoading": "Data loading",
+    "aiServiceError": "Sorry, AI service encountered an issue:",
+    "pleaseRetry": ". Please try again later or ask a different question.",
+    "voiceGenerationFailed": "Voice generation failed",
+    "voiceFailedButTextReady": "⚠️ Voice generation failed, but text content is ready",
+    "aiServiceUnavailable": "❌ Sorry, AI teacher service is temporarily unavailable:",
+    "noSpeechDetected": "No speech detected, please speak louder",
+    "unknownDuration": "Unknown duration",
+    "projectPractice": "Project Practice • Skill Application • Comprehensive Exercise",
+    "frontendDevelopment": "Frontend Development",
+    "frameworkApplication": "Framework Application",
+    "projectDevelopmentSkill": "Project Development",
+    "resumeOptimization": "Resume Optimization • Interview Preparation • Skill Assessment • Career Planning"
+  },
+  "timeEstimates": {
+    "theory": "20-25 minutes",
+    "practice": "25-30 minutes",
+    "project": "30-40 minutes",
+    "career": "20-25 minutes",
+    "estimated": "Estimated"
+  },
+  "labels": {
+    "modernTechStack": "Modern Tech Stack",
+    "projectDeliverables": "📦 Project Deliverables:",
+    "commonMistakes": "Common Mistakes",
+    "developmentWorkflow": "Development Workflow"
+  },
+  "architecture": {
+    "analysisPrompt": "Please analyze the architecture design of this sliding window visualization project",
+    "analyzing": "Analyzing project architecture...",
+    "expert": "AI Architecture Expert",
+    "analysisFailed": "Sorry, architecture analysis failed. Please try again later."
+  },
+  "voice": {
+    "playbackFailed": "Voice playback failed:",
+    "generationFailed": "Voice generation failed:"
+  },
+  "context": {
+    "course": "Course",
+    "chapter": "Chapter",
+    "currentStage": "Current learning stage",
+    "learningStage": "Learning stage",
+    "practiceTitle": "Practice title",
+    "practiceDescription": "Practice description",
+    "programmingPractice": "Programming practice",
+    "practiceSkills": "Practice programming skills",
+    "technicalPosition": "Technical position",
+    "interviewPractice": "Interview Practice",
+    "classroomTeaching": "Classroom Teaching",
+    "blackboardAnalysis": "Teaching blackboard analysis"
+  },
+  "codeRequest": {
+    "keywords": ["code examples", "sample code", "code snippet"],
+    "prefix": "User requested code examples. Please provide relevant programming example code, including:"
+  },
+  "hintRequest": {
+    "keywords": ["hints", "how to", "how to solve"],
+    "prefix": "User requested problem-solving hints. Please provide the following hints:"
+  },
+  "ui": {
+    "editor": "Editor",
+    "blackboardScreenshot": "Blackboard screenshot",
+    "voiceToText": "Voice to text",
+    "handwritingRecognition": "Handwriting recognition",
+    "imageAnalysis": "Image analysis",
+    "voice": "🎤 Voice",
+    "screenshot": "📸 Screenshot",
+    "imageAnalysisShort": "🔍 Image analysis",
+    "askAnything": "Ask me anything...",
+    "aiGeneratedContent": "✨ AI-generated content",
+    "invalidCallback": "❌ Invalid blackboard callback function",
+    "aiDrawingOnBoard": "🎨 AI teacher is drawing related content on the blackboard...",
+    "interviewEnd": "Interview finished! Thank you for participating. Now returning to normal learning mode.",
+    "optimizationTime": "Optimization solution time"
+  },
+  "errors": {
+    "cannotFindCanvas": "Cannot find blackboard canvas element",
+    "ttsRequestFailed": "TTS request failed",
+    "audioPlayError": "Audio playback error:",
+    "openaiTtsError": "OpenAI TTS error:",
+    "screenshotError": "Screenshot question error:",
+    "aiTeacherError": "AI Teacher dialogue error:",
+    "aiArchitectureError": "AI architecture analysis failed:",
+    "resumeServiceWarning": "AI resume generation service temporarily unavailable, used template content:"
+  },
+  "codeEditor": {
+    "speechRecognitionError": "Speech recognition error:",
+    "aiProgrammingTeacher": "AI Programming Teacher",
+    "aiDebugAssistant": "AI Debug Assistant",
+    "aiTeacherDialogError": "AI Teacher dialogue error:",
+    "aiDebugError": "AI Debug error:",
+    "defaultErrorReply": "Sorry, I cannot reply right now. Please try again later.",
+    "debugAnalysisError": "Sorry, code debug analysis failed. Please try again later or check your network connection.",
+    "audioPlaybackFailed": "Audio playback failed",
+    "ttsGenerationFailed": "TTS generation failed:",
+    "codeExamples": {
+      "functionDefinition": "Function Definition",
+      "listComprehension": "List Comprehension",
+      "asyncFunction": "Async Function",
+      "arrayMethods": "Array Methods",
+      "classAndInterface": "Class and Interface",
+      "setOperations": "Set Operations",
+      "templateAndSTL": "Template and STL",
+      "genericsAndTypes": "Generics and Types",
+      "concurrentProgramming": "Concurrent Programming",
+      "ownershipAndBorrowing": "Ownership and Borrowing",
+      "classAndNamespace": "Class and Namespace",
+      "recursiveFibonacci": "Recursive function implementing Fibonacci sequence",
+      "dataProcessingWithComprehension": "Data processing with list comprehension",
+      "asyncDataFetching": "Async data fetching and error handling",
+      "functionalArrayMethods": "Functional programming methods for arrays",
+      "objectOrientedBasics": "Object-oriented programming basics",
+      "javaStreamAPI": "Using Java Stream API",
+      "templateFunctionAndSTL": "Template functions and STL container usage",
+      "genericInterfaceAndClass": "Generic interface and class implementation",
+      "goroutinesAndWaitGroup": "Using Goroutines and WaitGroup",
+      "rustOwnershipSystem": "Rust ownership system demonstration",
+      "phpClassAndStaticMethods": "PHP class and static methods usage",
+      "evenSquares": "Even squares:",
+      "squareNumbers": "Square numbers:"
+    },
+    "debugHints": [
+      "Check if variable names are standardized and use meaningful names",
+      "Ensure code indentation is correct, Python is sensitive to indentation",
+      "Add comments to explain complex logic and improve code readability",
+      "Consider edge cases, such as handling empty inputs or exception values",
+      "Optimize algorithm complexity, avoid unnecessary nested loops"
+    ]
+  },
+  "aiVoiceChat": {
+    "title": "AI Voice Assistant",
+    "welcomeInterview": "👋 Hello! I'm an AI interviewer. This is a {{context}}, and I'll have in-depth conversations based on your responses. Please relax and communicate with me through voice or text. Are you ready?",
+    "welcomeAssistant": "👋 Hello! I'm your AI learning assistant. I can help you with {{context}} any questions. You can communicate with me through voice or text!",
+    "welcomeBasic": "👋 Hello! I'm your AI learning assistant. I can help you with any questions. You can communicate with me through voice or text!",
+    "inputPlaceholder": "Enter your question, or click the microphone for voice input... (Current: {{language}})",
+    "thinking": "AI is thinking...",
+    "startRecording": "Start voice input ({{language}})",
+    "stopRecording": "Stop recording",
+    "speechNotSupported": "Your browser doesn't support speech recognition",
+    "clearChat": "Clear conversation",
+    "conversationCleared": "👋 Conversation cleared! Any {{context}} questions you'd like to ask me?",
+    "conversationClearedBasic": "👋 Conversation cleared! Any questions you'd like to ask me?",
+    "languageMenu": {
+      "autoDetect": "Smart language detection",
+      "recommended": "Recommended",
+      "chinese": "Chinese",
+      "defaultLanguage": "Default language"
+    },
+    "messages": {
+      "intelligentDetectionEnabled": "Smart language detection enabled",
+      "languageSwitched": "Language switched to",
+      "ttsGenerating": "AI voice generating... {{progress}}%",
+      "aiSpeaking": "AI is speaking...",
+      "ttsPlaybackFailed": "Voice playback failed, please check text response",
+      "languageSwitchToZh": "Switched to Chinese mode",
+      "networkError": "Network connection failed, please check your connection and try again",
+      "aiReplyFailed": "AI reply failed, please try again"
+    },
+    "errors": {
+      "speechRecognition": "Speech recognition error:",
+      "languageNotSupported": "Current language not supported, switched to Chinese mode",
+      "networkFailed": "Network connection failed, please check network and try again",
+      "interviewApiFailed": "Interview API call failed",
+      "generalError": "Sorry, I can't reply right now. Please try again later.",
+      "languageError": "Current language mode has issues, switched to Chinese mode. Please resend your message.",
+      "ttsRequestFailed": "TTS request failed",
+      "audioPlaybackFailed": "Audio playback failed"
+    },
+    "status": {
+      "detected": "Detected"
+    }
+  },
+  "aiBlackboard": {
+    "saveSuccess": "📋 Current canvas state saved to history",
+    "textInputPlaceholder": "Enter text content, press Enter to confirm...",
+    "editTextPlaceholder": "Edit template text: {{text}}",
+    "templates": {
+      "basicFlowchart": "🔄 Basic Flowchart",
+      "arrayStructure": "📊 Array Structure",
+      "linkedListStructure": "🔗 Linked List Structure",
+      "binaryTree": "🌳 Binary Tree",
+      "recursiveFlow": "🔁 Recursive Flow",
+      "dynamicProgrammingTable": "📋 Dynamic Programming Table",
+      "twoPointers": "👆 Two Pointers",
+      "slidingWindow": "🪟 Sliding Window",
+      "complexityAnalysis": "⏱️ Complexity Analysis",
+      "mindMap": "🧠 Mind Map",
+      "comparisonTable": "📊 Comparison Table"
+    },
+    "templateElements": {
+      "recursiveFunction": "Recursive Function",
+      "terminationCondition": "Termination Condition?",
+      "returnResult": "Return Result",
+      "processingLogic": "Processing Logic",
+      "recursiveCall": "Recursive Call",
+      "slidingDirection": "Sliding Direction",
+      "timeComplexity": "Time Complexity",
+      "spaceComplexity": "Space Complexity",
+      "constant": "Constant",
+      "linear": "Linear",
+      "logarithmic": "Logarithmic",
+      "quadratic": "Quadratic"
+    }
+  }
+}

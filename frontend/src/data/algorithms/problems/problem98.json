@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "id": 98,
+    "title": "验证二叉搜索树",
+    "difficulty": "中等",
+    "leetcodeId": 98,
+    "category": "tree",
+    "patterns": [
+      "tree_inorder"
+    ],
+    "tags": [
+      "树",
+      "深度优先搜索",
+      "二叉搜索树"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给你一个二叉树的根节点 root ，判断其是否是一个有效的二叉搜索树。有效 二叉搜索树定义如下：节点的左子树只包含 小于 当前节点的数。节点的右子树只包含 大于 当前节点的数。所有左子树和右子树自身必须也是二叉搜索树。",
+  "examples": [
+    {
+      "input": "root = [2,1,3]",
+      "output": "true",
+      "explanation": "这是一个有效的二叉搜索树"
+    },
+    {
+      "input": "root = [5,1,4,null,null,3,6]",
+      "output": "false",
+      "explanation": "根节点的值是 5 ，但是右子树中节点的值是 4"
+    }
+  ],
+  "constraints": [
+    "树中节点数目范围在[1, 10^4] 内",
+    "-2^31 <= Node.val <= 2^31 - 1"
+  ],
+  "hints": [
+    "可以使用中序遍历，检查是否严格递增",
+    "也可以使用递归，维护上下界",
+    "注意处理重复值的情况"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "inorder_traversal",
+      "name": "中序遍历",
+      "timeComplexity": "O(n)",
+      "spaceComplexity": "O(n)",
+      "description": "利用BST中序遍历结果为递增序列的性质",
+      "code": {
+        "javascript": "/**\n * 验证二叉搜索树 - 利用BST中序遍历结果为递增序列的性质\n */\n\nfunction isValidBST(root) {\n    let prev = null;\n\n    function inorder(node) {\n        if (!node) return true;\n\n        if (!inorder(node.left)) return false;\n\n        if (prev !== null && node.val <= prev) {\n            return false;\n        }\n        prev = node.val;\n\n        return inorder(node.right);\n    }\n\n    return inorder(root);\n}\n\n\n/**\n * 测试isValidBST函数\n */\nfunction testIsValidBST() {\n    console.log(\"=== isValidBST测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: root = [2,1,3]\");\n    console.log(\"期望输出: true\");\n    console.log(\"说明: 这是一个有效的二叉搜索树\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testIsValidBST();",
+        "python": "\"\"\"\n验证二叉搜索树 - 利用BST中序遍历结果为递增序列的性质\n\"\"\"\n\ndef isValidBST(root):\n    def inorder(node):\n        if not node:\n            return True\n\n        if not inorder(node.left):\n            return False\n\n        if self.prev is not None and node.val <= self.prev:\n            return False\n        self.prev = node.val\n\n        return inorder(node.right)\n\n    self.prev = None\n    return inorder(root)\n\n\ndef test_isValidBST():\n    \"\"\"测试isValidBST函数\"\"\"\n    print(\"=== isValidBST测试 ===\")\n\n    # 测试用例\n    print(\"输入: root = [2,1,3]\")\n    print(\"期望输出: true\")\n    print(\"说明: 这是一个有效的二叉搜索树\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_isValidBST()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 验证二叉搜索树解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "root = [2,1,3]",
+      "output": "true",
+      "explanation": "这是一个有效的二叉搜索树"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "验证二叉搜索树变种练习",
+      "description": "基于验证二叉搜索树的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}

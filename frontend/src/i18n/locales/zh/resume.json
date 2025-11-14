@@ -1,0 +1,304 @@
+{
+  "title": "🧾 AI 智能简历生成器",
+  "subtitle": "基于您在平台上的学习成果和项目经验，自动生成个性化简历",
+  "steps": {
+    "generate": "智能生成",
+    "template": "选择模板",
+    "edit": "编辑简历",
+    "export": "导出简历"
+  },
+  "generation": {
+    "title": "🚀 AI智能简历生成",
+    "description": "基于您在平台上的学习成果和项目经验，自动生成个性化简历"
+  },
+  "templates": {
+    "title": "🎨 选择简历模板",
+    "description": "选择最适合您的简历模板风格",
+    "styles": {
+      "modern": "现代风格",
+      "classic": "经典风格",
+      "creative": "创意风格",
+      "minimal": "简约风格"
+    }
+  },
+  "sections": {
+    "personalInfo": "个人信息",
+    "summary": "个人简介",
+    "experience": "工作经历",
+    "education": "教育背景",
+    "skills": "技能清单",
+    "projects": "项目经验",
+    "achievements": "获奖成就",
+    "certifications": "证书认证"
+  },
+  "actions": {
+    "generate": "生成简历",
+    "preview": "预览简历",
+    "download": "下载PDF",
+    "share": "分享简历",
+    "edit": "编辑内容"
+  },
+  "progress": {
+    "analyzing": "分析学习记录",
+    "generating": "生成简历内容",
+    "formatting": "格式化排版",
+    "completed": "简历生成完成"
+  },
+  "templates": {
+    "modernTech": {
+      "name": "现代科技",
+      "description": "适合技术岗位，突出项目经验和技术技能",
+      "features": ["项目驱动", "技能突出", "ATS友好"]
+    },
+    "professional": {
+      "name": "商务专业",
+      "description": "传统商务风格，适合正式场合",
+      "features": ["简洁专业", "层次清晰", "传统布局"]
+    },
+    "creative": {
+      "name": "创意设计",
+      "description": "富有创意，适合设计和创意岗位",
+      "features": ["视觉突出", "创意布局", "个性化强"]
+    },
+    "minimal": {
+      "name": "极简风格",
+      "description": "极简设计，内容为王",
+      "features": ["极简设计", "内容聚焦", "易读性强"]
+    }
+  },
+  "skillLevels": {
+    "beginner": "入门",
+    "intermediate": "中级",
+    "advanced": "高级",
+    "expert": "专家"
+  },
+  "projectTypes": {
+    "web": "Web应用",
+    "mobile": "移动应用",
+    "backend": "后端服务",
+    "fullstack": "全栈项目",
+    "data": "数据科学",
+    "ai": "AI/机器学习",
+    "other": "其他"
+  },
+  "placeholders": {
+    "name": "用户姓名",
+    "email": "user@example.com",
+    "phone": "+86 138-0000-0000",
+    "location": "北京市",
+    "title": "软件工程师"
+  },
+  "defaultSummary": "拥有{level}开发经验，精通{skills}等技术栈，在LeadCode平台完成了{projectCount}个实战项目，具备扎实的编程基础和项目经验。",
+  "skillCategories": {
+    "programmingLanguages": "编程语言",
+    "frameworks": "框架技术",
+    "tools": "工具软件",
+    "databases": "数据库",
+    "other": "其他技能"
+  },
+  "buttons": {
+    "generateResume": "生成简历",
+    "preview": "预览",
+    "edit": "编辑",
+    "download": "下载",
+    "optimize": "AI优化",
+    "selectTemplate": "选择模板"
+  },
+  "status": {
+    "generating": "正在生成中...",
+    "optimizing": "AI优化中...",
+    "ready": "简历已准备就绪"
+  },
+  "warnings": {
+    "insufficient": {
+      "title": "条件不足",
+      "content": "请先完成至少一个项目后再生成简历。"
+    }
+  },
+  "education": {
+    "institution": "LeadCode 在线学习平台",
+    "degree": "技术技能认证",
+    "duration": "至今",
+    "achievements": {
+      "courses": "完成 {count} 门技术课程",
+      "skills": "掌握 {count} 项技术技能",
+      "projects": "完成 {count} 个实战项目"
+    }
+  },
+  "projects": {
+    "descriptionTemplate": "基于{tech}技术栈开发的{type}",
+    "achievements": {
+      "completion": "成功完成{type}项目开发",
+      "certification": "获得项目完成认证"
+    },
+    "duration": "项目开发期间"
+  },
+  "certifications": {
+    "leadcodeCompletion": "LeadCode 项目完成认证",
+    "description": "在LeadCode平台完成多个实战项目，展现了优秀的编程能力和项目管理技能"
+  },
+  "messages": {
+    "generateSuccess": "简历生成成功！",
+    "generateFailed": "简历生成失败，请重试",
+    "saveSuccess": "简历保存成功！",
+    "needProject": "需要完成至少一个项目才能生成简历",
+    "goToProjects": "去完成项目",
+    "aiOptimizeFailed": "AI简历优化失败",
+    "optimizationApplied": "已应用优化建议",
+    "templateSwitched": "已切换到{name}模板"
+  },
+  "aiOptimization": {
+    "warning": "请先生成简历",
+    "prompt": "请作为专业的HR和简历专家，分析以下简历内容并提供优化建议：\n\n简历内容：\n{resumeContent}\n\n请提供以下方面的具体优化建议：\n1. 个人总结/自我介绍的改进\n2. 项目经验描述的优化\n3. 技能展示的改进\n4. 教育背景的完善\n5. 整体结构和格式的建议\n\n请以JSON格式返回优化建议，格式如下：\n{\n  \"summary\": \"优化后的个人总结\",\n  \"suggestions\": [\n    {\n      \"type\": \"项目经验\",\n      \"original\": \"原内容\",\n      \"improved\": \"优化后内容\",\n      \"reason\": \"优化原因\"\n    }\n  ],\n  \"improvements\": [\"具体改进点1\", \"具体改进点2\"]\n}",
+    "completedTitle": "✨ AI简历优化完成",
+    "overallScore": "综合评分",
+    "optimizationSummary": "优化总结",
+    "improvements": "主要改进点",
+    "suggestionsTitle": "✨ AI简历优化建议"
+  },
+  "userDataOverview": {
+    "title": "您的学习成果",
+    "masteredSkills": "掌握技能",
+    "completedProjects": "完成项目",
+    "completedCourses": "完成课程",
+    "resumeVersions": "简历版本",
+    "yourSkills": "您的技能",
+    "yourProjects": "您的项目"
+  },
+  "resumePreview": {
+    "noData": "暂无简历数据",
+    "personalSummary": "个人简介",
+    "skills": "技能专长",
+    "programmingLanguages": "编程语言",
+    "frameworks": "框架技术",
+    "tools": "工具平台",
+    "otherSkills": "其他技能",
+    "projectExperience": "项目经验",
+    "techStack": "技术栈",
+    "achievements": "项目成果",
+    "education": "教育背景",
+    "certifications": "认证成就"
+  },
+  "versionHistory": {
+    "title": "简历版本历史",
+    "version": "版本",
+    "template": "模板",
+    "restore": "恢复此版本",
+    "preview": "预览"
+  },
+  "generateResume": "智能生成",
+  "resumePreview": "简历预览",
+  "editResume": "编辑简历",
+  "selectTemplate": "模板选择",
+  "noResumeGenerated": "请先生成简历",
+  "versionHistoryBtn": "版本历史",
+  "shareResume": "分享简历",
+  "exportResume": "导出简历",
+  "aiGenerating": "AI正在生成简历...",
+  "aiOptimizing": "AI优化中...",
+  "currentTemplate": "当前模板",
+  "selectTemplateBtn": "选择模板",
+  "buttons": {
+    "ok": "确定",
+    "cancel": "取消"
+  },
+  "editor": {
+    "title": "编辑简历",
+    "subtitle": "编辑您的简历内容，实时保存修改",
+    "cancel": "取消",
+    "save": "保存简历",
+    "editSection": "编辑部分",
+    "sections": {
+      "personalInfo": "个人信息",
+      "skills": "技能专长",
+      "projectExperience": "项目经验",
+      "education": "教育背景",
+      "certifications": "认证成就"
+    },
+    "personalInfo": {
+      "name": "姓名",
+      "title": "职位",
+      "email": "邮箱",
+      "phone": "电话",
+      "location": "地址",
+      "summary": "个人简介",
+      "namePlaceholder": "请输入您的姓名",
+      "titlePlaceholder": "如：前端开发工程师",
+      "emailPlaceholder": "your.email@example.com",
+      "phonePlaceholder": "+86 138-0000-0000",
+      "locationPlaceholder": "如：北京市海淀区",
+      "summaryPlaceholder": "简要介绍您的专业背景、技能特长和职业目标..."
+    },
+    "skills": {
+      "skillsCategory": "技能分类",
+      "skillsCategoryDesc": "将您的技能按照类别进行分组，便于HR快速了解您的技术栈",
+      "programmingLanguages": "编程语言",
+      "frameworks": "框架技术",
+      "tools": "工具平台",
+      "others": "其他技能",
+      "programmingPlaceholder": "如：JavaScript, Python, Java",
+      "frameworksPlaceholder": "如：React, Vue, Node.js",
+      "toolsPlaceholder": "如：Git, Docker, AWS",
+      "othersPlaceholder": "如：UI设计, 项目管理"
+    },
+    "projects": {
+      "addProject": "添加项目",
+      "projectTitle": "项目",
+      "deleteConfirm": "确定删除此项目吗？",
+      "name": "项目名称",
+      "duration": "项目时间",
+      "description": "项目描述",
+      "technologies": "技术栈",
+      "repository": "项目链接",
+      "achievements": "项目成果",
+      "namePlaceholder": "项目名称",
+      "durationPlaceholder": "如：2023.01 - 2023.06",
+      "descriptionPlaceholder": "详细描述项目背景、功能和您的贡献...",
+      "technologiesPlaceholder": "选择或输入技术栈",
+      "repositoryPlaceholder": "GitHub 或演示链接",
+      "achievementsPlaceholder": "项目取得的成果和亮点"
+    },
+    "education": {
+      "educationTitle": "教育经历",
+      "deleteConfirm": "确定删除此教育经历吗？",
+      "addEducation": "添加教育经历",
+      "institution": "学校/机构",
+      "degree": "学历/课程",
+      "duration": "时间",
+      "details": "详细信息",
+      "institutionPlaceholder": "学校或培训机构名称",
+      "degreePlaceholder": "如：计算机科学与技术 本科",
+      "durationPlaceholder": "如：2018.09 - 2022.06",
+      "detailsPlaceholder": "如：GPA、获奖情况、主要课程等"
+    },
+    "certifications": {
+      "addCertification": "添加认证",
+      "deleteConfirm": "确定删除吗？",
+      "name": "认证名称",
+      "issuer": "颁发机构",
+      "date": "获得时间",
+      "score": "成绩",
+      "namePlaceholder": "认证或奖项名称",
+      "issuerPlaceholder": "颁发机构",
+      "datePlaceholder": "获得时间",
+      "scorePlaceholder": "成绩"
+    },
+    "validation": {
+      "nameRequired": "请输入姓名",
+      "titleRequired": "请输入目标职位",
+      "emailRequired": "请输入邮箱",
+      "emailInvalid": "邮箱格式不正确",
+      "phoneRequired": "请输入电话号码",
+      "summaryRequired": "请输入个人简介",
+      "projectNameRequired": "请输入项目名称",
+      "projectDescRequired": "请输入项目描述",
+      "institutionRequired": "请输入学校或机构名称",
+      "degreeRequired": "请输入学历或课程信息",
+      "durationRequired": "请输入学习时间",
+      "certNameRequired": "请输入认证名称",
+      "certIssuerRequired": "请输入颁发机构",
+      "certDateRequired": "请输入获得时间",
+      "checkFormContent": "请检查表单内容"
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "id": 102,
+    "title": "二叉树的层序遍历",
+    "difficulty": "中等",
+    "leetcodeId": 102,
+    "category": "tree",
+    "patterns": [
+      "tree_level_order"
+    ],
+    "tags": [
+      "树",
+      "广度优先搜索"
+    ],
+    "estimatedTime": "25分钟",
+    "passingRate": "50.0%",
+    "version": "1.0",
+    "lastUpdated": "2025-10-21"
+  },
+  "description": "给你二叉树的根节点 root ，返回其节点值的 层序遍历 。 （即逐层地，从左到右访问所有节点）。",
+  "examples": [
+    {
+      "input": "root = [3,9,20,null,null,15,7]",
+      "output": "[[3],[9,20],[15,7]]",
+      "explanation": "层序遍历结果。"
+    },
+    {
+      "input": "root = [1]",
+      "output": "[[1]]",
+      "explanation": "只有一个节点。"
+    },
+    {
+      "input": "root = []",
+      "output": "[]",
+      "explanation": "空树。"
+    }
+  ],
+  "constraints": [
+    "树中节点数目在范围 [0, 2000] 内",
+    "-1000 <= Node.val <= 1000"
+  ],
+  "hints": [
+    "可以使用广度优先搜索。",
+    "使用队列来逐层处理节点。"
+  ],
+  "followUp": "你能想出更优化的解法吗？考虑时间和空间复杂度。",
+  "solutions": [
+    {
+      "id": "bfs",
+      "name": "广度优先搜索",
+      "timeComplexity": "O(n)",
+      "spaceComplexity": "O(n)",
+      "description": "使用队列进行层序遍历",
+      "code": {
+        "javascript": "/**\n * 二叉树的层序遍历 - 使用队列进行层序遍历\n */\n\nfunction levelOrder(root) {\n    if (!root) return [];\n    \n    const result = [];\n    const queue = [root];\n    \n    while (queue.length > 0) {\n        const levelSize = queue.length;\n        const currentLevel = [];\n        \n        for (let i = 0; i < levelSize; i++) {\n            const node = queue.shift();\n            currentLevel.push(node.val);\n            \n            if (node.left) queue.push(node.left);\n            if (node.right) queue.push(node.right);\n        }\n        \n        result.push(currentLevel);\n    }\n    \n    return result;\n}\n\n\n/**\n * 测试levelOrder函数\n */\nfunction testLevelOrder() {\n    console.log(\"=== levelOrder测试 ===\");\n\n    // 测试用例\n    console.log(\"输入: root = [3,9,20,null,null,15,7]\");\n    console.log(\"期望输出: [[3],[9,20],[15,7]]\");\n    console.log(\"说明: 层序遍历结果。\");\n\n    console.log(\"\\n=== 测试完成 ===\");\n}\n\n// 如果需要运行测试，取消注释下面的行\n// testLevelOrder();",
+        "python": "\"\"\"\n二叉树的层序遍历 - 使用队列进行层序遍历\n\"\"\"\n\ndef levelOrder(root):\n    if not root:\n        return []\n    \n    result = []\n    queue = [root]\n    \n    while queue:\n        level_size = len(queue)\n        current_level = []\n        \n        for _ in range(level_size):\n            node = queue.pop(0)\n            current_level.append(node.val)\n            \n            if node.left:\n                queue.append(node.left)\n            if node.right:\n                queue.append(node.right)\n        \n        result.append(current_level)\n    \n    return result\n\n\ndef test_levelOrder():\n    \"\"\"测试levelOrder函数\"\"\"\n    print(\"=== levelOrder测试 ===\")\n\n    # 测试用例\n    print(\"输入: root = [3,9,20,null,null,15,7]\")\n    print(\"期望输出: [[3],[9,20],[15,7]]\")\n    print(\"说明: 层序遍历结果。\")\n\n    print(\"\\n=== 测试完成 ===\")\n\n# 如果需要运行测试，取消注释下面的行\n# test_levelOrder()"
+      }
+    }
+  ],
+  "aiExplanation": {
+    "concept": {
+      "title": "🧠 二叉树的层序遍历解题策略",
+      "content": "这是一道经典的算法题目，重点学习解题思路和代码实现。"
+    },
+    "keyInsights": [
+      "💰 理解题目的核心要求",
+      "📊 选择合适的算法策略",
+      "🔄 优化时间和空间复杂度"
+    ],
+    "commonMistakes": [
+      "❌ 没有考虑边界条件",
+      "❌ 算法实现有误",
+      "❌ 忽略了题目的特殊要求"
+    ]
+  },
+  "visualization": {
+    "type": "step_by_step",
+    "defaultData": {
+      "input": "root = [3,9,20,null,null,15,7]",
+      "output": "[[3],[9,20],[15,7]]",
+      "explanation": "层序遍历结果。"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "description": "分析输入数据",
+        "highlight": [],
+        "action": "开始算法执行"
+      }
+    ]
+  },
+  "relatedProblems": [],
+  "practiceExercises": [
+    {
+      "title": "二叉树的层序遍历变种练习",
+      "description": "基于二叉树的层序遍历的变种问题",
+      "difficulty": "中等",
+      "hints": [
+        "考虑边界情况",
+        "优化算法复杂度"
+      ]
+    }
+  ]
+}
