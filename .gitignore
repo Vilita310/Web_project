@@ -49,22 +49,22 @@ coverage/
 tmp/
 temp/
 
-# 生产环境配置文件
+# Production configuration files
 .env.prod
 .env.production.local
 
-# 数据库文件
+# Database files
 *.db
 *.sqlite
 *.sqlite3
 
-# 备份文件
+# Backup files
 backups/
 *.backup
 *.bak
 *.sql
 
-# SSL证书和密钥
+# SSL certificates and keys
 ssl/
 *.pem
 *.key
@@ -72,20 +72,20 @@ ssl/
 *.csr
 *.p12
 
-# 安全相关文件
+# Security related files
 secrets/
 keys/
 credentials/
 auth/
 
-# Docker相关
+# Docker related
 .dockerignore
 
-# 监控和日志
+# Monitoring and logs
 monitoring/
 prometheus-data/
 
-# 项目特定文件
+# Project specific files
 /uploads/code/*.py
 /uploads/code/*.js
 /uploads/code/*.ts
@@ -95,9 +95,9 @@ create_*_user.py
 test_*.py
 temp_*.py
 
-# AI模型缓存
+# AI model cache
 .ai_cache/
 model_cache/
 
-# 用户上传的代码和文件
+# User uploaded code and files
 /uploads/user_files/
